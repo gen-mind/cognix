@@ -18,7 +18,6 @@ type MountParams struct {
 	AutHandler            *handler.AuthHandler
 	SwaggerHandler        *handler.SwaggerHandler
 	ConnectorHandler      *handler.ConnectorHandler
-	CredentialHandler     *handler.CredentialHandler
 	ChatHandler           *handler.ChatHandler
 	PersonaHandler        *handler.PersonaHandler
 	EmbeddingModelHandler *handler.EmbeddingModelHandler

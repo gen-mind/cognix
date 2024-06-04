@@ -23,7 +23,6 @@ import (
 type Executor struct {
 	cfg            *Config
 	connectorRepo  repository.ConnectorRepository
-	credentialRepo repository.CredentialRepository
 	docRepo        repository.DocumentRepository
 	msgClient      messaging.Client
 	chunking       ai.Chunking
@@ -43,7 +42,7 @@ func (e *Executor) run(streamName, topic string, task messaging.MessageHandler) 
 
 // runConnector run connector from nats message
 func (e *Executor) runConnector(ctx context.Context, msg jetstream.Msg) error {
-
+	startTime := time.Now()
 	//ctx = otel.GetTextMapPropagator().Extract(ctx, propagation.MapCarrier(msg.Header()))
 	var trigger proto.ConnectorRequest
 
@@ -56,6 +55,10 @@ func (e *Executor) runConnector(ctx context.Context, msg jetstream.Msg) error {
 	if err != nil {
 		return err
 	}
+	defer func() {
+		zap.S().Infof("connector %s completed. elapsed time: %d ms", connectorModel.Name, time.Since(startTime)/time.Millisecond)
+	}()
+
 	zap.S().Infof("receive message : %s [%d]", connectorModel.Name, connectorModel.ID.IntPart())
 	// refresh token if needed
 	if err = e.refreshToken(ctx, connectorModel); err != nil {
@@ -103,12 +106,14 @@ func (e *Executor) runConnector(ctx context.Context, msg jetstream.Msg) error {
 		}
 
 		// send message to chunking service
+		zap.S().Infof("send message to semantic %s", connectorModel.Name)
 		if loopErr = e.msgClient.Publish(ctx,
 			e.msgClient.StreamConfig().SemanticStreamName,
 			e.msgClient.StreamConfig().SemanticStreamSubject,
 			&proto.SemanticData{
 				Url:            result.URL,
 				DocumentId:     doc.ID.IntPart(),
+				ConnectorId:    connectorModel.ID.IntPart(),
 				FileType:       result.GetType(),
 				CollectionName: connectorModel.CollectionName(),
 			}); loopErr != nil {
@@ -117,26 +122,25 @@ func (e *Executor) runConnector(ctx context.Context, msg jetstream.Msg) error {
 			continue
 		}
 	}
-	// remove documents that were removed from source
+	//remove documents that were removed from source
 	var ids []int64
 	for _, doc := range connectorModel.DocsMap {
 		if doc.IsExists || doc.ID.IntPart() == 0 {
 			continue
 		}
+
 		ids = append(ids, doc.ID.IntPart())
 	}
 	if len(ids) > 0 {
-		if loopErr := e.docRepo.ArchiveRestore(ctx, false, ids...); loopErr != nil {
+		if loopErr := e.docRepo.DeleteByIDS(ctx, ids...); loopErr != nil {
 			err = loopErr
 		}
 	}
 
 	if err != nil {
-		connectorModel.LastAttemptStatus = model.ConnectorStatusError
-	} else {
-		connectorModel.LastAttemptStatus = model.ConnectorStatusSuccess
+		zap.S().Errorf("failed to update documents: %v", err)
+		connectorModel.Status = model.ConnectorStatusError
 	}
-	connectorModel.LastSuccessfulIndexDate = pg.NullTime{time.Now().UTC()}
 	connectorModel.LastUpdate = pg.NullTime{time.Now().UTC()}
 	if len(ids) > 0 {
 		if err = e.milvusClient.Delete(ctx, connectorModel.CollectionName(), ids...); err != nil {
@@ -219,7 +223,6 @@ func (e *Executor) refreshToken(ctx context.Context, cm *model.Connector) error 
 func NewExecutor(
 	cfg *Config,
 	connectorRepo repository.ConnectorRepository,
-	credentialRepo repository.CredentialRepository,
 	docRepo repository.DocumentRepository,
 	streamClient messaging.Client,
 	chunking ai.Chunking,
@@ -227,14 +230,13 @@ func NewExecutor(
 	milvusClient storage.MilvusClient,
 ) *Executor {
 	return &Executor{
-		cfg:            cfg,
-		connectorRepo:  connectorRepo,
-		credentialRepo: credentialRepo,
-		docRepo:        docRepo,
-		msgClient:      streamClient,
-		chunking:       chunking,
-		minioClient:    minioClient,
-		milvusClient:   milvusClient,
+		cfg:           cfg,
+		connectorRepo: connectorRepo,
+		docRepo:       docRepo,
+		msgClient:     streamClient,
+		chunking:      chunking,
+		minioClient:   minioClient,
+		milvusClient:  milvusClient,
 		oauthClient: resty.New().
 			SetTimeout(time.Minute).
 			SetBaseURL(cfg.OAuthURL),

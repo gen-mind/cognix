@@ -74,36 +74,21 @@ create table prompts
     deleted_date  timestamp
 );
 
-create table credentials
-(
-    id              bigint default unique_rowid() not null        primary key,
-    credential_json jsonb  default '{}'::JSONB    not null,
-    user_id         uuid                          not null        references users,
-    tenant_id       uuid                          not null        references tenants,
-    source          varchar(50)                   not null,
-    creation_date   timestamp                     not null,
-    last_update     timestamp,
-    deleted_date    timestamp,
-    shared          boolean                       not null
-);
-
 create table connectors
 (
-    id                         bigint default unique_rowid() not null        primary key,
-    credential_id              bigint        references credentials,
-    name                       varchar                       not null,
-    type                       varchar(50)                   not null,
-    connector_specific_config  jsonb                         not null,
-    refresh_freq               bigint,
-    user_id                    uuid                          not null        references users,
-    tenant_id                  uuid                                          references tenants,
-    disabled                   boolean                       not null,
-    last_successful_index_date timestamp,
-    last_attempt_status        varchar,
-    total_docs_indexed         bigint                        not null,
-    creation_date              timestamp                     not null,
-    last_update                timestamp,
-    deleted_date               timestamp
+    id                        bigint default unique_rowid() not null        primary key,
+    name                      varchar                       not null,
+    type                      varchar(50)                   not null,
+    connector_specific_config jsonb                         not null,
+    refresh_freq              bigint,
+    user_id                   uuid                          not null        references public.users,
+    tenant_id                 uuid        references public.tenants,
+    last_successful_analyzed  timestamp,
+    status                    varchar,
+    total_docs_analyzed       bigint                        not null,
+    creation_date             timestamp                     not null,
+    last_update               timestamp,
+    deleted_date              timestamp
 );
 
 create table chat_sessions

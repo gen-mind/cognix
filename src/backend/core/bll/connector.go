@@ -8,7 +8,6 @@ import (
 	"context"
 	"github.com/go-pg/pg/v10"
 	"github.com/google/uuid"
-	"github.com/shopspring/decimal"
 	"time"
 )
 
@@ -21,8 +20,7 @@ type (
 		Archive(ctx context.Context, user *model.User, id int64, restore bool) (*model.Connector, error)
 	}
 	connectorBL struct {
-		connectorRepo  repository.ConnectorRepository
-		credentialRepo repository.CredentialRepository
+		connectorRepo repository.ConnectorRepository
 		//messenger      messaging.Client
 	}
 )
@@ -47,53 +45,31 @@ func (c *connectorBL) Archive(ctx context.Context, user *model.User, id int64, r
 	return connector, nil
 }
 
-func NewConnectorBL(connectorRepo repository.ConnectorRepository,
-	credentialRepo repository.CredentialRepository,
-	// messenger messaging.Client,
-) ConnectorBL {
-	return &connectorBL{
-		connectorRepo:  connectorRepo,
-		credentialRepo: credentialRepo,
-		//messenger:      messenger,
-	}
+func NewConnectorBL(connectorRepo repository.ConnectorRepository) ConnectorBL {
+	return &connectorBL{connectorRepo: connectorRepo}
 }
 
 func (c *connectorBL) Create(ctx context.Context, user *model.User, param *parameters.CreateConnectorParam) (*model.Connector, error) {
-	param.CredentialID = decimal.NullDecimal{Valid: false}
+
 	tenantID := uuid.NullUUID{Valid: false}
 	if param.Shared {
 		tenantID.Valid = true
 		tenantID.UUID = user.TenantID
 	}
 	conn := model.Connector{
-		CredentialID:            decimal.NullDecimal{Valid: false},
 		Name:                    param.Name,
 		Type:                    model.SourceType(param.Source),
 		ConnectorSpecificConfig: param.ConnectorSpecificConfig,
 		RefreshFreq:             param.RefreshFreq,
 		UserID:                  user.ID,
 		TenantID:                tenantID,
-		Disabled:                param.Disabled,
-		LastAttemptStatus:       model.ConnectorStatusReadyToProcessed,
+		Status:                  model.ConnectorStatusReadyToProcessed,
 		CreationDate:            time.Now().UTC(),
 	}
-	//if param.CredentialID.Valid {
-	//	cred, err := c.credentialRepo.GetByID(ctx, param.CredentialID.Decimal.IntPart(), user.TenantID, user.ID)
-	//	if err != nil {
-	//		return nil, err
-	//	}
-	//	if cred.Type != model.SourceType(param.Type) {
-	//		return nil, utils.ErrorBadRequest.New("wrong credential source")
-	//	}
-	//	conn.CredentialID = decimal.NewNullDecimal(cred.ID)
-	//}
 
 	if err := c.connectorRepo.Create(ctx, &conn); err != nil {
 		return nil, err
 	}
-	//if err := c.messenger.Publish(ctx, model.TopicUpdateConnector, &proto.Body{Payload: &proto.Body_Trigger{Trigger: &proto.ConnectorRequest{Id: conn.ID.IntPart()}}}); err != nil {
-	//	return nil, err
-	//}
 	return &conn, nil
 }
 
@@ -102,17 +78,7 @@ func (c *connectorBL) Update(ctx context.Context, id int64, user *model.User, pa
 	if err != nil {
 		return nil, err
 	}
-	//if param.CredentialID.Valid {
-	//	cred, err := c.credentialRepo.GetByID(ctx, param.CredentialID.Decimal.IntPart(), user.TenantID, user.ID)
-	//	if err != nil {
-	//		return nil, err
-	//	}
-	//	if cred.Type != conn.Type {
-	//		return nil, utils.ErrorBadRequest.New("wrong credential source")
-	//	}
-	//}
 	conn.ConnectorSpecificConfig = param.ConnectorSpecificConfig
-	//conn.CredentialID = param.CredentialID
 	conn.Name = param.Name
 	conn.RefreshFreq = param.RefreshFreq
 	tenantID := uuid.NullUUID{Valid: false}
@@ -121,15 +87,11 @@ func (c *connectorBL) Update(ctx context.Context, id int64, user *model.User, pa
 		tenantID.UUID = user.TenantID
 	}
 	conn.TenantID = tenantID
-	conn.Disabled = param.Disabled
 	conn.LastUpdate = pg.NullTime{time.Now().UTC()}
 
 	if err = c.connectorRepo.Update(ctx, conn); err != nil {
 		return nil, err
 	}
-	//if err = c.messenger.Publish(ctx, model.TopicUpdateConnector, &proto.Body{Payload: &proto.Body_Trigger{Trigger: &proto.ConnectorRequest{Id: conn.ID.IntPart()}}}); err != nil {
-	//	return nil, err
-	//}
 	return conn, nil
 }
 

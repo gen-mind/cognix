@@ -211,7 +211,8 @@ CREATE TABLE "connectors" (
   "refresh_freq" integer,
   "user_id" uuid NOT NULL,
   "tenant_id" uuid NOT NULL,
-  "last_successful_analysis" timestamp, --datetime utc
+  "last_successful_analyzed" timestamp, --datetime utc
+   "total_docs_analyzed" integer, 
   "creation_date" timestamp NOT NULL DEFAULT (now()), --datetime utc
   "last_update" timestamp --datetime utc
 );

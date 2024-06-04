@@ -17,7 +17,7 @@ type (
 		FindByID(ctx context.Context, id int64) (*model.Document, error)
 		Create(ctx context.Context, document *model.Document) error
 		Update(ctx context.Context, document *model.Document) error
-		ArchiveRestore(ctx context.Context, restore bool, ids ...int64) error
+		DeleteByIDS(ctx context.Context, ids ...int64) error
 	}
 	documentRepository struct {
 		db *pg.DB
@@ -84,16 +84,10 @@ func (r *documentRepository) Update(ctx context.Context, document *model.Documen
 	return nil
 }
 
-func (r *documentRepository) ArchiveRestore(ctx context.Context, restore bool, ids ...int64) error {
-	var deletedTime pg.NullTime
-	if !restore {
-		deletedTime = pg.NullTime{time.Now().UTC()}
-	}
+func (r *documentRepository) DeleteByIDS(ctx context.Context, ids ...int64) error {
 	if _, err := r.db.WithContext(ctx).Model(&model.Document{}).
-		Set("last_update = ?", time.Now().UTC()).
-		Set("deleted_date = ?", deletedTime).
-		Where("id = any ?", pq.Array(ids)).Update(); err != nil {
-		return utils.Internal.Wrap(err, "can not update documents")
+		Where("id = any ?", pq.Array(ids)).Delete(); err != nil {
+		return utils.Internal.Wrapf(err, "can not delete documents [%s]", err.Error())
 	}
 	return nil
 }

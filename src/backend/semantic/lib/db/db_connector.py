@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, BigInteger, Boolean, UUID, TIMESTAMP, JSON, Enum, func, String
+from sqlalchemy import create_engine, Column, BigInteger, UUID, TIMESTAMP, JSON, Enum, func, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import enum
@@ -28,31 +28,26 @@ class Connector(Base):
     __tablename__ = 'connectors'
 
     id = Column(BigInteger, primary_key=True, default=func.unique_rowid())
-    credential_id = Column(BigInteger, nullable=True)
-    # credential_id = Column(BigInteger, ForeignKey('credentials.id'), nullable=True)
     name = Column(String, nullable=False)
     type = Column(String(50), nullable=False)
     connector_specific_config = Column(JSON, nullable=False)
     refresh_freq = Column(BigInteger, nullable=True)
     user_id = Column(UUID(as_uuid=True), nullable=False)
-    # user_id = Column(UUID(as_uuid=True), ForeignKey('users.id'), nullable=False)
     tenant_id = Column(UUID(as_uuid=True), nullable=True)
-    # tenant_id = Column(UUID(as_uuid=True), ForeignKey('tenants.id'), nullable=True)
-    disabled = Column(Boolean, nullable=False)
-    last_successful_index_date = Column(TIMESTAMP(timezone=False), nullable=True)
-    # last_attempt_status = Column(String, nullable=True)
-    last_attempt_status = Column(Enum(LastAttemptStatus), nullable=True)
-    total_docs_indexed = Column(BigInteger, nullable=False)
+    last_successful_analyzed = Column(TIMESTAMP(timezone=False), nullable=True)
+    status = Column(Enum(LastAttemptStatus), nullable=True)
+    total_docs_analyzed = Column(BigInteger, nullable=False)
     creation_date = Column(TIMESTAMP(timezone=False), nullable=False)
     last_update = Column(TIMESTAMP(timezone=False), nullable=True)
     deleted_date = Column(TIMESTAMP(timezone=False), nullable=True)
 
+
     def __repr__(self):
-        return (f"<Connector(id={self.id}, credential_id={self.credential_id}, name={self.name}, type={self.type}, "
+        return (f"<Connector(id={self.id}, name={self.name}, type={self.type}, "
                 f"connector_specific_config={self.connector_specific_config}, refresh_freq={self.refresh_freq}, "
-                f"user_id={self.user_id}, tenant_id={self.tenant_id}, disabled={self.disabled}, "
-                f"last_successful_index_date={self.last_successful_index_date}, last_attempt_status={self.last_attempt_status}, "
-                f"total_docs_indexed={self.total_docs_indexed}, creation_date={self.creation_date}, last_update={self.last_update}, "
+                f"user_id={self.user_id}, tenant_id={self.tenant_id}, "
+                f"last_successful_index_date={self.last_successful_analyzed}, last_attempt_status={self.status}, "
+                f"total_docs_indexed={self.total_docs_analyzed}, creation_date={self.creation_date}, last_update={self.last_update}, "
                 f"deleted_date={self.deleted_date})>")
 
 

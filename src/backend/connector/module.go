@@ -33,7 +33,6 @@ var Module = fx.Options(
 			return &cfg, nil
 		},
 		repository.NewConnectorRepository,
-		repository.NewCredentialRepository,
 		repository.NewDocumentRepository,
 		repository.NewEmbeddingModelRepository,
 		NewExecutor,

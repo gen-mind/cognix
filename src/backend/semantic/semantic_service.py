@@ -64,7 +64,7 @@ async def semantic_event(msg: Msg):
                 # update connector's status
                 connector_crud = ConnectorCRUD(cockroach_url)
                 connector = connector_crud.select_connector(document.connector_id)
-                last_successful_index_date = connector.last_successful_index_date
+                last_successful_index_date = connector.last_successful_analyzed
                 connector_crud.update_connector(document.connector_id,
                                                 last_attempt_status=LastAttemptStatus.PROCESSING,
                                                 last_update=datetime.datetime.now())
@@ -83,7 +83,7 @@ async def semantic_event(msg: Msg):
                                                 last_attempt_status=LastAttemptStatus.COMPLETED_SUCCESSFULLY,
                                                 last_successful_index_date=datetime.datetime.now(),
                                                 last_update=datetime.datetime.now(),
-                                                total_docs_indexed=eintites_analyzed
+                                                total_docs_analyzed=eintites_analyzed
                                                 )
             else:
                 logger.error(f"❌ failed to process chunking data error: document_id {semantic_data.document_id} not valid")
@@ -109,7 +109,8 @@ async def semantic_event(msg: Msg):
         elapsed_time = end_time - start_time
         logger.info(f"⏰⏰ total elapsed time: {elapsed_time:.2f} seconds")
 
-
+# IMPORTNAT WHEN IT DOES NOT CONNECTO TO COCKROCH IS PROCESSING!!!!!
+# this mean
 async def main():
     # Start the readiness probe server in a separate thread
     readiness_probe = ReadinessProbe()

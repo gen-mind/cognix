@@ -175,9 +175,9 @@ func (h *ConnectorHandler) Archive(c *gin.Context, identity *security.Identity) 
 	if !(action == ActionRestore || action == ActionDelete) {
 		return utils.ErrorBadRequest.Newf("invalid action: should be %s or %s", ActionRestore, ActionDelete)
 	}
-	credential, err := h.connectorBL.Archive(c.Request.Context(), identity.User, id, action == ActionRestore)
+	connector, err := h.connectorBL.Archive(c.Request.Context(), identity.User, id, action == ActionRestore)
 	if err != nil {
 		return err
 	}
-	return server.JsonResult(c, http.StatusOK, credential)
+	return server.JsonResult(c, http.StatusOK, connector)
 }

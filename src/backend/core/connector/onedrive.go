@@ -130,7 +130,7 @@ func (c *OneDrive) getFile(item *DriveChildBody) error {
 		}
 		// build unique filename for store in minio
 		fileName = c.model.BuildFileName(uuid.New().String() + "-" + item.Name)
-		//c.model.DocsMap[item.Id] = doc
+		c.model.DocsMap[item.Id] = doc
 	} else {
 		// when file was stored in minio URL should be minio:bucket:filename
 		minioFile := strings.Split(doc.URL, ":")

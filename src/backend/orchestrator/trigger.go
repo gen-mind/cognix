@@ -36,14 +36,14 @@ func (t *trigger) Do(ctx context.Context) error {
 	// todo we need figure out how to use multiple  orchestrators instances
 	// one approach could be that this method will extract top x rows from the database
 	// and it will book them
-	if !(t.connectorModel.LastAttemptStatus == model.ConnectorStatusReadyToProcessed ||
-		t.connectorModel.LastAttemptStatus == model.ConnectorStatusSuccess ||
-		t.connectorModel.LastAttemptStatus == model.ConnectorStatusError) {
+	if !(t.connectorModel.Status == model.ConnectorStatusReadyToProcessed ||
+		t.connectorModel.Status == model.ConnectorStatusSuccess ||
+		t.connectorModel.Status == model.ConnectorStatusError) {
 		// connector is working. do not send messages.
 		return nil
 	}
-	if t.connectorModel.LastSuccessfulIndexDate.IsZero() ||
-		t.connectorModel.LastSuccessfulIndexDate.Add(time.Duration(t.connectorModel.RefreshFreq)*time.Second).Before(time.Now().UTC()) {
+	if t.connectorModel.LastSuccessfulAnalyzed.IsZero() ||
+		t.connectorModel.LastSuccessfulAnalyzed.Add(time.Duration(t.connectorModel.RefreshFreq)*time.Second).Before(time.Now().UTC()) {
 		ctx, span := t.tracer.Start(ctx, ConnectorSchedulerSpan)
 		defer span.End()
 		span.SetAttributes(attribute.Int64(model.SpanAttributeConnectorID, t.connectorModel.ID.IntPart()))
@@ -59,6 +59,7 @@ func (t *trigger) Do(ctx context.Context) error {
 		}
 		if err = connWF.PrepareTask(ctx, t); err != nil {
 			span.RecordError(err)
+			zap.S().Errorf("failed to prepare task for connector %s[%d]: %v", t.connectorModel.Name, t.connectorModel.ID.IntPart(), err)
 			if errr := t.updateStatus(ctx, model.ConnectorStatusError); errr != nil {
 				span.RecordError(errr)
 			}
@@ -70,9 +71,7 @@ func (t *trigger) Do(ctx context.Context) error {
 
 // RunSemantic send message to semantic service
 func (t *trigger) RunSemantic(ctx context.Context, data *proto.SemanticData) error {
-	if err := t.updateStatus(ctx, model.ConnectorStatusWorking); err != nil {
-		return err
-	}
+
 	if t.connectorModel.Type == model.SourceTypeWEB {
 		doc := t.connectorModel.Docs[0]
 		var err error
@@ -88,7 +87,9 @@ func (t *trigger) RunSemantic(ctx context.Context, data *proto.SemanticData) err
 		}
 		data.DocumentId = doc.ID.IntPart()
 	}
-
+	if err := t.updateStatus(ctx, model.ConnectorStatusWorking); err != nil {
+		return err
+	}
 	zap.S().Infof("send message to semantic %s", t.connectorModel.Name)
 	return t.messenger.Publish(ctx, t.messenger.StreamConfig().SemanticStreamName,
 		t.messenger.StreamConfig().SemanticStreamSubject, data)
@@ -97,10 +98,10 @@ func (t *trigger) RunSemantic(ctx context.Context, data *proto.SemanticData) err
 // RunConnector send message to connector service
 func (t *trigger) RunConnector(ctx context.Context, data *proto.ConnectorRequest) error {
 	data.Params[connector.ParamFileLimit] = fmt.Sprintf("%d", t.fileSizeLimit)
-	zap.S().Infof("send message to connector %s", t.connectorModel.Name)
 	if err := t.updateStatus(ctx, model.ConnectorStatusWorking); err != nil {
 		return err
 	}
+	zap.S().Infof("send message to connector %s", t.connectorModel.Name)
 	return t.messenger.Publish(ctx, t.messenger.StreamConfig().ConnectorStreamName,
 		t.messenger.StreamConfig().ConnectorStreamSubject, data)
 }
@@ -125,7 +126,7 @@ func NewTrigger(messenger messaging.Client,
 
 // update status of connector in database
 func (t *trigger) updateStatus(ctx context.Context, status string) error {
-	t.connectorModel.LastAttemptStatus = status
+	t.connectorModel.Status = status
 	t.connectorModel.LastUpdate = pg.NullTime{time.Now().UTC()}
 	return t.connectorRepo.Update(ctx, t.connectorModel)
 }

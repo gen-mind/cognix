@@ -5,7 +5,6 @@ import (
 	"fmt"
 	validation "github.com/go-ozzo/ozzo-validation/v4"
 	"github.com/go-ozzo/ozzo-validation/v4/is"
-	"github.com/shopspring/decimal"
 )
 
 type LoginParam struct {
@@ -34,41 +33,14 @@ func (v InviteParam) Validate() error {
 type ArchivedParam struct {
 	Archived bool `form:"archived"`
 }
-type GetAllCredentialsParam struct {
-	ArchivedParam
-	Source string `form:"source"`
-}
-
-type CreateCredentialParam struct {
-	Source         string                `json:"source"`
-	Shared         bool                  `json:"shared"`
-	CredentialJson *model.CredentialJson `json:"credential_json"`
-}
-
-func (v CreateCredentialParam) Validate() error {
-	return validation.ValidateStruct(&v,
-		validation.Field(&v.Source, validation.Required,
-			validation.By(func(value interface{}) error {
-				if st, ok := model.AllSourceTypes[model.SourceType(v.Source)]; !ok || !st.IsImplemented {
-					return fmt.Errorf("invalid source type")
-				}
-				return nil
-			})))
-}
-
-type UpdateCredentialParam struct {
-	Shared         bool                  `json:"shared"`
-	CredentialJson *model.CredentialJson `json:"credential_json"`
-}
 
 type CreateConnectorParam struct {
-	CredentialID            decimal.NullDecimal `json:"credential_id,omitempty"`
-	Name                    string              `json:"name,omitempty"`
-	Source                  string              `json:"source,omitempty"`
-	ConnectorSpecificConfig model.JSONMap       `json:"connector_specific_config,omitempty"`
-	RefreshFreq             int                 `json:"refresh_freq,omitempty"`
-	Shared                  bool                `json:"shared,omitempty"`
-	Disabled                bool                `json:"disabled,omitempty"`
+	Name                    string        `json:"name,omitempty"`
+	Source                  string        `json:"source,omitempty"`
+	ConnectorSpecificConfig model.JSONMap `json:"connector_specific_config,omitempty"`
+	RefreshFreq             int           `json:"refresh_freq,omitempty"`
+	Shared                  bool          `json:"shared,omitempty"`
+	Disabled                bool          `json:"disabled,omitempty"`
 }
 
 func (v CreateConnectorParam) Validate() error {
@@ -83,12 +55,11 @@ func (v CreateConnectorParam) Validate() error {
 }
 
 type UpdateConnectorParam struct {
-	CredentialID            decimal.NullDecimal `json:"credential_id,omitempty"`
-	Name                    string              `json:"name,omitempty"`
-	ConnectorSpecificConfig model.JSONMap       `json:"connector_specific_config,omitempty"`
-	RefreshFreq             int                 `json:"refresh_freq,omitempty"`
-	Shared                  bool                `json:"shared,omitempty"`
-	Disabled                bool                `json:"disabled,omitempty"`
+	Name                    string        `json:"name,omitempty"`
+	ConnectorSpecificConfig model.JSONMap `json:"connector_specific_config,omitempty"`
+	RefreshFreq             int           `json:"refresh_freq,omitempty"`
+	Shared                  bool          `json:"shared,omitempty"`
+	Disabled                bool          `json:"disabled,omitempty"`
 }
 
 type AddUserParam struct {
