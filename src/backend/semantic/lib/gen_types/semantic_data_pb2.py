@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13semantic_data.proto\x12\ncom.embedd\"\xcd\x01\n\x0cSemanticData\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x10\n\x08site_map\x18\x02 \x01(\t\x12\x1a\n\x12search_for_sitemap\x18\x03 \x01(\x08\x12\x13\n\x0b\x64ocument_id\x18\x04 \x01(\x03\x12\'\n\tfile_type\x18\x05 \x01(\x0e\x32\x14.com.embedd.FileType\x12\x17\n\x0f\x63ollection_name\x18\x06 \x01(\t\x12\x12\n\nmodel_name\x18\x07 \x01(\t\x12\x17\n\x0fmodel_dimension\x18\x08 \x01(\x05*^\n\x08\x46ileType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x07\n\x03URL\x10\x01\x12\x07\n\x03PDF\x10\x02\x12\x07\n\x03RTF\x10\x03\x12\x07\n\x03\x44OC\x10\x04\x12\x07\n\x03XLS\x10\x05\x12\x07\n\x03PPT\x10\x06\x12\x07\n\x03TXT\x10\x07\x12\x06\n\x02MD\x10\x08\x42\x1aZ\x18\x62\x61\x63kend/core/proto;protob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13semantic_data.proto\x12\ncom.embedd\"\xfd\x01\n\x0cSemanticData\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x15\n\rurl_recursive\x18\x02 \x01(\x08\x12\x10\n\x08site_map\x18\x03 \x01(\t\x12\x1a\n\x12search_for_sitemap\x18\x04 \x01(\x08\x12\x13\n\x0b\x64ocument_id\x18\x05 \x01(\x03\x12\x17\n\x0f\x63onnector_id_id\x18\x06 \x01(\x03\x12\'\n\tfile_type\x18\x07 \x01(\x0e\x32\x14.com.embedd.FileType\x12\x17\n\x0f\x63ollection_name\x18\x08 \x01(\t\x12\x12\n\nmodel_name\x18\t \x01(\t\x12\x17\n\x0fmodel_dimension\x18\n \x01(\x05*^\n\x08\x46ileType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x07\n\x03URL\x10\x01\x12\x07\n\x03PDF\x10\x02\x12\x07\n\x03RTF\x10\x03\x12\x07\n\x03\x44OC\x10\x04\x12\x07\n\x03XLS\x10\x05\x12\x07\n\x03PPT\x10\x06\x12\x07\n\x03TXT\x10\x07\x12\x06\n\x02MD\x10\x08\x42\x1aZ\x18\x62\x61\x63kend/core/proto;protob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -22,8 +22,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'semantic_data_pb2', _global
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z\030backend/core/proto;proto'
-  _globals['_FILETYPE']._serialized_start=243
-  _globals['_FILETYPE']._serialized_end=337
+  _globals['_FILETYPE']._serialized_start=291
+  _globals['_FILETYPE']._serialized_end=385
   _globals['_SEMANTICDATA']._serialized_start=36
-  _globals['_SEMANTICDATA']._serialized_end=241
+  _globals['_SEMANTICDATA']._serialized_end=289
 # @@protoc_insertion_point(module_scope)

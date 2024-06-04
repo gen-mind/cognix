@@ -6,13 +6,21 @@ import enum
 Base = declarative_base()
 
 class LastAttemptStatus(enum.Enum):
-    ACTIVE = "ACTIVE"
-    PENDING_SCAN = "PENDING SCAN"
-    WORKING = "WORKING"
-    SCAN_COMPLETED_SUCCESSFULLY = "SCAN_COMPLETED_SUCCESSFULLY"
-    SCAN_COMPLETED_WITH_ERRORS = "SCAN_COMPLETED_WITH_ERRORS"
-    DISABLED = "DISABLED"
-    UNABLE_TO_PROCESS = "UNABLE_TO_PROCESS"
+    READY_TO_BE_PROCESSED = "Ready to be Processed"
+    PENDING = "Pending"
+    PROCESSING = "Processing"
+    COMPLETED_SUCCESSFULLY = "Completed Successfully"
+    COMPLETED_WITH_ERRORS = "Completed with Errors"
+    DISABLED = "Disabled"
+    UNABLE_TO_PROCESS = "Unable to Process"
+
+    # ConnectorStatusActive = "Ready to be Processed"
+    # ConnectorStatusPending = "Pending"
+    # ConnectorStatusWorking = "Processing"
+    # ConnectorStatusSuccess = "Completed Successfully"
+    # ConnectorStatusError = "Completed with Errors"
+    # ConnectorStatusDisabled = "Disabled"
+    # ConnectorStatusUnableProcess = "Unable to Process"
 
 
 class Connector(Base):

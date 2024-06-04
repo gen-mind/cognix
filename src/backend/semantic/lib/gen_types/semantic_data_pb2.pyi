@@ -27,21 +27,25 @@ TXT: FileType
 MD: FileType
 
 class SemanticData(_message.Message):
-    __slots__ = ("url", "site_map", "search_for_sitemap", "document_id", "file_type", "collection_name", "model_name", "model_dimension")
+    __slots__ = ("url", "url_recursive", "site_map", "search_for_sitemap", "document_id", "connector_id_id", "file_type", "collection_name", "model_name", "model_dimension")
     URL_FIELD_NUMBER: _ClassVar[int]
+    URL_RECURSIVE_FIELD_NUMBER: _ClassVar[int]
     SITE_MAP_FIELD_NUMBER: _ClassVar[int]
     SEARCH_FOR_SITEMAP_FIELD_NUMBER: _ClassVar[int]
     DOCUMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    CONNECTOR_ID_ID_FIELD_NUMBER: _ClassVar[int]
     FILE_TYPE_FIELD_NUMBER: _ClassVar[int]
     COLLECTION_NAME_FIELD_NUMBER: _ClassVar[int]
     MODEL_NAME_FIELD_NUMBER: _ClassVar[int]
     MODEL_DIMENSION_FIELD_NUMBER: _ClassVar[int]
     url: str
+    url_recursive: bool
     site_map: str
     search_for_sitemap: bool
     document_id: int
+    connector_id_id: int
     file_type: FileType
     collection_name: str
     model_name: str
     model_dimension: int
-    def __init__(self, url: _Optional[str] = ..., site_map: _Optional[str] = ..., search_for_sitemap: bool = ..., document_id: _Optional[int] = ..., file_type: _Optional[_Union[FileType, str]] = ..., collection_name: _Optional[str] = ..., model_name: _Optional[str] = ..., model_dimension: _Optional[int] = ...) -> None: ...
+    def __init__(self, url: _Optional[str] = ..., url_recursive: bool = ..., site_map: _Optional[str] = ..., search_for_sitemap: bool = ..., document_id: _Optional[int] = ..., connector_id_id: _Optional[int] = ..., file_type: _Optional[_Union[FileType, str]] = ..., collection_name: _Optional[str] = ..., model_name: _Optional[str] = ..., model_dimension: _Optional[int] = ...) -> None: ...
