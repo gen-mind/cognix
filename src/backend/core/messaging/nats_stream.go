@@ -17,6 +17,7 @@ type clientStream struct {
 	ctx       context.Context
 	wg        *sync.WaitGroup
 	streamCfg *StreamConfig
+	ackWait   time.Duration
 }
 
 func (c *clientStream) StreamConfig() *StreamConfig {
@@ -70,10 +71,10 @@ func (c *clientStream) Listen(ctx context.Context, streamName, topic string, han
 
 	cons, err := stream.CreateOrUpdateConsumer(ctx, jetstream.ConsumerConfig{
 		Durable:       streamName,
-		MaxDeliver:    3,
+		MaxDeliver:    c.streamCfg.MaxDeliver,
 		FilterSubject: topic,
 		AckPolicy:     jetstream.AckExplicitPolicy,
-		AckWait:       time.Minute,
+		AckWait:       c.ackWait,
 		DeliverPolicy: jetstream.DeliverAllPolicy,
 	})
 	if err != nil {
@@ -117,5 +118,6 @@ func NewClientStream(cfg *Config) (Client, error) {
 		cancel:    cancel,
 		wg:        &sync.WaitGroup{},
 		streamCfg: cfg.Stream,
+		ackWait:   time.Duration(cfg.Stream.AckWait) * time.Second,
 	}, nil
 }

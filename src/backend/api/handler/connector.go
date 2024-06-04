@@ -152,11 +152,7 @@ func (h *ConnectorHandler) Update(c *gin.Context) error {
 // @Success 200 {array} model.SourceTypeDescription
 // @Router /manage/connector/source_types [get]
 func (h *ConnectorHandler) GetSourceTypes(c *gin.Context, identity *security.Identity) error {
-	result := make([]*model.SourceTypeDescription, 0, len(model.AllSourceTypes))
-	for _, t := range model.AllSourceTypes {
-		result = append(result, &t)
-	}
-	return server.JsonResult(c, http.StatusOK, result)
+	return server.JsonResult(c, http.StatusOK, model.SourceTypesList)
 }
 
 // Archive delete or restore connector

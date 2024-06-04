@@ -19,7 +19,8 @@ User should prepare json for each connector and copy it to field ConnectorSpecif
 {
   "url": "",
   "site_map": "",
-  "search_for_sitemap": false 
+  "search_for_sitemap": false,
+  "url_recursive": false
 }
 ```
 

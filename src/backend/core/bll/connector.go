@@ -74,7 +74,7 @@ func (c *connectorBL) Create(ctx context.Context, user *model.User, param *param
 		UserID:                  user.ID,
 		TenantID:                tenantID,
 		Disabled:                param.Disabled,
-		LastAttemptStatus:       model.ConnectorStatusActive,
+		LastAttemptStatus:       model.ConnectorStatusReadyToProcessed,
 		CreationDate:            time.Now().UTC(),
 	}
 	//if param.CredentialID.Valid {

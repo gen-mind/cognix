@@ -39,12 +39,31 @@ type (
 	}
 )
 
-var AllSourceTypes = map[SourceType]SourceTypeDescription{
-	SourceTypeFile:        {SourceTypeFile, "File", true},
-	SourceTypeWEB:         {SourceTypeWEB, "Web", true},
-	SourceTypeSlack:       {SourceTypeSlack, "Slack", false},
-	SourceTypeGoogleDrive: {SourceTypeGoogleDrive, "Google Drive", false},
-	SourceTypeGMAIL:       {SourceTypeGMAIL, "Gmail", false},
-	SourceTypeSharepoint:  {SourceTypeSharepoint, "Sharepoint", false},
-	SourceTypeOneDrive:    {SourceTypeOneDrive, "OneDrive", true},
+var (
+	sourceTypeFileDescription        = SourceTypeDescription{SourceTypeFile, "File", true}
+	sourceTypeWEBDescription         = SourceTypeDescription{SourceTypeWEB, "Web", true}
+	sourceTypeSlackDescription       = SourceTypeDescription{SourceTypeSlack, "Slack", false}
+	sourceTypeGoogleDriveDescription = SourceTypeDescription{SourceTypeGoogleDrive, "Google Drive", false}
+	sourceTypeGmailDescription       = SourceTypeDescription{SourceTypeGMAIL, "Gmail", false}
+	sourceTypeSharepointDescription  = SourceTypeDescription{SourceTypeSharepoint, "Sharepoint", false}
+	sourceTypeOneDriveDescription    = SourceTypeDescription{SourceTypeOneDrive, "OneDrive", true}
+)
+var AllSourceTypes = map[SourceType]*SourceTypeDescription{
+	SourceTypeFile:        &sourceTypeFileDescription,
+	SourceTypeWEB:         &sourceTypeWEBDescription,
+	SourceTypeSlack:       &sourceTypeSlackDescription,
+	SourceTypeGoogleDrive: &sourceTypeGoogleDriveDescription,
+	SourceTypeGMAIL:       &sourceTypeGmailDescription,
+	SourceTypeSharepoint:  &sourceTypeSharepointDescription,
+	SourceTypeOneDrive:    &sourceTypeOneDriveDescription,
+}
+
+var SourceTypesList = []*SourceTypeDescription{
+	&sourceTypeFileDescription,
+	&sourceTypeWEBDescription,
+	&sourceTypeSlackDescription,
+	&sourceTypeGoogleDriveDescription,
+	&sourceTypeGmailDescription,
+	&sourceTypeSharepointDescription,
+	&sourceTypeOneDriveDescription,
 }

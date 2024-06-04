@@ -36,7 +36,9 @@ func (t *trigger) Do(ctx context.Context) error {
 	// todo we need figure out how to use multiple  orchestrators instances
 	// one approach could be that this method will extract top x rows from the database
 	// and it will book them
-	if t.connectorModel.LastAttemptStatus == model.ConnectorStatusWorking {
+	if !(t.connectorModel.LastAttemptStatus == model.ConnectorStatusReadyToProcessed ||
+		t.connectorModel.LastAttemptStatus == model.ConnectorStatusSuccess ||
+		t.connectorModel.LastAttemptStatus == model.ConnectorStatusError) {
 		// connector is working. do not send messages.
 		return nil
 	}

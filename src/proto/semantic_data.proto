@@ -27,7 +27,7 @@ message SemanticData {
   string site_map = 3;
   bool search_for_sitemap = 4;
   int64  document_id = 5;
-  int64  connector_id_id = 6;
+  int64  connector_id = 6;
   FileType file_type = 7;
   string collection_name = 8;
   string model_name = 9;

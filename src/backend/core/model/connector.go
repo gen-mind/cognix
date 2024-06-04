@@ -13,13 +13,13 @@ const (
 	CollectionTenant = "tenant_%s"
 	CollectionUser   = "user_%s"
 
-	ConnectorStatusActive        = "Active"
-	ConnectorStatusPending       = "Pending"
-	ConnectorStatusWorking       = "Working"
-	ConnectorStatusSuccess       = "Completed Successfully"
-	ConnectorStatusError         = "Completed with Errors"
-	ConnectorStatusDisabled      = "Disabled"
-	ConnectorStatusUnableProcess = "Unable to Process"
+	ConnectorStatusReadyToProcessed = "Ready to be Processed"
+	ConnectorStatusPending          = "Pending"
+	ConnectorStatusWorking          = "Processing"
+	ConnectorStatusSuccess          = "Completed Successfully"
+	ConnectorStatusError            = "Completed with Errors"
+	ConnectorStatusDisabled         = "Disabled"
+	ConnectorStatusUnableProcess    = "Unable to Process"
 )
 
 type Connector struct {

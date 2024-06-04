@@ -8,6 +8,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/shopspring/decimal"
+	"go.uber.org/zap"
 	"sync"
 	"time"
 )
@@ -63,11 +64,7 @@ func (r *embedding) FindDocuments(ctx context.Context,
 	for _, collectionName := range collectionNames {
 		docs, err := r.milvusClinet.Load(ctx, collectionName, response.GetVector())
 		if err != nil {
-			ch <- &Response{
-				IsValid: false,
-				Type:    ResponseError,
-				Err:     err,
-			}
+			zap.S().Errorf("error loading document from vector database :%s", err.Error())
 			continue
 		}
 		for _, doc := range docs {

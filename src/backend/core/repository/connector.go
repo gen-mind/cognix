@@ -110,17 +110,12 @@ func (r *connectorRepository) Update(ctx context.Context, connector *model.Conne
 
 func (r *connectorRepository) GetActive(ctx context.Context) ([]*model.Connector, error) {
 	connectors := make([]*model.Connector, 0)
+	//todo ask Gian how to do this
 	if err := r.db.WithContext(ctx).
 		Model(&connectors).
-		//ColumnExpr("connector.*").
-		//ColumnExpr("credential.*").
-		//ColumnExpr("embedding_models.model_id as embedding_model__model_id").
-		//ColumnExpr("embedding_models.model_dim as embedding_model__model_dim").
 		Relation("Docs").
 		Relation("Credential").
 		Relation("User.EmbeddingModel").
-		//Join("inner join users on connector.user_id =  users.id").
-		//Join("inner join embedding_models on embedding_models.tenant_id = users.tenant_id").
 		Where("disabled = false").
 		Where("connector.deleted_date is null").
 		Select(); err != nil {

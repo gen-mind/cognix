@@ -16,6 +16,7 @@ type (
 		URL              string `url:"url"`
 		SiteMap          string `json:"site_map"`
 		SearchForSitemap bool   `json:"search_for_sitemap"`
+		URLRecursive     bool   `json:"url_recursive"`
 	}
 )
 
@@ -51,7 +52,9 @@ func (c *Web) PrepareTask(ctx context.Context, task Task) error {
 		Url:              c.param.URL,
 		SiteMap:          c.param.SiteMap,
 		SearchForSitemap: c.param.SearchForSitemap,
+		UrlRecursive:     c.param.URLRecursive,
 		DocumentId:       rootDoc.ID.IntPart(),
+		ConnectorId:      c.model.ID.IntPart(),
 		FileType:         proto.FileType_URL,
 		CollectionName:   c.model.CollectionName(),
 		ModelName:        c.model.User.EmbeddingModel.ModelID,

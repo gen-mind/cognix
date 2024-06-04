@@ -8,7 +8,7 @@ import (
 )
 
 type Config struct {
-	URL       string `env:"COCKROACH_CLIENT_DATABASE_URL"`
+	URL       string `env:"COCKROACH_CLIENT_DATABASE_URL_GOLANG"`
 	DebugMode bool   `env:"COCKROACH_CLIENT_DB_DEBUG" envDefault:"false"`
 }
 
