@@ -55,6 +55,7 @@ services:
       - ${CONFIG_PATH}/milvus_cli.env
       - ${CONFIG_PATH}/nats_cli.env
       - ${CONFIG_PATH}/embedder_cli.env
+      - ${CONFIG_PATH}/cockroach_cli.env
     restart: always
     ports:
       - "3434:8080"

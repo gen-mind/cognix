@@ -5,14 +5,15 @@ import enum
 
 Base = declarative_base()
 
+
 class LastAttemptStatus(enum.Enum):
-    READY_TO_BE_PROCESSED = "Ready to be Processed"
-    PENDING = "Pending"
-    PROCESSING = "Processing"
-    COMPLETED_SUCCESSFULLY = "Completed Successfully"
-    COMPLETED_WITH_ERRORS = "Completed with Errors"
-    DISABLED = "Disabled"
-    UNABLE_TO_PROCESS = "Unable to Process"
+    READY_TO_BE_PROCESSED = "READY_TO_BE_PROCESSED"
+    PENDING = "PENDING"
+    PROCESSING = "PROCESSING"
+    COMPLETED_SUCCESSFULLY = "COMPLETED_SUCCESSFULLY"
+    COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS"
+    DISABLED = "DISABLED"
+    UNABLE_TO_PROCESS = "UNABLE_TO_PROCESS"
 
     # ConnectorStatusActive = "Ready to be Processed"
     # ConnectorStatusPending = "Pending"
@@ -86,9 +87,6 @@ class ConnectorCRUD:
         deleted_connectors = self.session.query(Connector).filter_by(id=connector_id).delete()
         self.session.commit()
         return deleted_connectors
-
-
-
 
 #
 # # Example usage

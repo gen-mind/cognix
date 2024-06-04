@@ -66,7 +66,7 @@ async def semantic_event(msg: Msg):
                 connector = connector_crud.select_connector(document.connector_id)
                 last_successful_index_date = connector.last_successful_index_date
                 connector_crud.update_connector(document.connector_id,
-                                                last_attempt_status=LastAttemptStatus.WORKING,
+                                                last_attempt_status=LastAttemptStatus.PROCESSING,
                                                 last_update=datetime.datetime.now())
 
                 # performing semantic analysis on the source
@@ -80,7 +80,7 @@ async def semantic_event(msg: Msg):
 
                 # updating again the connector
                 connector_crud.update_connector(connector_id,
-                                                last_attempt_status=LastAttemptStatus.SCAN_COMPLETED_SUCCESSFULLY,
+                                                last_attempt_status=LastAttemptStatus.COMPLETED_SUCCESSFULLY,
                                                 last_successful_index_date=datetime.datetime.now(),
                                                 last_update=datetime.datetime.now(),
                                                 total_docs_indexed=eintites_analyzed
@@ -99,7 +99,7 @@ async def semantic_event(msg: Msg):
             if connector_id != 0:
                 connector_crud = ConnectorCRUD(cockroach_url)
                 connector_crud.update_connector(connector_id,
-                                                last_attempt_status=LastAttemptStatus.SCAN_COMPLETED_WITH_ERRORS,
+                                                last_attempt_status=LastAttemptStatus.COMPLETED_WITH_ERRORS,
                                                 last_update=datetime.datetime.now())
         except Exception as e:
             error_message = str(e) if e else "Unknown error occurred"
