@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>microsoft_core - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.1";</script>
+<script src="../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package microsoft_core
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "cognix.ch/api/v2/core/connector/microsoft-core"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#Attachment">type Attachment</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ChannelBody">type ChannelBody</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ChannelResponse">type ChannelResponse</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#DriveChildBody">type DriveChildBody</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#DriveResponse">type DriveResponse</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#FileCallback">type FileCallback</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Folder">type Folder</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MSDrive">type MSDrive</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewMSDrive">func NewMSDrive(param *MSDriveParam, model *model.Connector, sessionID uuid.NullUUID, clinet *resty.Client, baseURL, folderURL string, callback FileCallback) *MSDrive</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MSDrive.DownloadItem">func (c *MSDrive) DownloadItem(ctx context.Context, itemID string, fileSizeLimit int) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MSDrive.Execute">func (c *MSDrive) Execute(ctx context.Context, fileSizeLimit int) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#MSDriveParam">type MSDriveParam</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MSTeamsChatResponse">type MSTeamsChatResponse</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MSTeamsChatValues">type MSTeamsChatValues</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MessageBody">type MessageBody</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MessageResponse">type MessageResponse</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MsFile">type MsFile</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Response">type Response</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Team">type Team</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TeamBody">type TeamBody</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TeamFilesFolder">type TeamFilesFolder</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TeamFrom">type TeamFrom</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TeamResponse">type TeamResponse</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TeamUser">type TeamUser</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/drive-model.go">drive-model.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/drive.go">drive.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/teams-model.go">teams-model.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span id="DownloadItem">DownloadItem</span> = &#34;https://graph.microsoft.com/v1.0/me/drive/items/%s&#34;
+)</pre>
+			
+		
+		
+		
+		
+			
+			
+			<h2 id="Attachment">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/teams-model.go?s=1953:2287#L58">Attachment</a>
+				<a class="permalink" href="index.html#Attachment">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Attachment struct {
+<span id="Attachment.Id"></span>    Id           <a href="http://localhost:6060/pkg/builtin/#string">string</a>      `json:&#34;id&#34;`
+<span id="Attachment.ContentType"></span>    ContentType  <a href="http://localhost:6060/pkg/builtin/#string">string</a>      `json:&#34;contentType&#34;`
+<span id="Attachment.ContentUrl"></span>    ContentUrl   <a href="http://localhost:6060/pkg/builtin/#string">string</a>      `json:&#34;contentUrl&#34;`
+<span id="Attachment.Content"></span>    Content      interface{} `json:&#34;content&#34;`
+<span id="Attachment.Name"></span>    Name         <a href="http://localhost:6060/pkg/builtin/#string">string</a>      `json:&#34;name&#34;`
+<span id="Attachment.ThumbnailUrl"></span>    ThumbnailUrl interface{} `json:&#34;thumbnailUrl&#34;`
+<span id="Attachment.TeamsAppId"></span>    TeamsAppId   interface{} `json:&#34;teamsAppId&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ChannelBody">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/teams-model.go?s=339:553#L11">ChannelBody</a>
+				<a class="permalink" href="index.html#ChannelBody">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ChannelBody struct {
+<span id="ChannelBody.Id"></span>    Id              <a href="http://localhost:6060/pkg/builtin/#string">string</a>    `json:&#34;id&#34;`
+<span id="ChannelBody.CreatedDateTime"></span>    CreatedDateTime <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a> `json:&#34;createdDateTime&#34;`
+<span id="ChannelBody.DisplayName"></span>    DisplayName     <a href="http://localhost:6060/pkg/builtin/#string">string</a>    `json:&#34;displayName&#34;`
+<span id="ChannelBody.Description"></span>    Description     <a href="http://localhost:6060/pkg/builtin/#string">string</a>    `json:&#34;description&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ChannelResponse">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/teams-model.go?s=272:337#L8">ChannelResponse</a>
+				<a class="permalink" href="index.html#ChannelResponse">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ChannelResponse struct {
+<span id="ChannelResponse.Value"></span>    Value []*<a href="index.html#ChannelBody">ChannelBody</a> `json:&#34;value&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="DriveChildBody">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/drive-model.go?s=146:699#L2">DriveChildBody</a>
+				<a class="permalink" href="index.html#DriveChildBody">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type DriveChildBody struct {
+<span id="DriveChildBody.MicrosoftGraphDownloadUrl"></span>    MicrosoftGraphDownloadUrl <a href="http://localhost:6060/pkg/builtin/#string">string</a>    `json:&#34;@microsoft.graph.downloadUrl&#34;`
+<span id="DriveChildBody.MicrosoftGraphDecorator"></span>    MicrosoftGraphDecorator   <a href="http://localhost:6060/pkg/builtin/#string">string</a>    `json:&#34;@microsoft.graph.Decorator&#34;`
+<span id="DriveChildBody.Id"></span>    Id                        <a href="http://localhost:6060/pkg/builtin/#string">string</a>    `json:&#34;id&#34;`
+<span id="DriveChildBody.LastModifiedDateTime"></span>    LastModifiedDateTime      <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a> `json:&#34;lastModifiedDateTime&#34;`
+<span id="DriveChildBody.Name"></span>    Name                      <a href="http://localhost:6060/pkg/builtin/#string">string</a>    `json:&#34;name&#34;`
+<span id="DriveChildBody.WebUrl"></span>    WebUrl                    <a href="http://localhost:6060/pkg/builtin/#string">string</a>    `json:&#34;webUrl&#34;`
+<span id="DriveChildBody.File"></span>    File                      *<a href="index.html#MsFile">MsFile</a>   `json:&#34;file&#34;`
+<span id="DriveChildBody.Size"></span>    Size                      <a href="http://localhost:6060/pkg/builtin/#int">int</a>       `json:&#34;size&#34;`
+<span id="DriveChildBody.Folder"></span>    Folder                    *<a href="index.html#Folder">Folder</a>   `json:&#34;folder&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="DriveResponse">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/drive-model.go?s=75:144#L1">DriveResponse</a>
+				<a class="permalink" href="index.html#DriveResponse">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type DriveResponse struct {
+<span id="DriveResponse.Value"></span>    Value []*<a href="index.html#DriveChildBody">DriveChildBody</a> `json:&#34;value&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="FileCallback">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/drive.go?s=1000:1037#L31">FileCallback</a>
+				<a class="permalink" href="index.html#FileCallback">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type FileCallback func(response *<a href="index.html#Response">Response</a>)</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Folder">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/drive-model.go?s=840:898#L21">Folder</a>
+				<a class="permalink" href="index.html#Folder">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Folder struct {
+<span id="Folder.ChildCount"></span>    ChildCount <a href="http://localhost:6060/pkg/builtin/#int">int</a> `json:&#34;childCount&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="MSDrive">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/drive.go?s=711:998#L20">MSDrive</a>
+				<a class="permalink" href="index.html#MSDrive">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+MSDrive represents a type that provides functionality to interact with Microsoft OneDrive.
+It contains fields such as client, param, folderURL, baseURL, callback, fileSizeLimit, sessionId, model, and unsupportedType.
+</p>
+
+			<pre>type MSDrive struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewMSDrive">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/drive.go?s=1863:2034#L49">NewMSDrive</a>
+					<a class="permalink" href="index.html#NewMSDrive">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewMSDrive(param *<a href="index.html#MSDriveParam">MSDriveParam</a>,
+    model *<a href="../../model/index.html">model</a>.<a href="../../model/index.html#Connector">Connector</a>,
+    sessionID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#NullUUID">NullUUID</a>,
+    clinet *resty.<a href="index.html#Client">Client</a>,
+    baseURL, folderURL <a href="http://localhost:6060/pkg/builtin/#string">string</a>,
+    callback <a href="index.html#FileCallback">FileCallback</a>) *<a href="index.html#MSDrive">MSDrive</a></pre>
+				<p>
+NewMSDrive creates a new instance of MSDrive with the given parameters and returns it.
+It initializes the MSDrive fields with the provided values and returns a pointer to the created MSDrive object.
+The unsupportedType field is initialized as an empty map[string]bool.
+</p>
+<p>
+Parameters:
+</p>
+<pre>- param: The MSDriveParam representing the parameters for the MSDrive type.
+- model: The model.Connector representing the table connector.
+- sessionID: The uuid.NullUUID representing the session ID.
+- clinet: The *resty.Client representing the REST client.
+- baseURL: The string representing the base URL.
+- folderURL: The string representing the folder URL.
+- callback: The FileCallback function to handle file responses.
+</pre>
+<p>
+Returns:
+</p>
+<pre>- *MSDrive: The newly created MSDrive instance.
+</pre>
+
+				
+				
+			
+
+			
+				
+				<h3 id="MSDrive.DownloadItem">func (*MSDrive) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/drive.go?s=3861:3952#L107">DownloadItem</a>
+					<a class="permalink" href="index.html#MSDrive.DownloadItem">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#MSDrive">MSDrive</a>) DownloadItem(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, itemID <a href="http://localhost:6060/pkg/builtin/#string">string</a>, fileSizeLimit <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+DownloadItem performs the download of a specific item from the MSDrive instance.
+It sets the fileSizeLimit field to the provided fileSizeLimit value.
+It makes a request to the API endpoint specific to the itemID and parses the response into the DriveChildBody struct.
+If there is an error during the request or parsing of the response,
+it returns the error. Otherwise, it calls the getFile method passing the parsed item.
+Please note that the getFile method is not shown in this documentation.
+</p>
+<p>
+Parameters:
+- ctx: The context.Context for controlling the request lifecycle.
+- itemID: The ID of the item to be downloaded.
+- fileSizeLimit: The maximum file size allowed for downloading.
+</p>
+<p>
+Returns:
+- error: If there is an error during the request or parsing of the item.
+</p>
+<p>
+Example:
+</p>
+<pre>err := drive.DownloadItem(ctx, &#34;item123&#34;, 1024)
+if err != nil {
+    log.Println(&#34;Failed to download item:&#34;, err)
+}
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="MSDrive.Execute">func (*MSDrive) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/drive.go?s=2615:2686#L72">Execute</a>
+					<a class="permalink" href="index.html#MSDrive.Execute">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#MSDrive">MSDrive</a>) Execute(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, fileSizeLimit <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Execute performs the execution of the MSDrive instance.
+It sets the fileSizeLimit field to the provided fileSizeLimit value.
+Then it makes a request to the baseURL and handles the response.
+If there is an error during the request or handling of items,
+it returns the error. Otherwise, it returns nil.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MSDriveParam">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/drive.go?s=423:483#L13">MSDriveParam</a>
+				<a class="permalink" href="index.html#MSDriveParam">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+MSDriveParam is a struct that represents the parameters for the MSDrive type.
+</p>
+
+			<pre>type MSDriveParam struct {
+<span id="MSDriveParam.Folder"></span>    Folder    <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="MSDriveParam.Recursive"></span>    Recursive <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="MSTeamsChatResponse">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/teams-model.go?s=2289:2424#L68">MSTeamsChatResponse</a>
+				<a class="permalink" href="index.html#MSTeamsChatResponse">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MSTeamsChatResponse struct {
+<span id="MSTeamsChatResponse.Value"></span>    Value   []*<a href="index.html#MSTeamsChatValues">MSTeamsChatValues</a> `json:&#34;value&#34;`
+<span id="MSTeamsChatResponse.NexLink"></span>    NexLink <a href="http://localhost:6060/pkg/builtin/#string">string</a>               `json:&#34;@odata.nextLink&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="MSTeamsChatValues">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/teams-model.go?s=2426:3058#L73">MSTeamsChatValues</a>
+				<a class="permalink" href="index.html#MSTeamsChatValues">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MSTeamsChatValues struct {
+<span id="MSTeamsChatValues.Id"></span>    Id                  <a href="http://localhost:6060/pkg/builtin/#string">string</a>      `json:&#34;id&#34;`
+<span id="MSTeamsChatValues.Topic"></span>    Topic               <a href="http://localhost:6060/pkg/builtin/#string">string</a>      `json:&#34;topic&#34;`
+<span id="MSTeamsChatValues.CreatedDateTime"></span>    CreatedDateTime     <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>   `json:&#34;createdDateTime&#34;`
+<span id="MSTeamsChatValues.LastUpdatedDateTime"></span>    LastUpdatedDateTime <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>   `json:&#34;lastUpdatedDateTime&#34;`
+<span id="MSTeamsChatValues.ChatType"></span>    ChatType            <a href="http://localhost:6060/pkg/builtin/#string">string</a>      `json:&#34;chatType&#34;`
+<span id="MSTeamsChatValues.WebUrl"></span>    WebUrl              <a href="http://localhost:6060/pkg/builtin/#string">string</a>      `json:&#34;webUrl&#34;`
+<span id="MSTeamsChatValues.TenantId"></span>    TenantId            <a href="http://localhost:6060/pkg/builtin/#string">string</a>      `json:&#34;tenantId&#34;`
+<span id="MSTeamsChatValues.OnlineMeetingInfo"></span>    OnlineMeetingInfo   interface{} `json:&#34;onlineMeetingInfo&#34;`
+<span id="MSTeamsChatValues.Viewpoint"></span>    Viewpoint           struct {
+        IsHidden                <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>      `json:&#34;isHidden&#34;`
+        LastMessageReadDateTime <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a> `json:&#34;lastMessageReadDateTime&#34;`
+    } `json:&#34;viewpoint&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="MessageBody">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/teams-model.go?s=1019:1706#L38">MessageBody</a>
+				<a class="permalink" href="index.html#MessageBody">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MessageBody struct {
+<span id="MessageBody.Id"></span>    Id                   <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;id&#34;`
+<span id="MessageBody.Etag"></span>    Etag                 <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;etag&#34;`
+<span id="MessageBody.MessageType"></span>    MessageType          <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;messageType&#34;`
+<span id="MessageBody.ReplyToId"></span>    ReplyToId            <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;replyToId&#34;`
+<span id="MessageBody.Subject"></span>    Subject              <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;subject&#34;`
+<span id="MessageBody.CreatedDateTime"></span>    CreatedDateTime      <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>     `json:&#34;createdDateTime&#34;`
+<span id="MessageBody.LastModifiedDateTime"></span>    LastModifiedDateTime <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>     `json:&#34;lastModifiedDateTime&#34;`
+<span id="MessageBody.WebUrl"></span>    WebUrl               <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;webUrl&#34;`
+<span id="MessageBody.DeletedDateTime"></span>    DeletedDateTime      pg.<a href="index.html#NullTime">NullTime</a>   `json:&#34;deletedDateTime&#34;`
+<span id="MessageBody.From"></span>    From                 *<a href="index.html#TeamFrom">TeamFrom</a>     `json:&#34;from&#34;`
+<span id="MessageBody.Body"></span>    Body                 *<a href="index.html#TeamBody">TeamBody</a>     `json:&#34;body&#34;`
+<span id="MessageBody.Attachments"></span>    Attachments          []*<a href="index.html#Attachment">Attachment</a> `json:&#34;attachments&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="MessageResponse">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/teams-model.go?s=1707:1952#L52">MessageResponse</a>
+				<a class="permalink" href="index.html#MessageResponse">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MessageResponse struct {
+<span id="MessageResponse.OdataContext"></span>    OdataContext   <a href="http://localhost:6060/pkg/builtin/#string">string</a>         `json:&#34;@odata.context&#34;`
+<span id="MessageResponse.OdataNextLink"></span>    OdataNextLink  <a href="http://localhost:6060/pkg/builtin/#string">string</a>         `json:&#34;@odata.nextLink&#34;`
+<span id="MessageResponse.OdataDeltaLink"></span>    OdataDeltaLink <a href="http://localhost:6060/pkg/builtin/#string">string</a>         `json:&#34;@odata.deltaLink&#34;`
+<span id="MessageResponse.Value"></span>    Value          []*<a href="index.html#MessageBody">MessageBody</a> `json:&#34;value&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="MsFile">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/drive-model.go?s=701:838#L14">MsFile</a>
+				<a class="permalink" href="index.html#MsFile">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MsFile struct {
+<span id="MsFile.Hashes"></span>    Hashes struct {
+        QuickXorHash <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;quickXorHash&#34;`
+    } `json:&#34;hashes&#34;`
+<span id="MsFile.MimeType"></span>    MimeType <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;mimeType&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Response">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/drive-model.go?s=900:1083#L25">Response</a>
+				<a class="permalink" href="index.html#Response">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Response struct {
+<span id="Response.URL"></span>    URL        <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="Response.Name"></span>    Name       <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="Response.SourceID"></span>    SourceID   <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="Response.ParentID"></span>    ParentID   <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="Response.DocumentID"></span>    DocumentID <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>
+<span id="Response.MimeType"></span>    MimeType   <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="Response.FileType"></span>    FileType   <a href="../../proto/index.html">proto</a>.<a href="../../proto/index.html#FileType">FileType</a>
+<span id="Response.Signature"></span>    Signature  <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Team">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/teams-model.go?s=79:212#L1">Team</a>
+				<a class="permalink" href="index.html#Team">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Team struct {
+<span id="Team.Id"></span>    Id          <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;id&#34;`
+<span id="Team.DisplayName"></span>    DisplayName <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;displayName&#34;`
+<span id="Team.Description"></span>    Description <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;description&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="TeamBody">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/teams-model.go?s=859:959#L28">TeamBody</a>
+				<a class="permalink" href="index.html#TeamBody">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type TeamBody struct {
+<span id="TeamBody.ContentType"></span>    ContentType <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;contentType&#34;`
+<span id="TeamBody.Content"></span>    Content     <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;content&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="TeamFilesFolder">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/teams-model.go?s=963:1017#L34">TeamFilesFolder</a>
+				<a class="permalink" href="index.html#TeamFilesFolder">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type TeamFilesFolder struct {
+<span id="TeamFilesFolder.Id"></span>    Id <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;id&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="TeamFrom">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/teams-model.go?s=805:856#L24">TeamFrom</a>
+				<a class="permalink" href="index.html#TeamFrom">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type TeamFrom struct {
+<span id="TeamFrom.User"></span>    User *<a href="index.html#TeamUser">TeamUser</a> `json:&#34;user&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="TeamResponse">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/teams-model.go?s=215:270#L5">TeamResponse</a>
+				<a class="permalink" href="index.html#TeamResponse">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type TeamResponse struct {
+<span id="TeamResponse.Value"></span>    Value []*<a href="index.html#Team">Team</a> `json:&#34;value&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="TeamUser">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/microsoft-core/teams-model.go?s=555:803#L17">TeamUser</a>
+				<a class="permalink" href="index.html#TeamUser">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type TeamUser struct {
+<span id="TeamUser.OdataType"></span>    OdataType        <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;@odata.type&#34;`
+<span id="TeamUser.Id"></span>    Id               <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;id&#34;`
+<span id="TeamUser.DisplayName"></span>    DisplayName      <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;displayName&#34;`
+<span id="TeamUser.UserIdentityType"></span>    UserIdentityType <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;userIdentityType&#34;`
+<span id="TeamUser.TenantId"></span>    TenantId         <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;tenantId&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>proto - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.1";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package proto
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "cognix.ch/api/v2/core/proto"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#RegisterEmbedServiceServer">func RegisterEmbedServiceServer(s grpc.ServiceRegistrar, srv EmbedServiceServer)</a></dd>
+			
+			
+				
+				<dd><a href="index.html#ConnectorRequest">type ConnectorRequest</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConnectorRequest.Descriptor">func (*ConnectorRequest) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConnectorRequest.GetId">func (x *ConnectorRequest) GetId() int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConnectorRequest.GetParams">func (x *ConnectorRequest) GetParams() map[string]string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConnectorRequest.ProtoMessage">func (*ConnectorRequest) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConnectorRequest.ProtoReflect">func (x *ConnectorRequest) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConnectorRequest.Reset">func (x *ConnectorRequest) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConnectorRequest.String">func (x *ConnectorRequest) String() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#EmbedRequest">type EmbedRequest</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbedRequest.Descriptor">func (*EmbedRequest) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbedRequest.GetContent">func (x *EmbedRequest) GetContent() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbedRequest.GetModel">func (x *EmbedRequest) GetModel() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbedRequest.ProtoMessage">func (*EmbedRequest) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbedRequest.ProtoReflect">func (x *EmbedRequest) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbedRequest.Reset">func (x *EmbedRequest) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbedRequest.String">func (x *EmbedRequest) String() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#EmbedResponse">type EmbedResponse</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbedResponse.Descriptor">func (*EmbedResponse) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbedResponse.GetVector">func (x *EmbedResponse) GetVector() []float32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbedResponse.ProtoMessage">func (*EmbedResponse) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbedResponse.ProtoReflect">func (x *EmbedResponse) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbedResponse.Reset">func (x *EmbedResponse) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbedResponse.String">func (x *EmbedResponse) String() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#EmbedServiceClient">type EmbedServiceClient</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewEmbedServiceClient">func NewEmbedServiceClient(cc grpc.ClientConnInterface) EmbedServiceClient</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#EmbedServiceServer">type EmbedServiceServer</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#EmbeddAsyncRequest">type EmbeddAsyncRequest</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncRequest.Descriptor">func (*EmbeddAsyncRequest) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncRequest.GetChunkId">func (x *EmbeddAsyncRequest) GetChunkId() int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncRequest.GetContent">func (x *EmbeddAsyncRequest) GetContent() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncRequest.GetDocumentId">func (x *EmbeddAsyncRequest) GetDocumentId() int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncRequest.GetModelId">func (x *EmbeddAsyncRequest) GetModelId() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncRequest.ProtoMessage">func (*EmbeddAsyncRequest) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncRequest.ProtoReflect">func (x *EmbeddAsyncRequest) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncRequest.Reset">func (x *EmbeddAsyncRequest) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncRequest.String">func (x *EmbeddAsyncRequest) String() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#EmbeddAsyncResponse">type EmbeddAsyncResponse</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncResponse.Descriptor">func (*EmbeddAsyncResponse) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncResponse.GetChunkId">func (x *EmbeddAsyncResponse) GetChunkId() int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncResponse.GetContent">func (x *EmbeddAsyncResponse) GetContent() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncResponse.GetDocumentId">func (x *EmbeddAsyncResponse) GetDocumentId() int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncResponse.GetVector">func (x *EmbeddAsyncResponse) GetVector() []float32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncResponse.ProtoMessage">func (*EmbeddAsyncResponse) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncResponse.ProtoReflect">func (x *EmbeddAsyncResponse) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncResponse.Reset">func (x *EmbeddAsyncResponse) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddAsyncResponse.String">func (x *EmbeddAsyncResponse) String() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#FileType">type FileType</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FileType.Descriptor">func (FileType) Descriptor() protoreflect.EnumDescriptor</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FileType.Enum">func (x FileType) Enum() *FileType</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FileType.EnumDescriptor">func (FileType) EnumDescriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FileType.Number">func (x FileType) Number() protoreflect.EnumNumber</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FileType.String">func (x FileType) String() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FileType.Type">func (FileType) Type() protoreflect.EnumType</a></dd>
+				
+			
+				
+				<dd><a href="index.html#SemanticData">type SemanticData</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.Descriptor">func (*SemanticData) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.GetCollectionName">func (x *SemanticData) GetCollectionName() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.GetConnectorId">func (x *SemanticData) GetConnectorId() int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.GetDocumentId">func (x *SemanticData) GetDocumentId() int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.GetFileType">func (x *SemanticData) GetFileType() FileType</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.GetModelDimension">func (x *SemanticData) GetModelDimension() int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.GetModelName">func (x *SemanticData) GetModelName() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.GetSearchForSitemap">func (x *SemanticData) GetSearchForSitemap() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.GetSiteMap">func (x *SemanticData) GetSiteMap() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.GetUrl">func (x *SemanticData) GetUrl() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.GetUrlRecursive">func (x *SemanticData) GetUrlRecursive() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.ProtoMessage">func (*SemanticData) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.ProtoReflect">func (x *SemanticData) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.Reset">func (x *SemanticData) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SemanticData.String">func (x *SemanticData) String() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#UnimplementedEmbedServiceServer">type UnimplementedEmbedServiceServer</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UnimplementedEmbedServiceServer.GetEmbeding">func (UnimplementedEmbedServiceServer) GetEmbeding(context.Context, *EmbedRequest) (*EmbedResponse, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#UnsafeEmbedServiceServer">type UnsafeEmbedServiceServer</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#WhisperData">type WhisperData</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WhisperData.Descriptor">func (*WhisperData) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WhisperData.GetCollectionName">func (x *WhisperData) GetCollectionName() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WhisperData.GetConnectorId">func (x *WhisperData) GetConnectorId() int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WhisperData.GetDocumentId">func (x *WhisperData) GetDocumentId() int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WhisperData.GetFileType">func (x *WhisperData) GetFileType() FileType</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WhisperData.GetModelDimension">func (x *WhisperData) GetModelDimension() int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WhisperData.GetModelName">func (x *WhisperData) GetModelName() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WhisperData.GetUrl">func (x *WhisperData) GetUrl() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WhisperData.ProtoMessage">func (*WhisperData) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WhisperData.ProtoReflect">func (x *WhisperData) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WhisperData.Reset">func (x *WhisperData) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WhisperData.String">func (x *WhisperData) String() string</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/client.go">client.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go">connector_messages.pb.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go">embed_service.pb.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service_grpc.pb.go">embed_service_grpc.pb.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/file_type.pb.go">file_type.pb.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go">semantic_data.pb.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/whisper_data.pb.go">whisper_data.pb.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				<p>
+Enum value maps for FileType.
+</p>
+
+				<pre>var (
+    <span id="FileType_name">FileType_name</span> = map[<a href="http://localhost:6060/pkg/builtin/#int32">int32</a>]<a href="http://localhost:6060/pkg/builtin/#string">string</a>{
+        0:  &#34;UNKNOWN&#34;,
+        1:  &#34;PDF&#34;,
+        2:  &#34;XPS&#34;,
+        3:  &#34;TXT&#34;,
+        4:  &#34;DOCX&#34;,
+        5:  &#34;DOC&#34;,
+        6:  &#34;XLSX&#34;,
+        7:  &#34;XLS&#34;,
+        8:  &#34;PPTX&#34;,
+        9:  &#34;PPT&#34;,
+        10: &#34;HWPX&#34;,
+        11: &#34;EPUB&#34;,
+        12: &#34;MOBI&#34;,
+        13: &#34;FB2&#34;,
+        14: &#34;CBZ&#34;,
+        15: &#34;MD&#34;,
+        16: &#34;URL&#34;,
+        17: &#34;YT&#34;,
+        18: &#34;MP4&#34;,
+        19: &#34;MP3&#34;,
+        20: &#34;MPEG&#34;,
+        21: &#34;MPGA&#34;,
+        22: &#34;M4A&#34;,
+        23: &#34;WAV&#34;,
+        24: &#34;WEBM&#34;,
+        25: &#34;MOV&#34;,
+    }
+    <span id="FileType_value">FileType_value</span> = map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#int32">int32</a>{
+        &#34;UNKNOWN&#34;: 0,
+        &#34;PDF&#34;:     1,
+        &#34;XPS&#34;:     2,
+        &#34;TXT&#34;:     3,
+        &#34;DOCX&#34;:    4,
+        &#34;DOC&#34;:     5,
+        &#34;XLSX&#34;:    6,
+        &#34;XLS&#34;:     7,
+        &#34;PPTX&#34;:    8,
+        &#34;PPT&#34;:     9,
+        &#34;HWPX&#34;:    10,
+        &#34;EPUB&#34;:    11,
+        &#34;MOBI&#34;:    12,
+        &#34;FB2&#34;:     13,
+        &#34;CBZ&#34;:     14,
+        &#34;MD&#34;:      15,
+        &#34;URL&#34;:     16,
+        &#34;YT&#34;:      17,
+        &#34;MP4&#34;:     18,
+        &#34;MP3&#34;:     19,
+        &#34;MPEG&#34;:    20,
+        &#34;MPGA&#34;:    21,
+        &#34;M4A&#34;:     22,
+        &#34;WAV&#34;:     23,
+        &#34;WEBM&#34;:    24,
+        &#34;MOV&#34;:     25,
+    }
+)</pre>
+			
+				<p>
+EmbedService_ServiceDesc is the grpc.ServiceDesc for EmbedService service.
+It&#39;s only intended for direct use with grpc.RegisterService,
+and not to be introspected or modified (even as a copy)
+</p>
+
+				<pre>var <span id="EmbedService_ServiceDesc">EmbedService_ServiceDesc</span> = <a href="http://localhost:6060/pkg/google.golang.org/grpc/">grpc</a>.<a href="http://localhost:6060/pkg/google.golang.org/grpc/#ServiceDesc">ServiceDesc</a>{
+    <a href="http://localhost:6060/pkg/google.golang.org/grpc/#ServiceDesc.ServiceName">ServiceName</a>: &#34;com.cognix.EmbedService&#34;,
+    <a href="http://localhost:6060/pkg/google.golang.org/grpc/#ServiceDesc.HandlerType">HandlerType</a>: (*<a href="index.html#EmbedServiceServer">EmbedServiceServer</a>)(<a href="http://localhost:6060/pkg/builtin/#nil">nil</a>),
+    <a href="http://localhost:6060/pkg/google.golang.org/grpc/#ServiceDesc.Methods">Methods</a>: []<a href="http://localhost:6060/pkg/google.golang.org/grpc/">grpc</a>.<a href="http://localhost:6060/pkg/google.golang.org/grpc/#MethodDesc">MethodDesc</a>{
+        {
+            <a href="index.html#MethodName">MethodName</a>: &#34;GetEmbeding&#34;,
+            <a href="index.html#Handler">Handler</a>:    _EmbedService_GetEmbeding_Handler,
+        },
+    },
+    <a href="http://localhost:6060/pkg/google.golang.org/grpc/#ServiceDesc.Streams">Streams</a>:  []<a href="http://localhost:6060/pkg/google.golang.org/grpc/">grpc</a>.<a href="http://localhost:6060/pkg/google.golang.org/grpc/#StreamDesc">StreamDesc</a>{},
+    <a href="http://localhost:6060/pkg/google.golang.org/grpc/#ServiceDesc.Metadata">Metadata</a>: &#34;embed_service.proto&#34;,
+}</pre>
+			
+				
+				<pre>var <span id="File_connector_messages_proto">File_connector_messages_proto</span> <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#FileDescriptor">FileDescriptor</a></pre>
+			
+				
+				<pre>var <span id="File_embed_service_proto">File_embed_service_proto</span> <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#FileDescriptor">FileDescriptor</a></pre>
+			
+				
+				<pre>var <span id="File_file_type_proto">File_file_type_proto</span> <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#FileDescriptor">FileDescriptor</a></pre>
+			
+				
+				<pre>var <span id="File_semantic_data_proto">File_semantic_data_proto</span> <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#FileDescriptor">FileDescriptor</a></pre>
+			
+				
+				<pre>var <span id="File_whisper_data_proto">File_whisper_data_proto</span> <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#FileDescriptor">FileDescriptor</a></pre>
+			
+		
+		
+			
+			
+			<h2 id="RegisterEmbedServiceServer">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service_grpc.pb.go?s=2427:2507#L59">RegisterEmbedServiceServer</a>
+				<a class="permalink" href="index.html#RegisterEmbedServiceServer">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func RegisterEmbedServiceServer(s <a href="http://localhost:6060/pkg/google.golang.org/grpc/">grpc</a>.<a href="http://localhost:6060/pkg/google.golang.org/grpc/#ServiceRegistrar">ServiceRegistrar</a>, srv <a href="index.html#EmbedServiceServer">EmbedServiceServer</a>)</pre>
+			
+			
+			
+
+		
+		
+			
+			
+			<h2 id="ConnectorRequest">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=583:997#L13">ConnectorRequest</a>
+				<a class="permalink" href="index.html#ConnectorRequest">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ConnectorRequest struct {
+<span id="ConnectorRequest.Id"></span>    Id     <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>             `protobuf:&#34;varint,1,opt,name=id,proto3&#34; json:&#34;id,omitempty&#34;`
+<span id="ConnectorRequest.Params"></span>    Params map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#string">string</a> `protobuf:&#34;bytes,2,rep,name=params,proto3&#34; json:&#34;params,omitempty&#34; protobuf_key:&#34;bytes,1,opt,name=key,proto3&#34; protobuf_val:&#34;bytes,2,opt,name=value,proto3&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="ConnectorRequest.Descriptor">func (*ConnectorRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=1753:1806#L50">Descriptor</a>
+					<a class="permalink" href="index.html#ConnectorRequest.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="index.html#ConnectorRequest">ConnectorRequest</a>) Descriptor() ([]<a href="http://localhost:6060/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6060/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use ConnectorRequest.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ConnectorRequest.GetId">func (*ConnectorRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=1874:1914#L54">GetId</a>
+					<a class="permalink" href="index.html#ConnectorRequest.GetId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#ConnectorRequest">ConnectorRequest</a>) GetId() <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ConnectorRequest.GetParams">func (*ConnectorRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=1962:2018#L61">GetParams</a>
+					<a class="permalink" href="index.html#ConnectorRequest.GetParams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#ConnectorRequest">ConnectorRequest</a>) GetParams() map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ConnectorRequest.ProtoMessage">func (*ConnectorRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=1318:1357#L35">ProtoMessage</a>
+					<a class="permalink" href="index.html#ConnectorRequest.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="index.html#ConnectorRequest">ConnectorRequest</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ConnectorRequest.ProtoReflect">func (*ConnectorRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=1362:1424#L37">ProtoReflect</a>
+					<a class="permalink" href="index.html#ConnectorRequest.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#ConnectorRequest">ConnectorRequest</a>) ProtoReflect() <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ConnectorRequest.Reset">func (*ConnectorRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=999:1033#L22">Reset</a>
+					<a class="permalink" href="index.html#ConnectorRequest.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#ConnectorRequest">ConnectorRequest</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ConnectorRequest.String">func (*ConnectorRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=1231:1273#L31">String</a>
+					<a class="permalink" href="index.html#ConnectorRequest.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#ConnectorRequest">ConnectorRequest</a>) String() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="EmbedRequest">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=595:904#L15">EmbedRequest</a>
+				<a class="permalink" href="index.html#EmbedRequest">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type EmbedRequest struct {
+<span id="EmbedRequest.Content"></span>    Content <a href="http://localhost:6060/pkg/builtin/#string">string</a> `protobuf:&#34;bytes,1,opt,name=content,proto3&#34; json:&#34;content,omitempty&#34;`
+<span id="EmbedRequest.Model"></span>    Model   <a href="http://localhost:6060/pkg/builtin/#string">string</a> `protobuf:&#34;bytes,2,opt,name=model,proto3&#34; json:&#34;model,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="EmbedRequest.Descriptor">func (*EmbedRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=1626:1675#L52">Descriptor</a>
+					<a class="permalink" href="index.html#EmbedRequest.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="index.html#EmbedRequest">EmbedRequest</a>) Descriptor() ([]<a href="http://localhost:6060/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6060/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use EmbedRequest.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EmbedRequest.GetContent">func (*EmbedRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=1738:1780#L56">GetContent</a>
+					<a class="permalink" href="index.html#EmbedRequest.GetContent">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbedRequest">EmbedRequest</a>) GetContent() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbedRequest.GetModel">func (*EmbedRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=1834:1874#L63">GetModel</a>
+					<a class="permalink" href="index.html#EmbedRequest.GetModel">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbedRequest">EmbedRequest</a>) GetModel() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbedRequest.ProtoMessage">func (*EmbedRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=1208:1243#L37">ProtoMessage</a>
+					<a class="permalink" href="index.html#EmbedRequest.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="index.html#EmbedRequest">EmbedRequest</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbedRequest.ProtoReflect">func (*EmbedRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=1248:1306#L39">ProtoReflect</a>
+					<a class="permalink" href="index.html#EmbedRequest.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbedRequest">EmbedRequest</a>) ProtoReflect() <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbedRequest.Reset">func (*EmbedRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=906:936#L24">Reset</a>
+					<a class="permalink" href="index.html#EmbedRequest.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbedRequest">EmbedRequest</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbedRequest.String">func (*EmbedRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=1125:1163#L33">String</a>
+					<a class="permalink" href="index.html#EmbedRequest.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbedRequest">EmbedRequest</a>) String() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="EmbedResponse">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=1926:2163#L70">EmbedResponse</a>
+				<a class="permalink" href="index.html#EmbedResponse">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type EmbedResponse struct {
+<span id="EmbedResponse.Vector"></span>    Vector []<a href="http://localhost:6060/pkg/builtin/#float32">float32</a> `protobuf:&#34;fixed32,1,rep,packed,name=vector,proto3&#34; json:&#34;vector,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="EmbedResponse.Descriptor">func (*EmbedResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=2891:2941#L106">Descriptor</a>
+					<a class="permalink" href="index.html#EmbedResponse.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="index.html#EmbedResponse">EmbedResponse</a>) Descriptor() ([]<a href="http://localhost:6060/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6060/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use EmbedResponse.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EmbedResponse.GetVector">func (*EmbedResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=3004:3049#L110">GetVector</a>
+					<a class="permalink" href="index.html#EmbedResponse.GetVector">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbedResponse">EmbedResponse</a>) GetVector() []<a href="http://localhost:6060/pkg/builtin/#float32">float32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbedResponse.ProtoMessage">func (*EmbedResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=2470:2506#L91">ProtoMessage</a>
+					<a class="permalink" href="index.html#EmbedResponse.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="index.html#EmbedResponse">EmbedResponse</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbedResponse.ProtoReflect">func (*EmbedResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=2511:2570#L93">ProtoReflect</a>
+					<a class="permalink" href="index.html#EmbedResponse.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbedResponse">EmbedResponse</a>) ProtoReflect() <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbedResponse.Reset">func (*EmbedResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=2165:2196#L78">Reset</a>
+					<a class="permalink" href="index.html#EmbedResponse.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbedResponse">EmbedResponse</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbedResponse.String">func (*EmbedResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service.pb.go?s=2386:2425#L87">String</a>
+					<a class="permalink" href="index.html#EmbedResponse.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbedResponse">EmbedResponse</a>) String() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="EmbedServiceClient">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service_grpc.pb.go?s=761:899#L14">EmbedServiceClient</a>
+				<a class="permalink" href="index.html#EmbedServiceClient">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+EmbedServiceClient is the client API for EmbedService service.
+</p>
+<p>
+For semantics around ctx use and closing/ending streaming RPCs, please refer to <a href="https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream">https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream</a>.
+</p>
+
+			<pre>type EmbedServiceClient interface {
+    GetEmbeding(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, in *<a href="index.html#EmbedRequest">EmbedRequest</a>, opts ...<a href="http://localhost:6060/pkg/google.golang.org/grpc/">grpc</a>.<a href="http://localhost:6060/pkg/google.golang.org/grpc/#CallOption">CallOption</a>) (*<a href="index.html#EmbedResponse">EmbedResponse</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEmbedServiceClient">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service_grpc.pb.go?s=966:1040#L22">NewEmbedServiceClient</a>
+					<a class="permalink" href="index.html#NewEmbedServiceClient">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewEmbedServiceClient(cc <a href="http://localhost:6060/pkg/google.golang.org/grpc/">grpc</a>.<a href="http://localhost:6060/pkg/google.golang.org/grpc/#ClientConnInterface">ClientConnInterface</a>) <a href="index.html#EmbedServiceClient">EmbedServiceClient</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="EmbedServiceServer">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service_grpc.pb.go?s=1538:1688#L38">EmbedServiceServer</a>
+				<a class="permalink" href="index.html#EmbedServiceServer">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+EmbedServiceServer is the server API for EmbedService service.
+All implementations must embed UnimplementedEmbedServiceServer
+for forward compatibility
+</p>
+
+			<pre>type EmbedServiceServer interface {
+    GetEmbeding(<a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, *<a href="index.html#EmbedRequest">EmbedRequest</a>) (*<a href="index.html#EmbedResponse">EmbedResponse</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    <span class="comment">// contains filtered or unexported methods</span>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="EmbeddAsyncRequest">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=2072:2631#L68">EmbeddAsyncRequest</a>
+				<a class="permalink" href="index.html#EmbeddAsyncRequest">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type EmbeddAsyncRequest struct {
+<span id="EmbeddAsyncRequest.DocumentId"></span>    DocumentId <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>  `protobuf:&#34;varint,1,opt,name=document_id,json=documentId,proto3&#34; json:&#34;document_id,omitempty&#34;`
+<span id="EmbeddAsyncRequest.ChunkId"></span>    ChunkId    <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>  `protobuf:&#34;varint,2,opt,name=chunk_id,json=chunkId,proto3&#34; json:&#34;chunk_id,omitempty&#34;`
+<span id="EmbeddAsyncRequest.Content"></span>    Content    <a href="http://localhost:6060/pkg/builtin/#string">string</a> `protobuf:&#34;bytes,3,opt,name=content,proto3&#34; json:&#34;content,omitempty&#34;`
+<span id="EmbeddAsyncRequest.ModelId"></span>    ModelId    <a href="http://localhost:6060/pkg/builtin/#string">string</a> `protobuf:&#34;bytes,4,opt,name=model_id,json=modelId,proto3&#34; json:&#34;model_id,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="EmbeddAsyncRequest.Descriptor">func (*EmbeddAsyncRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=3399:3454#L107">Descriptor</a>
+					<a class="permalink" href="index.html#EmbeddAsyncRequest.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="index.html#EmbeddAsyncRequest">EmbeddAsyncRequest</a>) Descriptor() ([]<a href="http://localhost:6060/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6060/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use EmbeddAsyncRequest.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncRequest.GetChunkId">func (*EmbeddAsyncRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=3628:3675#L118">GetChunkId</a>
+					<a class="permalink" href="index.html#EmbeddAsyncRequest.GetChunkId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbeddAsyncRequest">EmbeddAsyncRequest</a>) GetChunkId() <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncRequest.GetContent">func (*EmbeddAsyncRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=3728:3776#L125">GetContent</a>
+					<a class="permalink" href="index.html#EmbeddAsyncRequest.GetContent">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbeddAsyncRequest">EmbeddAsyncRequest</a>) GetContent() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncRequest.GetDocumentId">func (*EmbeddAsyncRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=3522:3572#L111">GetDocumentId</a>
+					<a class="permalink" href="index.html#EmbeddAsyncRequest.GetDocumentId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbeddAsyncRequest">EmbeddAsyncRequest</a>) GetDocumentId() <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncRequest.GetModelId">func (*EmbeddAsyncRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=3830:3878#L132">GetModelId</a>
+					<a class="permalink" href="index.html#EmbeddAsyncRequest.GetModelId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbeddAsyncRequest">EmbeddAsyncRequest</a>) GetModelId() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncRequest.ProtoMessage">func (*EmbeddAsyncRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=2958:2999#L92">ProtoMessage</a>
+					<a class="permalink" href="index.html#EmbeddAsyncRequest.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="index.html#EmbeddAsyncRequest">EmbeddAsyncRequest</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncRequest.ProtoReflect">func (*EmbeddAsyncRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=3004:3068#L94">ProtoReflect</a>
+					<a class="permalink" href="index.html#EmbeddAsyncRequest.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbeddAsyncRequest">EmbeddAsyncRequest</a>) ProtoReflect() <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncRequest.Reset">func (*EmbeddAsyncRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=2633:2669#L79">Reset</a>
+					<a class="permalink" href="index.html#EmbeddAsyncRequest.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbeddAsyncRequest">EmbeddAsyncRequest</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncRequest.String">func (*EmbeddAsyncRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=2869:2913#L88">String</a>
+					<a class="permalink" href="index.html#EmbeddAsyncRequest.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbeddAsyncRequest">EmbeddAsyncRequest</a>) String() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="EmbeddAsyncResponse">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=3932:4496#L139">EmbeddAsyncResponse</a>
+				<a class="permalink" href="index.html#EmbeddAsyncResponse">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type EmbeddAsyncResponse struct {
+<span id="EmbeddAsyncResponse.DocumentId"></span>    DocumentId <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>     `protobuf:&#34;varint,1,opt,name=document_id,json=documentId,proto3&#34; json:&#34;document_id,omitempty&#34;`
+<span id="EmbeddAsyncResponse.ChunkId"></span>    ChunkId    <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>     `protobuf:&#34;varint,2,opt,name=chunk_id,json=chunkId,proto3&#34; json:&#34;chunk_id,omitempty&#34;`
+<span id="EmbeddAsyncResponse.Content"></span>    Content    <a href="http://localhost:6060/pkg/builtin/#string">string</a>    `protobuf:&#34;bytes,3,opt,name=content,proto3&#34; json:&#34;content,omitempty&#34;`
+<span id="EmbeddAsyncResponse.Vector"></span>    Vector     []<a href="http://localhost:6060/pkg/builtin/#float32">float32</a> `protobuf:&#34;fixed32,4,rep,packed,name=vector,proto3&#34; json:&#34;vector,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="EmbeddAsyncResponse.Descriptor">func (*EmbeddAsyncResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=5270:5326#L178">Descriptor</a>
+					<a class="permalink" href="index.html#EmbeddAsyncResponse.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="index.html#EmbeddAsyncResponse">EmbeddAsyncResponse</a>) Descriptor() ([]<a href="http://localhost:6060/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6060/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use EmbeddAsyncResponse.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncResponse.GetChunkId">func (*EmbeddAsyncResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=5501:5549#L189">GetChunkId</a>
+					<a class="permalink" href="index.html#EmbeddAsyncResponse.GetChunkId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbeddAsyncResponse">EmbeddAsyncResponse</a>) GetChunkId() <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncResponse.GetContent">func (*EmbeddAsyncResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=5602:5651#L196">GetContent</a>
+					<a class="permalink" href="index.html#EmbeddAsyncResponse.GetContent">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbeddAsyncResponse">EmbeddAsyncResponse</a>) GetContent() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncResponse.GetDocumentId">func (*EmbeddAsyncResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=5394:5445#L182">GetDocumentId</a>
+					<a class="permalink" href="index.html#EmbeddAsyncResponse.GetDocumentId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbeddAsyncResponse">EmbeddAsyncResponse</a>) GetDocumentId() <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncResponse.GetVector">func (*EmbeddAsyncResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=5705:5756#L203">GetVector</a>
+					<a class="permalink" href="index.html#EmbeddAsyncResponse.GetVector">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbeddAsyncResponse">EmbeddAsyncResponse</a>) GetVector() []<a href="http://localhost:6060/pkg/builtin/#float32">float32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncResponse.ProtoMessage">func (*EmbeddAsyncResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=4826:4868#L163">ProtoMessage</a>
+					<a class="permalink" href="index.html#EmbeddAsyncResponse.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="index.html#EmbeddAsyncResponse">EmbeddAsyncResponse</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncResponse.ProtoReflect">func (*EmbeddAsyncResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=4873:4938#L165">ProtoReflect</a>
+					<a class="permalink" href="index.html#EmbeddAsyncResponse.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbeddAsyncResponse">EmbeddAsyncResponse</a>) ProtoReflect() <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncResponse.Reset">func (*EmbeddAsyncResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=4498:4535#L150">Reset</a>
+					<a class="permalink" href="index.html#EmbeddAsyncResponse.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbeddAsyncResponse">EmbeddAsyncResponse</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EmbeddAsyncResponse.String">func (*EmbeddAsyncResponse) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/connector_messages.pb.go?s=4736:4781#L159">String</a>
+					<a class="permalink" href="index.html#EmbeddAsyncResponse.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#EmbeddAsyncResponse">EmbeddAsyncResponse</a>) String() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="FileType">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/file_type.pb.go?s=574:593#L13">FileType</a>
+				<a class="permalink" href="index.html#FileType">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type FileType <a href="http://localhost:6060/pkg/builtin/#int32">int32</a></pre>
+
+			
+				
+				<pre>const (
+    <span class="comment">// ORCHESTRATOR SEND TO CONNECTOR:</span>
+    <span id="FileType_UNKNOWN">FileType_UNKNOWN</span> <a href="index.html#FileType">FileType</a> = 0
+    <span id="FileType_PDF">FileType_PDF</span>     <a href="index.html#FileType">FileType</a> = 1
+    <span id="FileType_XPS">FileType_XPS</span>     <a href="index.html#FileType">FileType</a> = 2
+    <span id="FileType_TXT">FileType_TXT</span>     <a href="index.html#FileType">FileType</a> = 3
+    <span id="FileType_DOCX">FileType_DOCX</span>    <a href="index.html#FileType">FileType</a> = 4
+    <span id="FileType_DOC">FileType_DOC</span>     <a href="index.html#FileType">FileType</a> = 5
+    <span id="FileType_XLSX">FileType_XLSX</span>    <a href="index.html#FileType">FileType</a> = 6
+    <span id="FileType_XLS">FileType_XLS</span>     <a href="index.html#FileType">FileType</a> = 7
+    <span id="FileType_PPTX">FileType_PPTX</span>    <a href="index.html#FileType">FileType</a> = 8
+    <span id="FileType_PPT">FileType_PPT</span>     <a href="index.html#FileType">FileType</a> = 9
+    <span id="FileType_HWPX">FileType_HWPX</span>    <a href="index.html#FileType">FileType</a> = 10
+    <span id="FileType_EPUB">FileType_EPUB</span>    <a href="index.html#FileType">FileType</a> = 11
+    <span id="FileType_MOBI">FileType_MOBI</span>    <a href="index.html#FileType">FileType</a> = 12
+    <span id="FileType_FB2">FileType_FB2</span>     <a href="index.html#FileType">FileType</a> = 13
+    <span id="FileType_CBZ">FileType_CBZ</span>     <a href="index.html#FileType">FileType</a> = 14
+    <span id="FileType_MD">FileType_MD</span>      <a href="index.html#FileType">FileType</a> = 15
+    <span class="comment">// ORCHESTRATOR SEND TO SEMANTIC</span>
+    <span id="FileType_URL">FileType_URL</span> <a href="index.html#FileType">FileType</a> = 16
+    <span id="FileType_YT">FileType_YT</span>  <a href="index.html#FileType">FileType</a> = 17
+    <span class="comment">// ORCHESTRATOR SEND TO WHISPER</span>
+    <span id="FileType_MP4">FileType_MP4</span>  <a href="index.html#FileType">FileType</a> = 18
+    <span id="FileType_MP3">FileType_MP3</span>  <a href="index.html#FileType">FileType</a> = 19
+    <span id="FileType_MPEG">FileType_MPEG</span> <a href="index.html#FileType">FileType</a> = 20
+    <span id="FileType_MPGA">FileType_MPGA</span> <a href="index.html#FileType">FileType</a> = 21
+    <span id="FileType_M4A">FileType_M4A</span>  <a href="index.html#FileType">FileType</a> = 22
+    <span id="FileType_WAV">FileType_WAV</span>  <a href="index.html#FileType">FileType</a> = 23
+    <span id="FileType_WEBM">FileType_WEBM</span> <a href="index.html#FileType">FileType</a> = 24
+    <span id="FileType_MOV">FileType_MOV</span>  <a href="index.html#FileType">FileType</a> = 25
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="FileType.Descriptor">func (FileType) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/file_type.pb.go?s=2593:2649#L117">Descriptor</a>
+					<a class="permalink" href="index.html#FileType.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#FileType">FileType</a>) Descriptor() <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#EnumDescriptor">EnumDescriptor</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="FileType.Enum">func (FileType) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/file_type.pb.go?s=2399:2433#L107">Enum</a>
+					<a class="permalink" href="index.html#FileType.Enum">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x <a href="index.html#FileType">FileType</a>) Enum() *<a href="index.html#FileType">FileType</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="FileType.EnumDescriptor">func (FileType) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/file_type.pb.go?s=2942:2990#L130">EnumDescriptor</a>
+					<a class="permalink" href="index.html#FileType.EnumDescriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#FileType">FileType</a>) EnumDescriptor() ([]<a href="http://localhost:6060/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6060/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use FileType.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="FileType.Number">func (FileType) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/file_type.pb.go?s=2803:2853#L125">Number</a>
+					<a class="permalink" href="index.html#FileType.Number">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x <a href="index.html#FileType">FileType</a>) Number() <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#EnumNumber">EnumNumber</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="FileType.String">func (FileType) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/file_type.pb.go?s=2477:2510#L113">String</a>
+					<a class="permalink" href="index.html#FileType.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x <a href="index.html#FileType">FileType</a>) String() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="FileType.Type">func (FileType) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/file_type.pb.go?s=2710:2754#L121">Type</a>
+					<a class="permalink" href="index.html#FileType.Type">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#FileType">FileType</a>) Type() <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#EnumType">EnumType</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="SemanticData">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=578:2151#L13">SemanticData</a>
+				<a class="permalink" href="index.html#SemanticData">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type SemanticData struct {
+
+    <span class="comment">// This is the url where the file is located.</span>
+    <span class="comment">// Based on the chunking type it will be a WEB URL (HTML type)</span>
+    <span class="comment">// Will be an S3/MINIO link with a proper authentication in case of a file</span>
+<span id="SemanticData.Url"></span>    Url              <a href="http://localhost:6060/pkg/builtin/#string">string</a>   `protobuf:&#34;bytes,1,opt,name=url,proto3&#34; json:&#34;url,omitempty&#34;`
+<span id="SemanticData.UrlRecursive"></span>    UrlRecursive     <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>     `protobuf:&#34;varint,2,opt,name=url_recursive,json=urlRecursive,proto3&#34; json:&#34;url_recursive,omitempty&#34;`
+<span id="SemanticData.SiteMap"></span>    SiteMap          <a href="http://localhost:6060/pkg/builtin/#string">string</a>   `protobuf:&#34;bytes,3,opt,name=site_map,json=siteMap,proto3&#34; json:&#34;site_map,omitempty&#34;`
+<span id="SemanticData.SearchForSitemap"></span>    SearchForSitemap <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>     `protobuf:&#34;varint,4,opt,name=search_for_sitemap,json=searchForSitemap,proto3&#34; json:&#34;search_for_sitemap,omitempty&#34;`
+<span id="SemanticData.DocumentId"></span>    DocumentId       <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>    `protobuf:&#34;varint,5,opt,name=document_id,json=documentId,proto3&#34; json:&#34;document_id,omitempty&#34;`
+<span id="SemanticData.ConnectorId"></span>    ConnectorId      <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>    `protobuf:&#34;varint,6,opt,name=connector_id,json=connectorId,proto3&#34; json:&#34;connector_id,omitempty&#34;`
+<span id="SemanticData.FileType"></span>    FileType         <a href="index.html#FileType">FileType</a> `protobuf:&#34;varint,7,opt,name=file_type,json=fileType,proto3,enum=com.cognix.FileType&#34; json:&#34;file_type,omitempty&#34;`
+<span id="SemanticData.CollectionName"></span>    CollectionName   <a href="http://localhost:6060/pkg/builtin/#string">string</a>   `protobuf:&#34;bytes,8,opt,name=collection_name,json=collectionName,proto3&#34; json:&#34;collection_name,omitempty&#34;`
+<span id="SemanticData.ModelName"></span>    ModelName        <a href="http://localhost:6060/pkg/builtin/#string">string</a>   `protobuf:&#34;bytes,9,opt,name=model_name,json=modelName,proto3&#34; json:&#34;model_name,omitempty&#34;`
+<span id="SemanticData.ModelDimension"></span>    ModelDimension   <a href="http://localhost:6060/pkg/builtin/#int32">int32</a>    `protobuf:&#34;varint,10,opt,name=model_dimension,json=modelDimension,proto3&#34; json:&#34;model_dimension,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="SemanticData.Descriptor">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=2873:2922#L61">Descriptor</a>
+					<a class="permalink" href="index.html#SemanticData.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="index.html#SemanticData">SemanticData</a>) Descriptor() ([]<a href="http://localhost:6060/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6060/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use SemanticData.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="SemanticData.GetCollectionName">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=3707:3756#L114">GetCollectionName</a>
+					<a class="permalink" href="index.html#SemanticData.GetCollectionName">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#SemanticData">SemanticData</a>) GetCollectionName() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SemanticData.GetConnectorId">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=3491:3536#L100">GetConnectorId</a>
+					<a class="permalink" href="index.html#SemanticData.GetConnectorId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#SemanticData">SemanticData</a>) GetConnectorId() <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SemanticData.GetDocumentId">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=3391:3435#L93">GetDocumentId</a>
+					<a class="permalink" href="index.html#SemanticData.GetDocumentId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#SemanticData">SemanticData</a>) GetDocumentId() <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SemanticData.GetFileType">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=3593:3638#L107">GetFileType</a>
+					<a class="permalink" href="index.html#SemanticData.GetFileType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#SemanticData">SemanticData</a>) GetFileType() <a href="index.html#FileType">FileType</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SemanticData.GetModelDimension">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=3917:3965#L128">GetModelDimension</a>
+					<a class="permalink" href="index.html#SemanticData.GetModelDimension">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#SemanticData">SemanticData</a>) GetModelDimension() <a href="http://localhost:6060/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SemanticData.GetModelName">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=3817:3861#L121">GetModelName</a>
+					<a class="permalink" href="index.html#SemanticData.GetModelName">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#SemanticData">SemanticData</a>) GetModelName() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SemanticData.GetSearchForSitemap">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=3276:3325#L86">GetSearchForSitemap</a>
+					<a class="permalink" href="index.html#SemanticData.GetSearchForSitemap">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#SemanticData">SemanticData</a>) GetSearchForSitemap() <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SemanticData.GetSiteMap">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=3180:3222#L79">GetSiteMap</a>
+					<a class="permalink" href="index.html#SemanticData.GetSiteMap">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#SemanticData">SemanticData</a>) GetSiteMap() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SemanticData.GetUrl">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=2985:3023#L65">GetUrl</a>
+					<a class="permalink" href="index.html#SemanticData.GetUrl">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#SemanticData">SemanticData</a>) GetUrl() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SemanticData.GetUrlRecursive">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=3073:3118#L72">GetUrlRecursive</a>
+					<a class="permalink" href="index.html#SemanticData.GetUrlRecursive">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#SemanticData">SemanticData</a>) GetUrlRecursive() <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SemanticData.ProtoMessage">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=2455:2490#L46">ProtoMessage</a>
+					<a class="permalink" href="index.html#SemanticData.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="index.html#SemanticData">SemanticData</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SemanticData.ProtoReflect">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=2495:2553#L48">ProtoReflect</a>
+					<a class="permalink" href="index.html#SemanticData.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#SemanticData">SemanticData</a>) ProtoReflect() <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SemanticData.Reset">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=2153:2183#L33">Reset</a>
+					<a class="permalink" href="index.html#SemanticData.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#SemanticData">SemanticData</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SemanticData.String">func (*SemanticData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/semantic_data.pb.go?s=2372:2410#L42">String</a>
+					<a class="permalink" href="index.html#SemanticData.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#SemanticData">SemanticData</a>) String() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UnimplementedEmbedServiceServer">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service_grpc.pb.go?s=1786:1833#L44">UnimplementedEmbedServiceServer</a>
+				<a class="permalink" href="index.html#UnimplementedEmbedServiceServer">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+UnimplementedEmbedServiceServer must be embedded to have forward compatible implementations.
+</p>
+
+			<pre>type UnimplementedEmbedServiceServer struct {
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UnimplementedEmbedServiceServer.GetEmbeding">func (UnimplementedEmbedServiceServer) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service_grpc.pb.go?s=1835:1941#L47">GetEmbeding</a>
+					<a class="permalink" href="index.html#UnimplementedEmbedServiceServer.GetEmbeding">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="index.html#UnimplementedEmbedServiceServer">UnimplementedEmbedServiceServer</a>) GetEmbeding(<a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, *<a href="index.html#EmbedRequest">EmbedRequest</a>) (*<a href="index.html#EmbedResponse">EmbedResponse</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UnsafeEmbedServiceServer">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/embed_service_grpc.pb.go?s=2338:2425#L55">UnsafeEmbedServiceServer</a>
+				<a class="permalink" href="index.html#UnsafeEmbedServiceServer">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+UnsafeEmbedServiceServer may be embedded to opt out of forward compatibility for this service.
+Use of this interface is not recommended, as added methods to EmbedServiceServer will
+result in compilation errors.
+</p>
+
+			<pre>type UnsafeEmbedServiceServer interface {
+    <span class="comment">// contains filtered or unexported methods</span>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="WhisperData">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/whisper_data.pb.go?s=577:1752#L13">WhisperData</a>
+				<a class="permalink" href="index.html#WhisperData">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type WhisperData struct {
+
+    <span class="comment">// This is the url where the file is located.</span>
+    <span class="comment">// Based on the chunking type it will be a WEB URL (HTML type)</span>
+    <span class="comment">// Will be an S3/MINIO link with a proper authentication in case of a file</span>
+<span id="WhisperData.Url"></span>    Url            <a href="http://localhost:6060/pkg/builtin/#string">string</a>   `protobuf:&#34;bytes,1,opt,name=url,proto3&#34; json:&#34;url,omitempty&#34;`
+<span id="WhisperData.DocumentId"></span>    DocumentId     <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>    `protobuf:&#34;varint,2,opt,name=document_id,json=documentId,proto3&#34; json:&#34;document_id,omitempty&#34;`
+<span id="WhisperData.ConnectorId"></span>    ConnectorId    <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>    `protobuf:&#34;varint,3,opt,name=connector_id,json=connectorId,proto3&#34; json:&#34;connector_id,omitempty&#34;`
+<span id="WhisperData.FileType"></span>    FileType       <a href="index.html#FileType">FileType</a> `protobuf:&#34;varint,4,opt,name=file_type,json=fileType,proto3,enum=com.cognix.FileType&#34; json:&#34;file_type,omitempty&#34;`
+<span id="WhisperData.CollectionName"></span>    CollectionName <a href="http://localhost:6060/pkg/builtin/#string">string</a>   `protobuf:&#34;bytes,5,opt,name=collection_name,json=collectionName,proto3&#34; json:&#34;collection_name,omitempty&#34;`
+<span id="WhisperData.ModelName"></span>    ModelName      <a href="http://localhost:6060/pkg/builtin/#string">string</a>   `protobuf:&#34;bytes,6,opt,name=model_name,json=modelName,proto3&#34; json:&#34;model_name,omitempty&#34;`
+<span id="WhisperData.ModelDimension"></span>    ModelDimension <a href="http://localhost:6060/pkg/builtin/#int32">int32</a>    `protobuf:&#34;varint,7,opt,name=model_dimension,json=modelDimension,proto3&#34; json:&#34;model_dimension,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="WhisperData.Descriptor">func (*WhisperData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/whisper_data.pb.go?s=2466:2514#L58">Descriptor</a>
+					<a class="permalink" href="index.html#WhisperData.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="index.html#WhisperData">WhisperData</a>) Descriptor() ([]<a href="http://localhost:6060/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6060/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use WhisperData.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="WhisperData.GetCollectionName">func (*WhisperData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/whisper_data.pb.go?s=2976:3024#L90">GetCollectionName</a>
+					<a class="permalink" href="index.html#WhisperData.GetCollectionName">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#WhisperData">WhisperData</a>) GetCollectionName() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="WhisperData.GetConnectorId">func (*WhisperData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/whisper_data.pb.go?s=2762:2806#L76">GetConnectorId</a>
+					<a class="permalink" href="index.html#WhisperData.GetConnectorId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#WhisperData">WhisperData</a>) GetConnectorId() <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="WhisperData.GetDocumentId">func (*WhisperData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/whisper_data.pb.go?s=2663:2706#L69">GetDocumentId</a>
+					<a class="permalink" href="index.html#WhisperData.GetDocumentId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#WhisperData">WhisperData</a>) GetDocumentId() <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="WhisperData.GetFileType">func (*WhisperData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/whisper_data.pb.go?s=2863:2907#L83">GetFileType</a>
+					<a class="permalink" href="index.html#WhisperData.GetFileType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#WhisperData">WhisperData</a>) GetFileType() <a href="index.html#FileType">FileType</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="WhisperData.GetModelDimension">func (*WhisperData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/whisper_data.pb.go?s=3184:3231#L104">GetModelDimension</a>
+					<a class="permalink" href="index.html#WhisperData.GetModelDimension">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#WhisperData">WhisperData</a>) GetModelDimension() <a href="http://localhost:6060/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="WhisperData.GetModelName">func (*WhisperData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/whisper_data.pb.go?s=3085:3128#L97">GetModelName</a>
+					<a class="permalink" href="index.html#WhisperData.GetModelName">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#WhisperData">WhisperData</a>) GetModelName() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="WhisperData.GetUrl">func (*WhisperData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/whisper_data.pb.go?s=2576:2613#L62">GetUrl</a>
+					<a class="permalink" href="index.html#WhisperData.GetUrl">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#WhisperData">WhisperData</a>) GetUrl() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="WhisperData.ProtoMessage">func (*WhisperData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/whisper_data.pb.go?s=2052:2086#L43">ProtoMessage</a>
+					<a class="permalink" href="index.html#WhisperData.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="index.html#WhisperData">WhisperData</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="WhisperData.ProtoReflect">func (*WhisperData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/whisper_data.pb.go?s=2091:2148#L45">ProtoReflect</a>
+					<a class="permalink" href="index.html#WhisperData.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#WhisperData">WhisperData</a>) ProtoReflect() <a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6060/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="WhisperData.Reset">func (*WhisperData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/whisper_data.pb.go?s=1754:1783#L30">Reset</a>
+					<a class="permalink" href="index.html#WhisperData.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#WhisperData">WhisperData</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="WhisperData.String">func (*WhisperData) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/proto/whisper_data.pb.go?s=1970:2007#L39">String</a>
+					<a class="permalink" href="index.html#WhisperData.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="index.html#WhisperData">WhisperData</a>) String() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

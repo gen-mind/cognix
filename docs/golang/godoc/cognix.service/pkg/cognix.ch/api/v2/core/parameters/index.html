@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>parameters - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.1";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package parameters
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "cognix.ch/api/v2/core/parameters"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+			
+				
+				<dd><a href="index.html#AddUserParam">type AddUserParam</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AddUserParam.Validate">func (v AddUserParam) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#ArchivedParam">type ArchivedParam</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#BaseFilters">type BaseFilters</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#CreateChatMessageRequest">type CreateChatMessageRequest</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CreateChatMessageRequest.Validate">func (v CreateChatMessageRequest) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#CreateChatSession">type CreateChatSession</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CreateChatSession.Validate">func (v CreateChatSession) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#CreateConnectorParam">type CreateConnectorParam</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CreateConnectorParam.Validate">func (v CreateConnectorParam) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#DocumentSetConnectorPairsParam">type DocumentSetConnectorPairsParam</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#DocumentSetParam">type DocumentSetParam</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#DocumentUploadResponse">type DocumentUploadResponse</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#EditUserParam">type EditUserParam</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EditUserParam.Validate">func (v EditUserParam) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#EmbeddingModelParam">type EmbeddingModelParam</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddingModelParam.Validate">func (v EmbeddingModelParam) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#InviteParam">type InviteParam</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#InviteParam.Validate">func (v InviteParam) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#LoginParam">type LoginParam</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MessageFeedbackParam">type MessageFeedbackParam</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MessageFeedbackParam.Validate">func (v MessageFeedbackParam) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#OAuthParam">type OAuthParam</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#PersonaParam">type PersonaParam</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PersonaParam.Validate">func (v PersonaParam) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#RetrievalDetails">type RetrievalDetails</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#StarterMessage">type StarterMessage</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#UpdateConnectorParam">type UpdateConnectorParam</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#UpdateConnectorParam.Validate">func (v UpdateConnectorParam) Validate() error</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/chat.go">chat.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/docs.go">docs.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/embedding_model.go">embedding_model.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/model.go">model.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/persona.go">persona.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span id="MessageFeedbackUpvote">MessageFeedbackUpvote</span>   = &#34;upvote&#34;
+    <span id="MessageFeedbackDownvote">MessageFeedbackDownvote</span> = &#34;downvote&#34;
+)</pre>
+			
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var <span id="SupportedModels">SupportedModels</span> = map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#bool">bool</a>{
+    openai.<a href="index.html#GPT3Dot5Turbo">GPT3Dot5Turbo</a>: <a href="http://localhost:6060/pkg/builtin/#true">true</a>,
+}</pre>
+			
+		
+		
+		
+			
+			
+			<h2 id="AddUserParam">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/model.go?s=2397:2482#L64">AddUserParam</a>
+				<a class="permalink" href="index.html#AddUserParam">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type AddUserParam struct {
+<span id="AddUserParam.Email"></span>    Email <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;email&#34;`
+<span id="AddUserParam.Role"></span>    Role  <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;role&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="AddUserParam.Validate">func (AddUserParam) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/model.go?s=2484:2522#L69">Validate</a>
+					<a class="permalink" href="index.html#AddUserParam.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (v <a href="index.html#AddUserParam">AddUserParam</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ArchivedParam">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/model.go?s=787:849#L23">ArchivedParam</a>
+				<a class="permalink" href="index.html#ArchivedParam">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ArchivedParam struct {
+<span id="ArchivedParam.Archived"></span>    Archived <a href="http://localhost:6060/pkg/builtin/#bool">bool</a> `form:&#34;archived&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="BaseFilters">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/chat.go?s=1934:2207#L49">BaseFilters</a>
+				<a class="permalink" href="index.html#BaseFilters">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type BaseFilters struct {
+<span id="BaseFilters.SourceType"></span>    SourceType  []<a href="../model/index.html">model</a>.<a href="../model/index.html#SourceType">SourceType</a> `json:&#34;source_type,omitempty&#34;`
+<span id="BaseFilters.DocumentSet"></span>    DocumentSet []<a href="http://localhost:6060/pkg/builtin/#string">string</a>           `json:&#34;document_set,omitempty&#34;`
+<span id="BaseFilters.TimeCutoff"></span>    TimeCutoff  <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>          `json:&#34;time_cutoff,omitempty&#34;`
+<span id="BaseFilters.Tags"></span>    Tags        []<a href="http://localhost:6060/pkg/builtin/#string">string</a>           `json:&#34;tags,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="CreateChatMessageRequest">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/chat.go?s=726:1288#L24">CreateChatMessageRequest</a>
+				<a class="permalink" href="index.html#CreateChatMessageRequest">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type CreateChatMessageRequest struct {
+<span id="CreateChatMessageRequest.ChatSessionID"></span>    ChatSessionID   <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a>   `json:&#34;chat_session_id,omitempty&#34;`
+<span id="CreateChatMessageRequest.ParentMessageID"></span>    ParentMessageID <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a>   `json:&#34;parent_message_id,omitempty&#34;`
+<span id="CreateChatMessageRequest.Message"></span>    Message         <a href="http://localhost:6060/pkg/builtin/#string">string</a>            `json:&#34;message,omitempty&#34;`
+<span id="CreateChatMessageRequest.PromptID"></span>    PromptID        <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a>   `json:&#34;prompt_id,omitempty&#34;`
+<span id="CreateChatMessageRequest.SearchDocIds"></span>    SearchDocIds    []<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;search_doc_ids,omitempty&#34;`
+    <span class="comment">//RetrievalOptions RetrievalDetails  `json:&#34;retrieval_options,omitempty&#34;`</span>
+<span id="CreateChatMessageRequest.QueryOverride"></span>    QueryOverride <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;query_override,omitempty&#34;`
+<span id="CreateChatMessageRequest.NoAiAnswer"></span>    NoAiAnswer    <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>   `json:&#34;no_ai_answer,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="CreateChatMessageRequest.Validate">func (CreateChatMessageRequest) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/chat.go?s=1290:1340#L35">Validate</a>
+					<a class="permalink" href="index.html#CreateChatMessageRequest.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (v <a href="index.html#CreateChatMessageRequest">CreateChatMessageRequest</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="CreateChatSession">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/chat.go?s=248:427#L6">CreateChatSession</a>
+				<a class="permalink" href="index.html#CreateChatSession">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type CreateChatSession struct {
+<span id="CreateChatSession.Description"></span>    Description <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;description&#34;`
+<span id="CreateChatSession.PersonaID"></span>    PersonaID   <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;persona_id&#34;`
+<span id="CreateChatSession.OneShot"></span>    OneShot     <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>            `json:&#34;one_shot&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="CreateChatSession.Validate">func (CreateChatSession) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/chat.go?s=429:472#L12">Validate</a>
+					<a class="permalink" href="index.html#CreateChatSession.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (v <a href="index.html#CreateChatSession">CreateChatSession</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="CreateConnectorParam">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/model.go?s=851:1302#L27">CreateConnectorParam</a>
+				<a class="permalink" href="index.html#CreateConnectorParam">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type CreateConnectorParam struct {
+<span id="CreateConnectorParam.Name"></span>    Name                    <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;name,omitempty&#34;`
+<span id="CreateConnectorParam.Source"></span>    Source                  <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;source,omitempty&#34;`
+<span id="CreateConnectorParam.ConnectorSpecificConfig"></span>    ConnectorSpecificConfig <a href="../model/index.html">model</a>.<a href="../model/index.html#JSONMap">JSONMap</a> `json:&#34;connector_specific_config,omitempty&#34;`
+<span id="CreateConnectorParam.RefreshFreq"></span>    RefreshFreq             <a href="http://localhost:6060/pkg/builtin/#int">int</a>           `json:&#34;refresh_freq,omitempty&#34;`
+<span id="CreateConnectorParam.Shared"></span>    Shared                  <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>          `json:&#34;shared,omitempty&#34;`
+<span id="CreateConnectorParam.Disabled"></span>    Disabled                <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>          `json:&#34;disabled,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="CreateConnectorParam.Validate">func (CreateConnectorParam) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/model.go?s=1304:1350#L36">Validate</a>
+					<a class="permalink" href="index.html#CreateConnectorParam.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (v <a href="index.html#CreateConnectorParam">CreateConnectorParam</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="DocumentSetConnectorPairsParam">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/docs.go?s=169:329#L1">DocumentSetConnectorPairsParam</a>
+				<a class="permalink" href="index.html#DocumentSetConnectorPairsParam">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type DocumentSetConnectorPairsParam struct {
+<span id="DocumentSetConnectorPairsParam.DocumentSetID"></span>    DocumentSetID <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a>   `json:&#34;document_set_id&#34;`
+<span id="DocumentSetConnectorPairsParam.ConnectorIDs"></span>    ConnectorIDs  []<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;connector_ids&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="DocumentSetParam">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/docs.go?s=60:167#L1">DocumentSetParam</a>
+				<a class="permalink" href="index.html#DocumentSetParam">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type DocumentSetParam struct {
+<span id="DocumentSetParam.Name"></span>    Name        <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;name&#34;`
+<span id="DocumentSetParam.Description"></span>    Description <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;description&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="DocumentUploadResponse">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/docs.go?s=331:487#L5">DocumentUploadResponse</a>
+				<a class="permalink" href="index.html#DocumentUploadResponse">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type DocumentUploadResponse struct {
+<span id="DocumentUploadResponse.FileName"></span>    FileName <a href="http://localhost:6060/pkg/builtin/#string">string</a>      `json:&#34;file_name&#34;`
+<span id="DocumentUploadResponse.Error"></span>    Error    <a href="http://localhost:6060/pkg/builtin/#string">string</a>      `json:&#34;error&#34;`
+<span id="DocumentUploadResponse.Document"></span>    Document interface{} `json:&#34;document&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="EditUserParam">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/model.go?s=2750:2806#L76">EditUserParam</a>
+				<a class="permalink" href="index.html#EditUserParam">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type EditUserParam struct {
+<span id="EditUserParam.Role"></span>    Role <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;role&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="EditUserParam.Validate">func (EditUserParam) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/model.go?s=2808:2847#L80">Validate</a>
+					<a class="permalink" href="index.html#EditUserParam.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (v <a href="index.html#EditUserParam">EditUserParam</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="EmbeddingModelParam">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/embedding_model.go?s=79:343#L1">EmbeddingModelParam</a>
+				<a class="permalink" href="index.html#EmbeddingModelParam">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type EmbeddingModelParam struct {
+<span id="EmbeddingModelParam.ModelID"></span>    ModelID   <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;model_id,omitempty&#34;`
+<span id="EmbeddingModelParam.ModelName"></span>    ModelName <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;model_name,omitempty&#34;`
+<span id="EmbeddingModelParam.ModelDim"></span>    ModelDim  <a href="http://localhost:6060/pkg/builtin/#int">int</a>    `json:&#34;model_dim,omitempty&#34;`
+<span id="EmbeddingModelParam.URL"></span>    URL       <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;url,omitempty&#34;`
+<span id="EmbeddingModelParam.IsActive"></span>    IsActive  <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>   `json:&#34;is_active,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="EmbeddingModelParam.Validate">func (EmbeddingModelParam) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/embedding_model.go?s=345:390#L3">Validate</a>
+					<a class="permalink" href="index.html#EmbeddingModelParam.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (v <a href="index.html#EmbeddingModelParam">EmbeddingModelParam</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="InviteParam">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/model.go?s=436:520#L11">InviteParam</a>
+				<a class="permalink" href="index.html#InviteParam">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type InviteParam struct {
+<span id="InviteParam.Email"></span>    Email <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;email&#34;`
+<span id="InviteParam.Role"></span>    Role  <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;role&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="InviteParam.Validate">func (InviteParam) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/model.go?s=522:559#L16">Validate</a>
+					<a class="permalink" href="index.html#InviteParam.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (v <a href="index.html#InviteParam">InviteParam</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="LoginParam">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/model.go?s=166:234#L1">LoginParam</a>
+				<a class="permalink" href="index.html#LoginParam">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type LoginParam struct {
+<span id="LoginParam.RedirectURL"></span>    RedirectURL <a href="http://localhost:6060/pkg/builtin/#string">string</a> `form:&#34;redirect_url&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="MessageFeedbackParam">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/chat.go?s=2209:2315#L56">MessageFeedbackParam</a>
+				<a class="permalink" href="index.html#MessageFeedbackParam">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MessageFeedbackParam struct {
+<span id="MessageFeedbackParam.ID"></span>    ID   <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;id&#34;`
+<span id="MessageFeedbackParam.Vote"></span>    Vote <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;vote&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="MessageFeedbackParam.Validate">func (MessageFeedbackParam) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/chat.go?s=2317:2363#L61">Validate</a>
+					<a class="permalink" href="index.html#MessageFeedbackParam.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (v <a href="index.html#MessageFeedbackParam">MessageFeedbackParam</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="OAuthParam">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/model.go?s=236:434#L4">OAuthParam</a>
+				<a class="permalink" href="index.html#OAuthParam">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type OAuthParam struct {
+<span id="OAuthParam.Action"></span>    Action   <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;action,omitempty&#34;`
+<span id="OAuthParam.TenantID"></span>    TenantID <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;tenant_id,omitempty&#34;`
+<span id="OAuthParam.Role"></span>    Role     <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;role,omitempty&#34;`
+<span id="OAuthParam.Email"></span>    Email    <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;email,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="PersonaParam">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/persona.go?s=199:723#L3">PersonaParam</a>
+				<a class="permalink" href="index.html#PersonaParam">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type PersonaParam struct {
+<span id="PersonaParam.Name"></span>    Name            <a href="http://localhost:6060/pkg/builtin/#string">string</a>            `json:&#34;name&#34;`
+<span id="PersonaParam.Description"></span>    Description     <a href="http://localhost:6060/pkg/builtin/#string">string</a>            `json:&#34;description&#34;`
+<span id="PersonaParam.ModelID"></span>    ModelID         <a href="http://localhost:6060/pkg/builtin/#string">string</a>            `json:&#34;model_id&#34;`
+<span id="PersonaParam.URL"></span>    URL             <a href="http://localhost:6060/pkg/builtin/#string">string</a>            `json:&#34;url&#34;`
+<span id="PersonaParam.APIKey"></span>    APIKey          <a href="http://localhost:6060/pkg/builtin/#string">string</a>            `json:&#34;api_key&#34;`
+<span id="PersonaParam.Endpoint"></span>    Endpoint        <a href="http://localhost:6060/pkg/builtin/#string">string</a>            `json:&#34;endpoint&#34;`
+<span id="PersonaParam.SystemPrompt"></span>    SystemPrompt    <a href="http://localhost:6060/pkg/builtin/#string">string</a>            `json:&#34;system_prompt&#34;`
+<span id="PersonaParam.TaskPrompt"></span>    TaskPrompt      <a href="http://localhost:6060/pkg/builtin/#string">string</a>            `json:&#34;task_prompt&#34;`
+<span id="PersonaParam.StarterMessages"></span>    StarterMessages []*<a href="index.html#StarterMessage">StarterMessage</a> `json:&#34;starter_messages,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="PersonaParam.Validate">func (PersonaParam) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/persona.go?s=869:907#L21">Validate</a>
+					<a class="permalink" href="index.html#PersonaParam.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (v <a href="index.html#PersonaParam">PersonaParam</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="RetrievalDetails">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/chat.go?s=1496:1933#L41">RetrievalDetails</a>
+				<a class="permalink" href="index.html#RetrievalDetails">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type RetrievalDetails struct {
+<span id="RetrievalDetails.RunSearch"></span>    RunSearch               <a href="http://localhost:6060/pkg/builtin/#string">string</a>      `json:&#34;run_search,omitempty&#34;`
+<span id="RetrievalDetails.RealTime"></span>    RealTime                <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>        `json:&#34;real_time,omitempty&#34;`
+<span id="RetrievalDetails.Filters"></span>    Filters                 <a href="index.html#BaseFilters">BaseFilters</a> `json:&#34;filters,omitempty&#34;`
+<span id="RetrievalDetails.EnableAutoDetectFilters"></span>    EnableAutoDetectFilters <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>        `json:&#34;enable_auto_detect_filters,omitempty&#34;`
+<span id="RetrievalDetails.Offset"></span>    Offset                  <a href="http://localhost:6060/pkg/builtin/#int">int</a>         `json:&#34;offset,omitempty&#34;`
+<span id="RetrievalDetails.Limit"></span>    Limit                   <a href="http://localhost:6060/pkg/builtin/#int">int</a>         `json:&#34;limit,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="StarterMessage">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/persona.go?s=725:867#L15">StarterMessage</a>
+				<a class="permalink" href="index.html#StarterMessage">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type StarterMessage struct {
+<span id="StarterMessage.Name"></span>    Name        <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;name&#34;`
+<span id="StarterMessage.Message"></span>    Message     <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;message&#34;`
+<span id="StarterMessage.Description"></span>    Description <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;description&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="UpdateConnectorParam">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/model.go?s=1663:2037#L47">UpdateConnectorParam</a>
+				<a class="permalink" href="index.html#UpdateConnectorParam">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type UpdateConnectorParam struct {
+<span id="UpdateConnectorParam.Name"></span>    Name                    <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;name,omitempty&#34;`
+<span id="UpdateConnectorParam.ConnectorSpecificConfig"></span>    ConnectorSpecificConfig <a href="../model/index.html">model</a>.<a href="../model/index.html#JSONMap">JSONMap</a> `json:&#34;connector_specific_config,omitempty&#34;`
+<span id="UpdateConnectorParam.RefreshFreq"></span>    RefreshFreq             <a href="http://localhost:6060/pkg/builtin/#int">int</a>           `json:&#34;refresh_freq,omitempty&#34;`
+<span id="UpdateConnectorParam.Shared"></span>    Shared                  <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>          `json:&#34;shared,omitempty&#34;`
+<span id="UpdateConnectorParam.Status"></span>    Status                  <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;status&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UpdateConnectorParam.Validate">func (UpdateConnectorParam) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/parameters/model.go?s=2039:2085#L55">Validate</a>
+					<a class="permalink" href="index.html#UpdateConnectorParam.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (v <a href="index.html#UpdateConnectorParam">UpdateConnectorParam</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

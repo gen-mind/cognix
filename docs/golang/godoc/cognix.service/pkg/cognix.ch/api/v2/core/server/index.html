@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>server - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.1";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package server
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "cognix.ch/api/v2/core/server"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+			
+				
+				<dd><a href="index.html#BindJsonAndValidate">func BindJsonAndValidate(c *gin.Context, data interface{}) error</a></dd>
+			
+				
+				<dd><a href="index.html#GetContextIdentity">func GetContextIdentity(c *gin.Context) (*security.Identity, error)</a></dd>
+			
+				
+				<dd><a href="index.html#HandlerErrorFunc">func HandlerErrorFunc(f HandlerFunc) gin.HandlerFunc</a></dd>
+			
+				
+				<dd><a href="index.html#HandlerErrorFuncAuth">func HandlerErrorFuncAuth(f HandleFuncAuth) gin.HandlerFunc</a></dd>
+			
+				
+				<dd><a href="index.html#JsonResult">func JsonResult(c *gin.Context, status int, data interface{}) error</a></dd>
+			
+				
+				<dd><a href="index.html#StringResult">func StringResult(c *gin.Context, status int, data []byte) error</a></dd>
+			
+			
+				
+				<dd><a href="index.html#AuthMiddleware">type AuthMiddleware</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewAuthMiddleware">func NewAuthMiddleware(jwtService security.JWTService, userRepo repository.UserRepository) *AuthMiddleware</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AuthMiddleware.RequireAuth">func (m *AuthMiddleware) RequireAuth(c *gin.Context)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#HandleFuncAuth">type HandleFuncAuth</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#HandlerFunc">type HandlerFunc</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#JsonErrorResponse">type JsonErrorResponse</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#JsonResponse">type JsonResponse</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/auth_middleware.go">auth_middleware.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/router.go">router.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				<p>
+ContextParamUser is a constant representing the key used to store user identity
+information in the request context.
+</p>
+
+				<pre>const <span id="ContextParamUser">ContextParamUser</span> = &#34;CONTEXT_USER&#34;</pre>
+			
+		
+		
+		
+			
+			
+			<h2 id="BindJsonAndValidate">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/router.go?s=5728:5792#L141">BindJsonAndValidate</a>
+				<a class="permalink" href="index.html#BindJsonAndValidate">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BindJsonAndValidate(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, data interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+			<p>
+BindJsonAndValidate extracts JSON data from the request body and validates it.
+It binds the JSON data to the provided &#39;data&#39; interface. If &#39;data&#39; implements the &#39;validation.Validatable&#39; interface,
+it also calls the &#39;Validate&#39; method on it and returns an error if validation fails.
+If an error occurs while binding or validating the JSON data, the error is returned.
+</p>
+<p>
+Parameters:
+</p>
+<pre>- c: gin.Context
+  The Gin context containing the request and response information.
+- data: interface{}
+  The interface to bind the JSON data to.
+</pre>
+<p>
+Returns:
+</p>
+<pre>- error
+  If an error occurs while binding or validating the JSON data, the error is returned. Otherwise, nil is returned.
+</pre>
+
+			
+			
+
+		
+			
+			
+			<h2 id="GetContextIdentity">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/auth_middleware.go?s=2621:2688#L77">GetContextIdentity</a>
+				<a class="permalink" href="index.html#GetContextIdentity">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func GetContextIdentity(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>) (*<a href="../security/index.html">security</a>.<a href="../security/index.html#Identity">Identity</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+			<p>
+GetContextIdentity retrieves the identity of a user from the Gin context.
+It returns the identity if it exists, otherwise it returns an error.
+In case of a broken session, it returns an error with the message &#34;broken session&#34;.
+</p>
+<p>
+Parameters:
+- c: a pointer to the Gin context
+</p>
+<p>
+Returns:
+- *security.Identity: the identity of the user
+- error: an error if the identity does not exist or the session is broken
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="HandlerErrorFunc">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/router.go?s=3035:3087#L68">HandlerErrorFunc</a>
+				<a class="permalink" href="index.html#HandlerErrorFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HandlerErrorFunc(f <a href="index.html#HandlerFunc">HandlerFunc</a>) <a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#HandlerFunc">HandlerFunc</a></pre>
+			<p>
+HandlerErrorFunc wraps a HandlerFunc with error handling.
+It takes a HandlerFunc as input and returns a gin.HandlerFunc.
+The returned gin.HandlerFunc calls the input HandlerFunc and passes its result to handleError().
+If an error occurs, handleError() handles the error and sends an appropriate JSON response.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="HandlerErrorFuncAuth">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/router.go?s=2505:2564#L54">HandlerErrorFuncAuth</a>
+				<a class="permalink" href="index.html#HandlerErrorFuncAuth">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func HandlerErrorFuncAuth(f <a href="index.html#HandleFuncAuth">HandleFuncAuth</a>) <a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#HandlerFunc">HandlerFunc</a></pre>
+			<p>
+HandlerErrorFuncAuth is a higher-order function that creates a Gin middleware for handling errors during authenticated requests.
+It takes a function f of type HandleFuncAuth, which accepts a Gin context and a *security.Identity as parameters and returns an error.
+The middleware extracts the identity from the context using the GetContextIdentity function, and if it exists, calls the provided function f with the context and identity.
+It then calls the handleError function to handle any errors returned by f.
+</p>
+<p>
+Parameters:
+- f: a function of type HandleFuncAuth that accepts a Gin context and a *security.Identity and returns an error.
+</p>
+<p>
+Returns:
+- gin.HandlerFunc: a Gin middleware function
+</p>
+<p>
+Usage Example:
+</p>
+<pre>router := gin.Default()
+authMiddleware := CustomAuthMiddleware()
+router.GET(&#34;/api/endpoint&#34;, HandlerErrorFuncAuth(HandleFunc))
+</pre>
+<p>
+Note: Replace HandleFunc with the actual function to be called within the middleware.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="JsonResult">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/router.go?s=4425:4492#L103">JsonResult</a>
+				<a class="permalink" href="index.html#JsonResult">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func JsonResult(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, status <a href="http://localhost:6060/pkg/builtin/#int">int</a>, data interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+			<p>
+JsonResult returns a JSON response with the given status and data.
+The response format follows the JsonResponse struct.
+The status parameter indicates the HTTP status code of the response.
+The data parameter contains the data to be included in the response body.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="StringResult">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/router.go?s=4909:4973#L121">StringResult</a>
+				<a class="permalink" href="index.html#StringResult">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StringResult(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, status <a href="http://localhost:6060/pkg/builtin/#int">int</a>, data []<a href="http://localhost:6060/pkg/builtin/#byte">byte</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+			<p>
+StringResult sends the data as the response body with the specified status code.
+</p>
+<p>
+Parameters:
+</p>
+<pre>- c: The Gin context object.
+- status: The status code to be returned in the response.
+- data: The data to be sent as the response body.
+</pre>
+<p>
+Returns:
+</p>
+<pre>- An error if the response cannot be sent.
+</pre>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="AuthMiddleware">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/auth_middleware.go?s=436:536#L8">AuthMiddleware</a>
+				<a class="permalink" href="index.html#AuthMiddleware">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+AuthMiddleware is a middleware that performs authentication for incoming requests.
+</p>
+
+			<pre>type AuthMiddleware struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewAuthMiddleware">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/auth_middleware.go?s=805:912#L19">NewAuthMiddleware</a>
+					<a class="permalink" href="index.html#NewAuthMiddleware">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewAuthMiddleware(jwtService <a href="../security/index.html">security</a>.<a href="../security/index.html#JWTService">JWTService</a>,
+    userRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#UserRepository">UserRepository</a>) *<a href="index.html#AuthMiddleware">AuthMiddleware</a></pre>
+				<p>
+NewAuthMiddleware creates a new AuthMiddleware with the given JWTService and UserRepository.
+Parameters:
+- jwtService: service for JWT operations
+- userRepo: repository for user operations
+Returns:
+- *AuthMiddleware: the new AuthMiddleware instance
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="AuthMiddleware.RequireAuth">func (*AuthMiddleware) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/auth_middleware.go?s=1050:1102#L26">RequireAuth</a>
+					<a class="permalink" href="index.html#AuthMiddleware.RequireAuth">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#AuthMiddleware">AuthMiddleware</a>) RequireAuth(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>)</pre>
+				<p>
+RequireAuth requires authentication for the given request.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="HandleFuncAuth">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/router.go?s=743:818#L15">HandleFuncAuth</a>
+				<a class="permalink" href="index.html#HandleFuncAuth">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+HandleFuncAuth represents a function type that handles authentication in a web server.
+It takes a Gin context and an identity object as parameters, and returns an error.
+</p>
+<p>
+Parameters:
+- c: a pointer to a Gin context
+- identity: a pointer to a security.Identity object that represents the user&#39;s identity
+</p>
+<p>
+Returns:
+- error: an error if the authentication fails, nil otherwise
+</p>
+
+			<pre>type HandleFuncAuth func(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../security/index.html">security</a>.<a href="../security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="HandlerFunc">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/router.go?s=299:342#L4">HandlerFunc</a>
+				<a class="permalink" href="index.html#HandlerFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+HandlerFunc represents a function that takes a *gin.Context as input and returns an error.
+</p>
+
+			<pre>type HandlerFunc func(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="JsonErrorResponse">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/router.go?s=1111:1295#L23">JsonErrorResponse</a>
+				<a class="permalink" href="index.html#JsonErrorResponse">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+JsonErrorResponse represents a JSON response format for reporting errors.
+</p>
+<p>
+It has the following fields:
+- Status: An integer indicating the HTTP status code.
+- Error: A string describing the error.
+- OriginalError: A string providing additional information about the error.
+</p>
+
+			<pre>type JsonErrorResponse struct {
+<span id="JsonErrorResponse.Status"></span>    Status        <a href="http://localhost:6060/pkg/builtin/#int">int</a>    `json:&#34;status,omitempty&#34;`
+<span id="JsonErrorResponse.Error"></span>    Error         <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;error,omitempty&#34;`
+<span id="JsonErrorResponse.OriginalError"></span>    OriginalError <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;original_error,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="JsonResponse">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/server/router.go?s=1368:1531#L30">JsonResponse</a>
+				<a class="permalink" href="index.html#JsonResponse">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+JsonResponse represents a JSON response that can be sent by an API.
+</p>
+
+			<pre>type JsonResponse struct {
+<span id="JsonResponse.Status"></span>    Status <a href="http://localhost:6060/pkg/builtin/#int">int</a>         `json:&#34;status,omitempty&#34;`
+<span id="JsonResponse.Error"></span>    Error  <a href="http://localhost:6060/pkg/builtin/#string">string</a>      `json:&#34;error,omitempty&#34;`
+<span id="JsonResponse.Data"></span>    Data   interface{} `json:&#34;data,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>
