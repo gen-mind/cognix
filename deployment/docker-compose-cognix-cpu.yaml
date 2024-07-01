@@ -1,7 +1,7 @@
 # cluster rag.cognix versions
 # milvus:v2.4.0
 # nats:2.10.14
-# cockroach-operator:v2.12.0 which is using cockroach:v23.1.11
+# yugabytedb:2024.1.0.0-b129
 
 # need to do give docker permissions on loval volumes
 # id -gn    # to find out the group name for your user:
@@ -11,7 +11,7 @@
 # Create the Required Directories:
 # sudo mkdir -p /Users/gp/Developer/cognix/data/etcd
 # sudo mkdir -p /Users/gp/Developer/cognix/data/minio
-# sudo mkdir -p /Users/gp/Developer/cognix/data/cockroach
+# sudo mkdir -p /Users/gp/Developer/cognix/data/yugabytedb
 # sudo mkdir -p /Users/gp/Developer/cognix/data/nats
 # sudo mkdir -p /Users/gp/Developer/cognix/data/milvus
 # TODO: add the new folders needed for observability (all container involved)
@@ -60,7 +60,7 @@ services:
       - ${CONFIG_PATH}/milvus_cli.env
       - ${CONFIG_PATH}/nats_cli.env
       - ${CONFIG_PATH}/embedder_cli.env
-      - ${CONFIG_PATH}/cockroach_cli.env
+      - ${CONFIG_PATH}/yugabytedb_cli.env
       - ${CONFIG_PATH}/minio_cli.env
     restart: always
 #    ports:
@@ -74,7 +74,7 @@ services:
     depends_on:
       - milvus
       - nats
-      - cockroach
+      - yugabytedb
       - minio
     networks:
       - cognix-network
@@ -109,14 +109,14 @@ services:
       - "8080:8080"
     env_file:
       - ${CONFIG_PATH}/api_srv.env
-      - ${CONFIG_PATH}/cockroach_cli.env
+      - ${CONFIG_PATH}/yugabytedb_cli.env
       - ${CONFIG_PATH}/minio_cli.env
       - ${CONFIG_PATH}/milvus_cli.env
       - ${CONFIG_PATH}/nats_cli.env
       - ${CONFIG_PATH}/embedder_cli.env
       - ${CONFIG_PATH}/.env
     depends_on:
-      - cockroach
+      - yugabytedb
       - minio
       - milvus
       - nats
@@ -134,12 +134,12 @@ services:
       dockerfile: Dockerfile
     env_file:
       - ${CONFIG_PATH}/orchestrator_srv.env
-      - ${CONFIG_PATH}/cockroach_cli.env
+      - ${CONFIG_PATH}/yugabytedb_cli.env
       - ${CONFIG_PATH}/nats_cli.env
       - ${CONFIG_PATH}/oauth_cli.env
       - ${CONFIG_PATH}/.env
     depends_on:
-      - cockroach
+      - yugabytedb
       - minio
       - nats
     restart: always
@@ -155,14 +155,14 @@ services:
         service: connector
       dockerfile: Dockerfile
     env_file:
-      - ${CONFIG_PATH}/cockroach_cli.env
+      - ${CONFIG_PATH}/yugabytedb_cli.env
       - ${CONFIG_PATH}/nats_cli.env
       - ${CONFIG_PATH}/milvus_cli.env
       - ${CONFIG_PATH}/minio_cli.env
       - ${CONFIG_PATH}/oauth_cli.env
       - ${CONFIG_PATH}/.env
     depends_on:
-      - cockroach
+      - yugabytedb
       - minio
       - nats
     restart: always
@@ -178,9 +178,10 @@ services:
     volumes:
       - ${MIGRATION_PATH}/versions:/versions
     env_file:
-      - ${CONFIG_PATH}/cockroach_cli.env
+      - ${CONFIG_PATH}/yugabytedb_cli.env
     depends_on:
-      - cockroach
+      yugabytedb:
+       condition: service_healthy
     networks:
       - cognix-network
 
@@ -268,25 +269,23 @@ services:
   # milvus-admin:
   #   image: milvusdb/milvus-insight:latest
   # https://github.com/zilliztech/attu
-  
-  cockroach:
-    container_name: cockroach
-    image: cockroachdb/cockroach:v24.1.1
+
+  yugabytedb:
+    container_name: yugabytedb
+    image: yugabytedb/yugabyte:2024.1.0.0-b129
     ports:
-      - "26257:26257"
-      - "28080:8080"
-    # command: start-single-node --insecure
-    command: start-single-node --insecure --cache=1.5GiB --max-sql-memory=1.5GiB
+      - "5433:5433"
+    command: yugabyted start --enable_pg_parity_early_access --background=false
     volumes:
-      - "../data/cockroach:/cockroach/cockroach-data"
+      - "../data/yugabytedb:/root/var/data"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/health?ready=1"]
+      test: postgres/bin/pg_isready -h yugabytedb -p 5433
       interval: 20s
       timeout: 5s
       retries: 5
     networks:
       - cognix-network
-
+  
   # natsmq configuration.
   # more detail: https://docs.nats.io/running-a-nats-service/configuration
   nats:
