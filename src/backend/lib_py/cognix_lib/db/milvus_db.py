@@ -95,7 +95,7 @@ class Milvus_DB:
         start_time = time.time()  # Record the start time
         self.ensure_connection()
         try:
-            collection = Collection(name=data.collection_names[0])
+            collection = Collection(name=data.collection_names[1])
             collection.load()
 
             # Call the updated embedd method with a list containing the query string
@@ -131,6 +131,8 @@ class Milvus_DB:
                         if content is not None and document_id is not None:
                             content_str = str(content)  # Convert the content to a string
                             document_id_str = str(document_id)  # Convert document_id to a string
+                            self.logger.debug(f"metric: {milvus_metric_type} distance: {hit.distance}")
+
                             self.logger.debug(
                                 f"Nearest Neighbor Number {j} in result {i}: {content_str} ---- {hit.distance}\n")
                             answer += content_str

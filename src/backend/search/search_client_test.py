@@ -15,7 +15,7 @@ def run():
                                 user_id="1",
                                 tenant_id="2",
                                 model_name="paraphrase-multilingual-mpnet-base-v2",
-                                collection_names=["user_625ece7e042d4f40bd2588b16bec7be6", ""])
+                                collection_names=["", "user_625ece7e042d4f40bd2588b16bec7be6"])
         response = stub.VectorSearch(request)
 
         print("query results:")
