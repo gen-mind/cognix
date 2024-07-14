@@ -9,15 +9,11 @@ mistune==3.0.2
 minio==7.2.7
 transformers==4.42.3
 chardet==5.2.0
-
-# conda install chardet
-# export PYTHONPATH=$PYTHONPATH:/Users/gp/Developer/cognix/src/backend/lib_py
-# python3 -c "import sys; print('\n'.join(sys.path))"
-
+pytesseract==0.3.10
 torch==2.0.1
 torchaudio==2.0.2
 torchvision==0.15.2
-pytesseract==0.3.10
+
 
 
 

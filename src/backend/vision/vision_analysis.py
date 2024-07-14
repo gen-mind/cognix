@@ -96,10 +96,6 @@ if __name__ == "__main__":
     vision = Vision(model_cache_limit=1, local_model_path=model_path)
     result = vision.analyze_image(image_file, model_name)
 
-    # Save the result to a Markdown file
-    md_filename = 'result.md'
-    with open(md_filename, 'w') as md_file:
-        md_file.write(result)
 
     print(result)
 

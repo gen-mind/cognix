@@ -6,13 +6,12 @@ WORKDIR /app
 ADD ./ ./
 
 # Copy the requirements.txt first to leverage Docker cache
-COPY voice/requirements.txt /app/
+COPY vision/requirements.txt /app/
 
 # Install dependencies and clean up
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     curl \
-    ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
