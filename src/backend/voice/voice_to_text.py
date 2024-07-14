@@ -52,11 +52,6 @@ from dotenv import load_dotenv
 if __name__ == "__main__":
     load_dotenv()
 
-    # Set environment variable to enable MPS fallback to CPU for unsupported operations
-    # os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
-
-
-
     # Configure logging
     log_level_str = os.getenv('VOICE_LOG_LEVEL', 'ERROR').upper()
     log_level = getattr(logging, log_level_str, logging.INFO)

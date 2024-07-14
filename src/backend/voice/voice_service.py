@@ -69,7 +69,7 @@ async def voice_event(msg: Msg):
     connector_id = 0
     entities_analyzed = 0
     try:
-        logger.info("🔥 starting speech to text analysis.. new version..")
+        logger.info("🔥 starting speech to text analysis..")
         # Deserialize the message
         voice_data = VoiceData()
         voice_data.ParseFromString(msg.data)
@@ -102,7 +102,7 @@ async def voice_event(msg: Msg):
 
             # model_name = "openai/whisper-large-v3"
             logging.warning("😱 model and cache limit hardcoded!")
-            model_name = "openai/whisper-small"
+            model_name = "openai/whisper-large-v3"
             vtt = VoiceToText(model_cache_limit=1, local_model_path=model_path)
             transcription = vtt.extract_text(downloaded_file_path, model_name)
 

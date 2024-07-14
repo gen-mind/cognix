@@ -1,0 +1,18 @@
+syntax = "proto3";
+import "file_type.proto";
+package com.cognix;
+option go_package = "backend/core/proto;proto";
+
+
+message VisionData {
+  // This is the url where the file is located.
+  // Based on the chunking type it will be a WEB URL (HTML type)
+  // Will be an S3/MINIO link with a proper authentication in case of a file
+  string url = 1;
+  int64  document_id = 2;
+  int64  connector_id = 3;
+  FileType file_type = 4;
+  string collection_name = 5;
+  string model_name = 6;
+  int32 model_dimension = 7;
+}

@@ -74,6 +74,33 @@ services:
     networks:
       - cognix-network
 
+  vision:
+    image: gen-mind/cognix-vision:latest
+    build:
+      context: ../src/backend
+      dockerfile: vision/Dockerfile
+    volumes:
+      - ${DATA_PATH}/temp:/temp
+      - ${DATA_PATH}/models:/models
+    env_file:
+      - ${CONFIG_PATH}/vision-srv.env
+      - ${CONFIG_PATH}/nats-cli.env
+      - ${CONFIG_PATH}/cockroach-cli.env
+      - ${CONFIG_PATH}/minio-cli.env
+    restart: always
+    #    healthcheck:
+    #      test: "curl --silent --fail http://localhost:8080/healthz > /dev/null || exit 1"
+    #      interval: 60s
+    #      start_period: 10s
+    #      timeout: 3s
+    #      retries: 3
+    depends_on:
+      - nats
+      - cockroach
+      - minio
+    networks:
+      - cognix-network
+
   transformer:
     container_name: transformer
     image: gen-mind/cognix-transformer:latest
