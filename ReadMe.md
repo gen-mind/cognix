@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# 🤖 `CogniX AI Code Generator` 🤖
+# 🤖 `CogniX` 🤖
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/gen-mind/cognix)
 [![join our community on Slack](https://img.shields.io/badge/Join%20our%20community%20on%20Slack-Invite-orange)](https://join.slack.com/t/cognixgroup/shared_invite/zt-2kbtcnys6-ZW3IjxeE~ZozZ8if6m0NWg)
