@@ -10,7 +10,8 @@
 </div>
 CogniX is a generic Retrieval-Augmented Generation (RAG) software
  capable of transforming various industries by leveraging AI
-  
+  <br />
+If you're unfamiliar with Retrieval-Augmented Generation, watch [this video](https://www.youtube.com/watch?v=u47GtXwePms).
 <br />
 
 
@@ -23,7 +24,7 @@ An advanced AI platform that integrates seamlessly with your environment, offeri
 - Performs advanced semantic search and reasoning across your organization's data.
 - Generates content based on your unique data and knowledge base.
 
-If you're new to AI-driven code generation, watch [this video](https://www.youtube.com/watch?v=u47GtXwePms).
+
 
 ## `Initial Focus`
 
