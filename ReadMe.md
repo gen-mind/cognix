@@ -22,19 +22,7 @@ An advanced AI platform that integrates seamlessly with your environment, offeri
 - Connects to your data sources: Google Drive, OneDrive, Slack, GitHub, GitLab, Jira, Azure DevOps, and more.
 - Performs advanced semantic search and reasoning across your organization's data.
 - Generates content based on your unique data and knowledge base.
-- Supports personalized learning and educational content creation.
-- Automates summarization of lengthy documents and reports.
-- Integrates with existing tools and platforms via easy-to-setup connectors.
-- Connects to your repo, GitHub, GitLab, Jira, Azure DevOps
 
-Capable of:
-- **Automating feature development**
-- **Creating database schemas**
-- **Building front-end and back-end code**
-- **Integrating with CI/CD pipelines**
-- **Following project-specific development guidelines**
-
-For detailed documentation and setup guides, visit [CogniX Docs](https://docs.cognix.ch/).
 If you're new to AI-driven code generation, watch [this video](https://www.youtube.com/watch?v=u47GtXwePms).
 
 ## `Initial Focus`
@@ -43,6 +31,14 @@ To quickly bring a product to market, we are focusing on two key aspects:
 - 🔍 Semantic Search for Business: A plug-in for business applications like Teams, Slack, and SharePoint, providing efficient search functionality directly within these tools. The first implementation will be for Microsoft Teams.
 - 🤖 AI Chatbot: A versatile chatbot that can be integrated into any website, capable of talking about the site's products or services, handling customer support and various other topics as instructed.
 We are also willing to explore any other specific capabilities CogniX can achieve, feel free to reach us out gp@cognix.ch
+
+## `Under our radar`
+- Connects to your repo, GitHub, GitLab, Jira, Azure DevOps
+- Supports personalized learning and educational content creation.
+- Automates summarization of lengthy documents and reports.
+- Integrates with existing tools and platforms via easy-to-setup connectors.
+
+
 
 ## `Contributing`
 
