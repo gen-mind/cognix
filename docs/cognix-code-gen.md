@@ -8,24 +8,25 @@
 [![join our community on Slack](https://img.shields.io/badge/Join%20our%20community%20on%20Slack-Invite-orange)](https://join.slack.com/t/cognixgroup/shared_invite/zt-2kbtcnys6-ZW3IjxeE~ZozZ8if6m0NWg)
 
 </div>
-CogniX is a generic Retrieval-Augmented Generation (RAG) software
- capable of transforming various industries by leveraging AI
+Hey there! We're Gian and Michael,  We’re excited to have you here!
 
+
+CogniX is an AI code generator that creates entire features or extensive code blocks by analyzing your existing codebase. It mimics your project's style, rules, and patterns, ensuring new code aligns seamlessly with your standards—automatically generating front-end, back-end, database, and more based on your prompts.
 <br />
 
 
 
 ## `Features`
 
+An advanced AI code generator that can integrate seamlessly with your development environment, offering capabilities such as:
 
-An advanced AI platform that integrates seamlessly with your environment, offering capabilities such as:
-- Connects to your data sources: Google Drive, OneDrive, Slack, GitHub, GitLab, Jira, Azure DevOps, and more.
-- Performs advanced semantic search and reasoning across your organization's data.
-- Generates content based on your unique data and knowledge base.
-- Supports personalized learning and educational content creation.
-- Automates summarization of lengthy documents and reports.
-- Integrates with existing tools and platforms via easy-to-setup connectors.
-- Connects to your repo, GitHub, GitLab, Jira, Azure DevOps
+- **Connects to your repo, GitHub, GitLab, Jira, Azure DevOps**
+- **Generates entire features, APIs, and complex code structures**
+- **Adheres to your project's style, rules, and patterns**
+- **Instructable via easy-to-setup connectors:**
+  - - **Analyzes all the code in your repo**
+  - - **Learns from your Google Drive**
+  - - **Understands files from your OneDrive**
 
 Capable of:
 - **Automating feature development**
@@ -36,13 +37,6 @@ Capable of:
 
 For detailed documentation and setup guides, visit [CogniX Docs](https://docs.cognix.ch/).
 If you're new to AI-driven code generation, watch [this video](https://www.youtube.com/watch?v=u47GtXwePms).
-
-## `Initial Focus`
-
-To quickly bring a product to market, we are focusing on two key aspects:
-- 🔍 Semantic Search for Business: A plug-in for business applications like Teams, Slack, and SharePoint, providing efficient search functionality directly within these tools. The first implementation will be for Microsoft Teams.
-- 🤖 AI Chatbot: A versatile chatbot that can be integrated into any website, capable of talking about the site's products or services, handling customer support and various other topics as instructed.
-We are also willing to explore any other specific capabilities CogniX can achieve, feel free to reach us out gp@cognix.ch
 
 ## `Contributing`
 
