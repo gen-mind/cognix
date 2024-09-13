@@ -10,7 +10,7 @@
 </div>
 CogniX is a generic Retrieval-Augmented Generation (RAG) software
  capable of transforming various industries by leveraging AI
-
+  
 <br />
 
 
