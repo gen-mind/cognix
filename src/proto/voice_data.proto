@@ -16,3 +16,8 @@ message VoiceData {
   string model_name = 6;
   int32 model_dimension = 7;
 }
+user id
+tileid - string
+image URL
+signalr connection id - string
+calling ennv (web, ch, de)
