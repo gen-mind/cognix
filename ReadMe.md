@@ -73,8 +73,7 @@ Watch the video to quickly get a glimpse of where we are and what we are doing n
 
 ## `Documentation`
 
-- User documentation at [rag.cognix.ch](https://rag.cognix.ch)
-- Technical documentation in this repo at [GitHub](https://github.com/gen-mind/cognix/tree/develop/docs)
+- Technical documentation in this repo at [GitHub](https://github.com/gen-mind/cognix/blob/develop/docs/readme.md)
 
 ## `Funding`
 
@@ -82,6 +81,6 @@ In our [pitch deck video](https://www.youtube.com/watch?v=grWGugrkxew), we menti
 
 ## `Future Vision`
 
-Gian and Michael, the co-founders, are conducting interviews with CXOs and decision-makers to identify market needs and refine our offerings. As we progress, CogniX will evolve to address more complex use cases and expand its impact across various industries.
+We conducting interviews with CXOs and decision-makers to identify market needs and refine our offerings. As we progress, CogniX will evolve to address more complex use cases and expand its impact across various industries.
 
-For more detailed information, visit the [CogniX Documentation](https://docs.cognix.ch/).
+
