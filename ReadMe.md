@@ -31,6 +31,7 @@ An advanced AI platform that integrates seamlessly with your environment, offeri
 To quickly bring a product to market, we are focusing on two key aspects:
 - 🔍 Semantic Search for Business: A plug-in for business applications like Teams, Slack, and SharePoint, providing efficient search functionality directly within these tools. The first implementation will be for Microsoft Teams.
 - 🤖 AI Chatbot: A versatile chatbot that can be integrated into any website, capable of talking about the site's products or services, handling customer support and various other topics as instructed.
+
 We are also willing to explore any other specific capabilities CogniX can achieve, feel free to reach us out gp@cognix.ch
 
 ## `Under our radar`
@@ -51,11 +52,8 @@ We are specifically looking for developers skilled in:
 - Python
 - DevOps
 
-If you're interested in contributing your time to help us build this innovative solution, you will be compensated with virtual checks redeemable once we secure early-stage funding.
-<br />
-We are actively applying to major early-stage funds like YC, Sequoia ARC, and others.
-If you believe we’re a good fit, we’re eager to discuss a co-founder position. 
-<br />This is a great opportunity to join us on this exciting journey. <a href="https://join.slack.com/t/cognixgroup/shared_invite/zt-2kbtcnys6-ZW3IjxeE~ZozZ8if6m0NWg">Join Cognix Group on Slack</a>
+If you're interested in contributing your time to help us build this innovative solution
+If you believe we’re a good fit, join us on this exciting journey. <a href="https://join.slack.com/t/cognixgroup/shared_invite/zt-2kbtcnys6-ZW3IjxeE~ZozZ8if6m0NWg">Join Cognix Group on Slack</a>
 
 [![Join our community on Slack](https://img.shields.io/badge/Join%20our%20community%20on%20Slack-Invite-orange)](https://join.slack.com/t/cognixgroup/shared_invite/zt-2kbtcnys6-ZW3IjxeE~ZozZ8if6m0NWg)
 
