@@ -1,20 +1,20 @@
-# Deep dive
+# `Deep dive`
 CogniX: your Gateway to Intelligent Document Analysis
 
 CogniX is an enterprise-level Retrieval-Augmented Generation (RAG) system, designed to manage and semantically analyze millions of documents with precision and efficiency. It represents the forefront of document understanding technology, making it an invaluable tool for businesses dealing with large volumes of informations.
 
-## How It Works
+## `How It Works`
 - **Semantic Analysis:** CogniX applies advanced semantic analysis to understand the meaning of documents beyond just keywords. This deep understanding allows for more accurate retrieval of information.
 - **Vector Database Storage:** The essence of each document's meaning is transformed into a mathematical vector and stored in a vector database. This ensures that searches are not just fast but incredibly relevant.
 - **Focused Retrieval:** Whether you're dealing with documents about apple harvesting or apple recipes, CogniX can discern and retrieve precisely what you're looking for. For instance, a query about apple harvests will only bring up relevant documents, leaving unrelated ones, like apple recipes, behind.
 
 
-## Advanced Capabilities
+## `Advanced Capabilities`
 - **Document Chunking and Embedding:** By breaking down documents and embedding their content using semantic machine-learning models trained on everyday language, CogniX ensures that even the most complex documents are made searchable.
 - **Support for Local LLMs:** With our powerful inference server, CogniX supports high-performance text generation across a wide range of popular open-source Large Language Models (LLMs), including Mixtral, Llama, Falcon, StarCoder, BLOOM, GPT-NeoX, and T5.
 - **Fine-Tuning for Precision:** While CogniX demonstrates robust capabilities, there's also the potential for fine-tuning models to specific domains, such as legal documents in multiple languages, to achieve even more precise results.
 
-## Architecture
+## `Architecture`
 
 CogniX is built on a dual-cluster architecture, designed to offer flexibility, scalability, and compliance with enterprise-grade requirements. 
 
@@ -27,11 +27,7 @@ CogniX is built on a dual-cluster architecture, designed to offer flexibility, s
 <p align="center"><em>Cognix architecture</em></p>
 
 
-
-
-
-
-### **The RAG Cluster**
+### `The RAG Cluster`
 The RAG (Retrieval-Augmented Generation) cluster is the heart of CogniX, incorporating all necessary components to:
 
 - Provide a user-friendly interface (UI) and robust Application Programming Interface (API).
@@ -56,8 +52,8 @@ This powerhouse is the backbone of our system, running an array of advanced serv
 - #miniorange : Our choice for Kubernetes-native object storage
 - #grafana : Providing comprehensive observability (metrics, performance, logs)
 
-#### **The RAG Cluster components**
-We have a pletora of APIs to fullfily any kind of need
+#### `Cluster components`
+We have a plethora of APIs to fulfill any kind of need
 
 - front end
 - System
@@ -80,21 +76,21 @@ At the right of the RAG cluster we can find all our storage services:
 - Embeddings
 - Connectors
 
-## 🤖 GPU Cluster: 
+## 🤖 `GPU Cluster` 
 the brain behind our inference capabilities, supporting a 7B parameter LLM and other essential models for semantic analysis.
 - RTX 6000 ada - 48 GB VRAM - 16 vCPU (1 token 30ms - 64 parallel requests)
 
-#### Microservices event-driven architecture 
+#### `Microservices event-driven architecture` 
 is a software design pattern that combines the benefits of microservices and event-driven architecture. This architecture enables the development of scalable and flexible applications, with services communicating with each other using events.
 
-#### Requirements
+#### `Requirements`
 The cluster will run with a base of 12 cores and 64 Gb of ram
 The vector database will use 
 
 25gb : 10.000 docs(50 pages each)
 500gb : 200.000 docs(50 pages each) = x : 10.000
 
-### **The Optional LLM Cluster**
+### `The Optional LLM Cluster`
 To enhance CogniX's capabilities with natural language processing, an optional Large Language Model (LLM) cluster can be integrated. This enables:
 
 - User interactions through chat functionalities.
@@ -114,7 +110,7 @@ CogniX supports a wide range of LLM options, including gpt-3.5-turbo, gpt-4, and
 
 At the heart of CogniX lies our state-of-the-art inference server, designed to supercharge text generation by harnessing the power of the world's leading open-source Large Language Models (LLMs). Our platform supports a wide array of LLMs, including Mixtral, Llama, Falcon, StarCoder, BLOOM, GPT-NeoX, and T5, ensuring unparalleled performance and versatility.
 
-#### Requirements
+#### `Requirements`
 We suggest a 7B param model which means one GP with at least 24GB of ram
 
 Number of concurrent users 
