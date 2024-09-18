@@ -21,10 +21,11 @@ CogniX is built on a dual-cluster architecture, designed to offer flexibility, s
 **Below is a glance at CogniX's architecture**, showcasing its robust, flexible, and scalable design tailored for modern enterprises.
 
 
-<figure markdown="span">
-  ![Image title](assets/architecture.jpg){ loading=lazy, align=center }
-  <figcaption>Cognix architecture</figcaption>
-</figure>
+<p align="center">
+  <img src="https://github.com/gen-mind/cognix/blob/develop/docs/assets/architecture.jpg" alt="Image title" style="max-width: 100%;">
+</p>
+<p align="center"><em>Cognix architecture</em></p>
+
 
 
 
