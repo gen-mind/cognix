@@ -81,6 +81,6 @@ In our [pitch deck video](https://www.youtube.com/watch?v=grWGugrkxew), we menti
 
 ## `Future Vision`
 
-We conducting interviews with CXOs and decision-makers to identify market needs and refine our offerings. As we progress, CogniX will evolve to address more complex use cases and expand its impact across various industries.
+We are conducting interviews with CXOs and decision-makers to identify market needs and refine our offerings. As we progress, CogniX will evolve to address more complex use cases and expand its impact across various industries.
 
 
