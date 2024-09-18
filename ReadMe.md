@@ -11,7 +11,7 @@
 CogniX is a generic Retrieval-Augmented Generation (RAG) software
  capable of transforming various industries by leveraging AI
   <br />
-If you're unfamiliar with Retrieval-Augmented Generation,<a href="https://www.youtube.com/watch?v=u47GtXwePms">watch this video</a>.
+If you're unfamiliar with Retrieval-Augmented Generation, <a href="https://www.youtube.com/watch?v=u47GtXwePms">watch this video</a>.
 <br />
 
 
@@ -33,7 +33,7 @@ To quickly bring a product to market, we are focusing on two key aspects:
 - 🔍 Semantic Search for Business: A plug-in for business applications like Teams, Slack, and SharePoint, providing efficient search functionality directly within these tools. The first implementation will be for Microsoft Teams.
 - 🤖 AI Chatbot: A versatile chatbot that can be integrated into any website, capable of talking about the site's products or services, handling customer support and various other topics as instructed.
 
-We are also willing to explore any other specific capabilities CogniX can achieve, feel free to reach us out gp@cognix.ch
+We are also willing to explore any other specific capabilities CogniX can achieve, feel free to reach us out gp {at} cognix.ch
 
 ## `Under our radar`
 - Connects to your repo, GitHub, GitLab, Jira, Azure DevOps
@@ -73,7 +73,7 @@ Watch the video to quickly get a glimpse of where we are and what we are doing n
 
 ## `Documentation`
 
-- Technical documentation in this repo at [GitHub](https://github.com/gen-mind/cognix/blob/develop/docs/readme.md)
+Technical documentation in this repo at [GitHub](https://github.com/gen-mind/cognix/blob/develop/docs/readme.md)
 
 ## `Funding`
 
