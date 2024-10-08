@@ -32,8 +32,8 @@ networks:
 
 services:
   embedder:
-    container_name: embedder
-    image: gen-mind/cognix-embedder:latest
+    container_name: genmind/cognix-embedder
+    image: genmind/cognix-embedder:0.1.0-beta
     build:
       context: ../src/ai
       dockerfile: embedder/Dockerfile
@@ -48,7 +48,8 @@ services:
       - cognix-network
 
   voice:
-    image: gen-mind/cognix-voice:latest
+    container_name: genmind/cognix-voice
+    image: genmind/cognix-voice:0.1.0-beta
     build:
       context: ../src/ai
       dockerfile: voice/Dockerfile
@@ -75,7 +76,8 @@ services:
       - cognix-network
 
   vision:
-    image: gen-mind/cognix-vision:latest
+    container_name: genmind/cognix-vision
+    image: genmind/cognix-vision:0.1.0-beta
     build:
       context: ../src/ai
       dockerfile: vision/Dockerfile
@@ -103,7 +105,7 @@ services:
 
   transformer:
     container_name: transformer
-    image: gen-mind/cognix-transformer:latest
+    image: gen-mind/cognix-transformer:0.1.0-beta
     build:
       context: ../src/ai
       dockerfile: transformer/Dockerfile_cpu
@@ -118,8 +120,8 @@ services:
       - cognix-network
 
   search:
-    container_name: search
-    image: gen-mind/cognix-search:latest
+    container_name: genmind/cognix-search
+    image: genmind/cognix-search:0.1.0-beta
     build:
       context: ../src/ai
       dockerfile: search/Dockerfile
@@ -136,8 +138,8 @@ services:
       - cognix-network
 
   semantic:
-    # container_name: semantic
-    image: gen-mind/cognix-semantic:latest
+    container_name: genmind/cognix-semantic
+    image: genmind/cognix-semantic:0.1.0-beta
     build:
       context: ../src/ai
       dockerfile: semantic/Dockerfile
@@ -169,8 +171,8 @@ services:
       - cognix-network
 
   cognix-web:
-    container_name: web-ui
-    image: gen-mind/cognix-web:latest
+    container_name: genmind/cognix-web:0.1.0-beta
+    image: gen-mind/cognix-web:0.1.0-beta
     build:
       context: ../src/web
       dockerfile: Dockerfile.dev
@@ -187,8 +189,8 @@ services:
       - cognix-network
 
   api:
-    container_name: api
-    image: gen-mind/cognix-api:latest
+    container_name: genmind/cognix-api
+    image: genmind/cognix-api:0.1.0-beta
     build:
       context: ${BACKEND_PATH}
       args:
@@ -216,8 +218,8 @@ services:
       - cognix-network
 
   configmap:
-    container_name: configmap
-    image: gen-mind/cognix-configmap:latest
+    container_name: genmind/cognix-configmap
+    image: genmind/cognix-configmap:0.1.0-beta
     build:
       context: ${BACKEND_PATH}
       args:
@@ -233,8 +235,8 @@ services:
       - cognix-network
 
   orchestrator:
-    container_name: orchestrator
-    image: gen-mind/cognix-orchestrator:latest
+    container_name: genmind/cognix-orchestrator
+    image: genmind/cognix-orchestrator:0.1.0-beta
     build:
       context: ${BACKEND_PATH}
       args:
@@ -255,8 +257,8 @@ services:
       - cognix-network
 
   connector:
-    container_name: connector
-    image: gen-mind/cognix-connector:latest
+    container_name: genmind/cognix-connector
+    image: genmind/cognix-connector:0.1.0-beta
     build:
       context: ${BACKEND_PATH}
       args:
@@ -278,8 +280,8 @@ services:
       - cognix-network
 
   migration:
-    container_name: migration
-    image: gen-mind/cognix-migration:latest
+    container_name: genmind/cognix-migration
+    image: genmind/cognix-migration:0.1.0-beta
     build:
       context: ${MIGRATION_PATH}
       dockerfile: Dockerfile
