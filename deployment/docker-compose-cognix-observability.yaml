@@ -35,7 +35,7 @@ services:
     container_name: embedder
     image: gen-mind/cognix-embedder:latest
     build:
-      context: ../src/backend/embedder
+      context: ../src/backend_go/embedder
       dockerfile: Dockerfile_cpu
     ports:
       - "50051:50051"
@@ -51,7 +51,7 @@ services:
     # container_name: semantic
     image: gen-mind/cognix-semantic:latest
     build:
-      context: ../src/backend/semantic
+      context: ../src/backend_go/semantic
       dockerfile: Dockerfile
     volumes:
       - ${DATA_PATH}/temp:/temp

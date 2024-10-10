@@ -18,7 +18,7 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-src/backend/vendor/
+src/backend_go/vendor/
 
 # Go workspace file
 go.work
@@ -35,10 +35,10 @@ data/
 
 
 # ignore model path
-src/backend/embedder/models/
+src/backend_go/embedder/models/
 
 # ignore temp path
-src/backend/semantic/testdocs/
+src/backend_go/semantic/testdocs/
 
 # ignore inteliJIdea configs
 .idea/
