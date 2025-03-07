@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>model - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.1";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package model
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "cognix.ch/api/v2/core/model"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#BucketName">func BucketName(tenantID uuid.UUID) string</a></dd>
+			
+				
+				<dd><a href="index.html#CollectionName">func CollectionName(userID uuid.UUID, tenantID uuid.NullUUID) string</a></dd>
+			
+			
+				
+				<dd><a href="index.html#ChatMessage">type ChatMessage</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ChatMessage.AfterSelect">func (c *ChatMessage) AfterSelect(ctx context.Context) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#ChatMessageDocumentPair">type ChatMessageDocumentPair</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ChatMessageFeedback">type ChatMessageFeedback</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ChatSession">type ChatSession</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Connector">type Connector</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Connector.BuildFileName">func (c *Connector) BuildFileName(filename string) string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Connector.CollectionName">func (c *Connector) CollectionName() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Defaults">type Defaults</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Document">type Document</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#DocumentResponse">type DocumentResponse</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#EmbeddingModel">type EmbeddingModel</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#JSON">type JSON</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JSON.Scan">func (j *JSON) Scan(value interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JSON.Value">func (j JSON) Value() (driver.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#JSONMap">type JSONMap</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JSONMap.FromStruct">func (j *JSONMap) FromStruct(src interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JSONMap.Scan">func (j *JSONMap) Scan(src interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JSONMap.ToStruct">func (j *JSONMap) ToStruct(dest interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#JSONMap.Value">func (j JSONMap) Value() (driver.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#LLM">type LLM</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#LLM.MaskApiKey">func (l *LLM) MaskApiKey() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#OAuthProvider">type OAuthProvider</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Persona">type Persona</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Prompt">type Prompt</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#SourceType">type SourceType</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#SourceTypeDescription">type SourceTypeDescription</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#StringSlice">type StringSlice</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#StringSlice.InArray">func (t StringSlice) InArray(val string) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#StringSlice.Scan">func (t *StringSlice) Scan(value interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#StringSlice.Value">func (t StringSlice) Value() (driver.Value, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Tenant">type Tenant</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#User">type User</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#User.HasRoles">func (u *User) HasRoles(role ...string) bool</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/chat.go">chat.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/connector.go">connector.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/document.go">document.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/embedding_model.go">embedding_model.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/llm.go">llm.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/mime_type.go">mime_type.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/oauth.go">oauth.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/persona.go">persona.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/prompt.go">prompt.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/source_type.go">source_type.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/tenant.go">tenant.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/trace.go">trace.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/types.go">types.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/user.go">user.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span id="MessageTypeUser">MessageTypeUser</span>      = &#34;user&#34;
+    <span id="MessageTypeAssistant">MessageTypeAssistant</span> = &#34;assistant&#34;
+    <span id="MessageTypeSystem">MessageTypeSystem</span>    = &#34;system&#34;
+)</pre>
+			
+				
+				<pre>const (
+    <span id="CollectionTenant">CollectionTenant</span> = &#34;tenant_%s&#34;
+    <span id="CollectionUser">CollectionUser</span>   = &#34;user_%s&#34;
+
+    <span id="ConnectorStatusReadyToProcessed">ConnectorStatusReadyToProcessed</span> = &#34;READY_TO_PROCESS&#34;
+    <span id="ConnectorStatusPending">ConnectorStatusPending</span>          = &#34;PENDING&#34;
+    <span id="ConnectorStatusWorking">ConnectorStatusWorking</span>          = &#34;PROCESSING&#34;
+    <span id="ConnectorStatusSuccess">ConnectorStatusSuccess</span>          = &#34;COMPLETED_SUCCESSFULLY&#34;
+    <span id="ConnectorStatusError">ConnectorStatusError</span>            = &#34;COMPLETED_WITH_ERRORS&#34;
+    <span id="ConnectorStatusDisabled">ConnectorStatusDisabled</span>         = &#34;DISABLED&#34;
+    <span id="ConnectorStatusUnableProcess">ConnectorStatusUnableProcess</span>    = &#34;UNABLE_TO_PROCESS&#34;
+)</pre>
+			
+				
+				<pre>const (
+    <span id="SpanAttributeConnectorID">SpanAttributeConnectorID</span>     = &#34;connector-id&#34;
+    <span id="SpanAttributeConnectorSource">SpanAttributeConnectorSource</span> = &#34;connector-source&#34;
+
+    <span id="TracerConnector">TracerConnector</span> = &#34;connector&#34;
+)</pre>
+			
+				
+				<pre>const (
+    <span id="GB">GB</span>             = 1024 * 1024 * 1024
+    <span id="ParamFileLimit">ParamFileLimit</span> = &#34;file_limit&#34;
+    <span id="ParamSessionID">ParamSessionID</span> = &#34;session_id&#34;
+)</pre>
+			
+				
+				<pre>const (
+    <span id="RoleUser">RoleUser</span>       = &#34;user&#34;
+    <span id="RoleAdmin">RoleAdmin</span>      = &#34;admin&#34;
+    <span id="RoleSuperAdmin">RoleSuperAdmin</span> = &#34;super_admin&#34;
+)</pre>
+			
+				
+				<pre>const (
+    <span id="MIMEURL">MIMEURL</span> = &#34;url&#34;
+)</pre>
+			
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var <span id="AllSourceTypes">AllSourceTypes</span> = map[<a href="index.html#SourceType">SourceType</a>]*<a href="index.html#SourceTypeDescription">SourceTypeDescription</a>{
+    <a href="index.html#SourceTypeFile">SourceTypeFile</a>:        &amp;sourceTypeFileDescription,
+    <a href="index.html#SourceTypeWEB">SourceTypeWEB</a>:         &amp;sourceTypeWEBDescription,
+    <a href="index.html#SourceTypeSlack">SourceTypeSlack</a>:       &amp;sourceTypeSlackDescription,
+    <a href="index.html#SourceTypeGoogleDrive">SourceTypeGoogleDrive</a>: &amp;sourceTypeGoogleDriveDescription,
+    <a href="index.html#SourceTypeGMAIL">SourceTypeGMAIL</a>:       &amp;sourceTypeGmailDescription,
+    <a href="index.html#SourceTypeSharepoint">SourceTypeSharepoint</a>:  &amp;sourceTypeSharepointDescription,
+    <a href="index.html#SourceTypeOneDrive">SourceTypeOneDrive</a>:    &amp;sourceTypeOneDriveDescription,
+    <a href="index.html#SourceTypeMsTeams">SourceTypeMsTeams</a>:     &amp;sourceTypeMsTeamsDescription,
+    <a href="index.html#SourceTypeYoutube">SourceTypeYoutube</a>:     &amp;sourceTypeYouTubeDescription,
+}</pre>
+			
+				
+				<pre>var <span id="ConnectorAuthProvider">ConnectorAuthProvider</span> = map[<a href="index.html#SourceType">SourceType</a>]<a href="index.html#OAuthProvider">OAuthProvider</a>{
+    <a href="index.html#SourceTypeOneDrive">SourceTypeOneDrive</a>: <a href="index.html#ProviderMicrosoft">ProviderMicrosoft</a>,
+    <a href="index.html#SourceTypeMsTeams">SourceTypeMsTeams</a>:  <a href="index.html#ProviderMicrosoft">ProviderMicrosoft</a>,
+}</pre>
+			
+				
+				<pre>var <span id="SourceTypesList">SourceTypesList</span> = []*<a href="index.html#SourceTypeDescription">SourceTypeDescription</a>{
+    &amp;sourceTypeFileDescription,
+    &amp;sourceTypeWEBDescription,
+    &amp;sourceTypeSlackDescription,
+    &amp;sourceTypeGoogleDriveDescription,
+    &amp;sourceTypeGmailDescription,
+    &amp;sourceTypeSharepointDescription,
+    &amp;sourceTypeOneDriveDescription,
+    &amp;sourceTypeMsTeamsDescription,
+    &amp;sourceTypeYouTubeDescription,
+}</pre>
+			
+				<p>
+SupportedExtensions is a map that associates file extensions with their corresponding MIME types.
+It is used to determine the MIME type based on the file extension.
+</p>
+
+				<pre>var <span id="SupportedExtensions">SupportedExtensions</span> = map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#string">string</a>{
+    &#34;PDF&#34;:  &#34;application/pdf&#34;,
+    &#34;XLSX&#34;: &#34;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&#34;,
+    &#34;XLS&#34;:  &#34;application/vnd.ms-excel&#34;,
+    &#34;DOCX&#34;: &#34;application/vnd.openxmlformats-officedocument.wordprocessingml.document&#34;,
+    &#34;DOC&#34;:  &#34;application/msword&#34;,
+    &#34;PPT&#34;:  &#34;application/vnd.ms-powerpoint&#34;,
+    &#34;PPTX&#34;: &#34;application/vnd.openxmlformats-officedocument.presentationml.presentation&#34;,
+    &#34;MD&#34;:   &#34;text/markdown&#34;,
+    &#34;HWPX&#34;: &#34;application/hwp+zip&#34;,
+    &#34;MOBI&#34;: &#34;application/x-mobipocket-ebook&#34;,
+    &#34;FB2&#34;:  &#34;application/fb2&#34;,
+    &#34;MP3&#34;:  &#34;audio/mpeg&#34;,
+    &#34;MPEG&#34;: &#34;video/mpeg&#34;,
+    &#34;MP4&#34;:  &#34;video/mp4&#34;,
+    &#34;MPGA&#34;: &#34;video/mpga&#34;,
+    &#34;WAV&#34;:  &#34;audio/wav&#34;,
+    &#34;WEBM&#34;: &#34;video/webm&#34;,
+    &#34;MOV&#34;:  &#34;video/mov&#34;,
+    &#34;M4A&#34;:  &#34;video/m4a&#34;,
+    &#34;TXT&#34;:  &#34;text/plain&#34;,
+    &#34;XPS&#34;:  &#34;application/vnd.ms-xpsdocument&#34;,
+    &#34;EPUB&#34;: &#34;application/epub+zip&#34;,
+}</pre>
+			
+				<p>
+SupportedMimeTypes is a map that associates MIME types with proto.FileType values.
+It is used to determine the file type based on the MIME type.
+</p>
+
+				<pre>var <span id="SupportedMimeTypes">SupportedMimeTypes</span> = map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType">FileType</a>{
+    <a href="index.html#MIMEURL">MIMEURL</a>: <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_URL">FileType_URL</a>,
+    &#34;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&#34;: <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_XLSX">FileType_XLSX</a>,
+    &#34;application/vnd.ms-excel&#34;: <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_XLS">FileType_XLS</a>,
+    &#34;application/vnd.openxmlformats-officedocument.wordprocessingml.document&#34;: <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_DOCX">FileType_DOCX</a>,
+    &#34;application/msword&#34;: <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_DOC">FileType_DOC</a>,
+    &#34;application/pdf&#34;:    <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_PDF">FileType_PDF</a>,
+    &#34;text/plain&#34;:         <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_TXT">FileType_TXT</a>,
+    &#34;application/vnd.openxmlformats-officedocument.presentationml.presentation&#34;: <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_PPTX">FileType_PPTX</a>,
+    &#34;application/vnd.ms-powerpoint&#34;:                                             <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_PPT">FileType_PPT</a>,
+    &#34;application/vnd.ms-xpsdocument&#34;:                                            <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_XPS">FileType_XPS</a>,
+    &#34;application/oxps&#34;:                                                          <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_XPS">FileType_XPS</a>,
+    &#34;application/epub+zip&#34;:                                                      <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_EPUB">FileType_EPUB</a>,
+    &#34;application/hwp+zip&#34;:                                                       <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_HWPX">FileType_HWPX</a>,
+    &#34;text/markdown&#34;:                                                             <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_MD">FileType_MD</a>,
+    &#34;application/x-mobipocket-ebook&#34;:                                            <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_MOBI">FileType_MOBI</a>,
+    &#34;application/fb2&#34;:                                                           <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_FB2">FileType_FB2</a>,
+    &#34;audio/mpeg&#34;:                                                                <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_MP3">FileType_MP3</a>,
+    &#34;video/mpeg&#34;:                                                                <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_MPEG">FileType_MPEG</a>,
+    &#34;video/mp4&#34;:                                                                 <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_MP4">FileType_MP4</a>,
+    &#34;video/mpga&#34;:                                                                <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_MPGA">FileType_MPGA</a>,
+    &#34;audio/wav&#34;:                                                                 <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_WAV">FileType_WAV</a>,
+    &#34;video/webm&#34;:                                                                <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_WEBM">FileType_WEBM</a>,
+    &#34;video/mov&#34;:                                                                 <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_MOV">FileType_MOV</a>,
+    &#34;video/m4a&#34;:                                                                 <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_M4A">FileType_M4A</a>,
+}</pre>
+			
+				
+				<pre>var <span id="WhisperFileTypes">WhisperFileTypes</span> = map[<a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType">FileType</a>]<a href="http://localhost:6060/pkg/builtin/#bool">bool</a>{
+    <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_MP3">FileType_MP3</a>:  <a href="http://localhost:6060/pkg/builtin/#true">true</a>,
+    <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_MP4">FileType_MP4</a>:  <a href="http://localhost:6060/pkg/builtin/#true">true</a>,
+    <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_MPEG">FileType_MPEG</a>: <a href="http://localhost:6060/pkg/builtin/#true">true</a>,
+    <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_MPGA">FileType_MPGA</a>: <a href="http://localhost:6060/pkg/builtin/#true">true</a>,
+    <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_M4A">FileType_M4A</a>:  <a href="http://localhost:6060/pkg/builtin/#true">true</a>,
+    <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_WAV">FileType_WAV</a>:  <a href="http://localhost:6060/pkg/builtin/#true">true</a>,
+    <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_WEBM">FileType_WEBM</a>: <a href="http://localhost:6060/pkg/builtin/#true">true</a>,
+    <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType_MOV">FileType_MOV</a>:  <a href="http://localhost:6060/pkg/builtin/#true">true</a>,
+}</pre>
+			
+		
+		
+			
+			
+			<h2 id="BucketName">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/connector.go?s=3766:3808#L71">BucketName</a>
+				<a class="permalink" href="index.html#BucketName">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BucketName(tenantID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="CollectionName">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/connector.go?s=3494:3562#L64">CollectionName</a>
+				<a class="permalink" href="index.html#CollectionName">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CollectionName(userID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, tenantID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#NullUUID">NullUUID</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+			<p>
+CollectionName returns the name of the collection based on the provided userID and tenantID.
+If the tenantID is valid, it formats the collection name as &#34;tenant_{tenantID}&#34; without &#34;-&#34; characters.
+Otherwise, it formats the collection name as &#34;user_{userID}&#34; without &#34;-&#34; characters.
+This function uses the constants CollectionTenant and CollectionUser for formatting.
+Example usage:
+</p>
+<pre>func (c *Connector) CollectionName() string {
+  return CollectionName(c.UserID, c.TenantID)
+}
+</pre>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="ChatMessage">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/chat.go?s=1083:2463#L24">ChatMessage</a>
+				<a class="permalink" href="index.html#ChatMessage">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+ChatMessage is a type that represents
+the model of the chat_sessions table.
+</p>
+
+			<pre>type ChatMessage struct {
+<span id="ChatMessage.ID"></span>    ID                 <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a>            `json:&#34;id,omitempty&#34;`
+<span id="ChatMessage.ChatSessionID"></span>    ChatSessionID      <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a>            `json:&#34;chat_session_id,omitempty&#34;`
+<span id="ChatMessage.Message"></span>    Message            <a href="http://localhost:6060/pkg/builtin/#string">string</a>                     `json:&#34;message,omitempty&#34;  pg:&#34;,use_zero&#34;`
+<span id="ChatMessage.MessageType"></span>    MessageType        <a href="http://localhost:6060/pkg/builtin/#string">string</a>                     `json:&#34;message_type,omitempty&#34;`
+<span id="ChatMessage.TimeSent"></span>    TimeSent           <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>                  `json:&#34;time_sent,omitempty&#34;`
+<span id="ChatMessage.TokenCount"></span>    TokenCount         <a href="http://localhost:6060/pkg/builtin/#int">int</a>                        `json:&#34;token_count,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="ChatMessage.ParentMessageID"></span>    ParentMessageID    <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a>            `json:&#34;parent_message,omitempty&#34; pg:&#34;parent_message,use_zero&#34;`
+<span id="ChatMessage.LatestChildMessage"></span>    LatestChildMessage <a href="http://localhost:6060/pkg/builtin/#int">int</a>                        `json:&#34;latest_child_message,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="ChatMessage.RephrasedQuery"></span>    RephrasedQuery     <a href="http://localhost:6060/pkg/builtin/#string">string</a>                     `json:&#34;rephrased_query,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="ChatMessage.Citations"></span>    Citations          []*<a href="index.html#DocumentResponse">DocumentResponse</a>        `json:&#34;citations,omitempty&#34; pg:&#34;-&#34;`
+<span id="ChatMessage.Error"></span>    Error              <a href="http://localhost:6060/pkg/builtin/#string">string</a>                     `json:&#34;error,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="ChatMessage.Feedback"></span>    Feedback           *<a href="index.html#ChatMessageFeedback">ChatMessageFeedback</a>       `json:&#34;feedback,omitempty&#34; pg:&#34;rel:has-one,fk:id,join_fk:chat_message_id&#34;`
+<span id="ChatMessage.ParentMessage"></span>    ParentMessage      *<a href="index.html#ChatMessage">ChatMessage</a>               `json:&#34;-&#34; pg:&#34;-&#34;`
+<span id="ChatMessage.DocumentPairs"></span>    DocumentPairs      []*<a href="index.html#ChatMessageDocumentPair">ChatMessageDocumentPair</a> `json:&#34;-&#34; pg:&#34;rel:has-many,fk:chat_message_id,join_fk:chat_message_id&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="ChatMessage.AfterSelect">func (*ChatMessage) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/chat.go?s=3704:3764#L66">AfterSelect</a>
+					<a class="permalink" href="index.html#ChatMessage.AfterSelect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ChatMessage">ChatMessage</a>) AfterSelect(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+AfterSelect is a method that is called after selecting a chat message from the database.
+It populates the Citations field of the chat message with the corresponding DocumentResponses.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ChatMessageDocumentPair">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/chat.go?s=3109:3462#L53">ChatMessageDocumentPair</a>
+				<a class="permalink" href="index.html#ChatMessageDocumentPair">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+ChatMessageDocumentPair struct represent data from table chat_message_document_pairs
+what documents were found for each message.
+</p>
+
+			<pre>type ChatMessageDocumentPair struct {
+<span id="ChatMessageDocumentPair.ID"></span>    ID            <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;id&#34;`
+<span id="ChatMessageDocumentPair.ChatMessageID"></span>    ChatMessageID <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;chat_message_id&#34; pg:&#34;,use_zero&#34;`
+<span id="ChatMessageDocumentPair.DocumentID"></span>    DocumentID    <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;document_id&#34; pg:&#34;,use_zero&#34;`
+<span id="ChatMessageDocumentPair.Document"></span>    Document      *<a href="index.html#Document">Document</a>       `json:&#34;document&#34; pg:&#34;rel:has-one&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ChatMessageFeedback">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/chat.go?s=2557:2970#L43">ChatMessageFeedback</a>
+				<a class="permalink" href="index.html#ChatMessageFeedback">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+ChatMessageFeedback is a type that represents
+the model of the chat_sessions table.
+</p>
+
+			<pre>type ChatMessageFeedback struct {
+<span id="ChatMessageFeedback.ID"></span>    ID            <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;id,omitempty&#34;`
+<span id="ChatMessageFeedback.ChatMessageID"></span>    ChatMessageID <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;chat_message_id,omitempty&#34;`
+<span id="ChatMessageFeedback.UserID"></span>    UserID        <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>       `json:&#34;user_id,omitempty&#34;`
+<span id="ChatMessageFeedback.UpVotes"></span>    UpVotes       <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>            `json:&#34;up_votes&#34; pg:&#34;,use_zero&#34;`
+<span id="ChatMessageFeedback.Feedback"></span>    Feedback      <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;feedback,omitempty&#34; pg:&#34;,use_zero&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ChatSession">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/chat.go?s=335:997#L10">ChatSession</a>
+				<a class="permalink" href="index.html#ChatSession">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+ChatSession is a type that represents
+the model of the chat_sessions table.
+</p>
+
+			<pre>type ChatSession struct {
+<span id="ChatSession.ID"></span>    ID           <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;id,omitempty&#34;`
+<span id="ChatSession.UserID"></span>    UserID       <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>       `json:&#34;user_id,omitempty&#34;`
+<span id="ChatSession.Description"></span>    Description  <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;description,omitempty&#34;`
+<span id="ChatSession.CreationDate"></span>    CreationDate <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>       `json:&#34;creation_date,omitempty&#34;`
+<span id="ChatSession.DeletedDate"></span>    DeletedDate  pg.<a href="index.html#NullTime">NullTime</a>     `json:&#34;deleted_date,omitempty&#34;`
+<span id="ChatSession.PersonaID"></span>    PersonaID    <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;persona_id,omitempty&#34;`
+<span id="ChatSession.OneShot"></span>    OneShot      <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>            `json:&#34;one_shot,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="ChatSession.Messages"></span>    Messages     []*<a href="index.html#ChatMessage">ChatMessage</a>  `json:&#34;messages,omitempty&#34; pg:&#34;rel:has-many&#34;`
+<span id="ChatSession.Persona"></span>    Persona      *<a href="index.html#Persona">Persona</a>        `json:&#34;persona,omitempty&#34; pg:&#34;rel:has-one&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Connector">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/connector.go?s=640:2107#L16">Connector</a>
+				<a class="permalink" href="index.html#Connector">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Connector is a struct that represents a table connector.
+</p>
+
+			<pre>type Connector struct {
+<span id="Connector.ID"></span>    ID                      <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a>      `json:&#34;id,omitempty&#34;`
+<span id="Connector.Name"></span>    Name                    <a href="http://localhost:6060/pkg/builtin/#string">string</a>               `json:&#34;name,omitempty&#34;`
+<span id="Connector.Type"></span>    Type                    <a href="index.html#SourceType">SourceType</a>           `json:&#34;source,omitempty&#34; pg:&#34;type&#34;`
+<span id="Connector.ConnectorSpecificConfig"></span>    ConnectorSpecificConfig <a href="index.html#JSONMap">JSONMap</a>              `json:&#34;connector_specific_config,omitempty&#34;`
+<span id="Connector.RefreshFreq"></span>    RefreshFreq             <a href="http://localhost:6060/pkg/builtin/#int">int</a>                  `json:&#34;refresh_freq,omitempty&#34;`
+<span id="Connector.UserID"></span>    UserID                  <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>            `json:&#34;user_id,omitempty&#34;`
+<span id="Connector.TenantID"></span>    TenantID                <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#NullUUID">NullUUID</a>        `json:&#34;tenant_id,omitempty&#34;`
+<span id="Connector.LastSuccessfulAnalyzed"></span>    LastSuccessfulAnalyzed  pg.<a href="index.html#NullTime">NullTime</a>          `json:&#34;last_successful_analysis,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Connector.Status"></span>    Status                  <a href="http://localhost:6060/pkg/builtin/#string">string</a>               `json:&#34;status,omitempty&#34;`
+<span id="Connector.TotalDocsAnalyzed"></span>    TotalDocsAnalyzed       <a href="http://localhost:6060/pkg/builtin/#int">int</a>                  `json:&#34;total_docs_indexed&#34; pg:&#34;,use_zero&#34;`
+<span id="Connector.CreationDate"></span>    CreationDate            <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>            `json:&#34;creation_date,omitempty&#34;`
+<span id="Connector.LastUpdate"></span>    LastUpdate              pg.<a href="index.html#NullTime">NullTime</a>          `json:&#34;last_update,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Connector.DeletedDate"></span>    DeletedDate             pg.<a href="index.html#NullTime">NullTime</a>          `json:&#34;deleted_date,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Connector.State"></span>    State                   <a href="index.html#JSONMap">JSONMap</a>              `json:&#34;-&#34;`
+<span id="Connector.Docs"></span>    Docs                    []*<a href="index.html#Document">Document</a>          `json:&#34;docs,omitempty&#34; pg:&#34;rel:has-many&#34;`
+<span id="Connector.DocsMap"></span>    DocsMap                 map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]*<a href="index.html#Document">Document</a> `json:&#34;docs_map,omitempty&#34; pg:&#34;-&#34;`
+<span id="Connector.User"></span>    User                    *<a href="index.html#User">User</a>                `json:&#34;-&#34; pg:&#34;rel:has-one,fk:user_id&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Connector.BuildFileName">func (*Connector) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/connector.go?s=2821:2878#L48">BuildFileName</a>
+					<a class="permalink" href="index.html#Connector.BuildFileName">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Connector">Connector</a>) BuildFileName(filename <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+BuildFileName returns a formatted filename based on the Connector&#39;s UserID and TenantID.
+If the TenantID is valid, the filename will be formatted as &#34;user-{UserID}/{filename}&#34;,
+otherwise it will be the same as the input filename.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Connector.CollectionName">func (*Connector) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/connector.go?s=2488:2531#L41">CollectionName</a>
+					<a class="permalink" href="index.html#Connector.CollectionName">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Connector">Connector</a>) CollectionName() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+CollectionName returns the name of the collection based on the provided userID and tenantID.
+If the tenantID is valid, it formats the collection name as &#34;tenant_{tenantID}&#34; without &#34;-&#34; characters.
+Otherwise, it formats the collection name as &#34;user_{userID}&#34; without &#34;-&#34; characters.
+This function uses the constants CollectionTenant and CollectionUser for formatting.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Defaults">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/user.go?s=142:198#L1">Defaults</a>
+				<a class="permalink" href="index.html#Defaults">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Defaults struct {
+<span id="Defaults.EmbeddingModel"></span>    EmbeddingModel *<a href="index.html#EmbeddingModel">EmbeddingModel</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Document">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/document.go?s=211:1164#L1">Document</a>
+				<a class="permalink" href="index.html#Document">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Document is a struct that represents a document in a database table named &#34;documents&#34;.
+</p>
+
+			<pre>type Document struct {
+<span id="Document.ID"></span>    ID              <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a>     `json:&#34;id,omitempty&#34;`
+<span id="Document.ParentID"></span>    ParentID        <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#NullDecimal">NullDecimal</a> `json:&#34;parent_id,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Document.SourceID"></span>    SourceID        <a href="http://localhost:6060/pkg/builtin/#string">string</a>              `json:&#34;source_id,omitempty&#34;`
+<span id="Document.ConnectorID"></span>    ConnectorID     <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a>     `json:&#34;connector_id,omitempty&#34;`
+<span id="Document.URL"></span>    URL             <a href="http://localhost:6060/pkg/builtin/#string">string</a>              `json:&#34;url,omitempty&#34; pg:&#34;url&#34;`
+<span id="Document.Signature"></span>    Signature       <a href="http://localhost:6060/pkg/builtin/#string">string</a>              `json:&#34;signature,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Document.ChunkingSession"></span>    ChunkingSession <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#NullUUID">NullUUID</a>       `json:&#34;chunking_session,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Document.Analyzed"></span>    Analyzed        <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>                `json:&#34;analyzed&#34; pg:&#34;,use_zero&#34;`
+<span id="Document.CreationDate"></span>    CreationDate    <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>           `json:&#34;creation_date,omitempty&#34;`
+<span id="Document.LastUpdate"></span>    LastUpdate      pg.<a href="index.html#NullTime">NullTime</a>         `json:&#34;last_update,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Document.OriginalURL"></span>    OriginalURL     <a href="http://localhost:6060/pkg/builtin/#string">string</a>              `json:&#34;original_url,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Document.IsExists"></span>    IsExists        <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>                `json:&#34;-&#34; pg:&#34;-&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="DocumentResponse">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/document.go?s=1258:1630#L18">DocumentResponse</a>
+				<a class="permalink" href="index.html#DocumentResponse">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+DocumentResponse is a struct that represents a response containing document information.
+</p>
+
+			<pre>type DocumentResponse struct {
+<span id="DocumentResponse.ID"></span>    ID          <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;id,omitempty&#34;`
+<span id="DocumentResponse.MessageID"></span>    MessageID   <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;message_id,omitempty&#34;`
+<span id="DocumentResponse.Link"></span>    Link        <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;link,omitempty&#34;`
+<span id="DocumentResponse.DocumentID"></span>    DocumentID  <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;document_id,omitempty&#34;`
+<span id="DocumentResponse.Content"></span>    Content     <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;content,omitempty&#34;`
+<span id="DocumentResponse.UpdatedDate"></span>    UpdatedDate <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>       `json:&#34;updated_date,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="EmbeddingModel">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/embedding_model.go?s=187:908#L1">EmbeddingModel</a>
+				<a class="permalink" href="index.html#EmbeddingModel">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+EmbeddingModel is a struct that represents an embedding model.
+</p>
+
+			<pre>type EmbeddingModel struct {
+<span id="EmbeddingModel.ID"></span>    ID           <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;id,omitempty&#34;`
+<span id="EmbeddingModel.TenantID"></span>    TenantID     <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>       `json:&#34;tenant_id,omitempty&#34;`
+<span id="EmbeddingModel.ModelID"></span>    ModelID      <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;model_id,omitempty&#34;`
+<span id="EmbeddingModel.ModelName"></span>    ModelName    <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;model_name,omitempty&#34;`
+<span id="EmbeddingModel.ModelDim"></span>    ModelDim     <a href="http://localhost:6060/pkg/builtin/#int">int</a>             `json:&#34;model_dim,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="EmbeddingModel.URL"></span>    URL          <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;url,omitempty&#34;`
+<span id="EmbeddingModel.IsActive"></span>    IsActive     <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>            `json:&#34;is_active,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="EmbeddingModel.CreationDate"></span>    CreationDate <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>       `json:&#34;creation_date,omitempty&#34;`
+<span id="EmbeddingModel.LastUpdate"></span>    LastUpdate   pg.<a href="index.html#NullTime">NullTime</a>     `json:&#34;last_update,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="EmbeddingModel.DeletedDate"></span>    DeletedDate  pg.<a href="index.html#NullTime">NullTime</a>     `json:&#34;deleted_date,omitempty&#34; pg:&#34;,use_zero&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="JSON">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/types.go?s=1591:1616#L77">JSON</a>
+				<a class="permalink" href="index.html#JSON">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type JSON <a href="http://localhost:6060/pkg/encoding/json/">json</a>.<a href="http://localhost:6060/pkg/encoding/json/#RawMessage">RawMessage</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="JSON.Scan">func (*JSON) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/types.go?s=1682:1726#L80">Scan</a>
+					<a class="permalink" href="index.html#JSON.Scan">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (j *<a href="index.html#JSON">JSON</a>) Scan(value interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Scan scan value into Jsonb, implements sql.Scanner interface
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="JSON.Value">func (JSON) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/types.go?s=1935:1978#L90">Value</a>
+					<a class="permalink" href="index.html#JSON.Value">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (j <a href="index.html#JSON">JSON</a>) Value() (<a href="http://localhost:6060/pkg/database/sql/driver/">driver</a>.<a href="http://localhost:6060/pkg/database/sql/driver/#Value">Value</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Value return json value, implement driver.Valuer interface
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="JSONMap">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/types.go?s=215:250#L7">JSONMap</a>
+				<a class="permalink" href="index.html#JSONMap">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type JSONMap map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="JSONMap.FromStruct">func (*JSONMap) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/types.go?s=868:919#L43">FromStruct</a>
+					<a class="permalink" href="index.html#JSONMap.FromStruct">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (j *<a href="index.html#JSONMap">JSONMap</a>) FromStruct(src interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JSONMap.Scan">func (*JSONMap) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/types.go?s=395:440#L17">Scan</a>
+					<a class="permalink" href="index.html#JSONMap.Scan">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (j *<a href="index.html#JSONMap">JSONMap</a>) Scan(src interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JSONMap.ToStruct">func (*JSONMap) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/types.go?s=716:766#L35">ToStruct</a>
+					<a class="permalink" href="index.html#JSONMap.ToStruct">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (j *<a href="index.html#JSONMap">JSONMap</a>) ToStruct(dest interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JSONMap.Value">func (JSONMap) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/types.go?s=252:298#L9">Value</a>
+					<a class="permalink" href="index.html#JSONMap.Value">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (j <a href="index.html#JSONMap">JSONMap</a>) Value() (<a href="http://localhost:6060/pkg/database/sql/driver/">driver</a>.<a href="http://localhost:6060/pkg/database/sql/driver/#Value">Value</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="LLM">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/llm.go?s=166:836#L1">LLM</a>
+				<a class="permalink" href="index.html#LLM">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+LLM represents a model of the llms table.
+</p>
+
+			<pre>type LLM struct {
+<span id="LLM.ID"></span>    ID           <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;id,omitempty&#34;`
+<span id="LLM.Name"></span>    Name         <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;name,omitempty&#34;`
+<span id="LLM.ModelID"></span>    ModelID      <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;model_id,omitempty&#34;`
+<span id="LLM.TenantID"></span>    TenantID     <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>       `json:&#34;tenant_id,omitempty&#34;`
+<span id="LLM.Url"></span>    Url          <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;url,omitempty&#34;  pg:&#34;,use_zero&#34;`
+<span id="LLM.ApiKey"></span>    ApiKey       <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;api_key&#34;`
+<span id="LLM.Endpoint"></span>    Endpoint     <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;endpoint,omitempty&#34;`
+<span id="LLM.CreationDate"></span>    CreationDate <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>       `json:&#34;creation_date,omitempty&#34;`
+<span id="LLM.LastUpdate"></span>    LastUpdate   pg.<a href="index.html#NullTime">NullTime</a>     `json:&#34;last_update,omitempty&#34; pg:&#34;,use_zero&#34;`
+
+<span id="LLM.DeletedDate"></span>    DeletedDate pg.<a href="index.html#NullTime">NullTime</a> `json:&#34;deleted_date,omitempty&#34; pg:&#34;,use_zero&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="LLM.MaskApiKey">func (*LLM) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/llm.go?s=942:975#L17">MaskApiKey</a>
+					<a class="permalink" href="index.html#LLM.MaskApiKey">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (l *<a href="index.html#LLM">LLM</a>) MaskApiKey() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+MaskApiKey masks the API key by replacing all but the first and last four characters with asterisks.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="OAuthProvider">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/oauth.go?s=311:336#L4">OAuthProvider</a>
+				<a class="permalink" href="index.html#OAuthProvider">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+OAuthProvider represents enum for oauth providers
+</p>
+
+			<pre>type OAuthProvider <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="ProviderCustom">ProviderCustom</span>    <a href="index.html#OAuthProvider">OAuthProvider</a> = &#34;custom&#34;
+    <span id="ProviderMicrosoft">ProviderMicrosoft</span> <a href="index.html#OAuthProvider">OAuthProvider</a> = &#34;microsoft&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Persona">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/persona.go?s=191:1398#L2">Persona</a>
+				<a class="permalink" href="index.html#Persona">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Persona represents a model of the personas table.
+</p>
+
+			<pre>type Persona struct {
+<span id="Persona.ID"></span>    ID              <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;id,omitempty&#34;`
+<span id="Persona.Name"></span>    Name            <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;name,omitempty&#34;`
+<span id="Persona.LlmID"></span>    LlmID           <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;llm_id,omitempty&#34;`
+<span id="Persona.DefaultPersona"></span>    DefaultPersona  <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>            `json:&#34;default_persona,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Persona.Description"></span>    Description     <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;description,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Persona.TenantID"></span>    TenantID        <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>       `json:&#34;tenant_id,omitempty&#34;`
+<span id="Persona.IsVisible"></span>    IsVisible       <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>            `json:&#34;is_visible,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Persona.DisplayPriority"></span>    DisplayPriority <a href="http://localhost:6060/pkg/builtin/#int">int</a>             `json:&#34;display_priority,omitempty&#34;`
+<span id="Persona.StarterMessages"></span>    StarterMessages <a href="http://localhost:6060/pkg/encoding/json/">json</a>.<a href="http://localhost:6060/pkg/encoding/json/#RawMessage">RawMessage</a> `json:&#34;starter_messages,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Persona.LLM"></span>    LLM             *<a href="index.html#LLM">LLM</a>            `json:&#34;llm,omitempty&#34; pg:&#34;rel:has-one&#34;`
+<span id="Persona.Prompt"></span>    Prompt          *<a href="index.html#Prompt">Prompt</a>         `json:&#34;prompt,omitempty&#34; pg:&#34;rel:has-one,fk:id,join_fk:persona_id&#34;`
+<span id="Persona.CreationDate"></span>    CreationDate    <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>       `json:&#34;creation_date,omitempty&#34;`
+<span id="Persona.LastUpdate"></span>    LastUpdate      pg.<a href="index.html#NullTime">NullTime</a>     `json:&#34;last_update,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Persona.DeletedDate"></span>    DeletedDate     pg.<a href="index.html#NullTime">NullTime</a>     `json:&#34;deleted_date,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Persona.ChatSessions"></span>    ChatSessions    []*<a href="index.html#ChatSession">ChatSession</a>  `json:&#34;chat_sessions,omitempty&#34; pg:&#34;rel:has-many,fk:id,join_fk:persona_id&#34;&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Prompt">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/prompt.go?s=172:908#L1">Prompt</a>
+				<a class="permalink" href="index.html#Prompt">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Prompt represents a model of the prompts table.
+</p>
+
+			<pre>type Prompt struct {
+<span id="Prompt.ID"></span>    ID           <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;id,omitempty&#34;`
+<span id="Prompt.PersonaID"></span>    PersonaID    <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#Decimal">Decimal</a> `json:&#34;persona_id,omitempty&#34;`
+<span id="Prompt.UserID"></span>    UserID       <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>       `json:&#34;user_id,omitempty&#34;`
+<span id="Prompt.Name"></span>    Name         <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;name,omitempty&#34;`
+<span id="Prompt.Description"></span>    Description  <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;description,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Prompt.SystemPrompt"></span>    SystemPrompt <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;system_prompt,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Prompt.TaskPrompt"></span>    TaskPrompt   <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;task_prompt,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Prompt.CreationDate"></span>    CreationDate <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>       `json:&#34;creation_date,omitempty&#34;`
+<span id="Prompt.LastUpdate"></span>    LastUpdate   pg.<a href="index.html#NullTime">NullTime</a>     `json:&#34;last_update,omitempty&#34; pg:&#34;,use_zero&#34;`
+<span id="Prompt.DeletedDate"></span>    DeletedDate  pg.<a href="index.html#NullTime">NullTime</a>     `json:&#34;deleted_date,omitempty&#34; pg:&#34;,use_zero&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SourceType">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/source_type.go?s=1418:1446#L25">SourceType</a>
+				<a class="permalink" href="index.html#SourceType">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type SourceType <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="SourceTypeIngestionApi">SourceTypeIngestionApi</span>   <a href="index.html#SourceType">SourceType</a> = &#34;ingestion_api&#34;
+    <span id="SourceTypeSlack">SourceTypeSlack</span>          <a href="index.html#SourceType">SourceType</a> = &#34;slack&#34;
+    <span id="SourceTypeWEB">SourceTypeWEB</span>            <a href="index.html#SourceType">SourceType</a> = &#34;web&#34;
+    <span id="SourceTypeGoogleDrive">SourceTypeGoogleDrive</span>    <a href="index.html#SourceType">SourceType</a> = &#34;google_drive&#34;
+    <span id="SourceTypeGMAIL">SourceTypeGMAIL</span>          <a href="index.html#SourceType">SourceType</a> = &#34;gmail&#34;
+    <span id="SourceTypeRequesttracker">SourceTypeRequesttracker</span> <a href="index.html#SourceType">SourceType</a> = &#34;requesttracker&#34;
+    <span id="SourceTypeGithub">SourceTypeGithub</span>         <a href="index.html#SourceType">SourceType</a> = &#34;github&#34;
+    <span id="SourceTypeGitlab">SourceTypeGitlab</span>         <a href="index.html#SourceType">SourceType</a> = &#34;gitlab&#34;
+    <span id="SourceTypeGuru">SourceTypeGuru</span>           <a href="index.html#SourceType">SourceType</a> = &#34;guru&#34;
+    <span id="SourceTypeBookstack">SourceTypeBookstack</span>      <a href="index.html#SourceType">SourceType</a> = &#34;bookstack&#34;
+    <span id="SourceTypeConfluence">SourceTypeConfluence</span>     <a href="index.html#SourceType">SourceType</a> = &#34;confluence&#34;
+    <span id="SourceTypeSlab">SourceTypeSlab</span>           <a href="index.html#SourceType">SourceType</a> = &#34;slab&#34;
+    <span id="SourceTypeJira">SourceTypeJira</span>           <a href="index.html#SourceType">SourceType</a> = &#34;jira&#34;
+    <span id="SourceTypeProductboard">SourceTypeProductboard</span>   <a href="index.html#SourceType">SourceType</a> = &#34;productboard&#34;
+    <span id="SourceTypeFile">SourceTypeFile</span>           <a href="index.html#SourceType">SourceType</a> = &#34;file&#34;
+    <span id="SourceTypeNotion">SourceTypeNotion</span>         <a href="index.html#SourceType">SourceType</a> = &#34;notion&#34;
+    <span id="SourceTypeZulip">SourceTypeZulip</span>          <a href="index.html#SourceType">SourceType</a> = &#34;zulip&#34;
+    <span id="SourceTypeLinear">SourceTypeLinear</span>         <a href="index.html#SourceType">SourceType</a> = &#34;linear&#34;
+    <span id="SourceTypeHubspot">SourceTypeHubspot</span>        <a href="index.html#SourceType">SourceType</a> = &#34;hubspot&#34;
+    <span id="SourceTypeDocument360">SourceTypeDocument360</span>    <a href="index.html#SourceType">SourceType</a> = &#34;document360&#34;
+    <span id="SourceTypeGong">SourceTypeGong</span>           <a href="index.html#SourceType">SourceType</a> = &#34;gong&#34;
+    <span id="SourceTypeGoogleSites">SourceTypeGoogleSites</span>    <a href="index.html#SourceType">SourceType</a> = &#34;google_sites&#34;
+    <span id="SourceTypeZendesk">SourceTypeZendesk</span>        <a href="index.html#SourceType">SourceType</a> = &#34;zendesk&#34;
+    <span id="SourceTypeLoopio">SourceTypeLoopio</span>         <a href="index.html#SourceType">SourceType</a> = &#34;loopio&#34;
+    <span id="SourceTypeSharepoint">SourceTypeSharepoint</span>     <a href="index.html#SourceType">SourceType</a> = &#34;sharepoint&#34;
+    <span id="SourceTypeOneDrive">SourceTypeOneDrive</span>       <a href="index.html#SourceType">SourceType</a> = &#34;one-drive&#34;
+    <span id="SourceTypeMsTeams">SourceTypeMsTeams</span>        <a href="index.html#SourceType">SourceType</a> = &#34;msteams&#34;
+    <span id="SourceTypeYoutube">SourceTypeYoutube</span>        <a href="index.html#SourceType">SourceType</a> = &#34;youtube&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SourceTypeDescription">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/source_type.go?s=1448:1611#L26">SourceTypeDescription</a>
+				<a class="permalink" href="index.html#SourceTypeDescription">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type SourceTypeDescription struct {
+<span id="SourceTypeDescription.ID"></span>    ID            <a href="index.html#SourceType">SourceType</a> `json:&#34;id&#34;`
+<span id="SourceTypeDescription.Name"></span>    Name          <a href="http://localhost:6060/pkg/builtin/#string">string</a>     `json:&#34;name&#34;`
+<span id="SourceTypeDescription.IsImplemented"></span>    IsImplemented <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>       `json:&#34;isImplemented&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="StringSlice">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/types.go?s=1075:1100#L52">StringSlice</a>
+				<a class="permalink" href="index.html#StringSlice">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+StringSlice is a type that represents string slice.
+</p>
+
+			<pre>type StringSlice []<a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="StringSlice.InArray">func (StringSlice) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/types.go?s=1459:1504#L68">InArray</a>
+					<a class="permalink" href="index.html#StringSlice.InArray">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (t <a href="index.html#StringSlice">StringSlice</a>) InArray(val <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="StringSlice.Scan">func (*StringSlice) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/types.go?s=1283:1334#L60">Scan</a>
+					<a class="permalink" href="index.html#StringSlice.Scan">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (t *<a href="index.html#StringSlice">StringSlice</a>) Scan(value interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Scan implements the Scanner interface.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="StringSlice.Value">func (StringSlice) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/types.go?s=1151:1201#L55">Value</a>
+					<a class="permalink" href="index.html#StringSlice.Value">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (t <a href="index.html#StringSlice">StringSlice</a>) Value() (<a href="http://localhost:6060/pkg/database/sql/driver/">driver</a>.<a href="http://localhost:6060/pkg/database/sql/driver/#Value">Value</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Value implements the driver Valuer interface.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Tenant">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/tenant.go?s=93:294#L1">Tenant</a>
+				<a class="permalink" href="index.html#Tenant">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Tenant represents a tenant in the system.
+</p>
+
+			<pre>type Tenant struct {
+<span id="Tenant.ID"></span>    ID            <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a> `json:&#34;id`
+<span id="Tenant.Name"></span>    Name          <a href="http://localhost:6060/pkg/builtin/#string">string</a>    `json:&#34;name&#34;`
+<span id="Tenant.Configuration"></span>    Configuration <a href="index.html#JSONMap">JSONMap</a>   `json:&#34;configuration&#34; pg:&#34;type:jsonb&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="User">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/user.go?s=241:888#L6">User</a>
+				<a class="permalink" href="index.html#User">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+User represents a user in the system.
+</p>
+
+			<pre>type User struct {
+<span id="User.ID"></span>    ID             <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>       `json:&#34;id,omitempty&#34;`
+<span id="User.TenantID"></span>    TenantID       <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>       `json:&#34;tenant_id,omitempty&#34;`
+<span id="User.UserName"></span>    UserName       <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;user_name,omitempty&#34;`
+<span id="User.FirstName"></span>    FirstName      <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;first_name,omitempty&#34;`
+<span id="User.LastName"></span>    LastName       <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;last_name,omitempty&#34;`
+<span id="User.ExternalID"></span>    ExternalID     <a href="http://localhost:6060/pkg/builtin/#string">string</a>          `json:&#34;-&#34;`
+<span id="User.Roles"></span>    Roles          <a href="index.html#StringSlice">StringSlice</a>     `json:&#34;roles,omitempty&#34; pg:&#34;,array&#34;`
+<span id="User.Tenant"></span>    Tenant         *<a href="index.html#Tenant">Tenant</a>         `json:&#34;tenant,omitempty&#34; pg:&#34;rel:has-one&#34;`
+<span id="User.EmbeddingModel"></span>    EmbeddingModel *<a href="index.html#EmbeddingModel">EmbeddingModel</a> `json:&#34;-&#34; pg:&#34;rel:has-one,fk:tenant_id,join_fk:tenant_id&#34;`
+<span id="User.Defaults"></span>    Defaults       *<a href="index.html#Defaults">Defaults</a>       `json:&#34;-&#34; pg:&#34;-&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="User.HasRoles">func (*User) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/model/user.go?s=1241:1285#L28">HasRoles</a>
+					<a class="permalink" href="index.html#User.HasRoles">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (u *<a href="index.html#User">User</a>) HasRoles(role ...<a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+HasRoles checks if the user has any of the specified roles.
+It returns true if the user has at least one of the specified roles,
+otherwise it returns false.
+</p>
+<p>
+Parameters:
+- role: variadic parameter that represents the roles to check.
+</p>
+<p>
+Returns:
+- bool: true if the user has at least one of the specified roles, false otherwise.
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

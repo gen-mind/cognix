@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.cognix;
+option go_package = "backend/core/proto;proto";
+
+message EmbedRequest {
+    repeated string contents = 1;
+    string model = 2;
+}
+
+message EmbedResponseItem {
+    string content = 1;
+    repeated float vector = 2;
+}
+
+message EmbedResponse {
+    repeated EmbedResponseItem embeddings = 1; // List of embedding items
+}
+
+service EmbedService {
+    rpc GetEmbedding (EmbedRequest) returns (EmbedResponse) {}
+}

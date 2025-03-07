@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>bll - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.1";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package bll
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "cognix.ch/api/v2/core/bll"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+			
+				
+				<dd><a href="index.html#AuthBL">type AuthBL</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewAuthBL">func NewAuthBL(userRepo repository.UserRepository, cfg *Config) AuthBL</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ChatBL">type ChatBL</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewChatBL">func NewChatBL(cfg *Config, chatRepo repository.ChatRepository, personaRepo repository.PersonaRepository, docRepo repository.DocumentRepository, embeddingModelRepo repository.EmbeddingModelRepository, aiBuilder *ai.Builder, embedding proto.EmbedServiceClient, milvusClinet storage.MilvusClient) ChatBL</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Config">type Config</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ConnectorBL">type ConnectorBL</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewConnectorBL">func NewConnectorBL(connectorRepo repository.ConnectorRepository) ConnectorBL</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#DocumentBL">type DocumentBL</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewDocumentBL">func NewDocumentBL(documentRepo repository.DocumentRepository, connectorRepo repository.ConnectorRepository, minioClient storage.MinIOClient) DocumentBL</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#EmbeddingModelBL">type EmbeddingModelBL</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewEmbeddingModelBL">func NewEmbeddingModelBL(emRepo repository.EmbeddingModelRepository) EmbeddingModelBL</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#PersonaBL">type PersonaBL</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewPersonaBL">func NewPersonaBL(personaRepo repository.PersonaRepository, chatRepo repository.ChatRepository) PersonaBL</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TenantBL">type TenantBL</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewTenantBL">func NewTenantBL(tenantRepo repository.TenantRepository, userRepo repository.UserRepository) TenantBL</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/auth.go">auth.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/chat.go">chat.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/connector.go">connector.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/document.go">document.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/embedding_model.go">embedding_model.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/module.go">module.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/persona.go">persona.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/tenant.go">tenant.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var <span id="BLLModule">BLLModule</span> = <a href="http://localhost:6060/pkg/go.uber.org/fx/">fx</a>.<a href="http://localhost:6060/pkg/go.uber.org/fx/#Options">Options</a>(
+    <a href="http://localhost:6060/pkg/go.uber.org/fx/">fx</a>.<a href="http://localhost:6060/pkg/go.uber.org/fx/#Provide">Provide</a>(func() (*<a href="index.html#Config">Config</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>) {
+        cfg := <a href="index.html#Config">Config</a>{}
+        err := <a href="../utils/index.html">utils</a>.<a href="../utils/index.html#ReadConfig">ReadConfig</a>(&amp;cfg)
+        return &amp;cfg, err
+    }),
+    <a href="http://localhost:6060/pkg/go.uber.org/fx/">fx</a>.<a href="http://localhost:6060/pkg/go.uber.org/fx/#Provide">Provide</a>(
+        <a href="index.html#NewConnectorBL">NewConnectorBL</a>,
+        <a href="index.html#NewAuthBL">NewAuthBL</a>,
+        <a href="index.html#NewPersonaBL">NewPersonaBL</a>,
+        <a href="index.html#NewChatBL">NewChatBL</a>,
+        <a href="index.html#NewDocumentBL">NewDocumentBL</a>,
+        <a href="index.html#NewEmbeddingModelBL">NewEmbeddingModelBL</a>,
+        <a href="index.html#NewTenantBL">NewTenantBL</a>,
+    ),
+)</pre>
+			
+		
+		
+		
+			
+			
+			<h2 id="AuthBL">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/auth.go?s=286:548#L6">AuthBL</a>
+				<a class="permalink" href="index.html#AuthBL">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+AuthBL represents the business logic for user authentication and sign-up.
+</p>
+
+			<pre>type AuthBL interface {
+    Login(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, userName <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    SignUp(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, identity *<a href="../oauth/index.html">oauth</a>.<a href="../oauth/index.html#IdentityResponse">IdentityResponse</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    QuickLogin(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, identity *<a href="../oauth/index.html">oauth</a>.<a href="../oauth/index.html#IdentityResponse">IdentityResponse</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewAuthBL">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/auth.go?s=934:1006#L27">NewAuthBL</a>
+					<a class="permalink" href="index.html#NewAuthBL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewAuthBL(userRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#UserRepository">UserRepository</a>,
+
+    cfg *<a href="index.html#Config">Config</a>) <a href="index.html#AuthBL">AuthBL</a></pre>
+				<p>
+NewAuthBL creates a new instance of AuthBL.
+</p>
+<p>
+Parameters:
+- userRepo: an implementation of the UserRepository interface.
+- cfg: a pointer to the Config struct.
+</p>
+<p>
+Returns:
+- AuthBL: a new instance of AuthBL.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="ChatBL">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/chat.go?s=439:989#L9">ChatBL</a>
+				<a class="permalink" href="index.html#ChatBL">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+ChatBL is an interface that defines methods for performing chat-related operations.
+</p>
+
+			<pre>type ChatBL interface {
+    GetSessions(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>) ([]*<a href="../model/index.html">model</a>.<a href="../model/index.html#ChatSession">ChatSession</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetSessionByID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#ChatSession">ChatSession</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    CreateSession(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, param *<a href="../parameters/index.html">parameters</a>.<a href="../parameters/index.html#CreateChatSession">CreateChatSession</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#ChatSession">ChatSession</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    SendMessage(ctx *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, param *<a href="../parameters/index.html">parameters</a>.<a href="../parameters/index.html#CreateChatMessageRequest">CreateChatMessageRequest</a>) (*<a href="../responder/index.html">responder</a>.<a href="../responder/index.html#Manager">Manager</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    FeedbackMessage(ctx *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>, vote <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#ChatMessageFeedback">ChatMessageFeedback</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewChatBL">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/chat.go?s=7757:8069#L188">NewChatBL</a>
+					<a class="permalink" href="index.html#NewChatBL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewChatBL(
+    cfg *<a href="index.html#Config">Config</a>,
+    chatRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#ChatRepository">ChatRepository</a>,
+    personaRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#PersonaRepository">PersonaRepository</a>,
+    docRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#DocumentRepository">DocumentRepository</a>,
+    embeddingModelRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#EmbeddingModelRepository">EmbeddingModelRepository</a>,
+    aiBuilder *<a href="../ai/index.html">ai</a>.<a href="../ai/index.html#Builder">Builder</a>,
+    embedding <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#EmbedServiceClient">EmbedServiceClient</a>,
+    milvusClinet <a href="../storage/index.html">storage</a>.<a href="../storage/index.html#MilvusClient">MilvusClient</a>,
+) <a href="index.html#ChatBL">ChatBL</a></pre>
+				<p>
+NewChatBL creates a new instance of ChatBL with the provided dependencies and configuration.
+</p>
+<p>
+Parameters:
+</p>
+<pre>- cfg: The configuration object containing environment variables.
+- chatRepo: The chat repository for accessing chat-related data.
+- personaRepo: The persona repository for accessing persona-related data.
+- docRepo: The document repository for accessing document-related data.
+- embeddingModelRepo: The embedding model repository for accessing embedding model-related data.
+- aiBuilder: The builder for managing OpenAIClient instances.
+- embedding: The EmbedServiceClient for embedding operations.
+- milvusClinet: The MilvusClient for Milvus operations.
+</pre>
+<p>
+Returns:
+</p>
+<pre>- ChatBL: The created instance of ChatBL.
+</pre>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Config">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/module.go?s=712:998#L7">Config</a>
+				<a class="permalink" href="index.html#Config">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Config is a struct that holds the configuration settings.
+</p>
+<p>
+The Config struct contains the following fields:
+</p>
+<pre>- RedirectURL:                A string representing the redirect URL.
+  It is tagged with `env:&#34;REDIRECT_URL&#34;`.
+- DefaultEmbeddingModel:      A string representing the default embedding model.
+  It is tagged with `env:&#34;DEFAULT_EMBEDDING_MODEL&#34;` and has a default value of &#34;paraphrase-multilingual-mpnet-base-v2&#34;.
+- DefaultEmbeddingVectorSize: An integer representing the default embedding vector size.
+  It is tagged with `env:&#34;DEFAULT_EMBEDDING_VECTOR_SIZE&#34;` and has a default value of 768.
+</pre>
+
+			<pre>type Config struct {
+<span id="Config.RedirectURL"></span>    RedirectURL                <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;REDIRECT_URL&#34;`
+<span id="Config.DefaultEmbeddingModel"></span>    DefaultEmbeddingModel      <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;DEFAULT_EMBEDDING_MODEL&#34; envDefault:&#34;paraphrase-multilingual-mpnet-base-v2&#34;`
+<span id="Config.DefaultEmbeddingVectorSize"></span>    DefaultEmbeddingVectorSize <a href="http://localhost:6060/pkg/builtin/#int">int</a>    `env:&#34;DEFAULT_EMBEDDING_VECTOR_SIZE&#34; envDefault:&#34;768&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ConnectorBL">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/connector.go?s=350:874#L9">ConnectorBL</a>
+				<a class="permalink" href="index.html#ConnectorBL">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+ConnectorBL represents the business logic interface for managing connectors.
+</p>
+
+			<pre>type ConnectorBL interface {
+    GetAll(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>) ([]*<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetByID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Create(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, param *<a href="../parameters/index.html">parameters</a>.<a href="../parameters/index.html#CreateConnectorParam">CreateConnectorParam</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Update(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, param *<a href="../parameters/index.html">parameters</a>.<a href="../parameters/index.html#UpdateConnectorParam">UpdateConnectorParam</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Archive(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>, restore <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewConnectorBL">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/connector.go?s=2968:3045#L67">NewConnectorBL</a>
+					<a class="permalink" href="index.html#NewConnectorBL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewConnectorBL(connectorRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#ConnectorRepository">ConnectorRepository</a>) <a href="index.html#ConnectorBL">ConnectorBL</a></pre>
+				<p>
+NewConnectorBL creates a new instance of ConnectorBL implementation.
+</p>
+<p>
+Parameters:
+- connectorRepo: the ConnectorRepository used to access connector data.
+</p>
+<p>
+Returns:
+- ConnectorBL: an instance of ConnectorBL interface.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="DocumentBL">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/document.go?s=805:957#L17">DocumentBL</a>
+				<a class="permalink" href="index.html#DocumentBL">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+DocumentBL is an interface that defines the methods for managing documents.
+UploadDocument uploads a document to the storage and creates a corresponding entry in the repository.
+Parameters:
+- ctx: The context.Context for the request.
+- user: The user who is uploading the document.
+- fileName: The name of the document file.
+- contentType: The content type of the document file.
+- file: The io.Reader containing the document file to be uploaded.
+Returns:
+- *model.Document: The newly created Document object.
+- error: Any error that occurred during the upload process.
+</p>
+
+			<pre>type DocumentBL interface {
+    UploadDocument(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, fileName, contentType <a href="http://localhost:6060/pkg/builtin/#string">string</a>, file <a href="http://localhost:6060/pkg/io/">io</a>.<a href="http://localhost:6060/pkg/io/#Reader">Reader</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#Document">Document</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewDocumentBL">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/document.go?s=3846:4000#L94">NewDocumentBL</a>
+					<a class="permalink" href="index.html#NewDocumentBL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewDocumentBL(documentRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#DocumentRepository">DocumentRepository</a>,
+    connectorRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#ConnectorRepository">ConnectorRepository</a>,
+    minioClient <a href="../storage/index.html">storage</a>.<a href="../storage/index.html#MinIOClient">MinIOClient</a>) <a href="index.html#DocumentBL">DocumentBL</a></pre>
+				<p>
+NewDocumentBL is a function that creates a new instance of the DocumentBL interface.
+The function takes the following parameters:
+- documentRepo: The repository for managing documents.
+- connectorRepo: The repository for managing connectors.
+- minioClient: The MinIO client for uploading documents to storage.
+The function returns a new instance of the DocumentBL interface.
+Example usage:
+documentRepo := repository.NewDocumentRepository()
+connectorRepo := repository.NewConnectorRepository()
+minioClient := storage.NewMinIOClient()
+documentBL := NewDocumentBL(documentRepo, connectorRepo, minioClient)
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="EmbeddingModelBL">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/embedding_model.go?s=273:927#L5">EmbeddingModelBL</a>
+				<a class="permalink" href="index.html#EmbeddingModelBL">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+EmbeddingModelBL is an interface that represents business logic for embedding models.
+</p>
+
+			<pre>type EmbeddingModelBL interface {
+    GetAll(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, param *<a href="../parameters/index.html">parameters</a>.<a href="../parameters/index.html#ArchivedParam">ArchivedParam</a>) ([]*<a href="../model/index.html">model</a>.<a href="../model/index.html#EmbeddingModel">EmbeddingModel</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetByID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#EmbeddingModel">EmbeddingModel</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Create(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, em *<a href="../parameters/index.html">parameters</a>.<a href="../parameters/index.html#EmbeddingModelParam">EmbeddingModelParam</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#EmbeddingModel">EmbeddingModel</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Update(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>, em *<a href="../parameters/index.html">parameters</a>.<a href="../parameters/index.html#EmbeddingModelParam">EmbeddingModelParam</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#EmbeddingModel">EmbeddingModel</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Delete(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#EmbeddingModel">EmbeddingModel</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Restore(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#EmbeddingModel">EmbeddingModel</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEmbeddingModelBL">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/embedding_model.go?s=5588:5673#L133">NewEmbeddingModelBL</a>
+					<a class="permalink" href="index.html#NewEmbeddingModelBL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewEmbeddingModelBL(emRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#EmbeddingModelRepository">EmbeddingModelRepository</a>) <a href="index.html#EmbeddingModelBL">EmbeddingModelBL</a></pre>
+				<p>
+NewEmbeddingModelBL creates a new instance of the EmbeddingModelBL interface
+with the provided EmbeddingModelRepository.
+</p>
+<p>
+Parameters:
+</p>
+<pre>- emRepo: an instance of the EmbeddingModelRepository interface used to
+  interact with the underlying data storage.
+</pre>
+<p>
+Returns:
+- EmbeddingModelBL: an instance of the EmbeddingModelBL interface.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="PersonaBL">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/persona.go?s=302:813#L8">PersonaBL</a>
+				<a class="permalink" href="index.html#PersonaBL">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+PersonaBL represents the business logic layer for personas.
+</p>
+
+			<pre>type PersonaBL interface {
+    GetAll(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, archived <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) ([]*<a href="../model/index.html">model</a>.<a href="../model/index.html#Persona">Persona</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetByID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#Persona">Persona</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Create(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, param *<a href="../parameters/index.html">parameters</a>.<a href="../parameters/index.html#PersonaParam">PersonaParam</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#Persona">Persona</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Update(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, param *<a href="../parameters/index.html">parameters</a>.<a href="../parameters/index.html#PersonaParam">PersonaParam</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#Persona">Persona</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Archive(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>, restore <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#Persona">Persona</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewPersonaBL">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/persona.go?s=7141:7247#L153">NewPersonaBL</a>
+					<a class="permalink" href="index.html#NewPersonaBL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewPersonaBL(personaRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#PersonaRepository">PersonaRepository</a>,
+    chatRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#ChatRepository">ChatRepository</a>) <a href="index.html#PersonaBL">PersonaBL</a></pre>
+				<p>
+NewPersonaBL is a function that creates a new instance of the PersonaBL interface.
+It takes a PersonaRepository and a ChatRepository as input parameters and returns a PersonaBL.
+The PersonaBL implementation uses the provided PersonaRepository and ChatRepository to interact with the data layer.
+The PersonaBL interface provides methods for managing personas, such as retrieving all personas, creating a new persona, updating a persona, retrieving a persona by ID, and archiving or restoring a persona.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="TenantBL">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/tenant.go?s=268:554#L4">TenantBL</a>
+				<a class="permalink" href="index.html#TenantBL">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+TenantBL represents the business logic interface for managing tenants and users in the system.
+</p>
+
+			<pre>type TenantBL interface {
+    GetUsers(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>) ([]*<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    AddUser(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, email, role <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    UpdateUser(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, id <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, role <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewTenantBL">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/bll/tenant.go?s=1802:1903#L32">NewTenantBL</a>
+					<a class="permalink" href="index.html#NewTenantBL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewTenantBL(tenantRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#TenantRepository">TenantRepository</a>, userRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#UserRepository">UserRepository</a>) <a href="index.html#TenantBL">TenantBL</a></pre>
+				<p>
+NewTenantBL is a function that creates a new instance of the TenantBL interface.
+It takes a TenantRepository and a UserRepository as input parameters and returns a TenantBL.
+The TenantBL implementation uses the provided TenantRepository and UserRepository to interact with the data layer.
+The TenantBL interface provides methods for managing tenants and users, such as retrieving a list of users, adding a new user, and updating a user.
+</p>
+
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

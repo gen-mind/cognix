@@ -1,0 +1,17 @@
+pymilvus==2.4.3
+python-dotenv==1.0.1
+protobuf==5.27.0
+grpcio==1.63.0
+grpcio-tools==1.63.0
+sentence-transformers==2.7.0
+
+
+# --find-links https://download.pytorch.org/whl/torch_stable.html
+# torch==2.3.0
+## move to torch+cpu to minize a lot
+# torch==2.3.0+cpu installed directly in dockerfile
+# #torchvision==2.3.0+cpu
+# #torchaudio==2.3.0+cpu
+#-f https://download.pytorch.org/whl/torch_stable.html
+
+

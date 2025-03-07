@@ -1,0 +1,17 @@
+
+{
+  "channel": "Dev Team",
+  "topics": [],
+  "files": {
+    "folder": "",
+    "recursive": true
+  },
+  "token": {
+      "access_token": "YOUR_ACCESS_TOKEN",
+      "token_type": "Bearer",
+      "refresh_token": "YOUR_REFRESH_TOKEN",
+      "expiry": "2024-06-20T16:16:31.953034988Z"
+    }
+}
+
+

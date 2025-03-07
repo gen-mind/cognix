@@ -1,0 +1,23 @@
+nats-py==2.7.2
+python-dotenv==1.0.1
+protobuf==5.27.0
+grpcio==1.63.0
+grpcio-tools==1.63.0
+sqlalchemy==2.0.30
+psycopg2-binary==2.9.9
+mistune==3.0.2
+minio==7.2.7
+openai-whisper==20231117
+transformers==4.42.3
+chardet==5.2.0
+
+# conda install chardet
+# export PYTHONPATH=$PYTHONPATH:/Users/gp/Developer/cognix/src/backend/lib_py
+# python3 -c "import sys; print('\n'.join(sys.path))"
+
+torch==2.0.1
+torchaudio==2.0.2
+torchvision==0.15.2
+
+
+

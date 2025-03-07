@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>utils - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.1";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package utils
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "cognix.ch/api/v2/core/utils"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="index.html#InitLogger">func InitLogger(debug bool)</a></dd>
+			
+				
+				<dd><a href="index.html#ReadConfig">func ReadConfig(cfg interface{}) error</a></dd>
+			
+				
+				<dd><a href="index.html#StripFileName">func StripFileName(filename string) string</a></dd>
+			
+				
+				<dd><a href="index.html#WrapRestyError">func WrapRestyError(resp *resty.Response, err error) error</a></dd>
+			
+			
+				
+				<dd><a href="index.html#ErrorWrap">type ErrorWrap</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ErrorWrap.New">func (e ErrorWrap) New(msg string) Errors</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ErrorWrap.Newf">func (e ErrorWrap) Newf(msg string, args ...interface{}) Errors</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ErrorWrap.Wrap">func (e ErrorWrap) Wrap(eo error, msg string) Errors</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ErrorWrap.Wrapf">func (e ErrorWrap) Wrapf(eo error, msg string, args ...interface{}) Errors</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Errors">type Errors</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Errors.Error">func (e Errors) Error() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Map">type Map</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Map.Scan">func (m *Map) Scan(val interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Map.ToStruct">func (m *Map) ToStruct(s interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Map.Value">func (m Map) Value() (driver.Value, error)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/config.go">config.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/errors.go">errors.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/log.go">log.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/map.go">map.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/resty.go">resty.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/string.go">string.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+			
+			
+			<h2 id="InitLogger">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/log.go?s=196:223#L1">InitLogger</a>
+				<a class="permalink" href="index.html#InitLogger">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func InitLogger(debug <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)</pre>
+			<p>
+InitLogger initializes the logger with the given debug flag.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ReadConfig">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/config.go?s=165:203#L1">ReadConfig</a>
+				<a class="permalink" href="index.html#ReadConfig">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ReadConfig(cfg interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+			<p>
+ReadConfig reads the configuration from environment variables and parses it into the provided cfg structure.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="StripFileName">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/string.go?s=122:164#L1">StripFileName</a>
+				<a class="permalink" href="index.html#StripFileName">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func StripFileName(filename <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+			<p>
+StripFileName removes special characters from the filename and replaces &#34;-&#34; with &#34;_&#34;.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="WrapRestyError">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/resty.go?s=448:506#L4">WrapRestyError</a>
+				<a class="permalink" href="index.html#WrapRestyError">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WrapRestyError(resp *resty.<a href="index.html#Response">Response</a>, err <a href="http://localhost:6060/pkg/builtin/#error">error</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+			<p>
+WrapRestyError wraps a Resty response error into a standard Go error.
+The function takes a pointer to a Resty response and an error as input.
+If the error is not nil, it returns the error.
+If the response is not an error, it returns nil.
+If the response contains an error message, it creates a new error using fmt.Errorf and returns it.
+Otherwise, it returns nil.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="ErrorWrap">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/errors.go?s=1632:1650#L59">ErrorWrap</a>
+				<a class="permalink" href="index.html#ErrorWrap">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+ErrorWrap is a custom error code type that wraps an integer value.
+</p>
+<p>
+Use the ErrorWrap type to represent different error codes in your application.
+</p>
+<p>
+Usage example:
+</p>
+<pre>type Errors struct {
+    Code     ErrorWrap
+    Message  string
+    Original error
+}
+
+const (
+    ErrorPermission   ErrorWrap = 403
+    NotFound          ErrorWrap = 404
+    Internal          ErrorWrap = 500
+    ErrorBadRequest   ErrorWrap = 400
+    ErrorUnauthorized ErrorWrap = 401
+)
+
+func (e ErrorWrap) Wrap(eo error, msg string) Errors {
+    return Errors{
+        Code:     e,
+        Message:  msg,
+        Original: eo,
+    }
+}
+
+func (e ErrorWrap) Wrapf(eo error, msg string, args ...interface{}) Errors {
+    return Errors{
+        Code:     e,
+        Message:  fmt.Sprintf(msg, args...),
+        Original: eo,
+    }
+}
+
+func (e ErrorWrap) New(msg string) Errors {
+    return Errors{
+        Code:     e,
+        Message:  msg,
+        Original: nil,
+    }
+}
+
+func (e ErrorWrap) Newf(msg string, args ...interface{}) Errors {
+    return Errors{
+        Code:     e,
+        Message:  fmt.Sprintf(msg, args...),
+        Original: nil,
+    }
+}
+</pre>
+
+			<pre>type ErrorWrap <a href="http://localhost:6060/pkg/builtin/#int">int</a></pre>
+
+			
+				<p>
+ErrorWrap constants represent common error types associated with HTTP status codes.
+ErrorPermission represents a permission error (403 Forbidden).
+NotFound represents a resource not found error (404 Not Found).
+Internal represents an internal server error (500 Internal Server Error).
+ErrorBadRequest represents a bad request error (400 Bad Request).
+ErrorUnauthorized represents an unauthorized error (401 Unauthorized).
+</p>
+
+				<pre>const (
+    <span id="ErrorPermission">ErrorPermission</span>   <a href="index.html#ErrorWrap">ErrorWrap</a> = <a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#StatusForbidden">StatusForbidden</a>
+    <span id="NotFound">NotFound</span>          <a href="index.html#ErrorWrap">ErrorWrap</a> = <a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#StatusNotFound">StatusNotFound</a>
+    <span id="Internal">Internal</span>          <a href="index.html#ErrorWrap">ErrorWrap</a> = <a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#StatusInternalServerError">StatusInternalServerError</a>
+    <span id="ErrorBadRequest">ErrorBadRequest</span>   <a href="index.html#ErrorWrap">ErrorWrap</a> = <a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#StatusBadRequest">StatusBadRequest</a>
+    <span id="ErrorUnauthorized">ErrorUnauthorized</span> <a href="index.html#ErrorWrap">ErrorWrap</a> = <a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#StatusUnauthorized">StatusUnauthorized</a>
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="ErrorWrap.New">func (ErrorWrap) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/errors.go?s=4057:4098#L121">New</a>
+					<a class="permalink" href="index.html#ErrorWrap.New">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#ErrorWrap">ErrorWrap</a>) New(msg <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="index.html#Errors">Errors</a></pre>
+				<p>
+New creates a new Errors object with the specified message. The Code field is set to the value of e, and the Original field is set to nil.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ErrorWrap.Newf">func (ErrorWrap) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/errors.go?s=4544:4607#L137">Newf</a>
+					<a class="permalink" href="index.html#ErrorWrap.Newf">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#ErrorWrap">ErrorWrap</a>) Newf(msg <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args ...interface{}) <a href="index.html#Errors">Errors</a></pre>
+				<p>
+Newf creates a new Errors instance with the specified message and arguments.
+The message is formatted using fmt.Sprintf with the provided arguments.
+The Original field is set to nil.
+</p>
+<p>
+Example usage:
+</p>
+<pre>err := ErrorWrap(0).Newf(&#34;failed getting user info: %s&#34;, err.Error())
+fmt.Println(err.Message) // Output: &#34;failed getting user info: &lt;error message&gt;&#34;
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="ErrorWrap.Wrap">func (ErrorWrap) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/errors.go?s=3176:3228#L95">Wrap</a>
+					<a class="permalink" href="index.html#ErrorWrap.Wrap">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#ErrorWrap">ErrorWrap</a>) Wrap(eo <a href="http://localhost:6060/pkg/builtin/#error">error</a>, msg <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="index.html#Errors">Errors</a></pre>
+				<p>
+Wrap creates an instance of Errors by wrapping an existing error with additional information.
+It takes an ErrorWrap value representing the error code, an error to wrap, and a message string.
+It returns an Errors object containing the error code, message, and original error.
+Example usage:
+</p>
+<pre>err := utils.NotFound.Wrap(e, &#34;error message&#34;)
+fmt.Println(err)
+// Output: error message
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="ErrorWrap.Wrapf">func (ErrorWrap) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/errors.go?s=3746:3820#L112">Wrapf</a>
+					<a class="permalink" href="index.html#ErrorWrap.Wrapf">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#ErrorWrap">ErrorWrap</a>) Wrapf(eo <a href="http://localhost:6060/pkg/builtin/#error">error</a>, msg <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args ...interface{}) <a href="index.html#Errors">Errors</a></pre>
+				<p>
+Wrapf wraps an error with a custom message and additional arguments. It returns a new Errors object that includes the original error, code, and formatted message.
+</p>
+<p>
+Parameters:
+</p>
+<pre>- eo: the original error to be wrapped.
+- msg: the custom error message.
+- args: additional arguments to be included in the formatted message.
+</pre>
+<p>
+Returns:
+</p>
+<pre>- Errors: a new Errors object with the wrapped error, code, and formatted message.
+</pre>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Errors">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/errors.go?s=296:371#L2">Errors</a>
+				<a class="permalink" href="index.html#Errors">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Errors represents an error with additional information. It has three properties:
+- Code: An ErrorWrap value indicating the type of error.
+- Message: A string describing the error.
+- Original: An error that happened before, if applicable.
+</p>
+
+			<pre>type Errors struct {
+<span id="Errors.Code"></span>    Code     <a href="index.html#ErrorWrap">ErrorWrap</a>
+<span id="Errors.Message"></span>    Message  <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="Errors.Original"></span>    Original <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Errors.Error">func (Errors) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/errors.go?s=2719:2749#L83">Error</a>
+					<a class="permalink" href="index.html#Errors.Error">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (e <a href="index.html#Errors">Errors</a>) Error() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Error returns the error message associated with the Errors object.
+It is a method of the Errors type.
+Usage: err.Error()
+Returns the string value of the Message field.
+Example:
+</p>
+<pre>err := ErrorWrap(1).Wrapf(nil, &#34;An error occurred: %s&#34;, &#34;error message&#34;)
+fmt.Println(err.Error()) // Output: An error occurred: error message
+</pre>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Map">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/map.go?s=170:201#L1">Map</a>
+				<a class="permalink" href="index.html#Map">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Map represents a key-value map where the keys are strings and the values can be of any type.
+</p>
+
+			<pre>type Map map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Map.Scan">func (*Map) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/map.go?s=743:784#L13">Scan</a>
+					<a class="permalink" href="index.html#Map.Scan">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#Map">Map</a>) Scan(val interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Scan reads the value from the database driver into the Map instance.
+It takes the value as an interface{} and attempts a type assertion to []byte.
+If the type assertion fails, it returns an error.
+Otherwise, it uses json.Unmarshal to decode the byte slice into the Map instance.
+It returns nil if the decoding is successful, otherwise it returns an error.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Map.ToStruct">func (*Map) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/map.go?s=1039:1082#L22">ToStruct</a>
+					<a class="permalink" href="index.html#Map.ToStruct">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#Map">Map</a>) ToStruct(s interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+ToStruct converts a Map to a struct by marshaling the map to JSON and then unmarshaling it into the provided struct.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Map.Value">func (Map) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/utils/map.go?s=274:316#L3">Value</a>
+					<a class="permalink" href="index.html#Map.Value">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m <a href="index.html#Map">Map</a>) Value() (<a href="http://localhost:6060/pkg/database/sql/driver/">driver</a>.<a href="http://localhost:6060/pkg/database/sql/driver/#Value">Value</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Value returns the JSON representation of the Map as a driver.Value.
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>storage - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.1";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package storage
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "cognix.ch/api/v2/core/storage"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+			
+				
+				<dd><a href="index.html#MilvusClient">type MilvusClient</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewMilvusClient">func NewMilvusClient(cfg *MilvusConfig) (MilvusClient, error)</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MilvusConfig">type MilvusConfig</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MilvusConfig.Validate">func (v MilvusConfig) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#MilvusPayload">type MilvusPayload</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MilvusPayload.FromResult">func (p *MilvusPayload) FromResult(i int, res milvus.SearchResult) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#MinIOClient">type MinIOClient</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewMinIOClient">func NewMinIOClient(cfg *MinioConfig) (MinIOClient, error)</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MinioConfig">type MinioConfig</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/storage/milvus.go">milvus.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/storage/minio.go">minio.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/storage/module.go">module.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				<p>
+Package-level constants for column names and vector dimension.
+</p>
+
+				<pre>const (
+    <span id="ColumnNameID">ColumnNameID</span>         = &#34;id&#34;
+    <span id="ColumnNameDocumentID">ColumnNameDocumentID</span> = &#34;document_id&#34;
+    <span id="ColumnNameContent">ColumnNameContent</span>    = &#34;content&#34;
+    <span id="ColumnNameVector">ColumnNameVector</span>     = &#34;vector&#34;
+
+    <span id="VectorDimension">VectorDimension</span> = 1536
+
+    <span id="IndexStrategyDISKANN">IndexStrategyDISKANN</span>   = &#34;DISKANN&#34;
+    <span id="IndexStrategyAUTOINDEX">IndexStrategyAUTOINDEX</span> = &#34;AUTOINDEX&#34;
+    <span id="IndexStrategyNoIndex">IndexStrategyNoIndex</span>   = &#34;NOINDEX&#34;
+)</pre>
+			
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				<p>
+MilvusModule is a variable of type fx.Option. It provides dependencies for Milvus configuration
+and client initialization.
+</p>
+<p>
+The provided dependencies include:
+- A function that reads the MilvusConfig from environment variables and validates it.
+- A function that creates a new Milvus client based on the provided config.
+</p>
+<p>
+This module can be used to configure and initialize a MilvusClient.
+</p>
+
+				<pre>var <span id="MilvusModule">MilvusModule</span> = <a href="http://localhost:6060/pkg/go.uber.org/fx/">fx</a>.<a href="http://localhost:6060/pkg/go.uber.org/fx/#Options">Options</a>(
+    <a href="http://localhost:6060/pkg/go.uber.org/fx/">fx</a>.<a href="http://localhost:6060/pkg/go.uber.org/fx/#Provide">Provide</a>(func() (*<a href="index.html#MilvusConfig">MilvusConfig</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>) {
+        cfg := <a href="index.html#MilvusConfig">MilvusConfig</a>{}
+        if err := <a href="../utils/index.html">utils</a>.<a href="../utils/index.html#ReadConfig">ReadConfig</a>(&amp;cfg); err != <a href="http://localhost:6060/pkg/builtin/#nil">nil</a> {
+            return <a href="http://localhost:6060/pkg/builtin/#nil">nil</a>, err
+        }
+        if err := cfg.<a href="index.html#Validate">Validate</a>(); err != <a href="http://localhost:6060/pkg/builtin/#nil">nil</a> {
+            return <a href="http://localhost:6060/pkg/builtin/#nil">nil</a>, err
+        }
+        return &amp;cfg, <a href="http://localhost:6060/pkg/builtin/#nil">nil</a>
+    },
+        <a href="index.html#NewMilvusClient">NewMilvusClient</a>,
+    ),
+)</pre>
+			
+				
+				<pre>var <span id="MinioModule">MinioModule</span> = <a href="http://localhost:6060/pkg/go.uber.org/fx/">fx</a>.<a href="http://localhost:6060/pkg/go.uber.org/fx/#Options">Options</a>(
+    <a href="http://localhost:6060/pkg/go.uber.org/fx/">fx</a>.<a href="http://localhost:6060/pkg/go.uber.org/fx/#Provide">Provide</a>(
+        func() (*<a href="index.html#MinioConfig">MinioConfig</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>) {
+            cfg := <a href="index.html#MinioConfig">MinioConfig</a>{}
+            err := <a href="../utils/index.html">utils</a>.<a href="../utils/index.html#ReadConfig">ReadConfig</a>(&amp;cfg)
+            return &amp;cfg, err
+        },
+        <a href="index.html#NewMinIOClient">NewMinIOClient</a>,
+    ),
+)</pre>
+			
+		
+		
+		
+			
+			
+			<h2 id="MilvusClient">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/storage/milvus.go?s=1518:1848#L41">MilvusClient</a>
+				<a class="permalink" href="index.html#MilvusClient">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+MilvusConfig represents the configuration for connecting to the Milvus service.
+</p>
+
+			<pre>type MilvusClient interface {
+    CreateSchema(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    Save(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, collection <a href="http://localhost:6060/pkg/builtin/#string">string</a>, payloads ...*<a href="index.html#MilvusPayload">MilvusPayload</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    Load(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, collection <a href="http://localhost:6060/pkg/builtin/#string">string</a>, vector []<a href="http://localhost:6060/pkg/builtin/#float32">float32</a>) ([]*<a href="index.html#MilvusPayload">MilvusPayload</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Delete(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, collection <a href="http://localhost:6060/pkg/builtin/#string">string</a>, documentID ...<a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewMilvusClient">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/storage/milvus.go?s=5374:5435#L154">NewMilvusClient</a>
+					<a class="permalink" href="index.html#NewMilvusClient">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewMilvusClient(cfg *<a href="index.html#MilvusConfig">MilvusConfig</a>) (<a href="index.html#MilvusClient">MilvusClient</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+NewMilvusClient creates a new instance of MilvusClient
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="MilvusConfig">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/storage/milvus.go?s=962:1293#L27">MilvusConfig</a>
+				<a class="permalink" href="index.html#MilvusConfig">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+MilvusConfig represents the configuration for connecting to the Milvus service.
+</p>
+
+			<pre>type MilvusConfig struct {
+<span id="MilvusConfig.Address"></span>    Address       <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;MILVUS_URL,required&#34;`
+<span id="MilvusConfig.Username"></span>    Username      <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;MILVUS_USERNAME,required&#34;`
+<span id="MilvusConfig.Password"></span>    Password      <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;MILVUS_PASSWORD,required&#34;`
+<span id="MilvusConfig.MetricType"></span>    MetricType    <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;MILVUS_METRIC_TYPE&#34; envDefault:&#34;COSINE&#34;`
+<span id="MilvusConfig.IndexStrategy"></span>    IndexStrategy <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;MILVUS_INDEX_STRATEGY&#34; envDefault:&#34;DISKANN&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="MilvusConfig.Validate">func (MilvusConfig) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/storage/milvus.go?s=3554:3592#L98">Validate</a>
+					<a class="permalink" href="index.html#MilvusConfig.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (v <a href="index.html#MilvusConfig">MilvusConfig</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MilvusPayload">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/storage/milvus.go?s=1295:1516#L34">MilvusPayload</a>
+				<a class="permalink" href="index.html#MilvusPayload">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+MilvusConfig represents the configuration for connecting to the Milvus service.
+</p>
+
+			<pre>type MilvusPayload struct {
+<span id="MilvusPayload.ID"></span>    ID         <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>     `json:&#34;id&#34;`
+<span id="MilvusPayload.DocumentID"></span>    DocumentID <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>     `json:&#34;document_id&#34;`
+<span id="MilvusPayload.Chunk"></span>    Chunk      <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>     `json:&#34;chunk&#34;`
+<span id="MilvusPayload.Content"></span>    Content    <a href="http://localhost:6060/pkg/builtin/#string">string</a>    `json:&#34;content&#34;`
+<span id="MilvusPayload.Vector"></span>    Vector     []<a href="http://localhost:6060/pkg/builtin/#float32">float32</a> `json:&#34;vector&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="MilvusPayload.FromResult">func (*MilvusPayload) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/storage/milvus.go?s=9177:9249#L249">FromResult</a>
+					<a class="permalink" href="index.html#MilvusPayload.FromResult">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (p *<a href="index.html#MilvusPayload">MilvusPayload</a>) FromResult(i <a href="http://localhost:6060/pkg/builtin/#int">int</a>, res <a href="http://localhost:6060/pkg/github.com/milvus-io/milvus-sdk-go/v2/client/">milvus</a>.<a href="http://localhost:6060/pkg/github.com/milvus-io/milvus-sdk-go/v2/client/#SearchResult">SearchResult</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+FromResult translates the SearchResult to MilvusPayload.
+It iterates through each field in the SearchResult and assigns the corresponding
+value to the fields in MilvusPayload.
+If the field is ColumnNameID, it assigns the value to the ID field in MilvusPayload.
+If the field is ColumnNameDocumentID, it assigns the value to the DocumentID field in MilvusPayload.
+If the field is ColumnNameContent, it attempts to unmarshal the value into a string map.
+If successful, it assigns the value of the &#34;content&#34; key to the Content field in MilvusPayload.
+Otherwise, it assigns the value directly to the Content field in MilvusPayload.
+If any error occurs during the process, it returns the error.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MinIOClient">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/storage/minio.go?s=624:909#L12">MinIOClient</a>
+				<a class="permalink" href="index.html#MinIOClient">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Package containing MinIO related code.
+MinioConfig represents the configuration settings for connecting to a MinIO server.
+</p>
+
+			<pre>type MinIOClient interface {
+    Upload(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, bucket, filename, contentType <a href="http://localhost:6060/pkg/builtin/#string">string</a>, reader <a href="http://localhost:6060/pkg/io/">io</a>.<a href="http://localhost:6060/pkg/io/#Reader">Reader</a>) (<a href="http://localhost:6060/pkg/builtin/#string">string</a>, <a href="http://localhost:6060/pkg/builtin/#string">string</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetObject(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, bucket, filename <a href="http://localhost:6060/pkg/builtin/#string">string</a>, writer <a href="http://localhost:6060/pkg/io/">io</a>.<a href="http://localhost:6060/pkg/io/#Writer">Writer</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    DeleteObject(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, bucket, filename <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewMinIOClient">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/storage/minio.go?s=4281:4339#L107">NewMinIOClient</a>
+					<a class="permalink" href="index.html#NewMinIOClient">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewMinIOClient(cfg *<a href="index.html#MinioConfig">MinioConfig</a>) (<a href="index.html#MinIOClient">MinIOClient</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+NewMinIOClient creates a new instance of MinIOClient using the provided MinioConfig.
+It returns the created MinIOClient and an error if any occurred.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="MinioConfig">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/storage/minio.go?s=300:622#L4">MinioConfig</a>
+				<a class="permalink" href="index.html#MinioConfig">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Package containing MinIO related code.
+MinioConfig represents the configuration settings for connecting to a MinIO server.
+</p>
+
+			<pre>type MinioConfig struct {
+<span id="MinioConfig.AccessKey"></span>    AccessKey       <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;MINIO_ACCESS_KEY&#34;`
+<span id="MinioConfig.SecretAccessKey"></span>    SecretAccessKey <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;MINIO_SECRET_ACCESS_KEY&#34;`
+<span id="MinioConfig.Endpoint"></span>    Endpoint        <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;MINIO_ENDPOINT&#34;`
+<span id="MinioConfig.UseSSL"></span>    UseSSL          <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>   `env:&#34;MINIO_USE_SSL&#34;`
+<span id="MinioConfig.BucketName"></span>    BucketName      <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;MINIO_BUCKET_NAME&#34;`
+<span id="MinioConfig.Region"></span>    Region          <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;MINIO_REGION&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

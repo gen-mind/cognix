@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>repository - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.1";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package repository
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "cognix.ch/api/v2/core/repository"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#NewDatabase">func NewDatabase(cfg *Config) (*pg.DB, error)</a></dd>
+			
+			
+				
+				<dd><a href="index.html#ChatRepository">type ChatRepository</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewChatRepository">func NewChatRepository(db *pg.DB) ChatRepository</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Config">type Config</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ConnectorRepository">type ConnectorRepository</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewConnectorRepository">func NewConnectorRepository(db *pg.DB) ConnectorRepository</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#DocumentRepository">type DocumentRepository</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewDocumentRepository">func NewDocumentRepository(db *pg.DB) DocumentRepository</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#EmbeddingModelRepository">type EmbeddingModelRepository</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewEmbeddingModelRepository">func NewEmbeddingModelRepository(db *pg.DB) EmbeddingModelRepository</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#LLMRepository">type LLMRepository</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewLLMRepository">func NewLLMRepository(db *pg.DB) LLMRepository</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#PersonaRepository">type PersonaRepository</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewPersonaRepository">func NewPersonaRepository(db *pg.DB) PersonaRepository</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TenantRepository">type TenantRepository</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewTenantRepository">func NewTenantRepository(db *pg.DB) TenantRepository</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#UserRepository">type UserRepository</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewUserRepository">func NewUserRepository(db *pg.DB) UserRepository</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/chat.go">chat.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/client.go">client.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/connector.go">connector.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/document.go">document.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/embedding_model.go">embedding_model.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/llm.go">llm.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/module.go">module.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/persona.go">persona.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/tenant.go">tenant.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/user.go">user.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var <span id="DatabaseModule">DatabaseModule</span> = <a href="http://localhost:6060/pkg/go.uber.org/fx/">fx</a>.<a href="http://localhost:6060/pkg/go.uber.org/fx/#Options">Options</a>(
+    <a href="http://localhost:6060/pkg/go.uber.org/fx/">fx</a>.<a href="http://localhost:6060/pkg/go.uber.org/fx/#Provide">Provide</a>(func() (*<a href="index.html#Config">Config</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>) {
+        cfg := <a href="index.html#Config">Config</a>{}
+        err := <a href="../utils/index.html">utils</a>.<a href="../utils/index.html#ReadConfig">ReadConfig</a>(&amp;cfg)
+        return &amp;cfg, err
+    },
+        <a href="index.html#NewDatabase">NewDatabase</a>,
+    ),
+)</pre>
+			
+				
+				<pre>var <span id="RepositoriesModule">RepositoriesModule</span> = <a href="http://localhost:6060/pkg/go.uber.org/fx/">fx</a>.<a href="http://localhost:6060/pkg/go.uber.org/fx/#Options">Options</a>(
+    <a href="http://localhost:6060/pkg/go.uber.org/fx/">fx</a>.<a href="http://localhost:6060/pkg/go.uber.org/fx/#Provide">Provide</a>(
+        <a href="index.html#NewUserRepository">NewUserRepository</a>,
+        <a href="index.html#NewConnectorRepository">NewConnectorRepository</a>,
+        <a href="index.html#NewLLMRepository">NewLLMRepository</a>,
+        <a href="index.html#NewPersonaRepository">NewPersonaRepository</a>,
+        <a href="index.html#NewChatRepository">NewChatRepository</a>,
+        <a href="index.html#NewDocumentRepository">NewDocumentRepository</a>,
+        <a href="index.html#NewEmbeddingModelRepository">NewEmbeddingModelRepository</a>,
+        <a href="index.html#NewTenantRepository">NewTenantRepository</a>,
+    ),
+)</pre>
+			
+		
+		
+			
+			
+			<h2 id="NewDatabase">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/client.go?s=1218:1263#L16">NewDatabase</a>
+				<a class="permalink" href="index.html#NewDatabase">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewDatabase(cfg *<a href="index.html#Config">Config</a>) (*pg.<a href="index.html#DB">DB</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+			<p>
+NewDatabase creates a new database connection using the provided configuration.
+It takes a pointer to a Config struct as input. The Config struct represents the
+required configuration parameters for the database connection, including the URL
+and the debug mode. The URL is used to parse the connection options, and if any
+parse error occurs, an error is returned. Then, a new database connection is established
+using the parsed options by calling the Connect function from the pg package.
+If the debug mode is enabled, a query hook is added to the database connection, which
+logs the executed queries. After the connection is established, a ping request is sent
+to the database to verify its availability. If the ping request fails, an error is returned.
+Finally, the function returns the established database connection and nil error if no errors occurred.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="ChatRepository">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/chat.go?s=286:885#L3">ChatRepository</a>
+				<a class="permalink" href="index.html#ChatRepository">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+ChatRepository is an interface that defines methods for interacting with the chat repository.
+</p>
+
+			<pre>type ChatRepository interface {
+    GetSessions(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, userID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>) ([]*<a href="../model/index.html">model</a>.<a href="../model/index.html#ChatSession">ChatSession</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetSessionByID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, userID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#ChatSession">ChatSession</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    CreateSession(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, session *<a href="../model/index.html">model</a>.<a href="../model/index.html#ChatSession">ChatSession</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    SendMessage(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, message *<a href="../model/index.html">model</a>.<a href="../model/index.html#ChatMessage">ChatMessage</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    UpdateMessage(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, message *<a href="../model/index.html">model</a>.<a href="../model/index.html#ChatMessage">ChatMessage</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    GetMessageByIDAndUserID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>, userID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#ChatMessage">ChatMessage</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    MessageFeedback(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, feedback *<a href="../model/index.html">model</a>.<a href="../model/index.html#ChatMessageFeedback">ChatMessageFeedback</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewChatRepository">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/chat.go?s=5084:5132#L97">NewChatRepository</a>
+					<a class="permalink" href="index.html#NewChatRepository">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewChatRepository(db *pg.<a href="index.html#DB">DB</a>) <a href="index.html#ChatRepository">ChatRepository</a></pre>
+				<p>
+NewChatRepository creates a new instance of ChatRepository with the provided database connection.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Config">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/client.go?s=172:328#L1">Config</a>
+				<a class="permalink" href="index.html#Config">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Config represents the configuration for the application.
+</p>
+
+			<pre>type Config struct {
+<span id="Config.URL"></span>    URL       <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;COCKROACH_CLIENT_DATABASE_URL_GOLANG&#34;`
+<span id="Config.DebugMode"></span>    DebugMode <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>   `env:&#34;COCKROACH_CLIENT_DB_DEBUG&#34; envDefault:&#34;false&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ConnectorRepository">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/connector.go?s=299:897#L4">ConnectorRepository</a>
+				<a class="permalink" href="index.html#ConnectorRepository">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+ConnectorRepository is an interface for accessing and manipulating connector data in the database.
+</p>
+
+			<pre>type ConnectorRepository interface {
+    GetActive(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>) ([]*<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetAllByUser(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, tenantID, userID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>) ([]*<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetByIDAndUser(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, tenantID, userID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetByID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetBySource(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, tenantID, userID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, source <a href="../model/index.html">model</a>.<a href="../model/index.html#SourceType">SourceType</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Create(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, connector *<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    Update(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, connector *<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewConnectorRepository">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/connector.go?s=2644:2702#L44">NewConnectorRepository</a>
+					<a class="permalink" href="index.html#NewConnectorRepository">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewConnectorRepository(db *pg.<a href="index.html#DB">DB</a>) <a href="index.html#ConnectorRepository">ConnectorRepository</a></pre>
+				<p>
+NewConnectorRepository creates a new instance of the ConnectorRepository interface, using the provided *pg.DB.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="DocumentRepository">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/document.go?s=273:751#L5">DocumentRepository</a>
+				<a class="permalink" href="index.html#DocumentRepository">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+DocumentRepository represents an interface for a document repository.
+</p>
+
+			<pre>type DocumentRepository interface {
+    FindByConnectorIDAndUser(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, connectorID <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) ([]*<a href="../model/index.html">model</a>.<a href="../model/index.html#Document">Document</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    FindByConnectorID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, connectorID <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) ([]*<a href="../model/index.html">model</a>.<a href="../model/index.html#Document">Document</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    FindByID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#Document">Document</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Create(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, document *<a href="../model/index.html">model</a>.<a href="../model/index.html#Document">Document</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    Update(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, document *<a href="../model/index.html">model</a>.<a href="../model/index.html#Document">Document</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    DeleteByIDS(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, ids ...<a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewDocumentRepository">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/document.go?s=5816:5872#L133">NewDocumentRepository</a>
+					<a class="permalink" href="index.html#NewDocumentRepository">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewDocumentRepository(db *pg.<a href="index.html#DB">DB</a>) <a href="index.html#DocumentRepository">DocumentRepository</a></pre>
+				<p>
+NewDocumentRepository creates a new instance of the DocumentRepository interface, using the provided *pg.DB.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="EmbeddingModelRepository">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/embedding_model.go?s=317:835#L5">EmbeddingModelRepository</a>
+				<a class="permalink" href="index.html#EmbeddingModelRepository">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+EmbeddingModelRepository is an interface that specifies the methods for accessing embedding model data.
+</p>
+
+			<pre>type EmbeddingModelRepository interface {
+    GetAll(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, tenantID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, param *<a href="../parameters/index.html">parameters</a>.<a href="../parameters/index.html#ArchivedParam">ArchivedParam</a>) ([]*<a href="../model/index.html">model</a>.<a href="../model/index.html#EmbeddingModel">EmbeddingModel</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetByID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, tenantID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#EmbeddingModel">EmbeddingModel</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetDefault(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, tenantID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#EmbeddingModel">EmbeddingModel</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Create(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, em *<a href="../model/index.html">model</a>.<a href="../model/index.html#EmbeddingModel">EmbeddingModel</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    Update(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, em *<a href="../model/index.html">model</a>.<a href="../model/index.html#EmbeddingModel">EmbeddingModel</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    Delete(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, em *<a href="../model/index.html">model</a>.<a href="../model/index.html#EmbeddingModel">EmbeddingModel</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEmbeddingModelRepository">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/embedding_model.go?s=4327:4395#L95">NewEmbeddingModelRepository</a>
+					<a class="permalink" href="index.html#NewEmbeddingModelRepository">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewEmbeddingModelRepository(db *pg.<a href="index.html#DB">DB</a>) <a href="index.html#EmbeddingModelRepository">EmbeddingModelRepository</a></pre>
+				<p>
+NewEmbeddingModelRepository creates a new instance of the EmbeddingModelRepository interface, using the provided *pg.DB.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="LLMRepository">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/llm.go?s=253:406#L3">LLMRepository</a>
+				<a class="permalink" href="index.html#LLMRepository">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+LLMRepository interface defines the methods for accessing data from the llms table.
+</p>
+
+			<pre>type LLMRepository interface {
+    GetAll(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>) ([]*<a href="../model/index.html">model</a>.<a href="../model/index.html#LLM">LLM</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetByUserID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, userID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#LLM">LLM</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewLLMRepository">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/llm.go?s=1004:1050#L25">NewLLMRepository</a>
+					<a class="permalink" href="index.html#NewLLMRepository">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewLLMRepository(db *pg.<a href="index.html#DB">DB</a>) <a href="index.html#LLMRepository">LLMRepository</a></pre>
+				<p>
+NewLLMRepository creates a new instance of the LLMRepository interface using the provided *pg.DB.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="PersonaRepository">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/persona.go?s=1012:1498#L13">PersonaRepository</a>
+				<a class="permalink" href="index.html#PersonaRepository">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+PersonaRepository is an interface that defines the methods for interacting with
+the personas table in the database.
+- GetAll returns all personas based on the provided context, tenant ID, and archived flag.
+- GetByID returns a persona based on the provided context, ID, tenant ID, and additional relations.
+- Create creates a new persona in the database based on the provided context and persona object.
+- Update updates an existing persona in the database based on the provided context and persona object.
+- Archive marks a persona as archived in the database based on the provided context and persona object.
+- IsExists checks if a persona with the provided ID and tenant ID exists in the database.
+</p>
+<p>
+personaRepository is an implementation of PersonaRepository.
+It holds the reference to the database connection.
+</p>
+
+			<pre>type PersonaRepository interface {
+    GetAll(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, tenantID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, archived <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) ([]*<a href="../model/index.html">model</a>.<a href="../model/index.html#Persona">Persona</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetByID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>, tenantID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, relations ...<a href="http://localhost:6060/pkg/builtin/#string">string</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#Persona">Persona</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    Create(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, persona *<a href="../model/index.html">model</a>.<a href="../model/index.html#Persona">Persona</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    Update(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, persona *<a href="../model/index.html">model</a>.<a href="../model/index.html#Persona">Persona</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    Archive(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, persona *<a href="../model/index.html">model</a>.<a href="../model/index.html#Persona">Persona</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    IsExists(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>, tenantID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>) (<a href="http://localhost:6060/pkg/builtin/#bool">bool</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewPersonaRepository">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/persona.go?s=2242:2296#L41">NewPersonaRepository</a>
+					<a class="permalink" href="index.html#NewPersonaRepository">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewPersonaRepository(db *pg.<a href="index.html#DB">DB</a>) <a href="index.html#PersonaRepository">PersonaRepository</a></pre>
+				<p>
+NewPersonaRepository creates a new instance of the PersonaRepository interface
+using the provided *pg.DB.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="TenantRepository">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/tenant.go?s=265:371#L3">TenantRepository</a>
+				<a class="permalink" href="index.html#TenantRepository">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+TenantRepository is an interface that defines methods for retrieving users related to a tenant.
+</p>
+
+			<pre>type TenantRepository interface {
+    GetUsers(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, tenantID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>) ([]*<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewTenantRepository">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/tenant.go?s=1066:1118#L29">NewTenantRepository</a>
+					<a class="permalink" href="index.html#NewTenantRepository">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewTenantRepository(db *pg.<a href="index.html#DB">DB</a>) <a href="index.html#TenantRepository">TenantRepository</a></pre>
+				<p>
+NewTenantRepository creates a new instance of the TenantRepository interface, using the provided *pg.DB.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="UserRepository">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/user.go?s=1316:1730#L44">UserRepository</a>
+				<a class="permalink" href="index.html#UserRepository">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+UserRepository is an interface that provides database operations with User model
+GetByUserName gets a user by username
+Parameters:
+- c: context
+- username: username of the user
+Returns:
+- *model.User: user
+- error: any error that occurred
+GetByIDAndTenantID gets a user by ID and Tenant ID
+Parameters:
+- c: context
+- id: ID of the user
+- tenantID: Tenant ID of the user
+Returns:
+- *model.User: user
+- error: any error that occurred
+IsUserExists checks if a user exists
+Parameters:
+- c: context
+- username: username of the user
+Returns:
+- bool: true if the user exists, false otherwise
+- error: any error that occurred
+RegisterUser registers a user
+Parameters:
+- c: context
+- user: user to register
+Returns:
+- error: any error that occurred
+Create creates a user
+Parameters:
+- c: context
+- user: user to create
+Returns:
+- error: any error that occurred
+Update updates a user
+Parameters:
+- c: context
+- user: user to update
+Returns:
+- error: any error that occurred
+UserRepository provides database operations with User model
+</p>
+
+			<pre>type UserRepository interface {
+    GetByUserName(c <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, username <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    GetByIDAndTenantID(c <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, id, tenantID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>) (*<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    IsUserExists(c <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, username <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (<a href="http://localhost:6060/pkg/builtin/#bool">bool</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    RegisterUser(c <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    Create(c <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    Update(c <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewUserRepository">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/repository/user.go?s=1942:1990#L59">NewUserRepository</a>
+					<a class="permalink" href="index.html#NewUserRepository">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewUserRepository(db *pg.<a href="index.html#DB">DB</a>) <a href="index.html#UserRepository">UserRepository</a></pre>
+				<p>
+NewUserRepository creates a new instance of the UserRepository interface, using the provided *pg.DB.
+</p>
+
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>handler - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.1";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package handler
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "cognix.ch/api/v2/api/handler"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#AuthHandler">type AuthHandler</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewAuthHandler">func NewAuthHandler(oauthClient oauth.Proxy, jwtService security.JWTService, authBL bll.AuthBL) *AuthHandler</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AuthHandler.Callback">func (h *AuthHandler) Callback(c *gin.Context) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AuthHandler.Mount">func (h *AuthHandler) Mount(route *gin.Engine, authMiddleware gin.HandlerFunc)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AuthHandler.RefreshToken">func (h *AuthHandler) RefreshToken(c *gin.Context) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AuthHandler.SignIn">func (h *AuthHandler) SignIn(c *gin.Context) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#ChatHandler">type ChatHandler</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewChatHandler">func NewChatHandler(chatBL bll.ChatBL) *ChatHandler</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ChatHandler.CreateSession">func (h *ChatHandler) CreateSession(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ChatHandler.GetByID">func (h *ChatHandler) GetByID(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ChatHandler.GetSessions">func (h *ChatHandler) GetSessions(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ChatHandler.MessageFeedback">func (h *ChatHandler) MessageFeedback(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ChatHandler.Mount">func (h *ChatHandler) Mount(route *gin.Engine, authMiddleware gin.HandlerFunc)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ChatHandler.SendMessage">func (h *ChatHandler) SendMessage(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#ConnectorHandler">type ConnectorHandler</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewCollectorHandler">func NewCollectorHandler(connectorBL bll.ConnectorBL) *ConnectorHandler</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConnectorHandler.Archive">func (h *ConnectorHandler) Archive(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConnectorHandler.Create">func (h *ConnectorHandler) Create(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConnectorHandler.GetAll">func (h *ConnectorHandler) GetAll(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConnectorHandler.GetById">func (h *ConnectorHandler) GetById(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConnectorHandler.GetSourceTypes">func (h *ConnectorHandler) GetSourceTypes(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConnectorHandler.Mount">func (h *ConnectorHandler) Mount(route *gin.Engine, authMiddleware gin.HandlerFunc)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConnectorHandler.Update">func (h *ConnectorHandler) Update(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#DocumentHandler">type DocumentHandler</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewDocumentHandler">func NewDocumentHandler(documentBL bll.DocumentBL) *DocumentHandler</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#DocumentHandler.GetAll">func (h *DocumentHandler) GetAll(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#DocumentHandler.Mount">func (h *DocumentHandler) Mount(router *gin.Engine, authMiddleware gin.HandlerFunc)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#DocumentHandler.Upload">func (h *DocumentHandler) Upload(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#EmbeddingModelHandler">type EmbeddingModelHandler</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewEmbeddingModelHandler">func NewEmbeddingModelHandler(embeddingModelBL bll.EmbeddingModelBL) *EmbeddingModelHandler</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddingModelHandler.Create">func (h *EmbeddingModelHandler) Create(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddingModelHandler.Delete">func (h *EmbeddingModelHandler) Delete(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddingModelHandler.GetAll">func (h *EmbeddingModelHandler) GetAll(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddingModelHandler.GetByID">func (h *EmbeddingModelHandler) GetByID(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddingModelHandler.Mount">func (h *EmbeddingModelHandler) Mount(router *gin.Engine, authMiddleware gin.HandlerFunc)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EmbeddingModelHandler.Update">func (h *EmbeddingModelHandler) Update(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#OAuthHandler">type OAuthHandler</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewOAuthHandler">func NewOAuthHandler(oauthConfig *oauth.Config) *OAuthHandler</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#OAuthHandler.Callback">func (h *OAuthHandler) Callback(c *gin.Context) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#OAuthHandler.GetUrl">func (h *OAuthHandler) GetUrl(c *gin.Context) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#OAuthHandler.Mount">func (h *OAuthHandler) Mount(route *gin.Engine)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#OAuthHandler.Refresh">func (h *OAuthHandler) Refresh(c *gin.Context) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#PersonaHandler">type PersonaHandler</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewPersonaHandler">func NewPersonaHandler(personaBL bll.PersonaBL, aiBuilder *ai.Builder) *PersonaHandler</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PersonaHandler.Archive">func (h *PersonaHandler) Archive(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PersonaHandler.Create">func (h *PersonaHandler) Create(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PersonaHandler.GetAll">func (h *PersonaHandler) GetAll(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PersonaHandler.GetByID">func (h *PersonaHandler) GetByID(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PersonaHandler.Mount">func (h *PersonaHandler) Mount(route *gin.Engine, authMiddleware gin.HandlerFunc)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PersonaHandler.Update">func (h *PersonaHandler) Update(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#SwaggerHandler">type SwaggerHandler</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewSwaggerHandler">func NewSwaggerHandler() *SwaggerHandler</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SwaggerHandler.GetDoc">func (h *SwaggerHandler) GetDoc(c *gin.Context) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SwaggerHandler.Health">func (h *SwaggerHandler) Health(c *gin.Context)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SwaggerHandler.Mount">func (h *SwaggerHandler) Mount(router *gin.Engine)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TenantHandler">type TenantHandler</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewTenantHandler">func NewTenantHandler(TenantBL bll.TenantBL) *TenantHandler</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TenantHandler.AddUser">func (h *TenantHandler) AddUser(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TenantHandler.EditUser">func (h *TenantHandler) EditUser(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TenantHandler.GetUserInfo">func (h *TenantHandler) GetUserInfo(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TenantHandler.GetUserList">func (h *TenantHandler) GetUserList(c *gin.Context, identity *security.Identity) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TenantHandler.Mount">func (h *TenantHandler) Mount(route *gin.Engine, TenantMiddleware gin.HandlerFunc)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TokenResponse">type TokenResponse</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/auth.go">auth.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/chat.go">chat.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/connector.go">connector.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/document.go">document.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/embedding_model.go">embedding_model.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/model.go">model.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/oauth.go">oauth.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/persona.go">persona.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/swagger.go">swagger.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/tenant.go">tenant.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span id="ActionDelete">ActionDelete</span>  = &#34;delete&#34;
+    <span id="ActionRestore">ActionRestore</span> = &#34;restore&#34;
+)</pre>
+			
+		
+		
+		
+		
+			
+			
+			<h2 id="AuthHandler">type <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/auth.go?s=385:525#L9">AuthHandler</a>
+				<a class="permalink" href="index.html#AuthHandler">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+AuthHandler  handles authentication endpoints
+</p>
+
+			<pre>type AuthHandler struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewAuthHandler">func <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/auth.go?s=767:908#L21">NewAuthHandler</a>
+					<a class="permalink" href="index.html#NewAuthHandler">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewAuthHandler(oauthClient <a href="../../core/oauth/index.html">oauth</a>.<a href="../../core/oauth/index.html#Proxy">Proxy</a>,
+    jwtService <a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#JWTService">JWTService</a>,
+    authBL <a href="../../core/bll/index.html">bll</a>.<a href="../../core/bll/index.html#AuthBL">AuthBL</a>,
+
+) *<a href="index.html#AuthHandler">AuthHandler</a></pre>
+				<p>
+NewAuthHandler initializes a new instance of AuthHandler
+@param oauthClient: OAuth proxy implementation
+@param jwtService: JWT service implementation
+@param authBL: Authentication business logic
+@return: AuthHandler instance
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="AuthHandler.Callback">func (*AuthHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/auth.go?s=2990:3042#L86">Callback</a>
+					<a class="permalink" href="index.html#AuthHandler.Callback">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#AuthHandler">AuthHandler</a>) Callback(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="AuthHandler.Mount">func (*AuthHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/auth.go?s=1131:1209#L35">Mount</a>
+					<a class="permalink" href="index.html#AuthHandler.Mount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#AuthHandler">AuthHandler</a>) Mount(route *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Engine">Engine</a>, authMiddleware <a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#HandlerFunc">HandlerFunc</a>)</pre>
+				<p>
+Mount sets up authentication routes by adding them to the specified `gin.Engine` instance.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AuthHandler.RefreshToken">func (*AuthHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/auth.go?s=2555:2611#L72">RefreshToken</a>
+					<a class="permalink" href="index.html#AuthHandler.RefreshToken">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#AuthHandler">AuthHandler</a>) RefreshToken(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="AuthHandler.SignIn">func (*AuthHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/auth.go?s=1977:2027#L55">SignIn</a>
+					<a class="permalink" href="index.html#AuthHandler.SignIn">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#AuthHandler">AuthHandler</a>) SignIn(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+SignIn login using google auth
+@Summary login using google auth
+@Description login using google auth
+@Tags Auth
+@ID auth_login
+@Param redirect_url query string false &#34;redirect base url&#34;
+@Produce  json
+@Success 200 {object} string
+@Router /auth/google/login [get]
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ChatHandler">type <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/chat.go?s=305:351#L6">ChatHandler</a>
+				<a class="permalink" href="index.html#ChatHandler">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+ChatHandler is a handler for chat related operations.
+</p>
+
+			<pre>type ChatHandler struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewChatHandler">func <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/chat.go?s=553:604#L13">NewChatHandler</a>
+					<a class="permalink" href="index.html#NewChatHandler">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewChatHandler(chatBL <a href="../../core/bll/index.html">bll</a>.<a href="../../core/bll/index.html#ChatBL">ChatBL</a>) *<a href="index.html#ChatHandler">ChatHandler</a></pre>
+				<p>
+NewChatHandler creates a new instance of ChatHandler with the provided ChatBL
+@param chatBL The implementation of ChatBL interface
+@return *ChatHandler The newly created ChatHandler instance
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="ChatHandler.CreateSession">func (*ChatHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/chat.go?s=3345:3431#L84">CreateSession</a>
+					<a class="permalink" href="index.html#ChatHandler.CreateSession">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#ChatHandler">ChatHandler</a>) CreateSession(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+CreateSession creates new chat session
+@Summary creates new chat session
+@Description creates new chat session
+@Tags Chat
+@ID chat_create_session
+@Param payload body parameters.CreateChatSession true &#34;create session parameters&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.ChatSession
+@Router /chats/create-chat-session [post]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ChatHandler.GetByID">func (*ChatHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/chat.go?s=2572:2652#L62">GetByID</a>
+					<a class="permalink" href="index.html#ChatHandler.GetByID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#ChatHandler">ChatHandler</a>) GetByID(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+GetByID return chat session with messages by given id
+@Summary return chat session with messages by given id
+@Description return chat session with messages by given id
+@Tags Chat
+@ID chat_get_by_id
+@Param id path int true &#34;session id&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.ChatSession
+@Router /chats/get-chat-session/{id} [get]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ChatHandler.GetSessions">func (*ChatHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/chat.go?s=1936:2020#L44">GetSessions</a>
+					<a class="permalink" href="index.html#ChatHandler.GetSessions">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#ChatHandler">ChatHandler</a>) GetSessions(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+GetSessions return list of chat sessions for current user
+@Summary return list of chat sessions for current user
+@Description return list of chat sessions for current user
+@Tags Chat
+@ID chat_get_sessions
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {array} model.ChatSession
+@Router /chats/get-user-chat-sessions [get]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ChatHandler.MessageFeedback">func (*ChatHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/chat.go?s=5010:5098#L136">MessageFeedback</a>
+					<a class="permalink" href="index.html#ChatHandler.MessageFeedback">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#ChatHandler">ChatHandler</a>) MessageFeedback(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+MessageFeedback add  feedback to message
+@Summary add  feedback to message
+@Description add  feedback to message
+@Tags Chat
+@ID chat_message_feedback
+@Param payload body parameters.MessageFeedbackParam true &#34;send message parameters&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.ChatMessageFeedback
+@Router /chats/message/feedback [post]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ChatHandler.Mount">func (*ChatHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/chat.go?s=1030:1108#L25">Mount</a>
+					<a class="permalink" href="index.html#ChatHandler.Mount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#ChatHandler">ChatHandler</a>) Mount(route *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Engine">Engine</a>, authMiddleware <a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#HandlerFunc">HandlerFunc</a>)</pre>
+				<p>
+Mount mounts the chat routes and handlers to the provided router with the authentication middleware.
+@Summary mounts the chat routes and handlers
+@Description mounts the chat routes and handlers
+@Tags Chat
+@Param route body *gin.Engine true &#34;router instance&#34;
+@Param authMiddleware body gin.HandlerFunc true &#34;authentication middleware&#34;
+@Router /api/chats [post]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ChatHandler.SendMessage">func (*ChatHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/chat.go?s=4140:4224#L106">SendMessage</a>
+					<a class="permalink" href="index.html#ChatHandler.SendMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#ChatHandler">ChatHandler</a>) SendMessage(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+SendMessage send message and wait stream response
+@Summary send message and wait stream response
+@Description send message and wait stream response
+@Tags Chat
+@ID chat_send_message
+@Param payload body parameters.CreateChatMessageRequest true &#34;send message parameters&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.ChatMessage
+@Router /chats/send-message [post]
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ConnectorHandler">type <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/connector.go?s=339:400#L6">ConnectorHandler</a>
+				<a class="permalink" href="index.html#ConnectorHandler">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+ConnectorHandler represents a handler for managing connectors.
+</p>
+
+			<pre>type ConnectorHandler struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewCollectorHandler">func <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/connector.go?s=672:743#L17">NewCollectorHandler</a>
+					<a class="permalink" href="index.html#NewCollectorHandler">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewCollectorHandler(connectorBL <a href="../../core/bll/index.html">bll</a>.<a href="../../core/bll/index.html#ConnectorBL">ConnectorBL</a>) *<a href="index.html#ConnectorHandler">ConnectorHandler</a></pre>
+				<p>
+NewCollectorHandler creates a new instance of ConnectorHandler.
+</p>
+<p>
+Parameters:
+- connectorBL: a ConnectorBL instance that handles connector-related business logic.
+</p>
+<p>
+Returns:
+- *ConnectorHandler: a pointer to the newly created ConnectorHandler instance.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="ConnectorHandler.Archive">func (*ConnectorHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/connector.go?s=5700:5785#L156">Archive</a>
+					<a class="permalink" href="index.html#ConnectorHandler.Archive">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#ConnectorHandler">ConnectorHandler</a>) Archive(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Archive delete or restore connector
+@Summary delete or restore connector
+@Description delete or restore connector
+@Tags Connectors
+@ID Connectors_delete_restore
+@Param id path int true &#34;Connectors id&#34;
+@Param action path string true &#34;action : delete | restore &#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.Connector
+@Router /manage/connector/{id}/{action} [post]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ConnectorHandler.Create">func (*ConnectorHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/connector.go?s=3210:3294#L87">Create</a>
+					<a class="permalink" href="index.html#ConnectorHandler.Create">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#ConnectorHandler">ConnectorHandler</a>) Create(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Create creates connector
+@Summary creates connector
+@Description creates connector
+@Tags Connectors
+@ID connectors_create
+@Param params body parameters.CreateConnectorParam true &#34;connector create parameter&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 201 {object} model.Connector
+@Router /manage/connector/ [post]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ConnectorHandler.GetAll">func (*ConnectorHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/connector.go?s=1848:1932#L46">GetAll</a>
+					<a class="permalink" href="index.html#ConnectorHandler.GetAll">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#ConnectorHandler">ConnectorHandler</a>) GetAll(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+GetAll return list of allowed connectors
+@Summary return list of allowed connectors
+@Description return list of allowed connectors
+@Tags Connectors
+@ID connectors_get_all
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {array} model.Connector
+@Router /manage/connector [get]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ConnectorHandler.GetById">func (*ConnectorHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/connector.go?s=2458:2543#L64">GetById</a>
+					<a class="permalink" href="index.html#ConnectorHandler.GetById">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#ConnectorHandler">ConnectorHandler</a>) GetById(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+GetById return list of allowed connectors
+@Summary return list of allowed connectors
+@Description return list of allowed connectors
+@Tags Connectors
+@ID connectors_get_by_id
+@Produce  json
+@Param id path int true &#34;connector id&#34;
+@Security ApiKeyAuth
+@Success 200 {object} model.Connector
+@Router /manage/connector/{id} [get]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ConnectorHandler.GetSourceTypes">func (*ConnectorHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/connector.go?s=5120:5212#L141">GetSourceTypes</a>
+					<a class="permalink" href="index.html#ConnectorHandler.GetSourceTypes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#ConnectorHandler">ConnectorHandler</a>) GetSourceTypes(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+GetSourceTypes return list of source types
+@Summary return list of source types
+@Description return list of source types
+@Tags Connectors
+@ID connectors_get_source_types
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {array} model.SourceTypeDescription
+@Router /manage/connector/source_types [get]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ConnectorHandler.Mount">func (*ConnectorHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/connector.go?s=995:1078#L26">Mount</a>
+					<a class="permalink" href="index.html#ConnectorHandler.Mount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#ConnectorHandler">ConnectorHandler</a>) Mount(route *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Engine">Engine</a>, authMiddleware <a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#HandlerFunc">HandlerFunc</a>)</pre>
+				<p>
+Mount mounts the ConnectorHandler routes to the specified gin.Engine
+@param route the gin.Engine to mount the routes to
+@param authMiddleware the authentication middleware to use
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ConnectorHandler.Update">func (*ConnectorHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/connector.go?s=4114:4198#L113">Update</a>
+					<a class="permalink" href="index.html#ConnectorHandler.Update">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#ConnectorHandler">ConnectorHandler</a>) Update(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Update updates connector
+@Summary updates connector
+@Description updates connector
+@Tags Connectors
+@ID connectors_update
+@Param id path int true &#34;connector id&#34;
+@Param params body parameters.UpdateConnectorParam true &#34;connector update parameter&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.Connector
+@Router /manage/connector/{id} [put]
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="DocumentHandler">type <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/document.go?s=318:376#L6">DocumentHandler</a>
+				<a class="permalink" href="index.html#DocumentHandler">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+DocumentHandler is a type that handles document-related operations in the system.
+</p>
+
+			<pre>type DocumentHandler struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewDocumentHandler">func <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/document.go?s=682:749#L17">NewDocumentHandler</a>
+					<a class="permalink" href="index.html#NewDocumentHandler">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewDocumentHandler(documentBL <a href="../../core/bll/index.html">bll</a>.<a href="../../core/bll/index.html#DocumentBL">DocumentBL</a>) *<a href="index.html#DocumentHandler">DocumentHandler</a></pre>
+				<p>
+NewDocumentHandler creates a new instance of DocumentHandler by injecting a DocumentBL implementation.
+</p>
+<p>
+Parameters:
+- documentBL: An instance of DocumentBL that handles document-related operations.
+</p>
+<p>
+Returns:
+- *DocumentHandler: A pointer to the newly created DocumentHandler instance.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="DocumentHandler.GetAll">func (*DocumentHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/document.go?s=1182:1265#L28">GetAll</a>
+					<a class="permalink" href="index.html#DocumentHandler.GetAll">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#DocumentHandler">DocumentHandler</a>) GetAll(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="DocumentHandler.Mount">func (*DocumentHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/document.go?s=902:985#L22">Mount</a>
+					<a class="permalink" href="index.html#DocumentHandler.Mount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#DocumentHandler">DocumentHandler</a>) Mount(router *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Engine">Engine</a>, authMiddleware <a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#HandlerFunc">HandlerFunc</a>)</pre>
+				<p>
+Mount sets up the document-related routes by adding them to the specified gin.Engine instance.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="DocumentHandler.Upload">func (*DocumentHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/document.go?s=1283:1366#L32">Upload</a>
+					<a class="permalink" href="index.html#DocumentHandler.Upload">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#DocumentHandler">DocumentHandler</a>) Upload(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="EmbeddingModelHandler">type <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/embedding_model.go?s=349:425#L6">EmbeddingModelHandler</a>
+				<a class="permalink" href="index.html#EmbeddingModelHandler">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+EmbeddingModelHandler handles HTTP requests related to embedding models.
+</p>
+
+			<pre>type EmbeddingModelHandler struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEmbeddingModelHandler">func <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/embedding_model.go?s=789:880#L18">NewEmbeddingModelHandler</a>
+					<a class="permalink" href="index.html#NewEmbeddingModelHandler">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewEmbeddingModelHandler(embeddingModelBL <a href="../../core/bll/index.html">bll</a>.<a href="../../core/bll/index.html#EmbeddingModelBL">EmbeddingModelBL</a>) *<a href="index.html#EmbeddingModelHandler">EmbeddingModelHandler</a></pre>
+				<p>
+NewEmbeddingModelHandler creates a new instance of EmbeddingModelHandler.
+It takes an instance of EmbeddingModelBL as a parameter and returns EmbeddingModelHandler.
+</p>
+<p>
+Parameters:
+- embeddingModelBL: an instance of EmbeddingModelBL used to handle embedding models.
+</p>
+<p>
+Returns:
+- *EmbeddingModelHandler: a new instance of EmbeddingModelHandler.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="EmbeddingModelHandler.Create">func (*EmbeddingModelHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/embedding_model.go?s=3633:3722#L89">Create</a>
+					<a class="permalink" href="index.html#EmbeddingModelHandler.Create">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#EmbeddingModelHandler">EmbeddingModelHandler</a>) Create(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Create creates embedding models
+@Summary creates embedding models
+@Description creates embedding models
+@Tags EmbeddingModel
+@ID embedding_model_create
+@Param params body parameters.EmbeddingModelParam true &#34;embedding model parameter&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 201 {object} model.EmbeddingModel
+@Router /manage/embedding_models [post]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EmbeddingModelHandler.Delete">func (*EmbeddingModelHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/embedding_model.go?s=5522:5611#L139">Delete</a>
+					<a class="permalink" href="index.html#EmbeddingModelHandler.Delete">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#EmbeddingModelHandler">EmbeddingModelHandler</a>) Delete(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Delete deletes or restore embedding model
+@Summary delete or restore embedding model
+@Description delete or restore embedding model
+@Tags EmbeddingModel
+@ID embedding_model_delete
+@Param id path int true &#34;embedding model id&#34;
+@Param action path string true &#34;action : delete | restore &#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.EmbeddingModel
+@Router /manage/embedding_models/{id}/{action} [post]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EmbeddingModelHandler.GetAll">func (*EmbeddingModelHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/embedding_model.go?s=2042:2131#L45">GetAll</a>
+					<a class="permalink" href="index.html#EmbeddingModelHandler.GetAll">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#EmbeddingModelHandler">EmbeddingModelHandler</a>) GetAll(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+GetAll return list of embedding models
+@Summary return list of embedding models
+@Description return list of embedding models
+@Tags EmbeddingModel
+@ID embedding_model_get_all
+@Param archived query bool false &#34;true for include deleted embedding models&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {array} model.EmbeddingModel
+@Router /manage/embedding_models [get]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EmbeddingModelHandler.GetByID">func (*EmbeddingModelHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/embedding_model.go?s=2825:2915#L67">GetByID</a>
+					<a class="permalink" href="index.html#EmbeddingModelHandler.GetByID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#EmbeddingModelHandler">EmbeddingModelHandler</a>) GetByID(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+GetByID return embedding model by id
+@Summary return embedding model by id
+@Description return embedding model by id
+@Tags EmbeddingModel
+@ID embedding_model_get_by_id
+@Param id path int true &#34;embedding model id&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.EmbeddingModel
+@Router /manage/embedding_models/{id} [get]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EmbeddingModelHandler.Mount">func (*EmbeddingModelHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/embedding_model.go?s=1166:1255#L25">Mount</a>
+					<a class="permalink" href="index.html#EmbeddingModelHandler.Mount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#EmbeddingModelHandler">EmbeddingModelHandler</a>) Mount(router *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Engine">Engine</a>, authMiddleware <a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#HandlerFunc">HandlerFunc</a>)</pre>
+				<p>
+Mount mounts the routes related to embedding models on the given router.
+@param router: The Gin router to mount the routes on.
+@param authMiddleware: The authentication middleware to apply to the routes.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EmbeddingModelHandler.Update">func (*EmbeddingModelHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/embedding_model.go?s=4497:4586#L112">Update</a>
+					<a class="permalink" href="index.html#EmbeddingModelHandler.Update">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#EmbeddingModelHandler">EmbeddingModelHandler</a>) Update(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Update updates embedding model
+@Summary updates embedding model
+@Description updates embedding model
+@Tags EmbeddingModel
+@ID embedding_model_update
+@Param id path int true &#34;embedding model id&#34;
+@Param params body parameters.EmbeddingModelParam true &#34;embedding model parameter&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.EmbeddingModel
+@Router /manage/embedding_models/{id} [put]
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="OAuthHandler">type <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/oauth.go?s=293:348#L4">OAuthHandler</a>
+				<a class="permalink" href="index.html#OAuthHandler">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+OAuthHandler  provide oauth authentication for  third part services
+</p>
+
+			<pre>type OAuthHandler struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewOAuthHandler">func <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/oauth.go?s=424:485#L9">NewOAuthHandler</a>
+					<a class="permalink" href="index.html#NewOAuthHandler">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewOAuthHandler(oauthConfig *<a href="../../core/oauth/index.html">oauth</a>.<a href="../../core/oauth/index.html#Config">Config</a>) *<a href="index.html#OAuthHandler">OAuthHandler</a></pre>
+				<p>
+NewOAuthHandler creates a new OAuthHandler with the given oauthConfig.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="OAuthHandler.Callback">func (*OAuthHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/oauth.go?s=2758:2811#L56">Callback</a>
+					<a class="permalink" href="index.html#OAuthHandler.Callback">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#OAuthHandler">OAuthHandler</a>) Callback(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Callback handles the callback after the authentication process is completed for the specified provider.
+It retrieves the provider from the context parameters and binds the query parameters from the context
+to a map[string]string. Then, it creates a new OAuth client for the specified provider and exchanges
+the received authorization code for an access token. Finally, it returns the result as a JSON response
+with the status code 200.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="OAuthHandler.GetUrl">func (*OAuthHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/oauth.go?s=1756:1807#L33">GetUrl</a>
+					<a class="permalink" href="index.html#OAuthHandler.GetUrl">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#OAuthHandler">OAuthHandler</a>) GetUrl(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+GetUrl retrieves the authentication URL for the given provider.
+It binds the query parameters from the context to the LoginParam struct.
+Then, it creates a new OAuth client for the specified provider and calls GetAuthURL
+to get the authentication URL with the provided redirect URL.
+Finally, it returns the URL as a response with the status code 200.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="OAuthHandler.Mount">func (*OAuthHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/oauth.go?s=1009:1056#L20">Mount</a>
+					<a class="permalink" href="index.html#OAuthHandler.Mount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#OAuthHandler">OAuthHandler</a>) Mount(route *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Engine">Engine</a>)</pre>
+				<p>
+Mount sets up the routes for OAuth authentication on the provided Gin router.
+It creates a new route group &#34;/api/oauth&#34; and registers the following routes:
+- GET &#34;/:provider/auth_url&#34; to handle getting the authentication URL for the given provider
+- GET &#34;/:provider/callback&#34; to handle the callback after the authentication process is completed
+- POST &#34;/:provider/refresh_token&#34; to handle refreshing the authentication token for the given provider.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="OAuthHandler.Refresh">func (*OAuthHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/oauth.go?s=3760:3812#L79">Refresh</a>
+					<a class="permalink" href="index.html#OAuthHandler.Refresh">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#OAuthHandler">OAuthHandler</a>) Refresh(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Refresh handles the refreshing of the authentication token for the specified provider.
+It retrieves the provider from the context parameters and binds the JSON payload from the context
+to an oauth2.Token struct. Then, it creates a new OAuth client for the specified provider and calls
+the RefreshToken method with the provided token. Finally, it returns the refreshed token as a JSON
+response with the status code 200.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="PersonaHandler">type <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/persona.go?s=328:406#L6">PersonaHandler</a>
+				<a class="permalink" href="index.html#PersonaHandler">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+PersonaHandler handles operations related to personas.
+</p>
+
+			<pre>type PersonaHandler struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewPersonaHandler">func <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/persona.go?s=838:924#L25">NewPersonaHandler</a>
+					<a class="permalink" href="index.html#NewPersonaHandler">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewPersonaHandler(personaBL <a href="../../core/bll/index.html">bll</a>.<a href="../../core/bll/index.html#PersonaBL">PersonaBL</a>, aiBuilder *<a href="../../core/ai/index.html">ai</a>.<a href="../../core/ai/index.html#Builder">Builder</a>) *<a href="index.html#PersonaHandler">PersonaHandler</a></pre>
+				<p>
+NewPersonaHandler returns a new instance of PersonaHandler.
+The PersonaHandler handles operations related to personas.
+</p>
+<p>
+Parameters:
+- personaBL: an instance of PersonaBL, the business logic layer for personas.
+- aiBuilder: an instance of ai.Builder, used for AI-related operations.
+</p>
+<p>
+Returns:
+</p>
+<pre>An instance of PersonaHandler.
+</pre>
+<p>
+Example:
+</p>
+<pre>personaHandler := NewPersonaHandler(personaBL, aiBuilder)
+</pre>
+
+				
+				
+			
+
+			
+				
+				<h3 id="PersonaHandler.Archive">func (*PersonaHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/persona.go?s=5146:5229#L150">Archive</a>
+					<a class="permalink" href="index.html#PersonaHandler.Archive">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#PersonaHandler">PersonaHandler</a>) Archive(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Archive delete or restore persona
+@Summary delete or restore persona
+@Description delete or restore persona
+@Tags Persona
+@ID persona_delete_restore
+@Param id path int true &#34;persona id&#34;
+@Param action path string true &#34;action : delete | restore &#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.Persona
+@Router /manage/personas/{id}/{action} [post]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PersonaHandler.Create">func (*PersonaHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/persona.go?s=3448:3530#L97">Create</a>
+					<a class="permalink" href="index.html#PersonaHandler.Create">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#PersonaHandler">PersonaHandler</a>) Create(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Create create persona
+@Summary create persona
+@Description create persona
+@Tags Persona
+@ID persona_create
+@Param id body parameters.PersonaParam true &#34;persona payload&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 201 {object} model.Persona
+@Router /manage/personas [post]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PersonaHandler.GetAll">func (*PersonaHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/persona.go?s=2035:2117#L52">GetAll</a>
+					<a class="permalink" href="index.html#PersonaHandler.GetAll">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#PersonaHandler">PersonaHandler</a>) GetAll(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+GetAll return list of allowed personas
+@Summary return list of allowed personas
+@Description return list of allowed personas
+@Tags Persona
+@ID personas_get_all
+@param archived query bool false &#34;true for include deleted personas&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {array} model.Persona
+@Router /manage/personas [get]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PersonaHandler.GetByID">func (*PersonaHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/persona.go?s=2749:2832#L75">GetByID</a>
+					<a class="permalink" href="index.html#PersonaHandler.GetByID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#PersonaHandler">PersonaHandler</a>) GetByID(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+GetByID return persona by id
+@Summary return persona by id
+@Description return persona by id
+@Tags Persona
+@ID persona_get_by_id
+@Param id path int true &#34;persona id&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.Persona
+@Router /manage/personas/{id} [get]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PersonaHandler.Mount">func (*PersonaHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/persona.go?s=1204:1285#L32">Mount</a>
+					<a class="permalink" href="index.html#PersonaHandler.Mount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#PersonaHandler">PersonaHandler</a>) Mount(route *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Engine">Engine</a>, authMiddleware <a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#HandlerFunc">HandlerFunc</a>)</pre>
+				<p>
+Mount mounts PersonaHandler routes to the given route with the provided authMiddleware.
+The routes include route group &#34;/api/manage/personas&#34; with the following endpoints:
+- GET /api/manage/person
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PersonaHandler.Update">func (*PersonaHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/persona.go?s=4168:4250#L120">Update</a>
+					<a class="permalink" href="index.html#PersonaHandler.Update">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#PersonaHandler">PersonaHandler</a>) Update(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Update update persona
+@Summary update persona
+@Description update persona
+@Tags Persona
+@ID persona_update
+@Param id path int true &#34;persona id&#34;
+@Param id body parameters.PersonaParam true &#34;persona payload&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.Persona
+@Router /manage/personas/{id} [put]
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="SwaggerHandler">type <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/swagger.go?s=365:395#L8">SwaggerHandler</a>
+				<a class="permalink" href="index.html#SwaggerHandler">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+SwaggerHandler represents the handler for Swagger related operations.
+</p>
+
+			<pre>type SwaggerHandler struct {
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewSwaggerHandler">func <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/swagger.go?s=460:500#L12">NewSwaggerHandler</a>
+					<a class="permalink" href="index.html#NewSwaggerHandler">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewSwaggerHandler() *<a href="index.html#SwaggerHandler">SwaggerHandler</a></pre>
+				<p>
+NewSwaggerHandler returns a new instance of SwaggerHandler.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="SwaggerHandler.GetDoc">func (*SwaggerHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/swagger.go?s=992:1045#L27">GetDoc</a>
+					<a class="permalink" href="index.html#SwaggerHandler.GetDoc">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#SwaggerHandler">SwaggerHandler</a>) GetDoc(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+GetDoc returns the swagger doc in the json format.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="SwaggerHandler.Health">func (*SwaggerHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/swagger.go?s=1489:1536#L41">Health</a>
+					<a class="permalink" href="index.html#SwaggerHandler.Health">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#SwaggerHandler">SwaggerHandler</a>) Health(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>)</pre>
+				<p>
+Health returns a string response with status code 200 indicating that the server is functioning properly.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="SwaggerHandler.Mount">func (*SwaggerHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/swagger.go?s=588:638#L17">Mount</a>
+					<a class="permalink" href="index.html#SwaggerHandler.Mount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#SwaggerHandler">SwaggerHandler</a>) Mount(router *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Engine">Engine</a>)</pre>
+				<p>
+Mount sets up Swagger routes and health check route.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TenantHandler">type <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/tenant.go?s=339:391#L6">TenantHandler</a>
+				<a class="permalink" href="index.html#TenantHandler">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+TenantHandler  handles authentication endpoints
+</p>
+
+			<pre>type TenantHandler struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewTenantHandler">func <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/tenant.go?s=599:658#L14">NewTenantHandler</a>
+					<a class="permalink" href="index.html#NewTenantHandler">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewTenantHandler(TenantBL <a href="../../core/bll/index.html">bll</a>.<a href="../../core/bll/index.html#TenantBL">TenantBL</a>) *<a href="index.html#TenantHandler">TenantHandler</a></pre>
+				<p>
+NewTenantHandler create new TenantHandler instance
+without duplicating the declaration code
+@param TenantBL tenant business logic interface
+@return *TenantHandler the new TenantHandler instance
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="TenantHandler.AddUser">func (*TenantHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/tenant.go?s=2230:2312#L61">AddUser</a>
+					<a class="permalink" href="index.html#TenantHandler.AddUser">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#TenantHandler">TenantHandler</a>) AddUser(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+AddUser add new user
+@Summary add new user
+@Description add new user
+@Tags Tenant
+@ID tenant_add_user
+@Param params body parameters.AddUserParam true &#34;create user parameter&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.User
+@Router /tenant/users [post]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TenantHandler.EditUser">func (*TenantHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/tenant.go?s=3206:3289#L91">EditUser</a>
+					<a class="permalink" href="index.html#TenantHandler.EditUser">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#TenantHandler">TenantHandler</a>) EditUser(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+EditUser edit  user
+@Summary edit user
+@Description edit  user
+@Tags Tenant
+@ID tenant_edit_user
+@Param id path string true &#34;user id&#34;
+@Param params body parameters.EditUserParam true &#34;edit user parameter&#34;
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.User
+@Router /tenant/users/{id} [put]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TenantHandler.GetUserInfo">func (*TenantHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/tenant.go?s=4220:4306#L123">GetUserInfo</a>
+					<a class="permalink" href="index.html#TenantHandler.GetUserInfo">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#TenantHandler">TenantHandler</a>) GetUserInfo(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+GetUserInfo get user info
+@Summary  get user info
+@Description  get user info
+@Tags Tenant
+@ID tenant_get_user_info
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {object} model.User
+@Router /tenant/user_info [get]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TenantHandler.GetUserList">func (*TenantHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/tenant.go?s=1681:1767#L43">GetUserList</a>
+					<a class="permalink" href="index.html#TenantHandler.GetUserList">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#TenantHandler">TenantHandler</a>) GetUserList(c *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Context">Context</a>, identity *<a href="../../core/security/index.html">security</a>.<a href="../../core/security/index.html#Identity">Identity</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+GetUserList return list of users
+@Summary return list of users
+@Description return list of users
+@Tags Tenant
+@ID tenant_get_users
+@Produce  json
+@Security ApiKeyAuth
+@Success 200 {array} model.User
+@Router /tenant/users [get]
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TenantHandler.Mount">func (*TenantHandler) <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/tenant.go?s=999:1081#L25">Mount</a>
+					<a class="permalink" href="index.html#TenantHandler.Mount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (h *<a href="index.html#TenantHandler">TenantHandler</a>) Mount(route *<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#Engine">Engine</a>, TenantMiddleware <a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="http://localhost:6060/pkg/github.com/gin-gonic/gin/#HandlerFunc">HandlerFunc</a>)</pre>
+				<p>
+Mount mounts the TenantHandler routes onto the provided gin.Engine.
+The routes are prefixed with &#34;/api/tenant&#34; and use the provided TenantMiddleware
+</p>
+<p>
+@param route - The gin.Engine to mount the routes onto
+@param TenantMiddleware - The gin.HandlerFunc to use as middleware
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TokenResponse">type <a href="http://localhost:6060/src/cognix.ch/api/v2/api/handler/model.go?s=168:226#L1">TokenResponse</a>
+				<a class="permalink" href="index.html#TokenResponse">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+TokenResponse is a struct representing the response from a token generation request
+</p>
+
+			<pre>type TokenResponse struct {
+<span id="TokenResponse.Token"></span>    Token <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;token&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>mocks - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.1";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package mocks
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "cognix.ch/api/v2/orchestrator/mocks"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#NewMockConnectorRepo">func NewMockConnectorRepo(iteration int, workCh chan int) repository.ConnectorRepository</a></dd>
+			
+				
+				<dd><a href="index.html#NewMockDocumentRepo">func NewMockDocumentRepo() repository.DocumentRepository</a></dd>
+			
+				
+				<dd><a href="index.html#NewMockMessenger">func NewMockMessenger(workCh chan int) messaging.Client</a></dd>
+			
+			
+				
+				<dd><a href="index.html#MockConnectorRepo">type MockConnectorRepo</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockConnectorRepo.Create">func (m *MockConnectorRepo) Create(ctx context.Context, connector *model.Connector) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockConnectorRepo.GetActive">func (m *MockConnectorRepo) GetActive(ctx context.Context) ([]*model.Connector, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockConnectorRepo.GetAllByUser">func (m *MockConnectorRepo) GetAllByUser(ctx context.Context, tenantID, userID uuid.UUID) ([]*model.Connector, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockConnectorRepo.GetByID">func (m *MockConnectorRepo) GetByID(ctx context.Context, id int64) (*model.Connector, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockConnectorRepo.GetByIDAndUser">func (m *MockConnectorRepo) GetByIDAndUser(ctx context.Context, tenantID, userID uuid.UUID, id int64) (*model.Connector, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockConnectorRepo.GetBySource">func (m *MockConnectorRepo) GetBySource(ctx context.Context, tenantID, userID uuid.UUID, source model.SourceType) (*model.Connector, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockConnectorRepo.Update">func (m *MockConnectorRepo) Update(ctx context.Context, connector *model.Connector) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#MockDocumentRepository">type MockDocumentRepository</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockDocumentRepository.Create">func (m MockDocumentRepository) Create(ctx context.Context, document *model.Document) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockDocumentRepository.DeleteByIDS">func (m MockDocumentRepository) DeleteByIDS(ctx context.Context, ids ...int64) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockDocumentRepository.FindByConnectorID">func (m MockDocumentRepository) FindByConnectorID(ctx context.Context, connectorID int64) ([]*model.Document, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockDocumentRepository.FindByConnectorIDAndUser">func (m MockDocumentRepository) FindByConnectorIDAndUser(ctx context.Context, user *model.User, connectorID int64) ([]*model.Document, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockDocumentRepository.FindByID">func (m MockDocumentRepository) FindByID(ctx context.Context, id int64) (*model.Document, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockDocumentRepository.Update">func (m MockDocumentRepository) Update(ctx context.Context, document *model.Document) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#MockMessenger">type MockMessenger</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockMessenger.Close">func (m MockMessenger) Close()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockMessenger.Listen">func (m MockMessenger) Listen(ctx context.Context, streamName, topic string, handler messaging.MessageHandler) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockMessenger.Publish">func (m MockMessenger) Publish(ctx context.Context, streamName, topic string, body proto2.Message) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MockMessenger.StreamConfig">func (m MockMessenger) StreamConfig() *messaging.StreamConfig</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/connector_repo_mock.go">connector_repo_mock.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/document_repo_mock.go">document_repo_mock.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/messenger_mock.go">messenger_mock.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var <span id="MockedConnectors">MockedConnectors</span> = map[<a href="http://localhost:6060/pkg/builtin/#int64">int64</a>]*<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#Connector">Connector</a>{
+    1: {
+        <a href="index.html#ID">ID</a>:   <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#NewFromInt">NewFromInt</a>(1),
+        <a href="index.html#Name">Name</a>: &#34;web connector ready to process&#34;,
+        <a href="index.html#Type">Type</a>: <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#SourceTypeWEB">SourceTypeWEB</a>,
+        <a href="index.html#ConnectorSpecificConfig">ConnectorSpecificConfig</a>: <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#JSONMap">JSONMap</a>{
+            &#34;url&#34;: &#34;http://testurl&#34;,
+        },
+        <a href="index.html#RefreshFreq">RefreshFreq</a>:       60,
+        <a href="index.html#Status">Status</a>:            <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#ConnectorStatusReadyToProcessed">ConnectorStatusReadyToProcessed</a>,
+        <a href="index.html#TotalDocsAnalyzed">TotalDocsAnalyzed</a>: 0,
+        <a href="index.html#CreationDate">CreationDate</a>:      <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Now">Now</a>().<a href="index.html#UTC">UTC</a>(),
+        <a href="index.html#User">User</a>: &amp;<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#User">User</a>{
+            <a href="../../core/model/index.html#User.EmbeddingModel">EmbeddingModel</a>: &amp;<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#EmbeddingModel">EmbeddingModel</a>{
+                <a href="../../core/model/index.html#EmbeddingModel.ModelID">ModelID</a>:  &#34;&#34;,
+                <a href="../../core/model/index.html#EmbeddingModel.ModelDim">ModelDim</a>: 3,
+            },
+        },
+    },
+    2: {
+        <a href="index.html#ID">ID</a>:   <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#NewFromInt">NewFromInt</a>(2),
+        <a href="index.html#Name">Name</a>: &#34;File connector ready to process&#34;,
+        <a href="index.html#Type">Type</a>: <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#SourceTypeFile">SourceTypeFile</a>,
+        <a href="index.html#ConnectorSpecificConfig">ConnectorSpecificConfig</a>: <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#JSONMap">JSONMap</a>{
+            &#34;file_name&#34;: &#34;file name&#34;,
+        },
+        <a href="index.html#RefreshFreq">RefreshFreq</a>:       60,
+        <a href="index.html#Status">Status</a>:            <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#ConnectorStatusReadyToProcessed">ConnectorStatusReadyToProcessed</a>,
+        <a href="index.html#TotalDocsAnalyzed">TotalDocsAnalyzed</a>: 0,
+        <a href="index.html#CreationDate">CreationDate</a>:      <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Now">Now</a>().<a href="index.html#UTC">UTC</a>(),
+        <a href="index.html#User">User</a>: &amp;<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#User">User</a>{
+            <a href="../../core/model/index.html#User.EmbeddingModel">EmbeddingModel</a>: &amp;<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#EmbeddingModel">EmbeddingModel</a>{
+                <a href="../../core/model/index.html#EmbeddingModel.ModelID">ModelID</a>:  &#34;&#34;,
+                <a href="../../core/model/index.html#EmbeddingModel.ModelDim">ModelDim</a>: 3,
+            },
+        },
+    },
+    3: {
+        <a href="index.html#ID">ID</a>:   <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#NewFromInt">NewFromInt</a>(3),
+        <a href="index.html#Name">Name</a>: &#34;One drive connector disabled&#34;,
+        <a href="index.html#Type">Type</a>: <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#SourceTypeOneDrive">SourceTypeOneDrive</a>,
+        <a href="index.html#ConnectorSpecificConfig">ConnectorSpecificConfig</a>: <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#JSONMap">JSONMap</a>{
+            &#34;file_name&#34;: &#34;file name&#34;,
+        },
+        <a href="index.html#RefreshFreq">RefreshFreq</a>:       60,
+        <a href="index.html#Status">Status</a>:            <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#ConnectorStatusDisabled">ConnectorStatusDisabled</a>,
+        <a href="index.html#TotalDocsAnalyzed">TotalDocsAnalyzed</a>: 0,
+        <a href="index.html#CreationDate">CreationDate</a>:      <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Now">Now</a>().<a href="index.html#UTC">UTC</a>(),
+        <a href="index.html#User">User</a>: &amp;<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#User">User</a>{
+            <a href="../../core/model/index.html#User.EmbeddingModel">EmbeddingModel</a>: &amp;<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#EmbeddingModel">EmbeddingModel</a>{
+                <a href="../../core/model/index.html#EmbeddingModel.ModelID">ModelID</a>:  &#34;&#34;,
+                <a href="../../core/model/index.html#EmbeddingModel.ModelDim">ModelDim</a>: 3,
+            },
+        },
+    },
+    4: {
+        <a href="index.html#ID">ID</a>:   <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#NewFromInt">NewFromInt</a>(2),
+        <a href="index.html#Name">Name</a>: &#34;File connector without embedding model&#34;,
+        <a href="index.html#Type">Type</a>: <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#SourceTypeFile">SourceTypeFile</a>,
+        <a href="index.html#ConnectorSpecificConfig">ConnectorSpecificConfig</a>: <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#JSONMap">JSONMap</a>{
+            &#34;file_name&#34;: &#34;file name&#34;,
+        },
+        <a href="index.html#RefreshFreq">RefreshFreq</a>:       60,
+        <a href="index.html#Status">Status</a>:            <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#ConnectorStatusReadyToProcessed">ConnectorStatusReadyToProcessed</a>,
+        <a href="index.html#TotalDocsAnalyzed">TotalDocsAnalyzed</a>: 0,
+        <a href="index.html#CreationDate">CreationDate</a>:      <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Now">Now</a>().<a href="index.html#UTC">UTC</a>(),
+        <a href="index.html#User">User</a>:              &amp;<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#User">User</a>{},
+    },
+    5: {
+        <a href="index.html#ID">ID</a>:   <a href="http://localhost:6060/pkg/github.com/shopspring/decimal/">decimal</a>.<a href="http://localhost:6060/pkg/github.com/shopspring/decimal/#NewFromInt">NewFromInt</a>(5),
+        <a href="index.html#Name">Name</a>: &#34;One drive connector ready for processing &#34;,
+        <a href="index.html#Type">Type</a>: <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#SourceTypeOneDrive">SourceTypeOneDrive</a>,
+        <a href="index.html#ConnectorSpecificConfig">ConnectorSpecificConfig</a>: <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#JSONMap">JSONMap</a>{
+            &#34;file_name&#34;: &#34;file name&#34;,
+        },
+        <a href="index.html#RefreshFreq">RefreshFreq</a>:       60,
+        <a href="index.html#Status">Status</a>:            <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#ConnectorStatusReadyToProcessed">ConnectorStatusReadyToProcessed</a>,
+        <a href="index.html#TotalDocsAnalyzed">TotalDocsAnalyzed</a>: 0,
+        <a href="index.html#CreationDate">CreationDate</a>:      <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Now">Now</a>().<a href="index.html#UTC">UTC</a>(),
+        <a href="index.html#User">User</a>: &amp;<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#User">User</a>{
+            <a href="../../core/model/index.html#User.EmbeddingModel">EmbeddingModel</a>: &amp;<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#EmbeddingModel">EmbeddingModel</a>{
+                <a href="../../core/model/index.html#EmbeddingModel.ModelID">ModelID</a>:  &#34;&#34;,
+                <a href="../../core/model/index.html#EmbeddingModel.ModelDim">ModelDim</a>: 3,
+            },
+        },
+    },
+}</pre>
+			
+		
+		
+			
+			
+			<h2 id="NewMockConnectorRepo">func <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/connector_repo_mock.go?s=4192:4280#L148">NewMockConnectorRepo</a>
+				<a class="permalink" href="index.html#NewMockConnectorRepo">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewMockConnectorRepo(iteration <a href="http://localhost:6060/pkg/builtin/#int">int</a>, workCh chan <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="../../core/repository/index.html">repository</a>.<a href="../../core/repository/index.html#ConnectorRepository">ConnectorRepository</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="NewMockDocumentRepo">func <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/document_repo_mock.go?s=1068:1124#L31">NewMockDocumentRepo</a>
+				<a class="permalink" href="index.html#NewMockDocumentRepo">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewMockDocumentRepo() <a href="../../core/repository/index.html">repository</a>.<a href="../../core/repository/index.html#DocumentRepository">DocumentRepository</a></pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="NewMockMessenger">func <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/messenger_mock.go?s=1901:1956#L58">NewMockMessenger</a>
+				<a class="permalink" href="index.html#NewMockMessenger">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewMockMessenger(workCh chan <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="../../core/messaging/index.html">messaging</a>.<a href="../../core/messaging/index.html#Client">Client</a></pre>
+			
+			
+			
+
+		
+		
+			
+			
+			<h2 id="MockConnectorRepo">type <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/connector_repo_mock.go?s=2418:2525#L91">MockConnectorRepo</a>
+				<a class="permalink" href="index.html#MockConnectorRepo">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MockConnectorRepo struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="MockConnectorRepo.Create">func (*MockConnectorRepo) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/connector_repo_mock.go?s=3892:3981#L138">Create</a>
+					<a class="permalink" href="index.html#MockConnectorRepo.Create">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#MockConnectorRepo">MockConnectorRepo</a>) Create(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, connector *<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#Connector">Connector</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MockConnectorRepo.GetActive">func (*MockConnectorRepo) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/connector_repo_mock.go?s=2527:2613#L97">GetActive</a>
+					<a class="permalink" href="index.html#MockConnectorRepo.GetActive">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#MockConnectorRepo">MockConnectorRepo</a>) GetActive(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>) ([]*<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MockConnectorRepo.GetAllByUser">func (*MockConnectorRepo) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/connector_repo_mock.go?s=3217:3334#L118">GetAllByUser</a>
+					<a class="permalink" href="index.html#MockConnectorRepo.GetAllByUser">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#MockConnectorRepo">MockConnectorRepo</a>) GetAllByUser(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, tenantID, userID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>) ([]*<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MockConnectorRepo.GetByID">func (*MockConnectorRepo) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/connector_repo_mock.go?s=3561:3653#L128">GetByID</a>
+					<a class="permalink" href="index.html#MockConnectorRepo.GetByID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#MockConnectorRepo">MockConnectorRepo</a>) GetByID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) (*<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MockConnectorRepo.GetByIDAndUser">func (*MockConnectorRepo) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/connector_repo_mock.go?s=3384:3511#L123">GetByIDAndUser</a>
+					<a class="permalink" href="index.html#MockConnectorRepo.GetByIDAndUser">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#MockConnectorRepo">MockConnectorRepo</a>) GetByIDAndUser(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, tenantID, userID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) (*<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MockConnectorRepo.GetBySource">func (*MockConnectorRepo) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/connector_repo_mock.go?s=3703:3842#L133">GetBySource</a>
+					<a class="permalink" href="index.html#MockConnectorRepo.GetBySource">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#MockConnectorRepo">MockConnectorRepo</a>) GetBySource(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, tenantID, userID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, source <a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#SourceType">SourceType</a>) (*<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MockConnectorRepo.Update">func (*MockConnectorRepo) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/connector_repo_mock.go?s=4031:4120#L143">Update</a>
+					<a class="permalink" href="index.html#MockConnectorRepo.Update">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#MockConnectorRepo">MockConnectorRepo</a>) Update(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, connector *<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#Connector">Connector</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MockDocumentRepository">type <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/document_repo_mock.go?s=138:174#L1">MockDocumentRepository</a>
+				<a class="permalink" href="index.html#MockDocumentRepository">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MockDocumentRepository struct{}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="MockDocumentRepository.Create">func (MockDocumentRepository) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/document_repo_mock.go?s=679:770#L17">Create</a>
+					<a class="permalink" href="index.html#MockDocumentRepository.Create">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m <a href="index.html#MockDocumentRepository">MockDocumentRepository</a>) Create(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, document *<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#Document">Document</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MockDocumentRepository.DeleteByIDS">func (MockDocumentRepository) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/document_repo_mock.go?s=934:1018#L26">DeleteByIDS</a>
+					<a class="permalink" href="index.html#MockDocumentRepository.DeleteByIDS">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m <a href="index.html#MockDocumentRepository">MockDocumentRepository</a>) DeleteByIDS(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, ids ...<a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MockDocumentRepository.FindByConnectorID">func (MockDocumentRepository) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/document_repo_mock.go?s=367:483#L7">FindByConnectorID</a>
+					<a class="permalink" href="index.html#MockDocumentRepository.FindByConnectorID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m <a href="index.html#MockDocumentRepository">MockDocumentRepository</a>) FindByConnectorID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, connectorID <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) ([]*<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#Document">Document</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MockDocumentRepository.FindByConnectorIDAndUser">func (MockDocumentRepository) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/document_repo_mock.go?s=176:317#L2">FindByConnectorIDAndUser</a>
+					<a class="permalink" href="index.html#MockDocumentRepository.FindByConnectorIDAndUser">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m <a href="index.html#MockDocumentRepository">MockDocumentRepository</a>) FindByConnectorIDAndUser(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, user *<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#User">User</a>, connectorID <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) ([]*<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#Document">Document</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MockDocumentRepository.FindByID">func (MockDocumentRepository) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/document_repo_mock.go?s=533:629#L12">FindByID</a>
+					<a class="permalink" href="index.html#MockDocumentRepository.FindByID">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m <a href="index.html#MockDocumentRepository">MockDocumentRepository</a>) FindByID(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, id <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) (*<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#Document">Document</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MockDocumentRepository.Update">func (MockDocumentRepository) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/document_repo_mock.go?s=825:916#L22">Update</a>
+					<a class="permalink" href="index.html#MockDocumentRepository.Update">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m <a href="index.html#MockDocumentRepository">MockDocumentRepository</a>) Update(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, document *<a href="../../core/model/index.html">model</a>.<a href="../../core/model/index.html#Document">Document</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MockMessenger">type <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/messenger_mock.go?s=232:278#L4">MockMessenger</a>
+				<a class="permalink" href="index.html#MockMessenger">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MockMessenger struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="MockMessenger.Close">func (MockMessenger) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/messenger_mock.go?s=1821:1851#L53">Close</a>
+					<a class="permalink" href="index.html#MockMessenger.Close">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m <a href="index.html#MockMessenger">MockMessenger</a>) Close()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MockMessenger.Listen">func (MockMessenger) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/messenger_mock.go?s=1512:1628#L41">Listen</a>
+					<a class="permalink" href="index.html#MockMessenger.Listen">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m <a href="index.html#MockMessenger">MockMessenger</a>) Listen(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, streamName, topic <a href="http://localhost:6060/pkg/builtin/#string">string</a>, handler <a href="../../core/messaging/index.html">messaging</a>.<a href="../../core/messaging/index.html#MessageHandler">MessageHandler</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MockMessenger.Publish">func (MockMessenger) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/messenger_mock.go?s=280:384#L8">Publish</a>
+					<a class="permalink" href="index.html#MockMessenger.Publish">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m <a href="index.html#MockMessenger">MockMessenger</a>) Publish(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, streamName, topic <a href="http://localhost:6060/pkg/builtin/#string">string</a>, body <a href="http://localhost:6060/pkg/github.com/golang/protobuf/proto/">proto2</a>.<a href="http://localhost:6060/pkg/github.com/golang/protobuf/proto/#Message">Message</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="MockMessenger.StreamConfig">func (MockMessenger) <a href="http://localhost:6060/src/cognix.ch/api/v2/orchestrator/mocks/messenger_mock.go?s=1647:1708#L46">StreamConfig</a>
+					<a class="permalink" href="index.html#MockMessenger.StreamConfig">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m <a href="index.html#MockMessenger">MockMessenger</a>) StreamConfig() *<a href="../../core/messaging/index.html">messaging</a>.<a href="../../core/messaging/index.html#StreamConfig">StreamConfig</a></pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

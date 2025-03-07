@@ -1,0 +1,20 @@
+syntax = "proto3";
+import "file_type.proto";
+package com.cognix;
+option go_package = "backend/core/proto;proto";
+
+message SemanticData {
+  // This is the url where the file is located.
+  // Based on the chunking type it will be a WEB URL (HTML type)
+  // Will be an S3/MINIO link with a proper authentication in case of a file
+  string url = 1;
+  bool url_recursive = 2;
+  string site_map = 3;
+  bool search_for_sitemap = 4;
+  int64  document_id = 5;
+  int64  connector_id = 6;
+  FileType file_type = 7;
+  string collection_name = 8;
+  string model_name = 9;
+  int32 model_dimension = 10;
+}

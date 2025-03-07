@@ -1,0 +1,48 @@
+syntax = "proto3";
+package com.cognix;
+option go_package = "backend/core/proto;proto";
+enum FileType {
+    // SEND TO CONNECTOR:
+    UNKNOWN = 0;
+    PDF = 1;
+    XPS = 2;
+    TXT = 3;
+    DOCX = 4;
+    DOC = 5;
+    XLSX = 6;
+    XLS = 7;
+    PPTX = 8;
+    PPT = 9;
+    HWPX = 10;
+    EPUB = 11;
+    MOBI = 12;
+    FB2 = 13;
+    CBZ = 14;
+    MD = 15;
+    // SEND TO SEMANTIC
+    URL = 16;
+    YT = 17;
+
+    // SEND TO WHISPER
+    MP4 = 18;
+    MP3 = 19;
+    MPEG = 20;
+    MPGA = 21;
+    M4A = 22;
+    WAV = 23;
+    WEBM = 24;
+    MOV = 25;
+
+    // send to vision
+    JPEG = 26;
+    JPG = 27;
+    PNG = 28;
+    BMP = 29;
+    GIF = 30;
+    TIFF = 31;
+    TIF = 32;
+    WEBP = 33;
+    PPM = 34;
+    PGM = 35;
+    PBM = 36;
+};

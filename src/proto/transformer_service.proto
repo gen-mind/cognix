@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.cognix;
+option go_package = "backend/core/proto;proto";
+
+enum SimilarityType {
+    COSINE = 0;
+    DIRECT = 1;
+}
+
+message SemanticRequest {
+    string content = 1;
+    string model = 2;
+    float threshold = 3;
+    SimilarityType similarity_type = 7;
+}
+
+message SemanticResponse {
+    repeated string chunks = 1;
+}
+
+service TransformerService {
+    rpc SemanticSplit (SemanticRequest) returns (SemanticResponse) {}
+}

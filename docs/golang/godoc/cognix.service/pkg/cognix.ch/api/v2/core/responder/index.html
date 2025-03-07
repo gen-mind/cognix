@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>responder - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.1";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package responder
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "cognix.ch/api/v2/core/responder"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+			
+				
+				<dd><a href="index.html#NewEmbeddingResponder">func NewEmbeddingResponder(embeddProto proto.EmbedServiceClient, milvusClinet storage.MilvusClient, docRepo repository.DocumentRepository, embeddingModel string) *embedding</a></dd>
+			
+			
+				
+				<dd><a href="index.html#ChatResponder">type ChatResponder</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewAIResponder">func NewAIResponder(aiClient ai.OpenAIClient, charRepo repository.ChatRepository, embeddProto proto.EmbedServiceClient, milvusClinet storage.MilvusClient, docRepo repository.DocumentRepository, embeddingModel string) ChatResponder</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Manager">type Manager</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewManager">func NewManager(responders ...ChatResponder) *Manager</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Manager.Receive">func (m *Manager) Receive() (*Response, bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Manager.Send">func (m *Manager) Send(cx context.Context, user *model.User, noLLM bool, parentMessage *model.ChatMessage, persona *model.Persona)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Response">type Response</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/responder/ai.go">ai.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/responder/embedding.go">embedding.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/responder/manager.go">manager.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/responder/responder.go">responder.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				<p>
+ResponseMessage is a constant variable representing the key for the message in a response.
+</p>
+
+				<pre>const (
+    <span id="ResponseMessage">ResponseMessage</span>  = &#34;message&#34;
+    <span id="ResponseError">ResponseError</span>    = &#34;error&#34;
+    <span id="ResponseDocument">ResponseDocument</span> = &#34;document&#34;
+    <span id="ResponseEnd">ResponseEnd</span>      = &#34;end&#34;
+)</pre>
+			
+		
+		
+		
+			
+			
+			<h2 id="NewEmbeddingResponder">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/responder/embedding.go?s=5110:5285#L116">NewEmbeddingResponder</a>
+				<a class="permalink" href="index.html#NewEmbeddingResponder">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewEmbeddingResponder(embeddProto <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#EmbedServiceClient">EmbedServiceClient</a>,
+    milvusClinet <a href="../storage/index.html">storage</a>.<a href="../storage/index.html#MilvusClient">MilvusClient</a>,
+    docRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#DocumentRepository">DocumentRepository</a>,
+    embeddingModel <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *embedding</pre>
+			<p>
+NewEmbeddingResponder creates a new instance of embedding struct
+</p>
+<p>
+Parameters:
+</p>
+<pre>- embeddProto : EmbedServiceClient for embedding service API
+- milvusClient: MilvusClient for interacting with the Milvus storage
+- docRepo     : DocumentRepository for interacting with the document data
+- embeddingModel   : The embedding model string
+</pre>
+<p>
+Returns:
+</p>
+<pre>- *embedding  : A pointer to the embedding struct
+</pre>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="ChatResponder">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/responder/responder.go?s=894:1079#L20">ChatResponder</a>
+				<a class="permalink" href="index.html#ChatResponder">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+ChatResponder is an interface that represents an object capable of sending chat responses.
+It defines a method `Send` that takes in a context, a response channel, a wait group, a user,
+a boolean flag, a parent message, and a persona, and sends the chat response.
+</p>
+
+			<pre>type ChatResponder interface {
+    Send(cx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, ch chan *<a href="index.html#Response">Response</a>, wg *<a href="http://localhost:6060/pkg/sync/">sync</a>.<a href="http://localhost:6060/pkg/sync/#WaitGroup">WaitGroup</a>, user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>, noLLM <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>, parentMessage *<a href="../model/index.html">model</a>.<a href="../model/index.html#ChatMessage">ChatMessage</a>, persona *<a href="../model/index.html">model</a>.<a href="../model/index.html#Persona">Persona</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewAIResponder">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/responder/ai.go?s=4095:4334#L122">NewAIResponder</a>
+					<a class="permalink" href="index.html#NewAIResponder">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewAIResponder(
+    aiClient <a href="../ai/index.html">ai</a>.<a href="../ai/index.html#OpenAIClient">OpenAIClient</a>,
+    charRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#ChatRepository">ChatRepository</a>,
+    embeddProto <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#EmbedServiceClient">EmbedServiceClient</a>,
+    milvusClinet <a href="../storage/index.html">storage</a>.<a href="../storage/index.html#MilvusClient">MilvusClient</a>,
+    docRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#DocumentRepository">DocumentRepository</a>,
+    embeddingModel <a href="http://localhost:6060/pkg/builtin/#string">string</a>,
+) <a href="index.html#ChatResponder">ChatResponder</a></pre>
+				<p>
+NewAIResponder creates a new instance of AIResponder.
+</p>
+<p>
+Parameters:
+</p>
+<pre>- aiClient: The AI client for making requests to the OpenAI chat API.
+- charRepo: The chat repository for interacting with the chat data.
+- embeddProto: The EmbedService client for embedding service API.
+- milvusClinet: The MilvusClient for interacting with the Milvus storage.
+- docRepo: The document repository for interacting with the document data.
+- embeddingModel: The embedding model string.
+</pre>
+<p>
+Returns:
+</p>
+<pre>- ChatResponder: The ChatResponder object for sending chat responses.
+</pre>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Manager">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/responder/manager.go?s=285:391#L2">Manager</a>
+				<a class="permalink" href="index.html#Manager">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Manager is a type that represents a manager responsible for managing chat responses.
+It contains a channel to receive responses, a wait group to manage goroutines,
+and a list of chat responders.
+</p>
+
+			<pre>type Manager struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewManager">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/responder/manager.go?s=2144:2197#L58">NewManager</a>
+					<a class="permalink" href="index.html#NewManager">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewManager(responders ...<a href="index.html#ChatResponder">ChatResponder</a>) *<a href="index.html#Manager">Manager</a></pre>
+				<p>
+NewManager creates a new Manager object with the given ChatResponder(s).
+</p>
+<p>
+Parameters:
+</p>
+<pre>- responders: The variable number of ChatResponder objects to be used by the Manager.
+</pre>
+<p>
+Returns:
+</p>
+<pre>- *Manager: The newly created Manager object.
+</pre>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Manager.Receive">func (*Manager) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/responder/manager.go?s=1715:1760#L41">Receive</a>
+					<a class="permalink" href="index.html#Manager.Receive">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#Manager">Manager</a>) Receive() (*<a href="index.html#Response">Response</a>, <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+Receive receives a response from the Manager&#39;s channel.
+</p>
+<p>
+If there is a response available in the channel, it returns the response and true.
+If there are no more responses in the channel, it returns a default end response and false.
+</p>
+<p>
+The response is of type *Response, which contains information about the received message.
+The boolean value indicates if a response is available or not.
+</p>
+<p>
+Example usage:
+</p>
+<pre>response, ok := manager.Receive()
+if ok {
+    // Process the response
+} else {
+    // No more responses available
+}
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Manager.Send">func (*Manager) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/responder/manager.go?s=854:988#L12">Send</a>
+					<a class="permalink" href="index.html#Manager.Send">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#Manager">Manager</a>) Send(cx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>,
+    user *<a href="../model/index.html">model</a>.<a href="../model/index.html#User">User</a>,
+    noLLM <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>,
+    parentMessage *<a href="../model/index.html">model</a>.<a href="../model/index.html#ChatMessage">ChatMessage</a>,
+    persona *<a href="../model/index.html">model</a>.<a href="../model/index.html#Persona">Persona</a>)</pre>
+				<p>
+Send is a method of the Manager struct that sends chat messages to all responders in parallel. It takes in a context, user,
+a boolean flag to indicate if the message should be processed by the language model, a parent message (if any), and a persona (if any).
+It loops through all the responders and calls their individual Send method in separate goroutines. It uses a WaitGroup to wait
+for all goroutines to finish before closing the channel m.ch.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Response">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/responder/responder.go?s=485:620#L9">Response</a>
+				<a class="permalink" href="index.html#Response">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Response represents a response object containing information about a chat message response.
+It includes fields for validity, type, chat message, document response, and an error.
+</p>
+
+			<pre>type Response struct {
+<span id="Response.IsValid"></span>    IsValid  <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>
+<span id="Response.Type"></span>    Type     <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="Response.Message"></span>    Message  *<a href="../model/index.html">model</a>.<a href="../model/index.html#ChatMessage">ChatMessage</a>
+<span id="Response.Document"></span>    Document *<a href="../model/index.html">model</a>.<a href="../model/index.html#DocumentResponse">DocumentResponse</a>
+<span id="Response.Err"></span>    Err      <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

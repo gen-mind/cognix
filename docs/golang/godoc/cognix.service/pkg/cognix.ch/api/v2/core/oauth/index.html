@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>oauth - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.1";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package oauth
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "cognix.ch/api/v2/core/oauth"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+			
+				
+				<dd><a href="index.html#Config">type Config</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#GoogleConfig">type GoogleConfig</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#IdentityResponse">type IdentityResponse</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Microsoft">type Microsoft</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Microsoft.ExchangeCode">func (m *Microsoft) ExchangeCode(ctx context.Context, code string) (*IdentityResponse, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Microsoft.GetAuthURL">func (m *Microsoft) GetAuthURL(ctx context.Context, redirectUrl, state string) (string, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Microsoft.RefreshToken">func (m *Microsoft) RefreshToken(token *oauth2.Token) (*oauth2.Token, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#MicrosoftConfig">type MicrosoftConfig</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Proxy">type Proxy</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewGoogleProvider">func NewGoogleProvider(cfg *GoogleConfig, redirectURL string) Proxy</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewMicrosoft">func NewMicrosoft(cfg *MicrosoftConfig) Proxy</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewProvider">func NewProvider(name string, cfg *Config) (Proxy, error)</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#SignInConfig">type SignInConfig</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/client.go">client.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/google.go">google.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/microsoft.go">microsoft.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span id="LoginState">LoginState</span>  = &#34;login&#34;
+    <span id="SignUpState">SignUpState</span> = &#34;signUp&#34;
+    <span id="InviteState">InviteState</span> = &#34;invite&#34;
+
+    <span id="ProviderGoogle">ProviderGoogle</span>    = &#34;google&#34;
+    <span id="ProviderMicrosoft">ProviderMicrosoft</span> = &#34;microsoft&#34;
+)</pre>
+			
+				<p>
+Constants for Google OAuth state and code names.
+</p>
+
+				<pre>const (
+    <span id="StateNameGoogle">StateNameGoogle</span> = &#34;state&#34;
+    <span id="CodeNameGoogle">CodeNameGoogle</span>  = &#34;code&#34;
+)</pre>
+			
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var <span id="Providers">Providers</span> = map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#bool">bool</a>{
+    <a href="index.html#ProviderMicrosoft">ProviderMicrosoft</a>: <a href="http://localhost:6060/pkg/builtin/#true">true</a>,
+}</pre>
+			
+		
+		
+		
+			
+			
+			<h2 id="Config">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/microsoft.go?s=676:749#L13">Config</a>
+				<a class="permalink" href="index.html#Config">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Config struct {
+<span id="Config.Microsoft"></span>    Microsoft *<a href="index.html#MicrosoftConfig">MicrosoftConfig</a>
+<span id="Config.Google"></span>    Google    *<a href="index.html#GoogleConfig">GoogleConfig</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="GoogleConfig">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/google.go?s=460:581#L12">GoogleConfig</a>
+				<a class="permalink" href="index.html#GoogleConfig">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+GoogleConfig represents the configuration for Google OAuth service.
+</p>
+
+			<pre>type GoogleConfig struct {
+<span id="GoogleConfig.GoogleClientID"></span>    GoogleClientID <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;GOOGLE_CLIENT_ID&#34;`
+<span id="GoogleConfig.GoogleSecret"></span>    GoogleSecret   <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;GOOGLE_SECRET&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="IdentityResponse">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/client.go?s=386:798#L19">IdentityResponse</a>
+				<a class="permalink" href="index.html#IdentityResponse">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type IdentityResponse struct {
+<span id="IdentityResponse.ID"></span>    ID           <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;id&#34;`
+<span id="IdentityResponse.Email"></span>    Email        <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;email&#34;`
+<span id="IdentityResponse.Name"></span>    Name         <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;name&#34;`
+<span id="IdentityResponse.GivenName"></span>    GivenName    <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;given_name&#34;`
+<span id="IdentityResponse.FamilyName"></span>    FamilyName   <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;family_name&#34;`
+<span id="IdentityResponse.AccessToken"></span>    AccessToken  <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;access_token&#34;`
+<span id="IdentityResponse.RefreshToken"></span>    RefreshToken <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;refresh_token&#34;`
+<span id="IdentityResponse.Token"></span>    Token        *<a href="http://localhost:6060/pkg/golang.org/x/oauth2/">oauth2</a>.<a href="http://localhost:6060/pkg/golang.org/x/oauth2/#Token">Token</a> `json:&#34;token,omitempty&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Microsoft">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/microsoft.go?s=1585:1663#L41">Microsoft</a>
+				<a class="permalink" href="index.html#Microsoft">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Microsoft implement OAuth authorization for microsoft`s services
+</p>
+
+			<pre>type Microsoft struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Microsoft.ExchangeCode">func (*Microsoft) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/microsoft.go?s=2798:2891#L65">ExchangeCode</a>
+					<a class="permalink" href="index.html#Microsoft.ExchangeCode">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#Microsoft">Microsoft</a>) ExchangeCode(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, code <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (*<a href="index.html#IdentityResponse">IdentityResponse</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+ExchangeCode exchanges the authorization code for an access token
+and returns the related IdentityResponse.
+It takes in the context and code as parameters.
+It constructs the payload with the necessary parameters, sends a POST request
+with the payload to the Microsoft token endpoint,
+and handles the response, parsing it into a tokenResponse.
+It then constructs an IdentityResponse with the access token, token type, refresh token,
+and expiry, and returns it.
+If any errors occur during the exchange, it returns a nil IdentityResponse and the error.
+This method requires a valid httpClient for making the API call.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Microsoft.GetAuthURL">func (*Microsoft) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/microsoft.go?s=1864:1958#L50">GetAuthURL</a>
+					<a class="permalink" href="index.html#Microsoft.GetAuthURL">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#Microsoft">Microsoft</a>) GetAuthURL(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, redirectUrl, state <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (<a href="http://localhost:6060/pkg/builtin/#string">string</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+GetAuthURL generates the authentication URL for Microsoft OAuth.
+It takes in the context, redirectUrl, and state as parameters.
+It sets the RedirectURL for the MicrosoftConfig and returns
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Microsoft.RefreshToken">func (*Microsoft) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/microsoft.go?s=4267:4343#L100">RefreshToken</a>
+					<a class="permalink" href="index.html#Microsoft.RefreshToken">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m *<a href="index.html#Microsoft">Microsoft</a>) RefreshToken(token *<a href="http://localhost:6060/pkg/golang.org/x/oauth2/">oauth2</a>.<a href="http://localhost:6060/pkg/golang.org/x/oauth2/#Token">Token</a>) (*<a href="http://localhost:6060/pkg/golang.org/x/oauth2/">oauth2</a>.<a href="http://localhost:6060/pkg/golang.org/x/oauth2/#Token">Token</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+RefreshToken refreshes the OAuth2 token using the provided refresh token.
+It takes in a token *oauth2.Token and uses the client ID, client secret, refresh token,
+grant type, and redirect URI to construct the request payload.
+The payload is sent as a POST request to the Microsoft token endpoint.
+The response is parsed into a tokenResponse struct, and a new OAuth2 token is constructed
+using the response&#39;s access token, token type, refresh token, and expiry.
+The new token is then returned, along with any error that occurred during the process.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MicrosoftConfig">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/microsoft.go?s=834:1005#L20">MicrosoftConfig</a>
+				<a class="permalink" href="index.html#MicrosoftConfig">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+MicrosoftConfig represents the configuration for Microsoft OAuth service.
+</p>
+
+			<pre>type MicrosoftConfig struct {
+<span id="MicrosoftConfig.ClientID"></span>    ClientID     <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;MICROSOFT_CLIENT_ID,required&#34;`
+<span id="MicrosoftConfig.ClientSecret"></span>    ClientSecret <a href="http://localhost:6060/pkg/builtin/#string">string</a> `env:&#34;MICROSOFT_CLIENT_SECRET,required&#34;`
+<span id="MicrosoftConfig.RedirectUL"></span>    RedirectUL   <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Proxy">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/client.go?s=872:1104#L32">Proxy</a>
+				<a class="permalink" href="index.html#Proxy">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Proxy represents an interface for implementing an OAuth proxy.
+</p>
+
+			<pre>type Proxy interface {
+    GetAuthURL(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, redirectUrl, state <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (<a href="http://localhost:6060/pkg/builtin/#string">string</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    ExchangeCode(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, code <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (*<a href="index.html#IdentityResponse">IdentityResponse</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    RefreshToken(token *<a href="http://localhost:6060/pkg/golang.org/x/oauth2/">oauth2</a>.<a href="http://localhost:6060/pkg/golang.org/x/oauth2/#Token">Token</a>) (*<a href="http://localhost:6060/pkg/golang.org/x/oauth2/">oauth2</a>.<a href="http://localhost:6060/pkg/golang.org/x/oauth2/#Token">Token</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewGoogleProvider">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/google.go?s=1453:1520#L31">NewGoogleProvider</a>
+					<a class="permalink" href="index.html#NewGoogleProvider">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewGoogleProvider(cfg *<a href="index.html#GoogleConfig">GoogleConfig</a>, redirectURL <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="index.html#Proxy">Proxy</a></pre>
+				<p>
+NewGoogleProvider creates a new implementation of the google oAuth client.
+It takes a GoogleConfig pointer and a redirectURL string as input and returns a Proxy interface.
+The returned value is a pointer to a googleProvider struct.
+The googleProvider struct contains an httpClient (a resty.Client) and a config (an oauth2.Config).
+The config is initialized with the client ID, client secret, endpoint, redirect URL, and scopes.
+The config is used for authorization and authentication with the google OAuth service.
+The googleProvider struct also implements the methods defined in the Proxy interface.
+This function is used to create a new Google OAuth provider in the application.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewMicrosoft">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/microsoft.go?s=5361:5406#L128">NewMicrosoft</a>
+					<a class="permalink" href="index.html#NewMicrosoft">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewMicrosoft(cfg *<a href="index.html#MicrosoftConfig">MicrosoftConfig</a>) <a href="index.html#Proxy">Proxy</a></pre>
+				<p>
+NewMicrosoft creates a new instance of the Microsoft OAuth provider.
+It takes in a MicrosoftConfig object as a parameter and returns a Proxy interface.
+The returned object can be used to interact with the Microsoft OAuth service.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewProvider">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/client.go?s=1507:1564#L44">NewProvider</a>
+					<a class="permalink" href="index.html#NewProvider">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewProvider(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, cfg *<a href="index.html#Config">Config</a>) (<a href="index.html#Proxy">Proxy</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+NewProvider creates a new OAuth provider based on the given name and configuration.
+Currently, only the &#34;microsoft&#34; provider is supported. If the name does not match any
+supported provider, an error is returned. If the provider is supported, it creates
+an instance of the provider with the specified configuration and returns it.
+The returned provider implements the Proxy interface.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="SignInConfig">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/oauth/client.go?s=284:383#L13">SignInConfig</a>
+				<a class="permalink" href="index.html#SignInConfig">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type SignInConfig struct {
+<span id="SignInConfig.State"></span>    State           <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="SignInConfig.StateCookieName"></span>    StateCookieName <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="SignInConfig.URL"></span>    URL             <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

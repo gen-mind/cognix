@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>connector - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.1";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/pkg/">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package connector
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "cognix.ch/api/v2/core/connector"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-subdirectories">Subdirectories</a></dd>
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#Base">type Base</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Base.Config">func (b *Base) Config(connector *model.Connector)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Connector">type Connector</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#New">func New(connectorModel *model.Connector, connectorRepo repository.ConnectorRepository, oauthURL string) (Connector, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewFile">func NewFile(connector *model.Connector) (Connector, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewMSTeams">func NewMSTeams(connector *model.Connector, connectorRepo repository.ConnectorRepository, oauthURL string) (Connector, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewOneDrive">func NewOneDrive(connector *model.Connector, connectorRepo repository.ConnectorRepository, oauthURL string) (Connector, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewWeb">func NewWeb(connector *model.Connector) (Connector, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewYoutube">func NewYoutube(connector *model.Connector) (Connector, error)</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Content">type Content</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#File">type File</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#File.Execute">func (c *File) Execute(ctx context.Context, param map[string]string) chan *Response</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#File.PrepareTask">func (c *File) PrepareTask(ctx context.Context, sessionID uuid.UUID, task Task) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#File.Validate">func (c *File) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#FileParameters">type FileParameters</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FileParameters.Validate">func (p FileParameters) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#MSTeamChannelState">type MSTeamChannelState</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MSTeamMessageState">type MSTeamMessageState</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MSTeamParameters">type MSTeamParameters</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MSTeamParameters.Validate">func (p MSTeamParameters) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#MSTeamState">type MSTeamState</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#MSTeams">type MSTeams</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MSTeams.Execute">func (c *MSTeams) Execute(ctx context.Context, param map[string]string) chan *Response</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MSTeams.PrepareTask">func (c *MSTeams) PrepareTask(ctx context.Context, sessionID uuid.UUID, task Task) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MSTeams.Validate">func (c *MSTeams) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#MSTeamsResult">type MSTeamsResult</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#OneDrive">type OneDrive</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#OneDrive.Execute">func (c *OneDrive) Execute(ctx context.Context, param map[string]string) chan *Response</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#OneDrive.PrepareTask">func (c *OneDrive) PrepareTask(ctx context.Context, sessionID uuid.UUID, task Task) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#OneDrive.Validate">func (c *OneDrive) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#OneDriveParameters">type OneDriveParameters</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#OneDriveParameters.Validate">func (p OneDriveParameters) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Response">type Response</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Task">type Task</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Web">type Web</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Web.Execute">func (c *Web) Execute(ctx context.Context, param map[string]string) chan *Response</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Web.PrepareTask">func (c *Web) PrepareTask(ctx context.Context, sessionID uuid.UUID, task Task) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Web.Validate">func (c *Web) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#WebParameters">type WebParameters</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#WebParameters.Validate">func (p WebParameters) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Youtube">type Youtube</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Youtube.Execute">func (c *Youtube) Execute(ctx context.Context, param map[string]string) chan *Response</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Youtube.PrepareTask">func (c *Youtube) PrepareTask(ctx context.Context, sessionID uuid.UUID, task Task) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Youtube.Validate">func (c *Youtube) Validate() error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#YoutubeParameters">type YoutubeParameters</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#YoutubeParameters.Validate">func (p YoutubeParameters) Validate() error</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/base.go">base.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/file.go">file.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/ms-teams.go">ms-teams.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/onedrive.go">onedrive.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/web.go">web.go</a>
+			
+				<a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/youtube.go">youtube.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="Base">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/base.go?s=1233:1390#L28">Base</a>
+				<a class="permalink" href="index.html#Base">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Base is a struct that represents the base properties and methods needed for various connectors.
+</p>
+<p>
+The struct contains the following fields:
+- model: a pointer to a Connector struct that represents a table connector.
+- connectorRepo: an interface for interacting with the connector repository.
+- resultCh: a channel for receiving response data.
+- oauthClient: a client for OAuth authentication.
+</p>
+
+			<pre>type Base struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Base.Config">func (*Base) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/base.go?s=3651:3700#L111">Config</a>
+					<a class="permalink" href="index.html#Base.Config">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (b *<a href="index.html#Base">Base</a>) Config(connector *<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Connector">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/base.go?s=630:818#L15">Connector</a>
+				<a class="permalink" href="index.html#Connector">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Connector is an interface that represents a connector.
+</p>
+
+			<pre>type Connector interface {
+    Execute(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, param map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#string">string</a>) chan *<a href="index.html#Response">Response</a>
+    PrepareTask(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, sessionID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, task <a href="index.html#Task">Task</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="New">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/base.go?s=3074:3199#L92">New</a>
+					<a class="permalink" href="index.html#New">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func New(connectorModel *<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>,
+    connectorRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#ConnectorRepository">ConnectorRepository</a>,
+    oauthURL <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (<a href="index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+			
+				
+				<h3 id="NewFile">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/file.go?s=4972:5031#L136">NewFile</a>
+					<a class="permalink" href="index.html#NewFile">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewFile(connector *<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>) (<a href="index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+NewFile creates new instance of file connector.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewMSTeams">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/ms-teams.go?s=27268:27395#L708">NewMSTeams</a>
+					<a class="permalink" href="index.html#NewMSTeams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewMSTeams(connector *<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>,
+    connectorRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#ConnectorRepository">ConnectorRepository</a>,
+    oauthURL <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (<a href="index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+NewMSTeams creates new instance of MsTeams connector
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewOneDrive">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/onedrive.go?s=7702:7830#L171">NewOneDrive</a>
+					<a class="permalink" href="index.html#NewOneDrive">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewOneDrive(connector *<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>,
+    connectorRepo <a href="../repository/index.html">repository</a>.<a href="../repository/index.html#ConnectorRepository">ConnectorRepository</a>,
+    oauthURL <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (<a href="index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+NewOneDrive creates a new instance of the OneDrive connector by initializing the connector struct and validating its parameters.
+It sets up the connection to the OneDrive API and configures the connector-specific parameters.
+If the connector-specific parameters cannot be deserialized into the OneDrive struct, an error is returned.
+It then validates the connector and refreshes the access token if needed.
+The resulting OneDrive instance is returned as a Connector interface.
+If any error occurs during the initialization or validation process, it is returned along with a nil OneDrive instance.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewWeb">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/web.go?s=7888:7946#L179">NewWeb</a>
+					<a class="permalink" href="index.html#NewWeb">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewWeb(connector *<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>) (<a href="index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+NewWeb is a function that initializes and configures a new instance of Web connector.
+It takes a pointer to a model.Connector struct as input and returns a Connector interface and an error.
+</p>
+<p>
+The function follows the following steps:
+1. Create a new empty instance of Web.
+2. Call the Config function of web.Base to set the connector model.
+3. Initialize the param field of web with a new instance of WebParameters.
+4. Call the ToStruct function of connector.ConnectorSpecificConfig to populate web.param.
+5. If there is an error during the conversion, return nil and the error.
+6. Call the Validate function of web to validate the parameters.
+7. If there is an error during the validation, return nil and the error.
+8. Return a pointer to web as a Connector interface and nil as the error.
+</p>
+<p>
+The returned Connector interface implements the Execute, PrepareTask, and Validate methods.
+</p>
+<p>
+The function uses the following types:
+- model.Connector: a struct that represents a table connector.
+- Connector: an interface that represents a connector.
+- Web: a struct that represents a Web connector and contains the base properties and methods needed.
+- Base: a struct that represents the base properties and methods needed for various connectors.
+- WebParameters: a struct that represents the parameters for a Web connector.
+- connector.ConnectorSpecificConfig: a map that stores the connector-specific configuration.
+</p>
+<p>
+The function uses the following methods:
+- web.Base.Config: a method that sets the connector model and initializes the result channel.
+- connector.ConnectorSpecificConfig.ToStruct: a method that converts the connector-specific configuration to a struct.
+- web.Validate: a method that validates the WebParameters.
+</p>
+<p>
+The function uses the following package:
+- &#34;github.com/clinkerhq/config-server/repository&#34;: a repository package that provides the interface for interacting with the connector repository.
+</p>
+<p>
+The function returns the following values
+- Connector: an interface that represents a connector.
+- error: an error, if any, encountered during the execution of the function.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewYoutube">func <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/youtube.go?s=3521:3583#L85">NewYoutube</a>
+					<a class="permalink" href="index.html#NewYoutube">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewYoutube(connector *<a href="../model/index.html">model</a>.<a href="../model/index.html#Connector">Connector</a>) (<a href="index.html#Connector">Connector</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+NewYoutube creates a new instance of the Youtube connector by configuring the connector and validating its parameters.
+It initializes the Youtube struct and sets the connector configuration using the provided Connector instance.
+If the connector-specific configuration cannot be converted into a YoutubeParameters instance or validation fails,
+an error is returned. Otherwise, the Youtube connector instance is returned with no error.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Content">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/base.go?s=2450:2671#L63">Content</a>
+				<a class="permalink" href="index.html#Content">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Content  defines action for stop content in minio database
+</p>
+
+			<pre>type Content struct {
+<span id="Content.Bucket"></span>    Bucket        <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="Content.URL"></span>    URL           <a href="http://localhost:6060/pkg/builtin/#string">string</a> <span class="comment">// URL for download</span>
+<span id="Content.Body"></span>    Body          []<a href="http://localhost:6060/pkg/builtin/#byte">byte</a> <span class="comment">// Body raw content  for store</span>
+<span id="Content.AppendContent"></span>    AppendContent <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>   <span class="comment">// if true content will be added to existing file on minio</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="File">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/file.go?s=330:401#L8">File</a>
+				<a class="permalink" href="index.html#File">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+File is a type that represents a file connector.
+</p>
+
+			<pre>type File struct {
+    <a href="index.html#Base">Base</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="File.Execute">func (*File) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/file.go?s=4033:4116#L100">Execute</a>
+					<a class="permalink" href="index.html#File.Execute">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#File">File</a>) Execute(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, param map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#string">string</a>) chan *<a href="index.html#Response">Response</a></pre>
+				<p>
+Execute executes the File connector and returns a channel of Response pointers.
+</p>
+<p>
+It checks if the `param` map is nil or if the `FileName` field in the `param` map is empty.
+If either of these conditions is true, it returns an empty channel.
+Otherwise, it checks if the document with the given `FileName` already exists in the `DocsMap` of the File&#39;s base model.
+If it doesn&#39;t exist, a new Document struct is created with the given `FileName` and other necessary information,
+and it is added to the `DocsMap`.
+The `IsExists` field of the document is set to true.
+Then, it checks if the `MIMEType` field in the `param` map is a supported MIME type.
+If it is, a Response struct is created with the necessary fields and sent to the `resultCh` channel.
+If it is not a supported MIME type, an error message is logged.
+Finally, the `resultCh` channel is closed and returned.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.PrepareTask">func (*File) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/file.go?s=2137:2222#L60">PrepareTask</a>
+					<a class="permalink" href="index.html#File.PrepareTask">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#File">File</a>) PrepareTask(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, sessionID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, task <a href="index.html#Task">Task</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+PrepareTask prepares the task before execution.
+</p>
+<p>
+It checks if the length of c.model.Docs is 0. If it is 0, it appends a new Document
+to c.model.Docs with the given link, connector ID, URL, creation date, and sets IsExists to true.
+</p>
+<p>
+If c.model.Status is either model.ConnectorStatusError or model.ConnectorStatusSuccess,
+it returns nil to ignore the file that was analyzed.
+</p>
+<p>
+Assigns sessionID to c.model.Docs[0].ChunkingSession.
+Calls task.RunSemantic method passing context and semantic data to run the task.
+Returns the result of task.RunSemantic method.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.Validate">func (*File) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/file.go?s=1413:1444#L42">Validate</a>
+					<a class="permalink" href="index.html#File.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#File">File</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Validate validates the File struct.
+</p>
+<p>
+It checks if the file parameter is not nil.
+If the file parameter is nil, it returns an error.
+Otherwise, it calls the Validate method of the file parameter and returns its result.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="FileParameters">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/file.go?s=667:767#L19">FileParameters</a>
+				<a class="permalink" href="index.html#FileParameters">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+FileParameters is a struct that represents the parameters for a file connector.
+</p>
+<p>
+The struct contains the following fields:
+- FileName: a string that specifies the name of the file.
+- MIMEType: a string that specifies the MIME type of the file.
+</p>
+
+			<pre>type FileParameters struct {
+<span id="FileParameters.FileName"></span>    FileName <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;file_name&#34;`
+<span id="FileParameters.MIMEType"></span>    MIMEType <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;mime_type&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="FileParameters.Validate">func (FileParameters) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/file.go?s=986:1026#L30">Validate</a>
+					<a class="permalink" href="index.html#FileParameters.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (p <a href="index.html#FileParameters">FileParameters</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Validate validates the FileParameters struct.
+</p>
+<p>
+It checks if the FileName and MIMEType fields are required and not empty.
+If any of the fields are empty, it returns an error.
+Otherwise, it returns nil.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MSTeamChannelState">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/ms-teams.go?s=2934:3137#L72">MSTeamChannelState</a>
+				<a class="permalink" href="index.html#MSTeamChannelState">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+MSTeams is a struct that represents the Microsoft Teams connector.
+</p>
+<p>
+The struct contains the following fields:
+- Base: a struct that represents the base properties and methods needed for various connectors.
+- param: a pointer to the MSTeamParameters struct that contains the connector parameters.
+- state: a pointer to the MSTeamState struct that stores the state after each execution.
+- client: a pointer to the resty.Client struct for making RESTful requests.
+- fileSizeLimit: an integer representing the maximum file size limit.
+- sessionID: a uuid.NullUUID representing the session ID.
+</p>
+
+			<pre>type MSTeamChannelState struct {
+    <span class="comment">// Link for request changes after last execution</span>
+<span id="MSTeamChannelState.DeltaLink"></span>    DeltaLink <a href="http://localhost:6060/pkg/builtin/#string">string</a>                         `json:&#34;delta_link&#34;`
+<span id="MSTeamChannelState.Topics"></span>    Topics    map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]*<a href="index.html#MSTeamMessageState">MSTeamMessageState</a> `json:&#34;topics&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="MSTeamMessageState">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/ms-teams.go?s=3168:3262#L78">MSTeamMessageState</a>
+				<a class="permalink" href="index.html#MSTeamMessageState">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+MSTeamMessageState store
+</p>
+
+			<pre>type MSTeamMessageState struct {
+<span id="MSTeamMessageState.LastCreatedDateTime"></span>    LastCreatedDateTime <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a> `json:&#34;last_created_date_time&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="MSTeamParameters">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/ms-teams.go?s=2406:2734#L59">MSTeamParameters</a>
+				<a class="permalink" href="index.html#MSTeamParameters">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MSTeamParameters struct {
+<span id="MSTeamParameters.Team"></span>    Team         <a href="http://localhost:6060/pkg/builtin/#string">string</a>                      `json:&#34;team&#34;`
+<span id="MSTeamParameters.Channels"></span>    Channels     <a href="../model/index.html">model</a>.<a href="../model/index.html#StringSlice">StringSlice</a>           `json:&#34;channels&#34;`
+<span id="MSTeamParameters.AnalyzeChats"></span>    AnalyzeChats <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>                        `json:&#34;analyze_chats&#34;`
+<span id="MSTeamParameters.Token"></span>    Token        *<a href="http://localhost:6060/pkg/golang.org/x/oauth2/">oauth2</a>.<a href="http://localhost:6060/pkg/golang.org/x/oauth2/#Token">Token</a>               `json:&#34;token&#34;`
+<span id="MSTeamParameters.Files"></span>    Files        *<a href="microsoft-core/index.html">microsoftcore</a>.<a href="microsoft-core/index.html#MSDriveParam">MSDriveParam</a> `json:&#34;files&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="MSTeamParameters.Validate">func (MSTeamParameters) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/ms-teams.go?s=3676:3718#L94">Validate</a>
+					<a class="permalink" href="index.html#MSTeamParameters.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (p <a href="index.html#MSTeamParameters">MSTeamParameters</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+ValidateStruct validates the fields of the MSTeamParameters struct.
+The validation rules are:
+</p>
+<pre>- p.Token must not be nil
+- p.Token.AccessToken, p.Token.RefreshToken, and p.Token.TokenType must not be empty
+</pre>
+<p>
+If any of the validation rules fail, an appropriate error message is returned.
+Otherwise, nil is returned.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MSTeamState">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/ms-teams.go?s=2791:2931#L67">MSTeamState</a>
+				<a class="permalink" href="index.html#MSTeamState">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+MSTeamState store ms team state after each execute
+</p>
+
+			<pre>type MSTeamState struct {
+<span id="MSTeamState.Channels"></span>    Channels map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]*<a href="index.html#MSTeamChannelState">MSTeamChannelState</a> `json:&#34;channels&#34;`
+<span id="MSTeamState.Chats"></span>    Chats    map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]*<a href="index.html#MSTeamMessageState">MSTeamMessageState</a> `json:&#34;chats&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="MSTeams">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/ms-teams.go?s=2231:2400#L50">MSTeams</a>
+				<a class="permalink" href="index.html#MSTeams">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MSTeams struct {
+    <a href="index.html#Base">Base</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="MSTeams.Execute">func (*MSTeams) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/ms-teams.go?s=6052:6138#L154">Execute</a>
+					<a class="permalink" href="index.html#MSTeams.Execute">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#MSTeams">MSTeams</a>) Execute(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, param map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#string">string</a>) chan *<a href="index.html#Response">Response</a></pre>
+				<p>
+Execute executes the MSTeams object with the given context and parameters. It returns a channel of Response
+objects. The function sets up the necessary variables and configurations, including file size limit, session ID,
+and document existence status. It then spawns a goroutine to call the execute method with the specified context
+and parameters. If an error occurs during the execution, an error message will be logged, and the result channel
+will be closed. The function finally returns the result channel for the caller to receive the response objects.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="MSTeams.PrepareTask">func (*MSTeams) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/ms-teams.go?s=4988:5076#L131">PrepareTask</a>
+					<a class="permalink" href="index.html#MSTeams.PrepareTask">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#MSTeams">MSTeams</a>) PrepareTask(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, sessionID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, task <a href="index.html#Task">Task</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+PrepareTask prepares a task by setting up the necessary parameters and invoking the task&#39;s RunConnector method.
+If the MSTeams instance has a team specified, it retrieves the Team ID and adds it to the parameters map.
+It also adds the session ID to the parameters map.
+Finally, it calls the task&#39;s RunConnector method with the context and the ConnectorRequest containing the prepared parameters.
+Any error encountered during this process is returned.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="MSTeams.Validate">func (*MSTeams) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/ms-teams.go?s=4381:4415#L119">Validate</a>
+					<a class="permalink" href="index.html#MSTeams.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#MSTeams">MSTeams</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Validate checks if the MSTeams parameter is valid.
+It returns an error if the file parameter is missing.
+It delegates the validation to the Validate method of the MSTeamParameters struct.
+Example usage:
+</p>
+<pre>msteams := &amp;MSTeams{}
+err := msteams.Validate()
+if err != nil {
+  log.Fatal(err)
+}
+</pre>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MSTeamsResult">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/ms-teams.go?s=3264:3335#L81">MSTeamsResult</a>
+				<a class="permalink" href="index.html#MSTeamsResult">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+MSTeams is a struct that represents the Microsoft Teams connector.
+</p>
+<p>
+The struct contains the following fields:
+- Base: a struct that represents the base properties and methods needed for various connectors.
+- param: a pointer to the MSTeamParameters struct that contains the connector parameters.
+- state: a pointer to the MSTeamState struct that stores the state after each execution.
+- client: a pointer to the resty.Client struct for making RESTful requests.
+- fileSizeLimit: an integer representing the maximum file size limit.
+- sessionID: a uuid.NullUUID representing the session ID.
+</p>
+
+			<pre>type MSTeamsResult struct {
+<span id="MSTeamsResult.PrevLoadTime"></span>    PrevLoadTime <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="MSTeamsResult.Messages"></span>    Messages     []<a href="http://localhost:6060/pkg/builtin/#string">string</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="OneDrive">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/onedrive.go?s=2176:2351#L38">OneDrive</a>
+				<a class="permalink" href="index.html#OneDrive">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+OneDrive is a struct that represents a type for connecting to OneDrive.
+It embeds the Base struct and contains additional fields:
+- param: a pointer to OneDriveParameters struct that holds the parameters for the OneDrive connection.
+- ctx: a context.Context for managing the context of the OneDrive connection.
+- client: a pointer to resty.Client struct for making HTTP requests.
+- fileSizeLimit: an integer representing the file size limit for the OneDrive connection.
+- sessionID: a NullUUID representing the session ID for the OneDrive connection.
+The OneDrive struct can be used to connect to OneDrive and perform various operations.
+</p>
+
+			<pre>type OneDrive struct {
+    <a href="index.html#Base">Base</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="OneDrive.Execute">func (*OneDrive) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/onedrive.go?s=5270:5357#L102">Execute</a>
+					<a class="permalink" href="index.html#OneDrive.Execute">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#OneDrive">OneDrive</a>) Execute(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, param map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#string">string</a>) chan *<a href="index.html#Response">Response</a></pre>
+				<p>
+Execute is a method of the OneDrive struct that executes the file scanning process.
+The method takes in a context object and a map of string parameters and returns a channel of Response objects.
+The method first initializes the fileSizeLimit variable, which represents the maximum file size to scan. It reads the value from the param map if it exists, otherwise it sets it to a default value of 1.
+Next, the method sets the fileSizeLimit field of the OneDrive struct by multiplying the fileSizeLimit variable by the model.GB constant.
+It then retrieves the paramSessionID from the param map and parses it into a UUID. If the parsing fails, it sets the sessionID field of the OneDrive struct to a new UUID. Otherwise, it sets it to the parsed value.
+If the length of the model&#39;s DocsMap is 0, the method initializes it as an empty map.
+The method creates an instance of the MSDrive object with the provided parameters and assigns it to the msDrive variable. It also sets up a goroutine to execute the scanning process asynchronously.
+Finally, the method returns the resultCh channel, which will be populated with the scan results.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="OneDrive.PrepareTask">func (*OneDrive) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/onedrive.go?s=3803:3892#L84">PrepareTask</a>
+					<a class="permalink" href="index.html#OneDrive.PrepareTask">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#OneDrive">OneDrive</a>) PrepareTask(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, sessionID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, task <a href="index.html#Task">Task</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+PrepareTask sends a message to the connector for the specified task, using the provided session ID.
+The message contains the connector ID and the session ID as parameters.
+It returns an error if there is an issue running the task.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="OneDrive.Validate">func (*OneDrive) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/onedrive.go?s=2699:2734#L55">Validate</a>
+					<a class="permalink" href="index.html#OneDrive.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#OneDrive">OneDrive</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Validate checks if the file parameter is nil or not.
+If the file parameter is nil, it returns an error with the message &#34;file parameter is required&#34;.
+Otherwise, it calls the Validate method of the file parameter and returns its result.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="OneDriveParameters">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/onedrive.go?s=2353:2450#L46">OneDriveParameters</a>
+				<a class="permalink" href="index.html#OneDriveParameters">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+OneDrive is a struct that represents a type for connecting to OneDrive.
+It embeds the Base struct and contains additional fields:
+- param: a pointer to OneDriveParameters struct that holds the parameters for the OneDrive connection.
+- ctx: a context.Context for managing the context of the OneDrive connection.
+- client: a pointer to resty.Client struct for making HTTP requests.
+- fileSizeLimit: an integer representing the file size limit for the OneDrive connection.
+- sessionID: a NullUUID representing the session ID for the OneDrive connection.
+The OneDrive struct can be used to connect to OneDrive and perform various operations.
+</p>
+
+			<pre>type OneDriveParameters struct {
+    <a href="microsoft-core/index.html">microsoft_core</a>.<a href="microsoft-core/index.html#MSDriveParam">MSDriveParam</a>
+<span id="OneDriveParameters.Token"></span>    Token *<a href="http://localhost:6060/pkg/golang.org/x/oauth2/">oauth2</a>.<a href="http://localhost:6060/pkg/golang.org/x/oauth2/#Token">Token</a> `json:&#34;token&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="OneDriveParameters.Validate">func (OneDriveParameters) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/onedrive.go?s=3172:3216#L66">Validate</a>
+					<a class="permalink" href="index.html#OneDriveParameters.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (p <a href="index.html#OneDriveParameters">OneDriveParameters</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Validate checks if the provided OneDriveParameters object is valid.
+It checks if the Token field is present and if its AccessToken, RefreshToken, and TokenType are not empty.
+If the Token is missing or any of the required fields is empty, it returns an error.
+Otherwise, it returns nil, indicating the object is valid.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Response">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/base.go?s=2082:2386#L48">Response</a>
+				<a class="permalink" href="index.html#Response">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Response represents a response object containing various properties related to a URL.
+</p>
+<p>
+The struct contains the following fields:
+- URL: a string representing the URL.
+- SiteMap: a string representing the site map.
+- SearchForSitemap: a boolean indicating whether to search for a sitemap.
+- Name: a string representing the name.
+- SourceID: a string representing the source ID.
+- DocumentID: an int64 representing the document ID.
+- MimeType: a string representing the mime type.
+- FileType: a proto.FileType representing the file type.
+- Signature: a string representing the signature.
+- Content: a pointer to a Content struct representing the content
+</p>
+
+			<pre>type Response struct {
+<span id="Response.URL"></span>    URL              <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="Response.SiteMap"></span>    SiteMap          <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="Response.SearchForSitemap"></span>    SearchForSitemap <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>
+<span id="Response.Name"></span>    Name             <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="Response.SourceID"></span>    SourceID         <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="Response.DocumentID"></span>    DocumentID       <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>
+<span id="Response.MimeType"></span>    MimeType         <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="Response.FileType"></span>    FileType         <a href="../proto/index.html">proto</a>.<a href="../proto/index.html#FileType">FileType</a>
+<span id="Response.Signature"></span>    Signature        <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="Response.Content"></span>    Content          *<a href="index.html#Content">Content</a>
+<span id="Response.UpToData"></span>    UpToData         <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Task">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/base.go?s=373:570#L8">Task</a>
+				<a class="permalink" href="index.html#Task">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Task is an interface that represents a task to be executed. It defines three methods:
+</p>
+
+			<pre>type Task interface {
+    RunConnector(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, data *<a href="../proto/index.html">proto</a>.<a href="../proto/index.html#ConnectorRequest">ConnectorRequest</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    RunSemantic(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, data *<a href="../proto/index.html">proto</a>.<a href="../proto/index.html#SemanticData">SemanticData</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+    UpToDate(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Web">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/web.go?s=323:368#L5">Web</a>
+				<a class="permalink" href="index.html#Web">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Web struct represents a web connector with base properties and WebParameters.
+</p>
+
+			<pre>type Web struct {
+    <a href="index.html#Base">Base</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Web.Execute">func (*Web) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/web.go?s=5014:5096#L119">Execute</a>
+					<a class="permalink" href="index.html#Web.Execute">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Web">Web</a>) Execute(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, param map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#string">string</a>) chan *<a href="index.html#Response">Response</a></pre>
+				<p>
+Execute runs the web connector to perform a web scraping operation.
+</p>
+<p>
+The function takes in a context and a param map and returns a channel of Response objects.
+The function launches a goroutine to execute the operation asynchronously.
+The function fetches the document from the model&#39;s DocsMap using the URL from the param map.
+If the document is not found, a new Document object is created and added to the DocsMap.
+The function then sends a Response object to the resultCh channel with the relevant information.
+Finally, the function closes the resultCh channel and returns it.
+The Response object contains the following fields:
+- URL: a string representing the URL.
+- SourceID: a string representing the source ID.
+- SiteMap: a string representing the site map.
+- SearchForSitemap: a boolean indicating whether to search for a sitemap.
+- DocumentID: an int64 representing the document ID.
+- MimeType: a string representing the mime type.
+- FileType: a proto.FileType representing the file type (16 for URL).
+Note: The function does not provide error handling and does not validate the param map.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Web.PrepareTask">func (*Web) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/web.go?s=2494:2578#L57">PrepareTask</a>
+					<a class="permalink" href="index.html#Web.PrepareTask">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Web">Web</a>) PrepareTask(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, sessionID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, task <a href="index.html#Task">Task</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+PrepareTask prepares a task for execution by performing necessary setup and validation.
+If the Web connector is new, a connectorTask for preparing the document table is run.
+The task is then executed by calling the RunSemantic method of the task object, passing the necessary data.
+</p>
+<p>
+Parameters:
+</p>
+<pre>- ctx: the context.Context object for managing the task execution
+- sessionID: the UUID representing the session ID
+- task: the Task object that represents the task to be executed
+</pre>
+<p>
+Returns:
+</p>
+<pre>- error: an error object if any error occurs during the preparation or execution of the task
+  or nil if the preparation and execution are successful.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Web.Validate">func (*Web) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/web.go?s=1677:1707#L38">Validate</a>
+					<a class="permalink" href="index.html#Web.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Web">Web</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Validate method validates the Web struct by checking if the param field is nil.
+If the param field is nil, it returns an error &#34;file parameter is required&#34;.
+Otherwise, it calls the Validate method of the param field, which is a WebParameters struct,
+and returns the result of the validation.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="WebParameters">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/web.go?s=833:1043#L17">WebParameters</a>
+				<a class="permalink" href="index.html#WebParameters">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+WebParameters struct represents the parameters for a Web connector.
+</p>
+<p>
+The struct contains the following fields:
+- URL: a string representing the URL. (url:&#34;url&#34;)
+- SiteMap: a string representing the site map. (json:&#34;site_map&#34;)
+- SearchForSitemap: a boolean indicating whether to search for a sitemap. (json:&#34;search_for_sitemap&#34;)
+- URLRecursive: a boolean indicating whether the URL should be fetched recursively. (json:&#34;url_recursive&#34;)
+</p>
+
+			<pre>type WebParameters struct {
+<span id="WebParameters.URL"></span>    URL              <a href="http://localhost:6060/pkg/builtin/#string">string</a> `url:&#34;url&#34;`
+<span id="WebParameters.SiteMap"></span>    SiteMap          <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;site_map&#34;`
+<span id="WebParameters.SearchForSitemap"></span>    SearchForSitemap <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>   `json:&#34;search_for_sitemap&#34;`
+<span id="WebParameters.URLRecursive"></span>    URLRecursive     <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>   `json:&#34;url_recursive&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="WebParameters.Validate">func (WebParameters) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/web.go?s=1227:1266#L27">Validate</a>
+					<a class="permalink" href="index.html#WebParameters.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (p <a href="index.html#WebParameters">WebParameters</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Validate method validates the WebParameters struct by checking if the URL field is required and a valid URL using the is.URL validator.
+Returns an error if validation fails.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Youtube">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/youtube.go?s=649:702#L11">Youtube</a>
+				<a class="permalink" href="index.html#Youtube">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Youtube is a struct representing a Youtube connector, which is a type of connector that inherits from the Base struct.
+</p>
+<p>
+The struct contains the following fields:
+- Base: the base properties and methods needed for various connectors.
+- param: a pointer to a Youtube Parameters struct that contains URL parameter.
+</p>
+<p>
+The Youtube struct does not have any additional methods or functionalities.
+</p>
+
+			<pre>type Youtube struct {
+    <a href="index.html#Base">Base</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Youtube.Execute">func (*Youtube) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/youtube.go?s=2925:3011#L74">Execute</a>
+					<a class="permalink" href="index.html#Youtube.Execute">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Youtube">Youtube</a>) Execute(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, param map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#string">string</a>) chan *<a href="index.html#Response">Response</a></pre>
+				<p>
+Execute executes the YouTube connector task.
+This method takes a context and a map of parameters as input and returns a channel of
+*Response objects as output. It runs the task asynchronously by launching a goroutine.
+Once the goroutine starts, it closes the resultCh channel and returns it.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Youtube.PrepareTask">func (*Youtube) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/youtube.go?s=1668:1756#L41">PrepareTask</a>
+					<a class="permalink" href="index.html#Youtube.PrepareTask">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Youtube">Youtube</a>) PrepareTask(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, sessionID <a href="http://localhost:6060/pkg/github.com/google/uuid/">uuid</a>.<a href="http://localhost:6060/pkg/github.com/google/uuid/#UUID">UUID</a>, task <a href="index.html#Task">Task</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+PrepareTask prepares a task by adding a document to the model if there are no existing documents.
+If the model&#39;s status is either ConnectorStatusError or ConnectorStatusSuccess, it returns nil.
+Otherwise, it calls the RunSemantic method of the task with the appropriate data.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Youtube.Validate">func (*Youtube) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/youtube.go?s=1242:1276#L31">Validate</a>
+					<a class="permalink" href="index.html#Youtube.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Youtube">Youtube</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Validate validates the Youtube connector by checking if the file parameter is nil.
+If the file parameter is nil, it returns an error indicating that the file parameter is required.
+Otherwise, it calls the Validate method of the file parameter and returns its error (if any).
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="YoutubeParameters">type <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/youtube.go?s=704:758#L15">YoutubeParameters</a>
+				<a class="permalink" href="index.html#YoutubeParameters">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Youtube is a struct representing a Youtube connector, which is a type of connector that inherits from the Base struct.
+</p>
+<p>
+The struct contains the following fields:
+- Base: the base properties and methods needed for various connectors.
+- param: a pointer to a Youtube Parameters struct that contains URL parameter.
+</p>
+<p>
+The Youtube struct does not have any additional methods or functionalities.
+</p>
+
+			<pre>type YoutubeParameters struct {
+<span id="YoutubeParameters.URL"></span>    URL <a href="http://localhost:6060/pkg/builtin/#string">string</a> `url:&#34;url&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="YoutubeParameters.Validate">func (YoutubeParameters) <a href="http://localhost:6060/src/cognix.ch/api/v2/core/connector/youtube.go?s=808:851#L21">Validate</a>
+					<a class="permalink" href="index.html#YoutubeParameters.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (p <a href="index.html#YoutubeParameters">YoutubeParameters</a>) Validate() <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Validate validates the YouTube parameters.
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+	
+	
+		<h2 id="pkg-subdirectories">Subdirectories</h2>
+	
+	<div class="pkg-dir">
+		<table>
+			<tr>
+				<th class="pkg-name">Name</th>
+				<th class="pkg-synopsis">Synopsis</th>
+			</tr>
+
+			
+			<tr>
+				<td colspan="2"><a href="../index.html">..</a></td>
+			</tr>
+			
+
+			
+				<tr>
+				
+					<td class="pkg-name" style="padding-left: 0px;">
+						<a href="microsoft-core/index.html">microsoft-core</a>
+					</td>
+				
+					<td class="pkg-synopsis">
+						
+					</td>
+				</tr>
+			
+		</table>
+	</div>
+
+
+
+<div id="footer">
+Build version go1.18.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.cognix;
+option go_package = "backend/core/proto;proto";
+
+message SearchRequest {
+  string content = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string model_name = 4;
+  repeated string collection_names = 5;
+}
+
+message SearchResponse {
+  repeated SearchDocument documents = 1;
+}
+
+message SearchDocument {
+  int64 document_id = 1; // document id in cockroach database
+  string content = 2;
+}
+
+service SearchService {
+  rpc VectorSearch (SearchRequest) returns (SearchResponse) {}
+}
