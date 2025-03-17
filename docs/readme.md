@@ -22,7 +22,7 @@ CogniX is built on a dual-cluster architecture, designed to offer flexibility, s
 
 
 <p align="center">
-  <img src="https://github.com/gen-mind/cognix/blob/develop/docs/assets/architecture.jpg" alt="Image title" style="max-width: 100%;">
+  <img src="https://github.com/gen-mind/cognix/blob/main/docs/assets/architecture.jpg" alt="Image title" style="max-width: 100%;">
 </p>
 <p align="center"><em>Cognix architecture</em></p>
 
