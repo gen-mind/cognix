@@ -1,0 +1,127 @@
+networks:
+  frontend-network:
+    external: true
+    driver: bridge
+  backend-network:
+    external: true
+    driver: bridge
+
+services:
+  traefik:
+    image: traefik:3.1.6
+    container_name: infra-traefik
+    hostname: traefik
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    networks:
+      - backend-network
+      - frontend-network
+    volumes:
+      - ${DATA_PATH}/certificates:/letsencrypt
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    restart: unless-stopped
+    command:
+      - "--api"
+      - "--api.dashboard=true"
+      - "--providers.docker=true"
+#      - "--providers.file.watch=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      - "--certificatesresolvers.myresolver.acme.email=${COGNIX_AI_SSL_EMAIL}"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+      - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
+      - "--log.level=INFO"
+      - "--metrics.prometheus=true"
+      - "--metrics.prometheus.buckets=0.100000, 0.300000, 1.200000, 5.000000"
+      - "--metrics.prometheus.addEntryPointsLabels=true"
+      - "--metrics.prometheus.addServicesLabels=true"
+      - "--entryPoints.metrics.address=:8899"
+      - "--metrics.prometheus.entryPoint=metrics"
+    labels:
+      - "traefik.enable=true"
+      - "logging=promtail"
+      - "logging_jobname=containerlogs"
+#      - "traefik.http.routers.traefik.rule=Host(`${COGNIX_AI_DOMAIN}`)"
+#      - "traefik.http.routers.traefik.service=api@internal"
+#      - "traefik.http.routers.traefik.entrypoints=websecure"
+#      - "traefik.http.routers.traefik.tls.certresolver=myresolver"
+##      - "traefik.http.routers.traefik.middlewares=authtraefik"
+##      - "traefik.http.middlewares.authtraefik.basicauth.users=user:$apr1$rEPGrvGu$54EqkL6az8vfJVGtyOUIQ." # user/mypassword
+#
+#      # global redirect to https
+#      - "traefik.http.routers.http-catchall.rule=hostregexp(`{host:.+}`)"
+#      - "traefik.http.routers.http-catchall.entrypoints=web"
+#      - "traefik.http.routers.http-catchall.middlewares=redirect-to-https"
+#
+#      # middleware redirect
+#      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: infra-portainer
+    command: -H unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    depends_on:
+      - traefik
+    networks:
+      - frontend-network
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.infra-portainer.rule=Host(`${COGNIX_AI_DOMAIN}`) && PathPrefix(`/portainer`)"
+      - "traefik.http.middlewares.infra-portainer-stripprefix.stripprefix.prefixes=/portainer"
+      - "traefik.http.routers.infra-portainer.middlewares=infra-portainer-stripprefix"
+      - "traefik.http.routers.infra-portainer.entrypoints=websecure"
+      - "traefik.http.routers.infra-portainer.tls.certresolver=myresolver"
+      - "traefik.http.services.infra-portainer.loadbalancer.server.port=9000"
+
+  whoami:
+    image: containous/whoami:latest
+    container_name: infra-whoami
+    networks:
+      - frontend-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.infra-whoami.rule=Host(`${COGNIX_AI_DOMAIN}`) && PathPrefix(`/whoami`)"
+      - "traefik.http.middlewares.infra-whoami-stripprefix.stripprefix.prefixes=/whoami"
+      - "traefik.http.routers.infra-whoami.middlewares=infra-whoami-stripprefix"
+      - "traefik.http.routers.infra-whoami.entrypoints=websecure"
+      - "traefik.http.routers.infra-whoami.tls.certresolver=myresolver"
+      - "traefik.http.services.infra-whoami.loadbalancer.server.port=80"
+    depends_on:
+      - traefik
+
+
+volumes:
+  # prometheus volume, must be defined here
+  prom_data:
+    driver: local
+    driver_opts:
+        type: none
+        o: bind
+        device: ${DATA_PATH}/prometheus
+  # authentic volumes
+  authentic_postgres_data:
+    driver: local
+    driver_opts:
+        type: none
+        o: bind
+        device: ${DATA_PATH}/authentik/postgres
+  authentic_redis_data:
+    driver: local
+    driver_opts:
+        type: none
+        o: bind
+        device: ${DATA_PATH}/authentik/redis
+  portainer_data:
+      driver: local
+      driver_opts:
+        type: none
+        o: bind
+        device: ${DATA_PATH}/portainer

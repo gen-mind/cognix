@@ -1,0 +1,167 @@
+networks:
+  frontend-network:
+    external: true
+    driver: bridge
+  backend-network:
+    external: true
+    driver: bridge
+
+services:
+  postgres:
+    image: docker.io/library/postgres:16.4
+    container_name: auth-db
+    environment:
+      - POSTGRES_USER=${AUTH_POSTGRES_USER}
+      - POSTGRES_PASSWORD=${AUTH_POSTGRES_PASSWORD}
+      - POSTGRES_DB=${AUTH_POSTGRES_DB}
+      - TZ=${TZ:-UTC}
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U "\"${AUTH_POSTGRES_USER}\""' ]
+      start_period: 30s
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - authentik_postgres_data:/var/lib/postgresql/data
+      - ${CONFIG_PATH}/authdb/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    restart: unless-stopped
+    networks:
+      - backend-network
+    labels:
+      - "traefik.enable=true"
+
+  redis:
+    image: docker.io/library/redis:7.4.1
+    container_name: auth-redis
+    command: --save 60 1 --loglevel warning
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      start_period: 20s
+      interval: 30s
+      retries: 5
+      timeout: 3s
+    volumes:
+      - authentik_redis_data:/data
+    restart: unless-stopped
+    networks:
+      - backend-network
+    labels:
+      - "traefik.enable=true"
+
+  server:
+    image: ghcr.io/goauthentik/server:2024.8.3
+    container_name: auth-server
+    command: server
+    environment:
+      - AUTHENTIK_REDIS__HOST=auth-redis
+      - AUTHENTIK_POSTGRESQL__HOST=auth-db
+      - AUTHENTIK_POSTGRESQL__USER=${AUTH_POSTGRES_USER}
+      - AUTHENTIK_POSTGRESQL__NAME=${AUTH_POSTGRES_DB}
+      - AUTHENTIK_POSTGRESQL__PASSWORD=${AUTH_POSTGRES_PASSWORD}
+      # (Required)  To generate a secret key run the following command:
+      #             echo $(openssl rand -base64 32)
+      - AUTHENTIK_SECRET_KEY=${AUTH_SECRET_KEY:?error}
+      # (Optional)  Enable Error Reporting
+      # - AUTHENTIK_ERROR_REPORTING__ENABLED=${AUTHENTIK_ERROR_REPORTING:-false}
+      # (Optional)  Enable Email Sending
+      # - AUTHENTIK_EMAIL__HOST=${EMAIL_HOST:?error}
+      # - AUTHENTIK_EMAIL__PORT=${EMAIL_PORT:-25}
+      # - AUTHENTIK_EMAIL__USERNAME=${EMAIL_USERNAME:?error}
+      # - AUTHENTIK_EMAIL__PASSWORD=${EMAIL_PASSWORD:?error}
+      # - AUTHENTIK_EMAIL__USE_TLS=${EMAIL_USE_TLS:-false}
+      # - AUTHENTIK_EMAIL__USE_SSL=${EMAIL_USE_SSL:-false}
+      # - AUTHENTIK_EMAIL__TIMEOUT=${EMAIL_TIMEOUT:-10}
+      # - AUTHENTIK_EMAIL__FROM=${EMAIL_FROM:?error}
+    volumes:
+      - ${DATA_PATH}/authentik/media:/media
+      - ${DATA_PATH}/authentik/media/custom-templates:/templates
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+    networks:
+      - backend-network
+      - frontend-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.auth-server.rule=Host(`${COGNIX_AI_DOMAIN}`)"
+      - "traefik.http.routers.auth-server.entrypoints=websecure"
+      - "traefik.http.routers.auth-server.tls.certresolver=myresolver"
+      - "traefik.http.services.auth-server.loadbalancer.server.port=9000"
+      - "logging=promtail"
+      - "logging_jobname=containerlogs"
+
+  worker:
+    image: ghcr.io/goauthentik/server:2024.8.3
+    container_name: auth-worker
+    command: worker
+    environment:
+      - AUTHENTIK_REDIS__HOST=auth-redis
+      - AUTHENTIK_POSTGRESQL__HOST=auth-db
+      - AUTHENTIK_POSTGRESQL__USER=${AUTH_POSTGRES_USER}
+      - AUTHENTIK_POSTGRESQL__NAME=${AUTH_POSTGRES_DB}
+      - AUTHENTIK_POSTGRESQL__PASSWORD=${AUTH_POSTGRES_PASSWORD}
+      # (Required)  To generate a secret key run the following command:
+      #             echo $(openssl rand -base64 32)
+      - AUTHENTIK_SECRET_KEY=${AUTH_SECRET_KEY:?error}
+      # (Optional)  Enable Error Reporting
+      # - AUTHENTIK_ERROR_REPORTING__ENABLED=${AUTHENTIK_ERROR_REPORTING:-false}
+      # (Optional)  Enable Email Sending
+      # - AUTHENTIK_EMAIL__HOST=${EMAIL_HOST:?error}
+      # - AUTHENTIK_EMAIL__PORT=${EMAIL_PORT:-25}
+      # - AUTHENTIK_EMAIL__USERNAME=${EMAIL_USERNAME:?error}
+      # - AUTHENTIK_EMAIL__PASSWORD=${EMAIL_PASSWORD:?error}
+      # - AUTHENTIK_EMAIL__USE_TLS=${EMAIL_USE_TLS:-false}
+      # - AUTHENTIK_EMAIL__USE_SSL=${EMAIL_USE_SSL:-false}
+      # - AUTHENTIK_EMAIL__TIMEOUT=${EMAIL_TIMEOUT:-10}
+      # - AUTHENTIK_EMAIL__FROM=${EMAIL_FROM:?error}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /run/docker.sock:/run/docker.sock
+      - ${DATA_PATH}/authentik/media:/media
+      - ${DATA_PATH}/authentik/media/custom-templates:/templates
+      - ${DATA_PATH}/authentik/certs:/certs
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+    networks:
+      - backend-network
+    labels:
+      - "logging=promtail"
+      - "logging_jobname=containerlogs"
+
+
+volumes:
+  # prometheus volume, must be defined here
+  prom_data:
+    driver: local
+    driver_opts:
+        type: none
+        o: bind
+        device: ${DATA_PATH}/prometheus
+  # authentic volumes
+  authentik_postgres_data:
+    driver: local
+    driver_opts:
+        type: none
+        o: bind
+        device: ${DATA_PATH}/authentik/postgres
+  authentik_redis_data:
+    driver: local
+    driver_opts:
+        type: none
+        o: bind
+        device: ${DATA_PATH}/authentik/redis
+  grafana-storage:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${DATA_PATH}/grafana/provisioning
+  grafana-provisioning:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${DATA_PATH}/grafana/provisioning

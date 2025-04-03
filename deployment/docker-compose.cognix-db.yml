@@ -1,0 +1,120 @@
+networks:
+  frontend-network:
+    external: true
+    driver: bridge
+  backend-network:
+    external: true
+    driver: bridge
+
+volumes:
+  nats-storage:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${DATA_PATH}/nats
+
+  yugabytedb-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${DATA_PATH}/db
+
+services:
+  # nats configuration.
+  # more detail: https://docs.nats.io/running-a-nats-service/configuration
+  nats:
+    image: nats:latest
+    container_name: nats
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+      - "6222:6222"
+    expose:
+      - 4222
+      - 8222
+    restart: unless-stopped
+    volumes:
+      - nats-storage:/data/nats
+    command:
+      - "--name=nats"
+      - "--http_port=8222"
+      - "--js"
+      - "--sd=/data/nats"
+#    healthcheck:
+#        test: echo $$(wget --server-response http://nats:8222/varz 2>&1 | grep  '200 OK') | grep '200'  || exit 1
+#        interval: 20s
+#        timeout: 5s
+#        retries: 5
+#        start_period: 40s
+    networks:
+      - backend-network
+      - frontend-network
+
+#  nats-exporter:
+#    image: synadia/prometheus-nats-exporter:latest
+#    container_name: nats-exporter
+#    command: -varz "http://localhost:5555"
+#    restart: unless-stopped
+#    networks:
+#      - backend-network
+
+  nats-dashboard:
+    image: mdawar/nats-dashboard
+    container_name: nats-dashboard
+    restart: unless-stopped
+    environment:
+      # The NATS monitoring server will be proxied on /proxy/* on the frontend.
+      # See: config/Caddyfile for the reverse proxy configuration.
+      REVERSE_PROXY_UPSTREAM: 'nats:8222'
+    volumes:
+      - ${CONFIG_PATH}/nats/nats-config.json:/srv/config.json
+    ports:
+      - "8000:8080"
+      - target: 80
+    networks:
+      - frontend-network
+      - backend-network
+
+  yugabytedb:
+    image: yugabytedb/yugabyte:latest
+    container_name: yugabytedb
+    restart: unless-stopped
+    command: ["bin/yugabyted", "start", "--daemon=false"]
+#    ports:
+#      - "7000:7000"   # YB-Master Admin UI
+#      - "9000:9000"   # YB-TServer Admin UI
+#      - "5433:5433"   # YSQL API
+#      - "9042:9042"   # YCQL API
+#      - "15433:15433" # <-- admin
+    deploy:
+      resources:
+        limits:
+          memory: 500M
+        reservations:
+          memory: 128M
+    volumes:
+      - yugabytedb-data:/home/yugabyte/var
+    env_file:
+      - ${CONFIG_PATH}/yugabytedb/yugabytedb.env
+    hostname: postgres
+    networks:
+      - backend-network
+      - frontend-network
+    labels:
+      - "traefik.enable=true"
+      # Router for sticky app
+      - "traefik.http.routers.yugabytedb.rule=Host(`${COGNIX_AI_DOMAIN}`) && PathPrefix(`/yugabytedb`)"
+      - "traefik.http.routers.yugabytedb.entrypoints=websecure"
+      - "traefik.http.routers.yugabytedb.tls.certresolver=myresolver"
+      - "traefik.http.services.yugabytedb.loadbalancer.server.port=15433"
+      # sending log to promtail
+      - "logging=obsrv-promtail"
+    #      - "logging_jobname=containerlogs"
+
+
+
+
+
+

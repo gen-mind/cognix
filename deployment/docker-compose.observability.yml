@@ -1,0 +1,232 @@
+networks:
+  frontend-network:
+    external: true
+    driver: bridge
+  backend-network:
+    external: true
+    driver: bridge
+
+volumes:
+  grafana-storage:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${DATA_PATH}/grafana/provisioning
+  grafana-provisioning:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${DATA_PATH}/grafana/provisioning
+  # prometheus volume, must be defined here
+  prom_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${DATA_PATH}/prometheus
+
+
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: obsrv-prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+#    ports:
+#      - 9090:9090
+    restart: unless-stopped
+    volumes:
+      - ${CONFIG_PATH}/prometheus:/etc/prometheus
+      - prom_data:/prometheus
+#    expose:
+#      - 9090
+    networks:
+      - backend-network
+      - frontend-network #needed to collect metrics from services inside front-end network
+    labels:
+      - "traefik.enable=true"
+      - "logging=promtail"
+      - "logging_jobname=containerlogs"
+
+  grafana:
+    image: grafana/grafana:latest #grafana/alpine
+    container_name: obsrv-grafana
+    ports:
+      - 3001:3001
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=grafana
+      - GF_SERVER_HTTP_PORT=3001
+      - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+      - GF_PATHS_DATA=/var/lib/grafana
+      - GF_AUTH_ANONYMOUS_ENABLED=false
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_SERVER_ROOT_URL=https://${COGNIX_AI_DOMAIN}/grafana
+      - GF_SERVER_SERVE_FROM_SUB_PATH=true
+      - GF_SERVER_DOMAIN=${COGNIX_AI_DOMAIN}
+#      # Optionally enable auto-login (bypasses Grafana login screen)
+#      - GF_AUTH_OAUTH_AUTO_LOGIN=true
+#      # Optionally map user groups to Grafana roles
+#      - GF_AUTH_GENERIC_OAUTH_ROLE_ATTRIBUTE_PATH=contains(groups, 'Grafana Admins') && 'Admin' || contains(groups, 'Grafana Editors') && 'Editor' || 'Viewer'
+    volumes:
+#      - ${DATA_PATH}/grafana/provisioning:/etc/grafana/provisioning
+#      - ${DATA_PATH}/grafana/data:/var/lib/grafana  # <-- This is where Grafana stores dashboards and data sources
+      - grafana-storage:/var/lib/grafana
+      - grafana-provisioning:/etc/grafana/provisioning
+    networks:
+      - backend-network
+      - frontend-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.obsrv-grafana.rule=Host(`${COGNIX_AI_DOMAIN}`) && PathPrefix(`/grafana`)"
+      #      - "traefik.http.middlewares.obsrv-grafana-stripprefix.stripprefix.prefixes=/grafana"
+      #      - "traefik.http.routers.grafana.middlewares=obsrv-grafana-stripprefix"
+      - "traefik.http.routers.obsrv-grafana.entrypoints=websecure"
+      - "traefik.http.routers.obsrv-grafana.tls.certresolver=myresolver"
+      #      # Middleware to handle path rewrites for static files
+      #      - "traefik.http.middlewares.obsrv-grafana-replacepathregex.replacepathregex.regex=^/sticky/(.*)"
+      #      - "traefik.http.middlewares.obsrv-grafana-replacepathregex.replacepathregex.replacement=/$1"
+      #      - "traefik.http.routers.obsrv-grafana.middlewares=grafana-replacepathregex"
+      - "traefik.http.services.obsrv-grafana.loadbalancer.server.port=3001"
+      
+
+  loki:
+    container_name: obsrv-loki
+    image: grafana/loki:2.9.2
+    ports:
+      - "3100:3100"
+    restart: unless-stopped
+    expose:
+      - 3100
+    command: -config.file=/etc/loki/loki-config.yaml
+    volumes:
+      - ${CONFIG_PATH}/loki:/etc/loki
+      - ${DATA_PATH}/loki:/loki  # Store Loki log data
+
+    networks:
+      - backend-network
+    labels:
+      - "traefik.enable=true"
+
+  # 7.6.24 to work use the following versions:
+  # - promtail latest
+  # - loki 2.9.2
+  promtail:
+    container_name: obsrv-promtail
+#    image: grafana/promtail:main-10569ab
+    image: grafana/promtail:3.1.1-amd64
+    volumes:
+      - /var/log:/var/log
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${CONFIG_PATH}/promtail:/etc/promtail
+    command: -config.file=/etc/promtail/promtail.yaml
+    networks:
+      - backend-network
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor
+    container_name: obsrv-cadvisor
+    restart: unless-stopped
+    privileged: true
+#    ports:
+#      - "8081:8080"
+#    expose:
+#      - 8080
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    devices:
+      - /dev/kmsg
+    networks:
+      - backend-network
+    labels:
+      - "traefik.enable=true"
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: obsrv-node-exporter
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    expose:
+      - 9100
+    networks:
+      - backend-network
+    labels:
+      - "traefik.enable=true"
+
+  nvidia-smi-exporter:
+    image: utkuozdemir/nvidia_gpu_exporter:1.1.0
+    container_name: obsrv-nvidia-smi-exporter
+    restart: unless-stopped
+    devices:
+      - /dev/nvidiactl:/dev/nvidiactl
+      - /dev/nvidia0:/dev/nvidia0
+    volumes:
+      - /usr/lib/x86_64-linux-gnu/libnvidia-ml.so:/usr/lib/x86_64-linux-gnu/libnvidia-ml.so
+      - /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1:/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1
+      - /usr/bin/nvidia-smi:/usr/bin/nvidia-smi
+    networks:
+      - backend-network
+
+  docker_exporter:
+    image: prometheusnet/docker_exporter
+    container_name: obsrv-docker_exporter
+    restart: always
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    ports:
+      - "9417:9417"
+
+
+# not needed any more since we have all data in grafana
+#  netdata:
+#    image: netdata/netdata
+#    container_name: infra-netdata
+#    #    ports:
+#    #      - "19999:19999"
+#    networks:
+#      - frontend-network
+#      - backend-network
+#    cap_add:
+#      - SYS_PTRACE
+#    security_opt:
+#      - apparmor:unconfined
+#    volumes:
+#      - /proc:/host/proc:ro
+#      - /sys:/host/sys:ro
+#      - /var/run/docker.sock:/var/run/docker.sock:ro
+#      - /etc/passwd:/host/etc/passwd:ro
+#      - /etc/group:/host/etc/group:ro
+#      - /etc/os-release:/host/etc/os-release:ro
+#    restart: unless-stopped
+#    labels:
+#      - "traefik.enable=true"
+#      - "traefik.http.routers.infra-netdata.rule=Host(`${COGNIX_AI_DOMAIN}`) && PathPrefix(`/netdata`)"
+#      - "traefik.http.middlewares.infra-netdata-stripprefix.stripprefix.prefixes=/netdata"
+#      - "traefik.http.routers.infra-netdata.middlewares=infra-netdata-stripprefix"
+#      - "traefik.http.routers.infra-netdata.entrypoints=websecure"
+#      - "traefik.http.routers.infra-netdata.tls.certresolver=myresolver"
+#      - "traefik.http.services.infra-netdata.loadbalancer.server.port=19999"
+
+#  volumes:
+#    prom_data:
+#      driver: local
+#      driver_opts:
+#        type: none
+#        o: bind
+#        device: ${DATA_PATH}/prometheus
+

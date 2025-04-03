@@ -1,0 +1,105 @@
+networks:
+  frontend-network:
+    external: true
+    driver: bridge
+  backend-network:
+    external: true
+    driver: bridge
+
+volumes:
+  anythingllm_storage:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${DATA_PATH}/anythingllm
+
+services:
+
+  tgi:
+    image: ghcr.io/huggingface/text-generation-inference:latest
+    container_name: tgi
+#    ports:
+#      - 8081:80
+    volumes:
+      - ${LOCAL_MODEL_CACHE_DIR}:/model_cache
+    environment:
+      - HF_TOKEN=${HF_TOKEN}
+    # need this to access GPU
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    command:
+      - '--huggingface-hub-cache'
+      - '/model_cache'
+      - '--model-id'
+      - '${MODEL_ID}'
+      - '--max-batch-prefill-tokens'
+      - '${MAX_PREFILL_TOKENS}'
+      - '--quantize'
+      - '${QUANTIZATION}'
+      - '--max-total-tokens'
+      - '${MAX_TOTAL_TOKENS}'
+      - '--max-input-length'
+      - '${MAX_INPUT_LENGTH}'
+    shm_size: 1gb
+    networks:
+      - frontend-network
+    labels:
+      - "traefik.enable=true"
+      # Router for tgi app inference inference.cognix.ch
+#      - "traefik.http.routers.tgi.rule=Host(`${COGNIX_AI_DOMAIN}`) && PathPrefix(`/tgi{regex:$$|/.*}`))"
+      - "traefik.http.routers.tgi.rule=Host(`${COGNIX_AI_INFERENCE}`)"
+      - "traefik.http.routers.tgi.entrypoints=websecure"
+      - "traefik.http.routers.tgi.tls.certresolver=myresolver"
+      - "traefik.http.services.tgi.loadbalancer.server.port=80"
+# https://huggingface.co/docs/text-generation-inference/en/basic_tutorials/launcher
+#error: unexpected argument '--HF_TOKEN' found
+#Usage: text-generation-launcher <--model-id <MODEL_ID>|--revision <REVISION>|--validation-workers <VALIDATION_WORKERS>|--sharded <SHARDED>|--num-shard <NUM_SHARD>|--quantize <QUANTIZE>|--speculate <SPECULATE>|--dtype <DTYPE>|--kv-cache-dtype <KV_CACHE_DTYPE>|--trust-remote-code|--max-concurrent-requests <MAX_CONCURRENT_REQUESTS>|--max-best-of <MAX_BEST_OF>|--max-stop-sequences <MAX_STOP_SEQUENCES>|--max-top-n-tokens <MAX_TOP_N_TOKENS>|--max-input-tokens <MAX_INPUT_TOKENS>|--max-input-length <MAX_INPUT_LENGTH>|--max-total-tokens <MAX_TOTAL_TOKENS>|--waiting-served-ratio <WAITING_SERVED_RATIO>|--max-batch-prefill-tokens <MAX_BATCH_PREFILL_TOKENS>|--max-batch-total-tokens <MAX_BATCH_TOTAL_TOKENS>|--max-waiting-tokens <MAX_WAITING_TOKENS>|--max-batch-size <MAX_BATCH_SIZE>|--cuda-graphs <CUDA_GRAPHS>|--hostname <HOSTNAME>|--port <PORT>|--shard-uds-path <SHARD_UDS_PATH>|--master-addr <MASTER_ADDR>|--master-port <MASTER_PORT>|--huggingface-hub-cache <HUGGINGFACE_HUB_CACHE>|--weights-cache-override <WEIGHTS_CACHE_OVERRIDE>|--disable-custom-kernels|--cuda-memory-fraction <CUDA_MEMORY_FRACTION>|--rope-scaling <ROPE_SCALING>|--rope-factor <ROPE_FACTOR>|--json-output|--otlp-endpoint <OTLP_ENDPOINT>|--otlp-service-name <OTLP_SERVICE_NAME>|--cors-allow-origin <CORS_ALLOW_ORIGIN>|--api-key <API_KEY>|--watermark-gamma <WATERMARK_GAMMA>|--watermark-delta <WATERMARK_DELTA>|--ngrok|--ngrok-authtoken <NGROK_AUTHTOKEN>|--ngrok-edge <NGROK_EDGE>|--tokenizer-config-path <TOKENIZER_CONFIG_PATH>|--disable-grammar-support|--env|--max-client-batch-size <MAX_CLIENT_BATCH_SIZE>|--lora-adapters <LORA_ADAPTERS>|--usage-stats <USAGE_STATS>>
+#For more information, try '--help'.
+
+
+  anythingllm:
+    image: mintplexlabs/anythingllm:latest
+    container_name: anythingllm
+    cap_add:
+      - SYS_ADMIN
+    environment:
+      - STORAGE_DIR=/app/server/storage
+#      - JWT_SECRET="make this a large list of random numbers and letters 20+"
+      - LLM_PROVIDER=vllm  # Use vLLM instead of Ollama
+      - EMBEDDING_ENGINE=vllm  # Change embedding engine to vLLM if applicable
+      - EMBEDDING_MODEL_PREF=nomic-embed-text:latest
+      - EMBEDDING_MODEL_MAX_CHUNK_LENGTH=8192
+      - VECTOR_DB=lancedb
+      - WHISPER_PROVIDER=local
+#      - TTS_PROVIDER=native
+      - PASSWORDMINCHAR=8
+    ports:
+      - "3002:3001"
+    volumes:
+      - anythingllm_storage:/app/server/storage
+    restart: unless-stopped
+    networks:
+      - frontend-network
+      - backend-network
+    labels:
+      - "traefik.enable=true"
+      # Router for sticky app
+      - "traefik.http.routers.anythingllm.rule=Host(`${CB_CHAT}`)"
+      - "traefik.http.routers.anythingllm.entrypoints=websecure"
+      - "traefik.http.routers.anythingllm.tls.certresolver=myresolver"
+      - "traefik.http.services.anythingllm.loadbalancer.server.port=3001"
+      # sending log to promtail
+#      - "logging=obsrv-promtail"
+#      - "logging_jobname=containerlogs"
+
+
+
+
+
